@@ -1,0 +1,18 @@
+{
+  "day": 128,
+  "title": "Privacy, Analytics, and Consent-Aware Configuration",
+  "date": "2026-06-08",
+  "url": "https://juribuora.github.io/blog/2026/06/08/day-128.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "webfundamentals",
+    "githubpages",
+    "documentation",
+    "tooling",
+    "learningprocess"
+  ],
+  "slug": "day-128",
+  "sourcePath": "Blog/_posts/2026-06-08-day-128.md",
+  "content": "# 🔄 Topic\n\nKeeping analytics useful without making privacy an afterthought.\n\n---\n\n# 🎯 Goal\n\nUnderstand how privacy-aware analytics configuration fits into a small production website.\n\n---\n\n# 🛠 What I Did\n\nI reviewed the privacy and analytics design in the Farina project. The site supports Google Analytics only when configured through an environment variable, and analytics behavior is intended to be consent-aware. This is important because local business websites still need to respect user privacy. Tracking should not be accidental, hardcoded, or silently enabled without thought.\n\nMain areas covered:\n\n- environment-based analytics configuration\n- consent-aware behavior\n- privacy policy\n- cookie policy\n- limited configuration exposure\n- GDPR-oriented thinking\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nThis matters because privacy failures are security failures in practice. User data, tracking behavior, cookies, and analytics scripts all create trust and compliance risk.\n\n---\n\n# 🔍 Investigation Questions\n\n- Is analytics enabled intentionally?\n- Is the measurement ID stored safely?\n- Does the site explain privacy behavior?\n- Are third-party scripts loaded only when appropriate?\n- Could config leak into public code?\n\n---\n\n# 🚨 Detection Opportunities\n\nPotential monitoring ideas:\n\n- unexpected third-party script loading\n- analytics ID changed unexpectedly\n- cookie behavior changed after deployment\n- privacy policy modified\n- environment variable misuse\n\nExample:\n\n    project=farina-farm-website\n    change_type=public_website_update\n    risk_area=repository_deployment_or_public_input\n    triage=review_change_intent_and_validate_build\n\n---\n\n# 🧭 MITRE ATT&CK Techniques\n\nPossible mappings depending on confirmed behavior:\n\n- T1552 — Unsecured Credentials\n- T1195 — Supply Chain Compromise\n- T1078 — Valid Accounts\n\n---\n\n# 🗺 Visual Investigation Diagram\n\n    User visit\n        ↓\nConsent decision\n        ↓\nAnalytics config\n        ↓\nThird-party script\n        ↓\nPrivacy/legal exposure\n\n---\n\n# ⚠ Challenges\n\nThe challenge was not treating privacy as boring legal text. It directly affects trust and operational responsibility.\n\n---\n\n# 📚 What I Learned\n\nI learned that privacy-aware design should be part of the build, not something pasted at the end.\n\n---\n\n# ➡ Next Steps\n\n- Review analytics configuration\n- Keep privacy/cookie pages accurate\n- Avoid hardcoding sensitive config\n- Document third-party scripts\n\n---\n\n# 🧠 Reflection\n\nThis was useful because it turned a real project into security-aware learning without pretending that every task was a pure cybersecurity lab.\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nTreating analytics as a controlled feature.\n\n**What broke**\n\nAssuming tracking is harmless because the site is small.\n\n**Why it broke**\n\nSmall websites still process real user data.\n\n**Fix / takeaway**\n\nEnable analytics intentionally and document behavior clearly.\n\n---\n\n# 📈 Skill Progression Context\n\nThis supports cybersecurity progression because privacy, data handling, and third-party scripts are common real-world risk areas.\n\n---\n\n# 😄 TL;DR\n\nAnalytics should be intentional, not accidental.\n"
+}

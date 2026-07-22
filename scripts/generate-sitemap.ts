@@ -138,6 +138,11 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
       title: "About — Juri Buora",
       description: "About Juri Buora and the public learning journey behind this cybersecurity log.",
     },
+    {
+      routePath: "/portfolio",
+      title: "Portfolio — Juri Buora",
+      description: "Selected cybersecurity work, labs, and engineering evidence from Juri Buora.",
+    },
     ...manifest.posts.map((post) => ({
       routePath: `/${post.category}/${post.day}`,
       title: `${post.title} — Juri Buora`,
@@ -191,6 +196,7 @@ export async function generateSitemap(outDir: string): Promise<void> {
     { loc: `${SITE}/blog`, lastmod: today, changefreq: "weekly", priority: 0.9 },
     { loc: `${SITE}/labs`, lastmod: today, changefreq: "weekly", priority: 0.9 },
     { loc: `${SITE}/about`, lastmod: today, changefreq: "monthly", priority: 0.8 },
+    { loc: `${SITE}/portfolio`, lastmod: today, changefreq: "monthly", priority: 0.8 },
   ];
 
   let mirroredEntries: Entry[] = [];

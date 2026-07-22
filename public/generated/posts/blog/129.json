@@ -1,0 +1,18 @@
+{
+  "day": 129,
+  "title": "Testing, Linting, Type Checking, and Build Validation",
+  "date": "2026-06-09",
+  "url": "https://juribuora.github.io/blog/2026/06/09/day-129.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "webfundamentals",
+    "githubpages",
+    "documentation",
+    "tooling",
+    "learningprocess"
+  ],
+  "slug": "day-129",
+  "sourcePath": "Blog/_posts/2026-06-09-day-129.md",
+  "content": "# 🔄 Topic\n\nUsing validation commands to catch problems before deployment.\n\n---\n\n# 🎯 Goal\n\nUnderstand how linting, type checking, tests, and builds reduce avoidable production mistakes.\n\n---\n\n# 🛠 What I Did\n\nI reviewed the validation workflow for the Farina website. The project includes commands for linting, TypeScript checks, tests, build, sitemap sync, and image sync. These checks are not glamorous, but they are exactly what prevents small mistakes from becoming production problems. A professional workflow is not just writing code. It is proving the code still builds and behaves as expected.\n\nMain areas covered:\n\n- npm run lint\n- npm run typecheck\n- npm run test\n- npm run build\n- npm run sync:sitemap\n- npm run sync:images\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nValidation matters because attackers and outages both exploit mistakes. Broken builds, type errors, stale assets, and unreviewed changes all reduce reliability.\n\n---\n\n# 🔍 Investigation Questions\n\n- Did linting catch unsafe patterns?\n- Did type checking catch broken props or data shapes?\n- Did tests pass?\n- Did the production build complete?\n- Did generated assets update correctly?\n\n---\n\n# 🚨 Detection Opportunities\n\nPotential monitoring ideas:\n\n- failed CI build\n- unexpected test changes\n- typecheck errors after dependency update\n- build artifact missing files\n- sitemap or image generation failure\n\nExample:\n\n    project=farina-farm-website\n    change_type=public_website_update\n    risk_area=repository_deployment_or_public_input\n    triage=review_change_intent_and_validate_build\n\n---\n\n# 🧭 MITRE ATT&CK Techniques\n\nPossible mappings depending on confirmed behavior:\n\n- T1195 — Supply Chain Compromise\n- T1565 — Data Manipulation\n\n---\n\n# 🗺 Visual Investigation Diagram\n\n    Code change\n        ↓\nLint\n        ↓\nTypecheck\n        ↓\nTest\n        ↓\nBuild\n        ↓\nDeploy decision\n\n---\n\n# ⚠ Challenges\n\nThe challenge was discipline. Skipping checks feels faster until it creates a broken deployment.\n\n---\n\n# 📚 What I Learned\n\nI learned that validation commands are lightweight guardrails. They help make changes confidently without trusting memory.\n\n---\n\n# ➡ Next Steps\n\n- Run checks before pushing\n- Fix warnings instead of ignoring them\n- Keep scripts documented\n- Use CI to repeat validation\n\n---\n\n# 🧠 Reflection\n\nThis was useful because it turned a real project into security-aware learning without pretending that every task was a pure cybersecurity lab.\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nThinking like an operator, not just a coder.\n\n**What broke**\n\nTreating validation as optional.\n\n**Why it broke**\n\nOptional checks are the first thing skipped under pressure.\n\n**Fix / takeaway**\n\nMake validation part of the normal workflow.\n\n---\n\n# 📈 Skill Progression Context\n\nThis supports cybersecurity progression because detection engineering also requires validation: test the rule, check false positives, document assumptions, and avoid blind trust.\n\n---\n\n# 😄 TL;DR\n\nProfessional work is checked work.\n"
+}

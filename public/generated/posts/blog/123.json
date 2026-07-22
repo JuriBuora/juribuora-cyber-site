@@ -1,0 +1,18 @@
+{
+  "day": 123,
+  "title": "Contact Forms, Validation, and Anti-Spam Thinking",
+  "date": "2026-06-03",
+  "url": "https://juribuora.github.io/blog/2026/06/03/day-123.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "webfundamentals",
+    "githubpages",
+    "documentation",
+    "tooling",
+    "learningprocess"
+  ],
+  "slug": "day-123",
+  "sourcePath": "Blog/_posts/2026-06-03-day-123.md",
+  "content": "# 🔄 Topic\n\nReviewing the contact flow as both a conversion path and an abuse target.\n\n---\n\n# 🎯 Goal\n\nUnderstand how form validation and abuse controls reduce noise and protect a small public website.\n\n---\n\n# 🛠 What I Did\n\nI looked at the contact and order-related flow as a public input surface. Even a simple form can be abused by bots, spam campaigns, malformed input, or automated submissions. The Farina project uses structured validation thinking with React Hook Form and Zod, plus practical anti-spam ideas such as honeypot fields, timing checks, and cooldown protection. The point was not to pretend this is enterprise-grade security. The point was to reduce obvious abuse while keeping the form usable.\n\nMain areas covered:\n\n- field validation\n- clear error messages\n- honeypot field\n- submission timing checks\n- cooldown protection\n- safe handling of user input\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nForms matter because user input is where many web problems start. Even static frontend projects need to think about abuse paths before adding backend services or integrations.\n\n---\n\n# 🔍 Investigation Questions\n\n- Which fields accept user input?\n- What input is required?\n- What happens with malformed input?\n- Can bots submit the form repeatedly?\n- Are errors helpful without leaking implementation details?\n\n---\n\n# 🚨 Detection Opportunities\n\nPotential monitoring ideas:\n\n- submission spikes\n- many failed validation attempts\n- honeypot field populated\n- rapid repeated submissions\n- same IP or user agent abusing the form\n\nExample:\n\n    project=farina-farm-website\n    change_type=public_website_update\n    risk_area=repository_deployment_or_public_input\n    triage=review_change_intent_and_validate_build\n\n---\n\n# 🧭 MITRE ATT&CK Techniques\n\nPossible mappings depending on confirmed behavior:\n\n- T1190 — Exploit Public-Facing Application\n- T1110 — Brute Force\n- T1595 — Active Scanning\n\n---\n\n# 🗺 Visual Investigation Diagram\n\n    Public form\n        ↓\nValidation\n        ↓\nAnti-spam checks\n        ↓\nSubmission handling\n        ↓\nMonitoring/maintenance\n\n---\n\n# ⚠ Challenges\n\nThe challenge was balancing protection and usability. Too much friction can hurt real customers; too little protection invites abuse.\n\n---\n\n# 📚 What I Learned\n\nI learned that form security starts with simple controls: validate, limit, monitor, and avoid trusting input.\n\n---\n\n# ➡ Next Steps\n\n- Review form fields\n- Keep validation strict but user-friendly\n- Plan backend handling carefully if serverless forms are added\n\n---\n\n# 🧠 Reflection\n\nThis was useful because it turned a real project into security-aware learning without pretending that every task was a pure cybersecurity lab.\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nThinking about abuse before backend integration.\n\n**What broke**\n\nAssuming a small form is harmless.\n\n**Why it broke**\n\nAny public input can become a target.\n\n**Fix / takeaway**\n\nTreat every form as an input boundary.\n\n---\n\n# 📈 Skill Progression Context\n\nThis supports SOC progression because many alerts and incidents start with public-facing inputs: forms, login pages, APIs, and upload points.\n\n---\n\n# 😄 TL;DR\n\nA contact form is also an attack surface.\n"
+}

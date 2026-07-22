@@ -1,0 +1,18 @@
+{
+  "day": 122,
+  "title": "Mobile-First UX and Customer-Facing Reliability",
+  "date": "2026-06-02",
+  "url": "https://juribuora.github.io/blog/2026/06/02/day-122.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "webfundamentals",
+    "githubpages",
+    "documentation",
+    "tooling",
+    "learningprocess"
+  ],
+  "slug": "day-122",
+  "sourcePath": "Blog/_posts/2026-06-02-day-122.md",
+  "content": "# 🔄 Topic\n\nImproving the website for real users on phones, not just desktop previews.\n\n---\n\n# 🎯 Goal\n\nUnderstand why responsive design and mobile usability matter for a local business website.\n\n---\n\n# 🛠 What I Did\n\nI focused on the practical user experience of the Farina website. A local agricultural business website is likely to be visited from phones: people checking products, looking for directions, viewing photos, or contacting the business quickly. This means layout, spacing, readability, buttons, galleries, and contact actions must work well on smaller screens. The work was not pure cybersecurity, but it was operationally real: a broken mobile experience is a business failure.\n\nMain areas covered:\n\n- mobile-first layouts\n- readable typography\n- touch-friendly buttons\n- responsive sections\n- fast navigation\n- clear contact paths\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nReliability matters in security because availability is part of the CIA triad. If users cannot use the site properly, the service is effectively failing its purpose.\n\n---\n\n# 🔍 Investigation Questions\n\n- Does the site work on mobile?\n- Are calls to action easy to tap?\n- Does layout break on small screens?\n- Are images too heavy for mobile connections?\n- Can customers contact the business without friction?\n\n---\n\n# 🚨 Detection Opportunities\n\nPotential monitoring ideas:\n\n- mobile error spikes\n- high bounce rate after deployment\n- slow page loads\n- broken navigation after asset changes\n- unexpected layout regressions\n\nExample:\n\n    project=farina-farm-website\n    change_type=public_website_update\n    risk_area=repository_deployment_or_public_input\n    triage=review_change_intent_and_validate_build\n\n---\n\n# 🧭 MITRE ATT&CK Techniques\n\nPossible mappings depending on confirmed behavior:\n\n- T1499 — Endpoint Denial of Service\n- T1498 — Network Denial of Service\n\n---\n\n# 🗺 Visual Investigation Diagram\n\n    User device\n        ↓\nMobile layout\n        ↓\nPage speed\n        ↓\nContact action\n        ↓\nBusiness outcome\n\n---\n\n# ⚠ Challenges\n\nThe challenge was not overbuilding. A small business site needs clarity more than complex effects.\n\n---\n\n# 📚 What I Learned\n\nI learned that usability is operational reliability. If people cannot navigate the site, the system is not doing its job.\n\n---\n\n# ➡ Next Steps\n\n- Test important pages on mobile\n- Keep buttons obvious\n- Optimize image weight\n- Avoid unnecessary animation\n\n---\n\n# 🧠 Reflection\n\nThis was useful because it turned a real project into security-aware learning without pretending that every task was a pure cybersecurity lab.\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nPrioritizing real customer behavior.\n\n**What broke**\n\nDesigning only from desktop view.\n\n**Why it broke**\n\nDesktop preview hides many mobile problems.\n\n**Fix / takeaway**\n\nTest the site the way real users will use it.\n\n---\n\n# 📈 Skill Progression Context\n\nThis supports cybersecurity progression because security professionals must understand availability, reliability, and user behavior, not just attacker tools.\n\n---\n\n# 😄 TL;DR\n\nMobile usability is business availability.\n"
+}

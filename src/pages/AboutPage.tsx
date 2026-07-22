@@ -18,7 +18,7 @@ const skills = [
 const certifications = [
   { name: "CompTIA Security+", status: "In Progress", icon: "🎯" },
   { name: "TryHackMe Learning Paths", status: "Active", icon: "🔬" },
-  { name: "Google Cybersecurity Certificate", status: "Planned", icon: "📋" },
+  { name: "Google Cybersecurity Certificate", status: "In Progress", icon: "📋" },
 ];
 
 const AboutPage = () => {
@@ -48,8 +48,8 @@ const AboutPage = () => {
           </p>
           <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto">
             I'm documenting my journey from zero to cybersecurity — building real skills through daily study,
-            hands-on labs, and honest documentation. My goal is to become a junior security analyst,
-            with a solid foundation in networking, Linux, web security, and threat analysis.
+            hands-on labs, and honest documentation, with a solid foundation in networking, Linux,
+            web security, and threat analysis.
           </p>
         </div>
       </section>
@@ -163,9 +163,9 @@ const AboutPage = () => {
       {/* CTA */}
       <section>
         <div className="container mx-auto px-4 py-16 max-w-3xl text-center">
-          <h2 className="text-xl font-bold text-foreground mb-3">Interested in connecting?</h2>
+          <h2 className="text-xl font-bold text-foreground mb-3">Let's Connect</h2>
           <p className="text-sm text-muted-foreground mb-6">
-            I'm actively looking for junior cybersecurity roles — SOC analyst, security operations, or penetration testing internships.
+            I welcome thoughtful conversations, feedback, and collaboration around cybersecurity and the work documented here.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a

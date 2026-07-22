@@ -1,0 +1,18 @@
+{
+  "day": 121,
+  "title": "Routing, Pages, and Public Attack Surface",
+  "date": "2026-06-01",
+  "url": "https://juribuora.github.io/blog/2026/06/01/day-121.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "webfundamentals",
+    "githubpages",
+    "documentation",
+    "tooling",
+    "learningprocess"
+  ],
+  "slug": "day-121",
+  "sourcePath": "Blog/_posts/2026-06-01-day-121.md",
+  "content": "# 🔄 Topic\n\nMapping website routes as user journeys and public exposure points.\n\n---\n\n# 🎯 Goal\n\nConnect React Router pages to user behavior, business purpose, and security review.\n\n---\n\n# 🛠 What I Did\n\nI broke the Farina website into public routes and treated each route as both a user journey and an exposed surface. The site includes pages for the homepage, products, gallery, contacts, about section, firewood information, firewood ordering, privacy policy, cookie policy, and fallback handling. This helped me see routing as more than navigation. Every public route needs a purpose, clear content, and predictable behavior.\n\nMain areas covered:\n\n- homepage\n- products\n- gallery\n- contact\n- about\n- firewood\n- firewood ordering\n- privacy policy\n- cookie policy\n- 404 fallback\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nPublic routes matter because every route is something users, search engines, scanners, and attackers can request. Even static sites need sensible route handling and clean fallback behavior.\n\n---\n\n# 🔍 Investigation Questions\n\n- Which routes exist?\n- Which routes collect input?\n- Which routes expose business details?\n- Which routes should search engines index?\n- Does the 404 page leak anything or create confusion?\n\n---\n\n# 🚨 Detection Opportunities\n\nPotential monitoring ideas:\n\n- unusual requests to hidden paths\n- high volume of 404s\n- scanning for admin routes\n- attempted form abuse on public pages\n- unexpected route changes in deployment\n\nExample:\n\n    project=farina-farm-website\n    change_type=public_website_update\n    risk_area=repository_deployment_or_public_input\n    triage=review_change_intent_and_validate_build\n\n---\n\n# 🧭 MITRE ATT&CK Techniques\n\nPossible mappings depending on confirmed behavior:\n\n- T1190 — Exploit Public-Facing Application\n- T1595 — Active Scanning\n- T1592 — Gather Victim Host Information\n\n---\n\n# 🗺 Visual Investigation Diagram\n\n    URL request\n        ↓\nRouter\n        ↓\nPage component\n        ↓\nContent/function\n        ↓\nLogs/analytics\n        ↓\nSecurity review\n\n---\n\n# ⚠ Challenges\n\nThe challenge was thinking like both a user and a defender. A user asks, 'Can I find what I need?' A defender asks, 'What can be touched from the internet?'\n\n---\n\n# 📚 What I Learned\n\nI learned that route mapping is a simple but useful security habit. You cannot protect or test what you have not listed.\n\n---\n\n# ➡ Next Steps\n\n- Create a route inventory\n- Check route purpose and content\n- Review form-related routes more carefully\n\n---\n\n# 🧠 Reflection\n\nThis was useful because it turned a real project into security-aware learning without pretending that every task was a pure cybersecurity lab.\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nMapping every route explicitly.\n\n**What broke**\n\nTreating pages as only design units.\n\n**Why it broke**\n\nPages are also public entry points.\n\n**Fix / takeaway**\n\nMaintain a simple route inventory for every web project.\n\n---\n\n# 📈 Skill Progression Context\n\nThis supports SOC progression because investigations often begin with URLs, paths, HTTP status codes, and user activity.\n\n---\n\n# 😄 TL;DR\n\nRoutes are user journeys and exposure points.\n"
+}

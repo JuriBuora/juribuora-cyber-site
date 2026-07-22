@@ -29,6 +29,12 @@ const BlogHeader = () => {
           >
             About
           </Link>
+          <Link
+            to="/portfolio"
+            className="px-2 py-1 rounded-md text-xs font-mono text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
+          >
+            Portfolio
+          </Link>
           <button
             onClick={toggle}
             className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
@@ -36,18 +42,20 @@ const BlogHeader = () => {
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
-          {socialLinks.map(({ href, icon: Icon, label }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith("mailto:") ? undefined : "_blank"}
-              rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-              className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
-              aria-label={label}
-            >
-              <Icon className="w-4 h-4" />
-            </a>
-          ))}
+          <div className="hidden sm:flex items-center gap-1">
+            {socialLinks.map(({ href, icon: Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
+                aria-label={label}
+              >
+                <Icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </header>

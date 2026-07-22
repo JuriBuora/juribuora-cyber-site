@@ -4,6 +4,1339 @@ import type { LoadedPosts } from "./posts";
 export const jekyllSnapshot: LoadedPosts = {
   "posts": [
     {
+      "day": 172,
+      "title": "Parallel Agents Without Collisions: Task Graphs and Git Worktrees",
+      "date": "2026-07-22",
+      "url": "https://juribuora.github.io/blog/2026/07/22/day-172.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "git",
+        "worktrees",
+        "multiagent",
+        "isolation",
+        "learningprocess"
+      ],
+      "slug": "day-172",
+      "sourcePath": "Blog/_posts/2026-07-22-day-172.md",
+      "contentPath": "/generated/posts/blog/172.json"
+    },
+    {
+      "day": 171,
+      "title": "Five Ways My Automation Faked Success (and the Fail-Closed Fixes)",
+      "date": "2026-07-21",
+      "url": "https://juribuora.github.io/blog/2026/07/21/day-171.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "failclosed",
+        "verification",
+        "supervisor",
+        "reliability",
+        "learningprocess"
+      ],
+      "slug": "day-171",
+      "sourcePath": "Blog/_posts/2026-07-21-day-171.md",
+      "contentPath": "/generated/posts/blog/171.json"
+    },
+    {
+      "day": 170,
+      "title": "Making Security Work Clear Without Overselling It",
+      "date": "2026-07-20",
+      "url": "https://juribuora.github.io/blog/2026/07/20/day-170.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "documentation",
+        "verification",
+        "technicalwriting",
+        "learningprocess"
+      ],
+      "slug": "day-170",
+      "sourcePath": "Blog/_posts/2026-07-20-day-170.md",
+      "contentPath": "/generated/posts/blog/170.json"
+    },
+    {
+      "day": 169,
+      "title": "Why Safe Rollouts Use Feature Flags, Fixtures, and Evidence Gates",
+      "date": "2026-07-19",
+      "url": "https://juribuora.github.io/blog/2026/07/19/day-169.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "changemanagement",
+        "featureflags",
+        "testing",
+        "riskmanagement",
+        "learningprocess"
+      ],
+      "slug": "day-169",
+      "sourcePath": "Blog/_posts/2026-07-19-day-169.md",
+      "contentPath": "/generated/posts/blog/169.json"
+    },
+    {
+      "day": 168,
+      "title": "Secure Artifact Delivery: Narrow Links, Verified Bytes, and No Duplicate Sends",
+      "date": "2026-07-18",
+      "url": "https://juribuora.github.io/blog/2026/07/18/day-168.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "integrity",
+        "authorization",
+        "hashing",
+        "securedelivery",
+        "learningprocess"
+      ],
+      "slug": "day-168",
+      "sourcePath": "Blog/_posts/2026-07-18-day-168.md",
+      "contentPath": "/generated/posts/blog/168.json"
+    },
+    {
+      "day": 167,
+      "title": "Approval-Gated Automation: Making Privileged Agent Work Accountable",
+      "date": "2026-07-17",
+      "url": "https://juribuora.github.io/blog/2026/07/17/day-167.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "automationsecurity",
+        "leastprivilege",
+        "approvals",
+        "auditability",
+        "learningprocess"
+      ],
+      "slug": "day-167",
+      "sourcePath": "Blog/_posts/2026-07-17-day-167.md",
+      "contentPath": "/generated/posts/blog/167.json"
+    },
+    {
+      "day": 166,
+      "title": "Resilient Sessions: What a Torn Journal Taught Me About Safe AI State",
+      "date": "2026-07-16",
+      "url": "https://juribuora.github.io/blog/2026/07/16/day-166.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "resilience",
+        "dataintegrity",
+        "recovery",
+        "logging",
+        "learningprocess"
+      ],
+      "slug": "day-166",
+      "sourcePath": "Blog/_posts/2026-07-16-day-166.md",
+      "contentPath": "/generated/posts/blog/166.json"
+    },
+    {
+      "day": 165,
+      "title": "Bounded Context, Better Decisions: Testing AI Agent Memory Without Blind Trust",
+      "date": "2026-07-15",
+      "url": "https://juribuora.github.io/blog/2026/07/15/day-165.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "aisecurity",
+        "provenance",
+        "dataintegrity",
+        "benchmarking",
+        "learningprocess"
+      ],
+      "slug": "day-165",
+      "sourcePath": "Blog/_posts/2026-07-15-day-165.md",
+      "contentPath": "/generated/posts/blog/165.json"
+    },
+    {
+      "day": 164,
+      "title": "Verifying the Verifier: A False-Positive Streak in My Own Checks",
+      "date": "2026-07-14",
+      "url": "https://juribuora.github.io/blog/2026/07/14/day-164.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "verification",
+        "falsepositives",
+        "detectionengineering",
+        "reliability",
+        "learningprocess"
+      ],
+      "slug": "day-164",
+      "sourcePath": "Blog/_posts/2026-07-14-day-164.md",
+      "contentPath": "/generated/posts/blog/164.json"
+    },
+    {
+      "day": 163,
+      "title": "Model Fleet Ops: Migrating the Coding Lane to Gemma and Budgeting Tokens Like a Resource",
+      "date": "2026-07-13",
+      "url": "https://juribuora.github.io/blog/2026/07/13/day-163.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "localllm",
+        "lifecycle",
+        "resourcemanagement",
+        "benchmarking",
+        "learningprocess"
+      ],
+      "slug": "day-163",
+      "sourcePath": "Blog/_posts/2026-07-13-day-163.md",
+      "contentPath": "/generated/posts/blog/163.json"
+    },
+    {
+      "day": 162,
+      "title": "An AI Secretary With a Kill Switch: Calendars, Sender Policy, and Emergency Control",
+      "date": "2026-07-12",
+      "url": "https://juribuora.github.io/blog/2026/07/12/day-162.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "automation",
+        "privacy",
+        "emailsecurity",
+        "failsafe",
+        "learningprocess"
+      ],
+      "slug": "day-162",
+      "sourcePath": "Blog/_posts/2026-07-12-day-162.md",
+      "contentPath": "/generated/posts/blog/162.json"
+    },
+    {
+      "day": 161,
+      "title": "Hardening the iOS Companion: Untrusted Links, Redacted Errors, and the 'Full Power' Question",
+      "date": "2026-07-11",
+      "url": "https://juribuora.github.io/blog/2026/07/11/day-161.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "ios",
+        "appsec",
+        "mobilesecurity",
+        "testing",
+        "learningprocess"
+      ],
+      "slug": "day-161",
+      "sourcePath": "Blog/_posts/2026-07-11-day-161.md",
+      "contentPath": "/generated/posts/blog/161.json"
+    },
+    {
+      "day": 160,
+      "title": "Tailscale Broke My Stack: Node Identity, Hostnames, and Private Services",
+      "date": "2026-07-10",
+      "url": "https://juribuora.github.io/blog/2026/07/10/day-160.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "tailscale",
+        "networking",
+        "dns",
+        "availability",
+        "learningprocess"
+      ],
+      "slug": "day-160",
+      "sourcePath": "Blog/_posts/2026-07-10-day-160.md",
+      "contentPath": "/generated/posts/blog/160.json"
+    },
+    {
+      "day": 159,
+      "title": "Widening an Agent's Write Scope on Purpose (and Making Its Findings Earn Evidence)",
+      "date": "2026-07-09",
+      "url": "https://juribuora.github.io/blog/2026/07/09/day-159.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "leastprivilege",
+        "localai",
+        "accesscontrol",
+        "verification",
+        "learningprocess"
+      ],
+      "slug": "day-159",
+      "sourcePath": "Blog/_posts/2026-07-09-day-159.md",
+      "contentPath": "/generated/posts/blog/159.json"
+    },
+    {
+      "day": 158,
+      "title": "Gated Autonomy: A Phone Approval Loop Before Any Agent Sends Anything",
+      "date": "2026-07-08",
+      "url": "https://juribuora.github.io/blog/2026/07/08/day-158.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "humanintheloop",
+        "approvals",
+        "automation",
+        "emailsecurity",
+        "learningprocess"
+      ],
+      "slug": "day-158",
+      "sourcePath": "Blog/_posts/2026-07-08-day-158.md",
+      "contentPath": "/generated/posts/blog/158.json"
+    },
+    {
+      "day": 157,
+      "title": "WebCheckup: Turning the Mini-Audit Into a Real Multilingual Service",
+      "date": "2026-07-07",
+      "url": "https://juribuora.github.io/blog/2026/07/07/day-157.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webcheckup",
+        "auditing",
+        "reporting",
+        "localization",
+        "learningprocess"
+      ],
+      "slug": "day-157",
+      "sourcePath": "Blog/_posts/2026-07-07-day-157.md",
+      "contentPath": "/generated/posts/blog/157.json"
+    },
+    {
+      "day": 156,
+      "title": "Too Many Projects: Auditing My Own Tool Sprawl Like an Asset Inventory",
+      "date": "2026-07-06",
+      "url": "https://juribuora.github.io/blog/2026/07/06/day-156.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "assetinventory",
+        "governance",
+        "documentation",
+        "decommissioning",
+        "learningprocess"
+      ],
+      "slug": "day-156",
+      "sourcePath": "Blog/_posts/2026-07-06-day-156.md",
+      "contentPath": "/generated/posts/blog/156.json"
+    },
+    {
+      "day": 155,
+      "title": "Linux User and Group Management as Access Control Practice",
+      "date": "2026-07-05",
+      "url": "https://juribuora.github.io/blog/2026/07/05/day-155.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "accesscontrol",
+        "authentication",
+        "authorization",
+        "googlecybersecuritycertificate",
+        "learningprocess"
+      ],
+      "slug": "day-155",
+      "sourcePath": "Blog/_posts/2026-07-05-day-155.md",
+      "contentPath": "/generated/posts/blog/155.json"
+    },
+    {
+      "day": 154,
+      "title": "Building a Cybersecurity Glossary Without Breaking My Notes",
+      "date": "2026-07-04",
+      "url": "https://juribuora.github.io/blog/2026/07/04/day-154.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "obsidian",
+        "knowledgemanagement",
+        "glossary",
+        "validation",
+        "learningprocess"
+      ],
+      "slug": "day-154",
+      "sourcePath": "Blog/_posts/2026-07-04-day-154.md",
+      "contentPath": "/generated/posts/blog/154.json"
+    },
+    {
+      "day": 153,
+      "title": "Testing Hermes Agent: Strong First Builds, Weak Self-Verification",
+      "date": "2026-07-03",
+      "url": "https://juribuora.github.io/blog/2026/07/03/day-153.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "autonomousagents",
+        "verification",
+        "hermes",
+        "webtesting",
+        "learningprocess"
+      ],
+      "slug": "day-153",
+      "sourcePath": "Blog/_posts/2026-07-03-day-153.md",
+      "contentPath": "/generated/posts/blog/153.json"
+    },
+    {
+      "day": 152,
+      "title": "Building an AI Inference Orchestrator With Routing, Retries, and Cost Awareness",
+      "date": "2026-07-02",
+      "url": "https://juribuora.github.io/blog/2026/07/02/day-152.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "aios",
+        "orchestration",
+        "reliability",
+        "costtracking",
+        "learningprocess"
+      ],
+      "slug": "day-152",
+      "sourcePath": "Blog/_posts/2026-07-02-day-152.md",
+      "contentPath": "/generated/posts/blog/152.json"
+    },
+    {
+      "day": 151,
+      "title": "Benchmarking My Local LLM Stack Instead of Trusting Vibes",
+      "date": "2026-07-01",
+      "url": "https://juribuora.github.io/blog/2026/07/01/day-151.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "localllm",
+        "benchmarking",
+        "ollama",
+        "ds4",
+        "lmstudio",
+        "learningprocess"
+      ],
+      "slug": "day-151",
+      "sourcePath": "Blog/_posts/2026-07-01-day-151.md",
+      "contentPath": "/generated/posts/blog/151.json"
+    },
+    {
+      "day": 150,
+      "title": "Remote Agent Hub and the Discipline of Honest Feature Labels",
+      "date": "2026-06-30",
+      "url": "https://juribuora.github.io/blog/2026/06/30/day-150.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "remoteagenthub",
+        "productsecurity",
+        "accesscontrol",
+        "localfirst",
+        "learningprocess"
+      ],
+      "slug": "day-150",
+      "sourcePath": "Blog/_posts/2026-06-30-day-150.md",
+      "contentPath": "/generated/posts/blog/150.json"
+    },
+    {
+      "day": 149,
+      "title": "Turning My iPhone Into a Command Center for Local Agents",
+      "date": "2026-06-29",
+      "url": "https://juribuora.github.io/blog/2026/06/29/day-149.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "ios",
+        "localagents",
+        "operationalsecurity",
+        "ux",
+        "learningprocess"
+      ],
+      "slug": "day-149",
+      "sourcePath": "Blog/_posts/2026-06-29-day-149.md",
+      "contentPath": "/generated/posts/blog/149.json"
+    },
+    {
+      "day": 148,
+      "title": "Building Least-Privilege Tool Profiles for My AI Agents (and Finding My Own Risk Scorer Was Inverted)",
+      "date": "2026-06-28",
+      "url": "https://juribuora.github.io/blog/2026/06/28/day-148.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "leastprivilege",
+        "mcp",
+        "permissionmodel",
+        "riskscoring",
+        "learningprocess"
+      ],
+      "slug": "day-148",
+      "sourcePath": "Blog/_posts/2026-06-28-day-148.md",
+      "contentPath": "/generated/posts/blog/148.json"
+    },
+    {
+      "day": 147,
+      "title": "'Build Succeeded' Isn't Proof: Writing a Real UI Test for the Auth Flow",
+      "date": "2026-06-27",
+      "url": "https://juribuora.github.io/blog/2026/06/27/day-147.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "testing",
+        "authentication",
+        "ios",
+        "qualityassurance",
+        "learningprocess"
+      ],
+      "slug": "day-147",
+      "sourcePath": "Blog/_posts/2026-06-27-day-147.md",
+      "contentPath": "/generated/posts/blog/147.json"
+    },
+    {
+      "day": 146,
+      "title": "Giving My Local Agent Daemon Real Auth (And Almost Leaking the Token in the 401 Page)",
+      "date": "2026-06-26",
+      "url": "https://juribuora.github.io/blog/2026/06/26/day-146.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "accesscontrol",
+        "authentication",
+        "ios",
+        "localai",
+        "learningprocess"
+      ],
+      "slug": "day-146",
+      "sourcePath": "Blog/_posts/2026-06-26-day-146.md",
+      "contentPath": "/generated/posts/blog/146.json"
+    },
+    {
+      "day": 145,
+      "title": "Productizing a Website Security Mini-Audit, and Finding an Access Gap in My Own Funnel",
+      "date": "2026-06-25",
+      "url": "https://juribuora.github.io/blog/2026/06/25/day-145.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "websecurity",
+        "auditing",
+        "business",
+        "accesscontrol",
+        "learningprocess"
+      ],
+      "slug": "day-145",
+      "sourcePath": "Blog/_posts/2026-06-25-day-145.md",
+      "contentPath": "/generated/posts/blog/145.json"
+    },
+    {
+      "day": 144,
+      "title": "A 348-Term Glossary and the False Positives That Came With It",
+      "date": "2026-06-24",
+      "url": "https://juribuora.github.io/blog/2026/06/24/day-144.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "knowledgemanagement",
+        "obsidian",
+        "websecurity",
+        "linux",
+        "learningprocess"
+      ],
+      "slug": "day-144",
+      "sourcePath": "Blog/_posts/2026-06-24-day-144.md",
+      "contentPath": "/generated/posts/blog/144.json"
+    },
+    {
+      "day": 143,
+      "title": "Building a Local MITRE ATT&CK Technique Library from My Own Notes",
+      "date": "2026-06-23",
+      "url": "https://juribuora.github.io/blog/2026/06/23/day-143.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "mitre",
+        "knowledgemanagement",
+        "obsidian",
+        "detectionengineering",
+        "learningprocess"
+      ],
+      "slug": "day-143",
+      "sourcePath": "Blog/_posts/2026-06-23-day-143.md",
+      "contentPath": "/generated/posts/blog/143.json"
+    },
+    {
+      "day": 142,
+      "title": "Benchmarking an Autonomous Agent: Strong One-Shot Builds, Unreliable Self-Debugging",
+      "date": "2026-06-22",
+      "url": "https://juribuora.github.io/blog/2026/06/22/day-142.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "localai",
+        "benchmarking",
+        "autonomy",
+        "verification",
+        "learningprocess"
+      ],
+      "slug": "day-142",
+      "sourcePath": "Blog/_posts/2026-06-22-day-142.md",
+      "contentPath": "/generated/posts/blog/142.json"
+    },
+    {
+      "day": 141,
+      "title": "A Human Memory Layer: The RAG Vault My Agents Write and I Read Anywhere",
+      "date": "2026-06-21",
+      "url": "https://juribuora.github.io/blog/2026/06/21/day-141.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "knowledgemanagement",
+        "obsidian",
+        "localai",
+        "datagovernance",
+        "learningprocess"
+      ],
+      "slug": "day-141",
+      "sourcePath": "Blog/_posts/2026-06-21-day-141.md",
+      "contentPath": "/generated/posts/blog/141.json"
+    },
+    {
+      "day": 140,
+      "title": "AI-OS: Governance, Routing, and a Verification Gateway for My Local Agents",
+      "date": "2026-06-20",
+      "url": "https://juribuora.github.io/blog/2026/06/20/day-140.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "localai",
+        "governance",
+        "orchestration",
+        "verification",
+        "learningprocess"
+      ],
+      "slug": "day-140",
+      "sourcePath": "Blog/_posts/2026-06-20-day-140.md",
+      "contentPath": "/generated/posts/blog/140.json"
+    },
+    {
+      "day": 139,
+      "title": "Benchmarking a Local LLM Coding Stack: Harness, Routing, and Review Findings",
+      "date": "2026-06-19",
+      "url": "https://juribuora.github.io/blog/2026/06/19/day-139.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "localai",
+        "benchmarking",
+        "codereview",
+        "reliability",
+        "learningprocess"
+      ],
+      "slug": "day-139",
+      "sourcePath": "Blog/_posts/2026-06-19-day-139.md",
+      "contentPath": "/generated/posts/blog/139.json"
+    },
+    {
+      "day": 138,
+      "title": "An iOS Companion for My Local Agent, Private by Design",
+      "date": "2026-06-18",
+      "url": "https://juribuora.github.io/blog/2026/06/18/day-138.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "ios",
+        "tailscale",
+        "remoteaccess",
+        "swiftui",
+        "learningprocess"
+      ],
+      "slug": "day-138",
+      "sourcePath": "Blog/_posts/2026-06-18-day-138.md",
+      "contentPath": "/generated/posts/blog/138.json"
+    },
+    {
+      "day": 137,
+      "title": "Running DS4: A Serious Local Model on a Laptop With Limits",
+      "date": "2026-06-17",
+      "url": "https://juribuora.github.io/blog/2026/06/17/day-137.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "localai",
+        "ds4",
+        "resourcemanagement",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-137",
+      "sourcePath": "Blog/_posts/2026-06-17-day-137.md",
+      "contentPath": "/generated/posts/blog/137.json"
+    },
+    {
+      "day": 136,
+      "title": "Linux Permissions and Authorization: A Google Cybersecurity Certificate Portfolio Activity",
+      "date": "2026-06-16",
+      "url": "https://juribuora.github.io/blog/2026/06/16/day-136.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "accesscontrol",
+        "googlecert",
+        "portfolio",
+        "learningprocess"
+      ],
+      "slug": "day-136",
+      "sourcePath": "Blog/_posts/2026-06-16-day-136.md",
+      "contentPath": "/generated/posts/blog/136.json"
+    },
+    {
+      "day": 135,
+      "title": "Auditing My Own Website, Then Fixing What the Report Found",
+      "date": "2026-06-15",
+      "url": "https://juribuora.github.io/blog/2026/06/15/day-135.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "websecurity",
+        "hardening",
+        "githubpages",
+        "remediation",
+        "learningprocess"
+      ],
+      "slug": "day-135",
+      "sourcePath": "Blog/_posts/2026-06-15-day-135.md",
+      "contentPath": "/generated/posts/blog/135.json"
+    },
+    {
+      "day": 134,
+      "title": "Building a Website Trust & Security Mini-Audit Service",
+      "date": "2026-06-14",
+      "url": "https://juribuora.github.io/blog/2026/06/14/day-134.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "websecurity",
+        "auditing",
+        "reporting",
+        "business",
+        "learningprocess"
+      ],
+      "slug": "day-134",
+      "sourcePath": "Blog/_posts/2026-06-14-day-134.md",
+      "contentPath": "/generated/posts/blog/134.json"
+    },
+    {
+      "day": 133,
+      "title": "When the Learning Log Breaks: Fixing My Blog's Own Publishing Pipeline",
+      "date": "2026-06-13",
+      "url": "https://juribuora.github.io/blog/2026/06/13/day-133.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "githubpages",
+        "cicd",
+        "jekyll",
+        "troubleshooting",
+        "learningprocess"
+      ],
+      "slug": "day-133",
+      "sourcePath": "Blog/_posts/2026-06-13-day-133.md",
+      "contentPath": "/generated/posts/blog/133.json"
+    },
+    {
+      "day": 132,
+      "title": "Giving a Local LLM Hands: LM Studio, Function Calling, and MCP Servers",
+      "date": "2026-06-12",
+      "url": "https://juribuora.github.io/blog/2026/06/12/day-132.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "localai",
+        "mcp",
+        "tooling",
+        "automation",
+        "learningprocess"
+      ],
+      "slug": "day-132",
+      "sourcePath": "Blog/_posts/2026-06-12-day-132.md",
+      "contentPath": "/generated/posts/blog/132.json"
+    },
+    {
+      "day": 131,
+      "title": "Project Retrospective: Turning a Real Website Build Into Portfolio Evidence",
+      "date": "2026-06-11",
+      "url": "https://juribuora.github.io/blog/2026/06/11/day-131.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-131",
+      "sourcePath": "Blog/_posts/2026-06-11-day-131.md",
+      "contentPath": "/generated/posts/blog/131.json"
+    },
+    {
+      "day": 130,
+      "title": "Public Website Security Review for a Static Business Site",
+      "date": "2026-06-10",
+      "url": "https://juribuora.github.io/blog/2026/06/10/day-130.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-130",
+      "sourcePath": "Blog/_posts/2026-06-10-day-130.md",
+      "contentPath": "/generated/posts/blog/130.json"
+    },
+    {
+      "day": 129,
+      "title": "Testing, Linting, Type Checking, and Build Validation",
+      "date": "2026-06-09",
+      "url": "https://juribuora.github.io/blog/2026/06/09/day-129.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-129",
+      "sourcePath": "Blog/_posts/2026-06-09-day-129.md",
+      "contentPath": "/generated/posts/blog/129.json"
+    },
+    {
+      "day": 128,
+      "title": "Privacy, Analytics, and Consent-Aware Configuration",
+      "date": "2026-06-08",
+      "url": "https://juribuora.github.io/blog/2026/06/08/day-128.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-128",
+      "sourcePath": "Blog/_posts/2026-06-08-day-128.md",
+      "contentPath": "/generated/posts/blog/128.json"
+    },
+    {
+      "day": 127,
+      "title": "Custom Domain, DNS, and Website Availability",
+      "date": "2026-06-07",
+      "url": "https://juribuora.github.io/blog/2026/06/07/day-127.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-127",
+      "sourcePath": "Blog/_posts/2026-06-07-day-127.md",
+      "contentPath": "/generated/posts/blog/127.json"
+    },
+    {
+      "day": 126,
+      "title": "GitHub Pages Deployment and CI/CD Trust Boundaries",
+      "date": "2026-06-06",
+      "url": "https://juribuora.github.io/blog/2026/06/06/day-126.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-126",
+      "sourcePath": "Blog/_posts/2026-06-06-day-126.md",
+      "contentPath": "/generated/posts/blog/126.json"
+    },
+    {
+      "day": 125,
+      "title": "Image Optimization and Performance as Operational Security",
+      "date": "2026-06-05",
+      "url": "https://juribuora.github.io/blog/2026/06/05/day-125.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-125",
+      "sourcePath": "Blog/_posts/2026-06-05-day-125.md",
+      "contentPath": "/generated/posts/blog/125.json"
+    },
+    {
+      "day": 124,
+      "title": "SEO, Metadata, and Structured Data Without Forgetting Security",
+      "date": "2026-06-04",
+      "url": "https://juribuora.github.io/blog/2026/06/04/day-124.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-124",
+      "sourcePath": "Blog/_posts/2026-06-04-day-124.md",
+      "contentPath": "/generated/posts/blog/124.json"
+    },
+    {
+      "day": 123,
+      "title": "Contact Forms, Validation, and Anti-Spam Thinking",
+      "date": "2026-06-03",
+      "url": "https://juribuora.github.io/blog/2026/06/03/day-123.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-123",
+      "sourcePath": "Blog/_posts/2026-06-03-day-123.md",
+      "contentPath": "/generated/posts/blog/123.json"
+    },
+    {
+      "day": 122,
+      "title": "Mobile-First UX and Customer-Facing Reliability",
+      "date": "2026-06-02",
+      "url": "https://juribuora.github.io/blog/2026/06/02/day-122.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-122",
+      "sourcePath": "Blog/_posts/2026-06-02-day-122.md",
+      "contentPath": "/generated/posts/blog/122.json"
+    },
+    {
+      "day": 121,
+      "title": "Routing, Pages, and Public Attack Surface",
+      "date": "2026-06-01",
+      "url": "https://juribuora.github.io/blog/2026/06/01/day-121.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-121",
+      "sourcePath": "Blog/_posts/2026-06-01-day-121.md",
+      "contentPath": "/generated/posts/blog/121.json"
+    },
+    {
+      "day": 120,
+      "title": "Repository Structure and Operational Hygiene",
+      "date": "2026-05-31",
+      "url": "https://juribuora.github.io/blog/2026/05/31/day-120.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-120",
+      "sourcePath": "Blog/_posts/2026-05-31-day-120.md",
+      "contentPath": "/generated/posts/blog/120.json"
+    },
+    {
+      "day": 119,
+      "title": "React, TypeScript, Vite, and Tailwind as a Production Stack",
+      "date": "2026-05-30",
+      "url": "https://juribuora.github.io/blog/2026/05/30/day-119.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-119",
+      "sourcePath": "Blog/_posts/2026-05-30-day-119.md",
+      "contentPath": "/generated/posts/blog/119.json"
+    },
+    {
+      "day": 118,
+      "title": "Real Client Website Scope and Business Requirements",
+      "date": "2026-05-29",
+      "url": "https://juribuora.github.io/blog/2026/05/29/day-118.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "githubpages",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-118",
+      "sourcePath": "Blog/_posts/2026-05-29-day-118.md",
+      "contentPath": "/generated/posts/blog/118.json"
+    },
+    {
+      "day": 117,
+      "title": "macOS Persistence, LaunchDaemons, and Endpoint Triage",
+      "date": "2026-05-28",
+      "url": "https://juribuora.github.io/blog/2026/05/28/day-117.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "processes",
+        "logs",
+        "linuxfundamentals",
+        "documentation"
+      ],
+      "slug": "day-117",
+      "sourcePath": "Blog/_posts/2026-05-28-day-117.md",
+      "contentPath": "/generated/posts/blog/117.json"
+    },
+    {
+      "day": 116,
+      "title": "Frontend Architecture, Website Optimization, and GitHub Workflows",
+      "date": "2026-05-27",
+      "url": "https://juribuora.github.io/blog/2026/05/27/day-116.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "documentation",
+        "githubpages",
+        "tooling"
+      ],
+      "slug": "day-116",
+      "sourcePath": "Blog/_posts/2026-05-27-day-116.md",
+      "contentPath": "/generated/posts/blog/116.json"
+    },
+    {
+      "day": 115,
+      "title": "Local AI Models, Coding Agents, and Operational Automation",
+      "date": "2026-05-26",
+      "url": "https://juribuora.github.io/blog/2026/05/26/day-115.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "documentation",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-115",
+      "sourcePath": "Blog/_posts/2026-05-26-day-115.md",
+      "contentPath": "/generated/posts/blog/115.json"
+    },
+    {
+      "day": 114,
+      "title": "OS, Network, and Cloud Hardening",
+      "date": "2026-05-25",
+      "url": "https://juribuora.github.io/blog/2026/05/25/day-114.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "linuxfundamentals",
+        "learningprocess",
+        "documentation"
+      ],
+      "slug": "day-114",
+      "sourcePath": "Blog/_posts/2026-05-25-day-114.md",
+      "contentPath": "/generated/posts/blog/114.json"
+    },
+    {
+      "day": 113,
+      "title": "Sniffing, Spoofing, and Interception Tactics",
+      "date": "2026-05-24",
+      "url": "https://juribuora.github.io/blog/2026/05/24/day-113.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "tcpip",
+        "learningprocess"
+      ],
+      "slug": "day-113",
+      "sourcePath": "Blog/_posts/2026-05-24-day-113.md",
+      "contentPath": "/generated/posts/blog/113.json"
+    },
+    {
+      "day": 112,
+      "title": "DoS, DDoS, SYN Floods, Smurf, and Amplification",
+      "date": "2026-05-23",
+      "url": "https://juribuora.github.io/blog/2026/05/23/day-112.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "tcpip",
+        "logs",
+        "learningprocess"
+      ],
+      "slug": "day-112",
+      "sourcePath": "Blog/_posts/2026-05-23-day-112.md",
+      "contentPath": "/generated/posts/blog/112.json"
+    },
+    {
+      "day": 111,
+      "title": "Reading tcpdump-Style Logs and DNS/ICMP Failures",
+      "date": "2026-05-22",
+      "url": "https://juribuora.github.io/blog/2026/05/22/day-111.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "dns",
+        "tcpip",
+        "logs",
+        "learningprocess"
+      ],
+      "slug": "day-111",
+      "sourcePath": "Blog/_posts/2026-05-22-day-111.md",
+      "contentPath": "/generated/posts/blog/111.json"
+    },
+    {
+      "day": 110,
+      "title": "Enterprise Network Flow and Attack Surface Mapping",
+      "date": "2026-05-21",
+      "url": "https://juribuora.github.io/blog/2026/05/21/day-110.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "webfundamentals",
+        "learningprocess"
+      ],
+      "slug": "day-110",
+      "sourcePath": "Blog/_posts/2026-05-21-day-110.md",
+      "contentPath": "/generated/posts/blog/110.json"
+    },
+    {
+      "day": 109,
+      "title": "Firewalls, VPNs, Proxies, Security Zones, and CIDR",
+      "date": "2026-05-20",
+      "url": "https://juribuora.github.io/blog/2026/05/20/day-109.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "tcpip",
+        "learningprocess"
+      ],
+      "slug": "day-109",
+      "sourcePath": "Blog/_posts/2026-05-20-day-109.md",
+      "contentPath": "/generated/posts/blog/109.json"
+    },
+    {
+      "day": 108,
+      "title": "Network Protocols, Ports, DNS, HTTP, and Remote Access",
+      "date": "2026-05-19",
+      "url": "https://juribuora.github.io/blog/2026/05/19/day-108.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "dns",
+        "http",
+        "tcpip",
+        "learningprocess"
+      ],
+      "slug": "day-108",
+      "sourcePath": "Blog/_posts/2026-05-19-day-108.md",
+      "contentPath": "/generated/posts/blog/108.json"
+    },
+    {
+      "day": 107,
+      "title": "Network Architecture, Cloud Networks, and the TCP/IP Model",
+      "date": "2026-05-18",
+      "url": "https://juribuora.github.io/blog/2026/05/18/day-107.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "tcpip",
+        "learningprocess"
+      ],
+      "slug": "day-107",
+      "sourcePath": "Blog/_posts/2026-05-18-day-107.md",
+      "contentPath": "/generated/posts/blog/107.json"
+    },
+    {
+      "day": 106,
+      "title": "From Risk Management to Portfolio Evidence",
+      "date": "2026-05-17",
+      "url": "https://juribuora.github.io/blog/2026/05/17/day-106.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "documentation",
+        "learningprocess"
+      ],
+      "slug": "day-106",
+      "sourcePath": "Blog/_posts/2026-05-17-day-106.md",
+      "contentPath": "/generated/posts/blog/106.json"
+    },
+    {
+      "day": 105,
+      "title": "Incident Response Playbooks and Escalation Discipline",
+      "date": "2026-05-16",
+      "url": "https://juribuora.github.io/blog/2026/05/16/day-105.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "logs",
+        "documentation",
+        "learningprocess"
+      ],
+      "slug": "day-105",
+      "sourcePath": "Blog/_posts/2026-05-16-day-105.md",
+      "contentPath": "/generated/posts/blog/105.json"
+    },
+    {
+      "day": 104,
+      "title": "SIEM Logs, Dashboards, and Alert Triage",
+      "date": "2026-05-15",
+      "url": "https://juribuora.github.io/blog/2026/05/15/day-104.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "logs",
+        "learningprocess",
+        "documentation"
+      ],
+      "slug": "day-104",
+      "sourcePath": "Blog/_posts/2026-05-15-day-104.md",
+      "contentPath": "/generated/posts/blog/104.json"
+    },
+    {
+      "day": 103,
+      "title": "Security Frameworks, Controls, NIST CSF, OWASP, and Audits",
+      "date": "2026-05-14",
+      "url": "https://juribuora.github.io/blog/2026/05/14/day-103.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "documentation",
+        "learningprocess"
+      ],
+      "slug": "day-103",
+      "sourcePath": "Blog/_posts/2026-05-14-day-103.md",
+      "contentPath": "/generated/posts/blog/103.json"
+    },
+    {
+      "day": 102,
+      "title": "Threats, Risks, Vulnerabilities, and the NIST RMF",
+      "date": "2026-05-13",
+      "url": "https://juribuora.github.io/blog/2026/05/13/day-102.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess",
+        "documentation"
+      ],
+      "slug": "day-102",
+      "sourcePath": "Blog/_posts/2026-05-13-day-102.md",
+      "contentPath": "/generated/posts/blog/102.json"
+    },
+    {
+      "day": 101,
+      "title": "Frameworks, Controls, Ethics, and Analyst Tooling",
+      "date": "2026-05-12",
+      "url": "https://juribuora.github.io/blog/2026/05/12/day-101.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess",
+        "documentation",
+        "tooling"
+      ],
+      "slug": "day-101",
+      "sourcePath": "Blog/_posts/2026-05-12-day-101.md",
+      "contentPath": "/generated/posts/blog/101.json"
+    },
+    {
+      "day": 100,
+      "title": "Attack History, Business Impact, and Security Domains",
+      "date": "2026-05-11",
+      "url": "https://juribuora.github.io/blog/2026/05/11/day-100.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess",
+        "documentation"
+      ],
+      "slug": "day-100",
+      "sourcePath": "Blog/_posts/2026-05-11-day-100.md",
+      "contentPath": "/generated/posts/blog/100.json"
+    },
+    {
+      "day": 99,
+      "title": "Cybersecurity Analyst Mindset and Phishing Triage",
+      "date": "2026-05-10",
+      "url": "https://juribuora.github.io/blog/2026/05/10/day-99.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess",
+        "documentation"
+      ],
+      "slug": "day-99",
+      "sourcePath": "Blog/_posts/2026-05-10-day-99.md",
+      "contentPath": "/generated/posts/blog/99.json"
+    },
+    {
+      "day": 98,
+      "title": "Cookie Banners, Technical Cookies, and Website Privacy Checks",
+      "date": "2026-05-09",
+      "url": "https://juribuora.github.io/blog/2026/05/09/day-98.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "http",
+        "logs",
+        "documentation",
+        "learningprocess"
+      ],
+      "slug": "day-98",
+      "sourcePath": "Blog/_posts/2026-05-09-day-98.md",
+      "contentPath": "/generated/posts/blog/98.json"
+    },
+    {
+      "day": 97,
+      "title": "Privacy-First Website Analytics",
+      "date": "2026-05-08",
+      "url": "https://juribuora.github.io/blog/2026/05/08/day-97.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "http",
+        "documentation",
+        "learningprocess"
+      ],
+      "slug": "day-97",
+      "sourcePath": "Blog/_posts/2026-05-08-day-97.md",
+      "contentPath": "/generated/posts/blog/97.json"
+    },
+    {
       "day": 96,
       "title": "IP Spoofing, Sniffing, and Attack Technique Classification",
       "date": "2026-05-07",
@@ -1321,7 +2654,14 @@ export const jekyllSnapshot: LoadedPosts = {
       "date": "2026-02-06",
       "url": "https://juribuora.github.io/blog/2026/02/06/day-15.html",
       "category": "blog",
-      "tags": [],
+      "tags": [
+        "linux",
+        "commandline",
+        "bash",
+        "logs",
+        "labs",
+        "learningprocess"
+      ],
       "slug": "day-15",
       "sourcePath": "Blog/_posts/2026-02-06-day-15.md",
       "contentPath": "/generated/posts/blog/15.json"
@@ -1605,6 +2945,128 @@ export const jekyllSnapshot: LoadedPosts = {
   ],
   "labs": [
     {
+      "day": 10,
+      "title": "Isolating Parallel Agents with Git Worktrees",
+      "date": "2026-07-22",
+      "url": "https://juribuora.github.io/labs/2026/07/22/lab-10-day-172.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "git",
+        "worktrees",
+        "isolation",
+        "multiagent",
+        "commandline",
+        "bash",
+        "changecontrol",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-10-day-172",
+      "sourcePath": "Labs/_posts/2026-07-22-lab-10-day-172.md",
+      "contentPath": "/generated/posts/lab/10.json"
+    },
+    {
+      "day": 9,
+      "title": "Testing an Integrity-Protected Artifact Delivery Path",
+      "date": "2026-07-18",
+      "url": "https://juribuora.github.io/labs/2026/07/18/lab-09-day-168.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "integrity",
+        "authorization",
+        "hashing",
+        "securedelivery",
+        "testing",
+        "labs"
+      ],
+      "slug": "lab-09-day-168",
+      "sourcePath": "Labs/_posts/2026-07-18-lab-09-day-168.md",
+      "contentPath": "/generated/posts/lab/9.json"
+    },
+    {
+      "day": 8,
+      "title": "Auditing a Bounded, Source-Attributed Agent Context",
+      "date": "2026-07-15",
+      "url": "https://juribuora.github.io/labs/2026/07/15/lab-08-day-165.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "provenance",
+        "dataintegrity",
+        "aisecurity",
+        "python",
+        "testing",
+        "labs"
+      ],
+      "slug": "lab-08-day-165",
+      "sourcePath": "Labs/_posts/2026-07-15-lab-08-day-165.md",
+      "contentPath": "/generated/posts/lab/8.json"
+    },
+    {
+      "day": 7,
+      "title": "Investigating a False-Positive Alert in a Verification Script",
+      "date": "2026-07-14",
+      "url": "https://juribuora.github.io/labs/2026/07/14/lab-07-day-164.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "detectionengineering",
+        "falsepositives",
+        "bash",
+        "git",
+        "commandline",
+        "triage",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-07-day-164",
+      "sourcePath": "Labs/_posts/2026-07-14-lab-07-day-164.md",
+      "contentPath": "/generated/posts/lab/7.json"
+    },
+    {
+      "day": 6,
+      "title": "Linux User and Group Management for Access Control",
+      "date": "2026-07-05",
+      "url": "https://juribuora.github.io/labs/2026/07/05/lab-06-day-155.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "accesscontrol",
+        "authentication",
+        "authorization",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-06-day-155",
+      "sourcePath": "Labs/_posts/2026-07-05-lab-06-day-155.md",
+      "contentPath": "/generated/posts/lab/6.json"
+    },
+    {
+      "day": 5,
+      "title": "SSH Brute-Force Investigation and Automated Defense",
+      "date": "2026-03-10",
+      "url": "https://juribuora.github.io/labs/2026/03/10/lab-05-day-38.html",
+      "category": "lab",
+      "tags": [
+        "linux",
+        "commandline",
+        "logs",
+        "ssh",
+        "networking",
+        "cybersecurity",
+        "labs"
+      ],
+      "slug": "lab-05-day-38",
+      "sourcePath": "Labs/_posts/2026-03-10-lab-05-day-38.md",
+      "contentPath": "/generated/posts/lab/5.json"
+    },
+    {
       "day": 4,
       "title": "Endpoint Process Chain Triage with Pipe-Delimited Logs and awk",
       "date": "2026-02-26",
@@ -1683,65 +3145,156 @@ export const jekyllSnapshot: LoadedPosts = {
     }
   ],
   "allTags": [
+    "accesscontrol",
+    "aios",
+    "aisecurity",
+    "approvals",
+    "appsec",
+    "assetinventory",
+    "auditability",
+    "auditing",
+    "authentication",
+    "authorization",
     "automation",
+    "automationsecurity",
+    "autonomousagents",
+    "autonomy",
+    "availability",
     "bash",
+    "benchmarking",
     "blogging",
+    "business",
+    "changecontrol",
+    "changemanagement",
+    "cicd",
+    "codereview",
     "commandline",
     "consistency",
+    "costtracking",
     "cron",
     "css",
     "cybersecurity",
     "cybersecurityfoundations",
     "dailylog",
+    "datagovernance",
+    "dataintegrity",
     "debugging",
+    "decommissioning",
     "defense",
+    "detectionengineering",
     "dns",
     "documentation",
+    "ds4",
+    "emailsecurity",
+    "failclosed",
+    "failsafe",
+    "falsepositives",
+    "featureflags",
     "filepermissions",
     "filesystem",
     "foundations",
+    "git",
     "github",
     "githubpages",
+    "glossary",
+    "googlecert",
+    "googlecybersecuritycertificate",
+    "governance",
     "grep",
+    "hardening",
+    "hashing",
+    "hermes",
     "homebrew",
     "http",
+    "humanintheloop",
+    "integrity",
+    "ios",
+    "isolation",
     "jekyll",
     "kalilinux",
+    "knowledgemanagement",
     "labs",
     "learninginpublic",
     "learningprocess",
+    "leastprivilege",
+    "lifecycle",
     "linux",
     "linuxfundamentals",
     "linuxux",
+    "lmstudio",
+    "localagents",
+    "localai",
+    "localfirst",
+    "localization",
+    "localllm",
+    "logging",
     "logs",
     "macbook",
     "macos",
+    "mcp",
+    "mitre",
+    "mobilesecurity",
+    "multiagent",
     "networking",
     "obsidian",
+    "ollama",
+    "operationalsecurity",
+    "orchestration",
     "packagemanagement",
     "packets",
     "parallels",
+    "permissionmodel",
     "permissions",
+    "portfolio",
+    "privacy",
     "processes",
+    "productsecurity",
+    "provenance",
+    "python",
+    "qualityassurance",
     "rbenv",
+    "recovery",
+    "reliability",
+    "remediation",
+    "remoteaccess",
+    "remoteagenthub",
+    "reporting",
+    "resilience",
+    "resourcemanagement",
+    "riskmanagement",
+    "riskscoring",
     "rss",
     "ruby",
+    "securedelivery",
     "ssh",
     "staticsite",
     "staticsites",
+    "supervisor",
+    "swiftui",
+    "tailscale",
     "tcpip",
+    "technicalwriting",
+    "testing",
     "tooling",
+    "triage",
     "troubleshooting",
     "tryhackme",
     "ubuntu",
+    "ux",
+    "validation",
+    "verification",
     "virtualmachine",
     "visualization",
     "vscode",
+    "webcheckup",
     "webfundamentals",
+    "websecurity",
     "websitemaintenance",
+    "webtesting",
     "windows",
     "windows11",
     "workflow",
+    "worktrees",
     "zeroday"
   ],
   "source": "snapshot",

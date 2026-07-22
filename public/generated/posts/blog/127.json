@@ -1,0 +1,18 @@
+{
+  "day": 127,
+  "title": "Custom Domain, DNS, and Website Availability",
+  "date": "2026-06-07",
+  "url": "https://juribuora.github.io/blog/2026/06/07/day-127.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "webfundamentals",
+    "githubpages",
+    "documentation",
+    "tooling",
+    "learningprocess"
+  ],
+  "slug": "day-127",
+  "sourcePath": "Blog/_posts/2026-06-07-day-127.md",
+  "content": "# 🔄 Topic\n\nConnecting the Farina domain setup to DNS, CNAME, and production reachability.\n\n---\n\n# 🎯 Goal\n\nUnderstand how custom domains and DNS records affect whether users can actually reach the website.\n\n---\n\n# 🛠 What I Did\n\nI reviewed the custom domain side of the Farina website. The repository includes a CNAME file for the production domain, and deployment checks make sure that file exists in the final build output. This connects directly to previous networking study: a website is not only code. Users need DNS resolution, correct domain configuration, HTTPS, hosting, and valid routing before the page loads.\n\nMain areas covered:\n\n- custom domain\n- CNAME file\n- GitHub Pages configuration\n- DNS records\n- production domain reachability\n- deployment validation\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nDNS matters because many 'website down' problems are not code problems. They can be DNS, certificate, routing, hosting, or deployment configuration problems.\n\n---\n\n# 🔍 Investigation Questions\n\n- Does the domain resolve?\n- Does www point to the expected host?\n- Is the CNAME included in the deployed output?\n- Does HTTPS work?\n- Is the issue DNS, hosting, or application-level?\n\n---\n\n# 🚨 Detection Opportunities\n\nPotential monitoring ideas:\n\n- DNS resolution failures\n- unexpected DNS record change\n- certificate errors\n- CNAME missing from deployment\n- traffic drop after domain configuration change\n\nExample:\n\n    project=farina-farm-website\n    change_type=public_website_update\n    risk_area=repository_deployment_or_public_input\n    triage=review_change_intent_and_validate_build\n\n---\n\n# 🧭 MITRE ATT&CK Techniques\n\nPossible mappings depending on confirmed behavior:\n\n- T1498 — Network Denial of Service\n- T1499 — Endpoint Denial of Service\n- T1565 — Data Manipulation\n\n---\n\n# 🗺 Visual Investigation Diagram\n\n    User browser\n        ↓\nDNS lookup\n        ↓\nGitHub Pages host\n        ↓\nHTTPS\n        ↓\nStatic site response\n\n---\n\n# ⚠ Challenges\n\nThe challenge was remembering that deployment success does not always mean reachability. The build can pass while DNS or domain configuration breaks access.\n\n---\n\n# 📚 What I Learned\n\nI learned that custom domains are operational dependencies. They need simple checks and documentation.\n\n---\n\n# ➡ Next Steps\n\n- Document DNS settings\n- Check domain after deployment\n- Keep CNAME committed\n- Separate DNS issues from app issues\n\n---\n\n# 🧠 Reflection\n\nThis was useful because it turned a real project into security-aware learning without pretending that every task was a pure cybersecurity lab.\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nConnecting DNS theory to a real domain.\n\n**What broke**\n\nAssuming website availability is only about code.\n\n**Why it broke**\n\nUsers depend on DNS before they ever touch the app.\n\n**Fix / takeaway**\n\nWhen a website is unreachable, test DNS first, not last.\n\n---\n\n# 📈 Skill Progression Context\n\nThis supports cybersecurity progression because DNS appears constantly in SOC investigations, outages, phishing, and attacker infrastructure.\n\n---\n\n# 😄 TL;DR\n\nNo DNS, no website.\n"
+}

@@ -1,9 +1,9 @@
 import { Target, Eye, BookOpen, MessageSquare } from "lucide-react";
 
 const items = [
-  { icon: Target, title: "The Goal", text: "Solid fundamentals in networking, Linux, web tech, and security. 10+ documented pentests. Junior-level hireable." },
+  { icon: Target, title: "The Goal", text: "Solid fundamentals in networking, Linux, web tech, and security. Documented practice, careful reasoning, and steady improvement." },
   { icon: Eye, title: "The Approach", text: "Foundations first, hands-on labs, rigorous documentation, understanding flows over memorizing definitions." },
-  { icon: BookOpen, title: "What You'll Find", text: "Daily logs, labs, structured reports, diagrams & notes, and portfolio-ready material." },
+  { icon: BookOpen, title: "What You'll Find", text: "Daily logs, labs, structured reports, diagrams & notes, and detailed project material." },
   { icon: MessageSquare, title: "Feedback Welcome", text: "Bad assumptions? Weak mental models? Corrections are welcome — better early than confidently wrong later." },
 ];
 
