@@ -3,8 +3,12 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # The scheduled run exists to pull new Blog/Labs posts from
+  # JuriBuora.github.io via `npm run sync:jekyll`. Every 30 minutes was 48
+  # rebuilds/day of unchanged content, plus 48 rounds of GitHub API calls.
+  # Daily is ample for a blog; use workflow_dispatch to publish immediately.
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "0 5 * * *"
   workflow_dispatch:
 
 permissions:
