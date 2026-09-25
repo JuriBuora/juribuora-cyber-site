@@ -1,0 +1,19 @@
+{
+  "day": 20,
+  "title": "Verifying an Encrypted Backup Restore Safely",
+  "date": "2026-09-02",
+  "url": "https://juribuora.github.io/labs/2026/09/02/lab-20-day-214.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "backuprecovery",
+    "encryption",
+    "sqlite",
+    "incidentresponse",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-20-day-214",
+  "sourcePath": "Labs/_posts/2026-09-02-lab-20-day-214.md",
+  "content": "## Lab Objective\n\nPractice the reasoning behind a safe backup verification workflow: restore to an isolated location, inspect the restored state, and avoid starting a second live client with copied credentials.\n\n---\n\n## Lab Environment\n\n- **Backup concept:** encrypted off-host repository\n- **Database type:** SQLite in WAL mode\n- **Restore target:** isolated recovery directory or separate machine\n- **Safety rule:** do not start the live service from restored credentials\n\n---\n\n## Scenario\n\nAn automation service has a live SQLite database, configuration, and authentication material. A raw copy of a WAL-mode database can be inconsistent while the service is writing. A backup is only useful if it can be restored and inspected somewhere separate from the live process.\n\n---\n\n## Step 1 - Create a Consistent Database Snapshot\n\nUse SQLite’s own snapshot capability instead of copying a live database file directly:\n\n```sql\nVACUUM INTO 'state-snapshot.db';\n```\n\nThis produces a consistent snapshot at the SQLite level. It avoids treating a changing WAL-backed file as a stable artifact.\n\n---\n\n## Step 2 - Restore to an Isolated Location\n\n```bash\nmkdir -p /tmp/recovery-lab\n# restore-tool restore latest --target /tmp/recovery-lab\nfind /tmp/recovery-lab -type f | wc -l\n```\n\nIn a real recovery plan, the target should be a different host or a clearly isolated directory. Do not overwrite the live service’s state while testing.\n\n---\n\n## Step 3 - Inspect Database Integrity\n\n```bash\nsqlite3 /tmp/recovery-lab/state-snapshot.db 'PRAGMA integrity_check;'\nsqlite3 /tmp/recovery-lab/state-snapshot.db '.tables'\n```\n\nDo not stop at “the archive listed files.” Read the restored database and check the tables expected by the application.\n\n---\n\n## Step 4 - Separate Derived-Index Warnings from Corruption\n\nSearch-index structures can be rebuilt. Core tables, credentials, and configuration cannot be treated the same way.\n\n| Finding | Response |\n| --- | --- |\n| Core table integrity error | Fail recovery verification |\n| Missing expected configuration | Fail recovery verification |\n| Derived search-index compatibility warning | Investigate and document; do not automatically call the entire backup corrupt |\n\n---\n\n## Step 5 - Verify Non-Interference\n\nBefore and after the restore check, record only safe metadata from the live system:\n\n```bash\npgrep -f 'gateway|bridge'\nshasum -a 256 /path/to/live/credential-file\n```\n\nThe restore verifier should never launch a second copy of a messaging client or use restored credentials to connect to a live service.\n\n---\n\n## Security Takeaways\n\n- Encryption protects backup confidentiality, but does not prove recoverability.\n- WAL-mode databases need consistent snapshots.\n- A restore test must happen outside the live service path.\n- Read restored data structurally; archive existence is weak evidence.\n- Treat derived-index warnings differently from core-state corruption.\n\n---\n\n## Reflection\n\nThis lab showed why recovery is an operational security skill. The question is not “did the backup job run?” but “can I restore safe, readable state without making the incident worse?”\n\n---\n\n## TL;DR\n\nCreate a consistent snapshot, restore it elsewhere, read it, and prove the verification did not touch the live service.\n"
+}

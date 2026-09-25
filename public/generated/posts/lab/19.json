@@ -1,0 +1,20 @@
+{
+  "day": 19,
+  "title": "Testing a Stale-Message-Safe Agent Relay",
+  "date": "2026-08-30",
+  "url": "https://juribuora.github.io/labs/2026/08/30/lab-19-day-211.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "automation",
+    "statemanagement",
+    "integrity",
+    "python",
+    "testing",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-19-day-211",
+  "sourcePath": "Labs/_posts/2026-08-30-lab-19-day-211.md",
+  "content": "## Lab Objective\n\nPractice the integrity controls behind a local agent relay without using a live browser conversation or a real coding worker.\n\nThe lab focuses on three questions:\n\n- Is the next instruction genuinely newer than the last one consumed?\n- Does one active loop own the worker?\n- Does a failed handover repeat work or leave a recoverable state?\n\n---\n\n## Lab Environment\n\n- **Language:** Python\n- **State:** local JSON or SQLite fixture\n- **External accounts:** none\n- **Worker:** stubbed function\n- **Goal:** validate ordering and state transitions, not model quality\n\n---\n\n## Scenario\n\nA local relay reads a conversation, hands the most recent instruction to a worker, and later posts the worker’s result. If it reads its own old post as a new instruction, or two relays run concurrently, the system can loop or duplicate work.\n\n---\n\n## Step 1 - Represent the Consumed State\n\n```python\nstate = {\n    \"conversation_id\": \"chat-1\",\n    \"last_consumed_hash\": \"abc123\",\n    \"round\": 4,\n}\n```\n\nThe state records what the relay has already acted on. It does not rely only on a visible message count, because counts can change when the UI rerenders or when the relay posts its own handover.\n\n---\n\n## Step 2 - Reject a Stale Instruction\n\n```python\nimport hashlib\n\ndef digest(text: str) -> str:\n    return hashlib.sha256(text.encode()).hexdigest()\n\ndef is_new_instruction(text: str, state: dict) -> bool:\n    return digest(text) != state[\"last_consumed_hash\"]\n\nassert is_new_instruction(\"new task\", state)\nassert not is_new_instruction(\"old task\", {**state, \"last_consumed_hash\": digest(\"old task\")})\n```\n\nThis is a minimal freshness gate. In a production relay, identity and document position should also be verified.\n\n---\n\n## Step 3 - Enforce One Active Loop\n\n```python\nfrom pathlib import Path\n\nlock = Path(\"/tmp/agent-bridge-lab.lock\")\n\ndef acquire_lock() -> bool:\n    if lock.exists():\n        return False\n    lock.write_text(\"active\")\n    return True\n\nassert acquire_lock() is True\nassert acquire_lock() is False\nlock.unlink()\n```\n\nThe exact implementation can vary, but the property matters: a second local loop must refuse before it competes for the same model and task state.\n\n---\n\n## Step 4 - Model the Handover Transition\n\n```python\nrecord = {\"instruction\": \"new task\", \"state\": \"received\"}\n\nrecord[\"state\"] = \"consumed\"\ntry:\n    # worker_result = run_stubbed_worker(record[\"instruction\"])\n    worker_result = \"completed safely\"\n    record[\"handover\"] = worker_result\n    record[\"state\"] = \"posted\"\nexcept Exception:\n    record[\"state\"] = \"needs_recovery\"\n```\n\nWriting state around the transition gives a later recovery routine something concrete to inspect instead of rerunning blindly.\n\n---\n\n## Security Takeaways\n\n- A relay needs a durable definition of “already consumed.”\n- One task loop should own one worker context at a time.\n- Browser-visible order is not a safe database.\n- Output still needs redaction before it crosses into another tool or chat.\n- Recovery must distinguish “work never started” from “work finished but handover failed.”\n\n---\n\n## Reflection\n\nThe model is not the only moving part in an agent loop. Identity, freshness, locking, and durable transitions decide whether the loop does the intended work once or repeats it until someone notices.\n\n---\n\n## TL;DR\n\nUse explicit consumed-state, a single-loop lock, and recoverable handover states before trusting an agent relay to run repeatedly.\n"
+}

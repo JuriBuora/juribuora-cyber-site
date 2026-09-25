@@ -37,6 +37,14 @@ const caseStudies = [
     skills: ["Integrity", "Authorization", "Hashing", "Secure delivery"],
     to: "/blog/168",
   },
+  {
+    title: "Evidence-Gated Tool Evaluation",
+    evidence: "Local-first capability review",
+    summary:
+      "Compared candidate tools against existing manual workflows, kept bounded local capabilities, and rejected additions that did not improve traceable evidence.",
+    skills: ["Supply chain", "Provenance", "Least privilege", "Change control"],
+    to: "/blog/177",
+  },
 ];
 
 const PortfolioPage = () => (
