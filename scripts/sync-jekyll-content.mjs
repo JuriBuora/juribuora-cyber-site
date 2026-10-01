@@ -115,13 +115,14 @@ function plainText(markdown) {
 }
 
 // A post's one-line description for list pages: the `summary` front matter
-// when the author wrote one, otherwise the first paragraph of its TL;DR.
+// when the author wrote one, otherwise the first paragraph of its Topic section.
 function deriveSummary(frontMatter, body) {
   if (typeof frontMatter.summary === "string" && frontMatter.summary.trim()) {
     return frontMatter.summary.trim();
   }
-  // Older posts have no TL;DR; their "Topic" or "Goal" section says the same thing.
-  const match = ["TL;DR", "Topic", "Goal"]
+  // "Topic" says plainly what the post is about. The TL;DR is often a one-line quip,
+  // so it is only the fallback, then "Goal" for the oldest posts.
+  const match = ["Topic", "TL;DR", "Goal"]
     .map((heading) =>
       body.match(new RegExp(`^#+[^\\n]*${heading}[^\\n]*\\n+([\\s\\S]*?)(?=\\n\\s*\\n|\\n#|\\n<!--|$)`, "im")),
     )
