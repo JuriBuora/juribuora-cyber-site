@@ -43,8 +43,9 @@ it.skipIf(!existsSync(shell))("hydrates the English shell for a saved Italian re
     expect(mounted.errors).toEqual([]);
     // Same node: the prerendered page was adopted, not rebuilt from scratch.
     expect(document.querySelector("#root main")).toBe(serverMain);
-    expect(document.documentElement.classList.contains("lang-pending")).toBe(false);
-    expect(document.documentElement.lang).toBe("it");
+    // The class and the lang attribute are set by effects, a moment after the text changes.
+    await waitFor(() => expect(document.documentElement.classList.contains("lang-pending")).toBe(false));
+    await waitFor(() => expect(document.documentElement.lang).toBe("it"));
   } finally {
     await act(async () => mounted.root?.unmount());
     document.body.innerHTML = "";

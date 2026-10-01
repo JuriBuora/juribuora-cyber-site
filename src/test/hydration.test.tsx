@@ -82,7 +82,8 @@ it("shows the page again once a held-back Italian reader has their language", as
     expect(container.textContent).toBe("en");
     expect(document.documentElement.classList.contains("lang-pending")).toBe(true);
     await waitFor(() => expect(container.textContent).toBe("it"));
-    expect(document.documentElement.classList.contains("lang-pending")).toBe(false);
+    // Removed by an effect, a moment after the text changes.
+    await waitFor(() => expect(document.documentElement.classList.contains("lang-pending")).toBe(false));
   } finally {
     await act(async () => root?.unmount());
     container.remove();
