@@ -8,7 +8,15 @@
  * and tiering notes, handoffs, the reports on this site). A test checks that
  * both languages have the same shape and that every link is a real page.
  */
+import { jekyllSnapshot } from "./jekyllSnapshot.generated";
 import type { Lang } from "./plain";
+
+/** Reports are linked by name, so renumbering them can never point a link at a different report. */
+const report = (slug: string) => {
+  const found = jekyllSnapshot.reports.find((r) => r.slug === slug);
+  if (!found) throw new Error(`No report named "${slug}" in the synced content`);
+  return `/report/${found.day}`;
+};
 
 export type ItemMore = {
   text: string[];
@@ -165,7 +173,7 @@ const en: Record<string, ItemMore[]> = {
       ],
       aside:
         "On 1 October 2026 one of them built the version of this website that works without JavaScript and the other reviewed it. The review found that Italian readers would briefly see each page in English first. 58 passing tests had not noticed.",
-      link: { label: "The review that found five flaws", to: "/report/3" },
+      link: { label: "The review that found five flaws", to: report("dns-rebinding-ssrf-browser-tool") },
     },
     {
       text: [
@@ -323,7 +331,7 @@ const en: Record<string, ItemMore[]> = {
       ],
       aside:
         "The most serious of the five was in code nobody had touched, described in every earlier note as finished. Addresses written as plain numbers skipped the check entirely, because the check only ran when there was a name to look up.",
-      link: { label: "The full vulnerability report", to: "/report/3" },
+      link: { label: "The full vulnerability report", to: report("dns-rebinding-ssrf-browser-tool") },
     },
     {
       text: [
@@ -361,7 +369,7 @@ const en: Record<string, ItemMore[]> = {
       ],
       aside:
         "The first audit found that the service behind the app accepted commands from anything on my network with no login, and that jobs were marked “done” when the result was empty. Both were fixed within the week.",
-      link: { label: "The audit report", to: "/report/7" },
+      link: { label: "The audit report", to: report("security-audit-iphone-agent-app") },
     },
     {
       text: [
@@ -371,7 +379,7 @@ const en: Record<string, ItemMore[]> = {
       facts: [{ value: "138 s", label: "for the helper machine to recover when I cut its connection on purpose" }],
       aside:
         "One day sleeping stopped working and the helper machine looked switched off. It had been on the whole time: it had lost the wireless network and then only searched for 36 hours without reconnecting. It now reconnects after 90 seconds, reloads its network driver after 5 minutes and restarts as a last resort.",
-      link: { label: "The shutdown nobody could explain", to: "/report/4" },
+      link: { label: "The shutdown nobody could explain", to: report("incident-unexplained-remote-shutdown") },
     },
   ],
 
@@ -465,11 +473,11 @@ const en: Record<string, ItemMore[]> = {
     },
     {
       text: [
-        "On 10 September I added a backup so that an outage would give a weaker answer instead of none. It worked as designed within the hour: the main model hit a limit, the backup took over, and it answered a comment about the rain with “Good morning”. I removed that backup the same day and replaced it with one as good as the main model.",
-        "A support desk would choose the other way, because for a business being available matters most. In my own conversations a late answer looks like I have not seen the message yet. A wrong one looks like me.",
+        "On 10 September I added a backup so that an outage would give a weaker answer instead of none. Within the hour the main model hit a limit, the backup took over, and it answered a comment about the rain with “Good morning”. I removed that backup the same day and used one as good as the main model.",
+        "Since 30 September the backup is a local model again, by my own choice. Whatever it writes still passes the last look before sending, like every other message.",
       ],
       aside:
-        "This is not settled. Since 30 September a local model is the backup again, so I count this as an open risk and not as a solved problem.",
+        "The switch itself was never the problem. That day it did exactly what it was built to do: it noticed the limit and changed model without leaking anything. The weak point was what the backup said.",
     },
     {
       text: [
@@ -522,7 +530,7 @@ const en: Record<string, ItemMore[]> = {
       ],
       aside:
         "The restore report says plainly what this does not cover: if both machines can be lost to the same event, another copy somewhere else is needed. That is why I also keep a copy on a removable disk, with a monthly reminder to refresh it.",
-      link: { label: "The restore drill report", to: "/report/8" },
+      link: { label: "The restore drill report", to: report("backup-restore-drill-agent-state") },
     },
     {
       text: [
@@ -536,7 +544,7 @@ const en: Record<string, ItemMore[]> = {
       ],
       aside:
         "The integrity check complained about the search index. That index is rebuilt from the data it describes, so those warnings were recorded separately from damage to the original data, of which there was none. A check that treats every warning as corruption always fails and tells you nothing.",
-      link: { label: "The restore drill report", to: "/report/8" },
+      link: { label: "The restore drill report", to: report("backup-restore-drill-agent-state") },
     },
     {
       text: [
@@ -737,7 +745,7 @@ const it: Record<string, ItemMore[]> = {
       ],
       aside:
         "Il 1º ottobre 2026 uno dei due ha costruito la versione di questo sito che funziona senza JavaScript e l’altro l’ha rivista. La revisione ha scoperto che i lettori italiani avrebbero visto per un attimo ogni pagina in inglese. 58 test superati non se n’erano accorti.",
-      link: { label: "La revisione che ha trovato cinque difetti (in inglese)", to: "/report/3" },
+      link: { label: "La revisione che ha trovato cinque difetti (in inglese)", to: report("dns-rebinding-ssrf-browser-tool") },
     },
     {
       text: [
@@ -895,7 +903,7 @@ const it: Record<string, ItemMore[]> = {
       ],
       aside:
         "Il più grave dei cinque era in codice che nessuno aveva toccato, descritto in ogni appunto precedente come finito. Gli indirizzi scritti come semplici numeri saltavano del tutto il controllo, perché il controllo partiva solo quando c’era un nome da cercare.",
-      link: { label: "Il rapporto completo sulla vulnerabilità (in inglese)", to: "/report/3" },
+      link: { label: "Il rapporto completo sulla vulnerabilità (in inglese)", to: report("dns-rebinding-ssrf-browser-tool") },
     },
     {
       text: [
@@ -933,7 +941,7 @@ const it: Record<string, ItemMore[]> = {
       ],
       aside:
         "La prima verifica ha trovato che il servizio dietro l’app accettava comandi da qualsiasi cosa sulla mia rete senza accesso, e che i lavori venivano segnati come “fatti” quando il risultato era vuoto. Entrambi i problemi sono stati corretti in settimana.",
-      link: { label: "Il rapporto di verifica (in inglese)", to: "/report/7" },
+      link: { label: "Il rapporto di verifica (in inglese)", to: report("security-audit-iphone-agent-app") },
     },
     {
       text: [
@@ -943,7 +951,7 @@ const it: Record<string, ItemMore[]> = {
       facts: [{ value: "138 s", label: "perché la macchina di supporto si riprendesse quando le ho tagliato apposta la connessione" }],
       aside:
         "Un giorno lo stop ha smesso di funzionare e la macchina di supporto sembrava spenta. Era rimasta accesa tutto il tempo: aveva perso la rete senza fili e poi aveva solo cercato per 36 ore senza ricollegarsi. Ora si ricollega dopo 90 secondi, ricarica il driver di rete dopo 5 minuti e si riavvia come ultima risorsa.",
-      link: { label: "Lo spegnimento che nessuno sapeva spiegare (in inglese)", to: "/report/4" },
+      link: { label: "Lo spegnimento che nessuno sapeva spiegare (in inglese)", to: report("incident-unexplained-remote-shutdown") },
     },
   ],
 
@@ -1037,11 +1045,11 @@ const it: Record<string, ItemMore[]> = {
     },
     {
       text: [
-        "Il 10 settembre ho aggiunto una riserva, perché un’interruzione desse una risposta più debole invece di nessuna. Ha funzionato come previsto entro un’ora: il modello principale ha raggiunto un limite, la riserva è subentrata, e ha risposto “Buongiorno” a un commento sulla pioggia. Ho tolto quella riserva il giorno stesso e l’ho sostituita con una all’altezza del modello principale.",
-        "Un servizio clienti sceglierebbe il contrario, perché per un’azienda conta soprattutto essere disponibili. Nelle mie conversazioni una risposta in ritardo sembra che io non abbia ancora visto il messaggio. Una sbagliata sembra me.",
+        "Il 10 settembre ho aggiunto una riserva, perché un’interruzione desse una risposta più debole invece di nessuna. Entro un’ora il modello principale ha raggiunto un limite, la riserva è subentrata, e ha risposto “Buongiorno” a un commento sulla pioggia. Ho tolto quella riserva il giorno stesso e ne ho usata una all’altezza del modello principale.",
+        "Dal 30 settembre la riserva è di nuovo un modello locale, per mia scelta. Tutto ciò che scrive passa comunque dall’ultima occhiata prima dell’invio, come ogni altro messaggio.",
       ],
       aside:
-        "La questione non è chiusa. Dal 30 settembre la riserva è di nuovo un modello locale, quindi lo considero un rischio aperto e non un problema risolto.",
+        "Il passaggio in sé non è mai stato il problema. Quel giorno ha fatto esattamente ciò per cui era stato costruito: ha notato il limite e ha cambiato modello senza far trapelare nulla. Il punto debole era ciò che diceva la riserva.",
     },
     {
       text: [
@@ -1094,7 +1102,7 @@ const it: Record<string, ItemMore[]> = {
       ],
       aside:
         "Il rapporto sul ripristino dice chiaramente cosa non è coperto: se entrambe le macchine possono andare perse nello stesso evento, serve un’altra copia altrove. Per questo tengo anche una copia su un disco rimovibile, con un promemoria mensile per aggiornarla.",
-      link: { label: "Il rapporto sulla prova di ripristino (in inglese)", to: "/report/8" },
+      link: { label: "Il rapporto sulla prova di ripristino (in inglese)", to: report("backup-restore-drill-agent-state") },
     },
     {
       text: [
@@ -1108,7 +1116,7 @@ const it: Record<string, ItemMore[]> = {
       ],
       aside:
         "Il controllo di integrità si è lamentato dell’indice di ricerca. Quell’indice si ricostruisce dai dati che descrive, quindi quegli avvisi sono stati registrati a parte rispetto ai danni ai dati originali, che non c’erano. Un controllo che tratta ogni avviso come un danno fallisce sempre e non dice nulla.",
-      link: { label: "Il rapporto sulla prova di ripristino (in inglese)", to: "/report/8" },
+      link: { label: "Il rapporto sulla prova di ripristino (in inglese)", to: report("backup-restore-drill-agent-state") },
     },
     {
       text: [

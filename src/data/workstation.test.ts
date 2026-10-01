@@ -132,6 +132,17 @@ describe("plain-words page", () => {
     }
   });
 
+  it("links each report card to the report it names, whatever its number", () => {
+    const linked = (role: string, index: number) =>
+      jekyllSnapshot.reports.find((r) => `/report/${r.day}` === roleMore.en[role][index].link?.to)?.title ?? "";
+    expect(linked("workers", 1)).toMatch(/DNS-Rebinding/);
+    expect(linked("hands", 2)).toMatch(/DNS-Rebinding/);
+    expect(linked("hands", 6)).toMatch(/iPhone App/);
+    expect(linked("hands", 7)).toMatch(/Powered Off My Computer/);
+    expect(linked("insurance", 0)).toMatch(/Restoring an Encrypted Backup/);
+    expect(linked("insurance", 1)).toMatch(/Restoring an Encrypted Backup/);
+  });
+
   it("links every story to a page that exists", () => {
     const routes = new Set([
       "/workstation",

@@ -171,7 +171,7 @@ const en: RoleDetail[] = [
     items: [
       { name: "The pre-flight check", tag: "34 known failures", body: "Before a risky change, I go through a list of 34 ways things have gone wrong before, name the ones that apply, and record proof for each." },
       { name: "The last look before sending", body: "Every outgoing message passes a final filter. Internal notes, error text and the model’s own thinking are stopped there." },
-      { name: "Silence over a bad answer", body: "A weak reply to a real person costs more than a late one. When a backup model answered badly, I took it away instead of accepting worse answers." },
+      { name: "When the main brain is down", body: "A local model answers instead, and its reply goes through the same final check. I tried silence for a while, and chose to answer." },
       { name: "Nobody marks their own homework", body: "Work counts as finished when someone else has checked it and there is evidence. A worker’s own “done” is not accepted." },
       { name: "Yes or no on my phone", body: "Sensitive actions wait for my approval. A spoken command is read back and has to be confirmed before anything starts." },
       { name: "The hard stops", body: "Passwords, payments, my personal documents, and anything a backup could not undo. No worker crosses these on its own." },
@@ -364,7 +364,7 @@ const it: RoleDetail[] = [
     items: [
       { name: "Il controllo prima del decollo", tag: "34 guasti noti", body: "Prima di una modifica rischiosa passo in rassegna un elenco di 34 modi in cui le cose sono già andate storte, indico quelli che riguardano il caso, e registro una prova per ciascuno." },
       { name: "L’ultima occhiata prima dell’invio", body: "Ogni messaggio in uscita passa da un filtro finale. Note interne, testi di errore e i ragionamenti del modello si fermano lì." },
-      { name: "Meglio il silenzio di una risposta sbagliata", body: "Una risposta scadente a una persona vera costa più di una risposta in ritardo. Quando un modello di riserva ha risposto male, l’ho tolto invece di accettare risposte peggiori." },
+      { name: "Quando il cervello principale non c’è", body: "Risponde al suo posto un modello locale, e la sua risposta passa dallo stesso controllo finale. Per un periodo ho provato il silenzio, e ho scelto di rispondere." },
       { name: "Nessuno si dà il voto da solo", body: "Un lavoro è finito quando qualcun altro lo ha controllato e c’è una prova. Il “fatto” detto dal lavoratore non basta." },
       { name: "Sì o no dal telefono", body: "Le azioni delicate aspettano la mia approvazione. Un comando a voce mi viene riletto e va confermato prima che parta qualcosa." },
       { name: "I limiti invalicabili", body: "Password, pagamenti, i miei documenti personali, e tutto ciò che un backup non potrebbe annullare. Nessun lavoratore li supera da solo." },

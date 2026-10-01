@@ -130,7 +130,7 @@ export const projects: Project[] = [
       "Prompts plateau and mechanisms hold. Each recurring defect moved from a prompt rule to a filter or shaping rule.",
       "The credential vault tools are switched off on this surface, because the caller is whoever messages me.",
       "The tool manual is not given to the model on this surface. Cutting the assembled prompt from 61,923 to 28,790 characters reduced assistant-sounding output.",
-      "Silence beats a degraded reply. On 10 Sep a weaker backup model answered a comment about the rain with “Good morning”, and I removed it the same day. Since 30 Sep a local model is the backup again, which I count as an open risk.",
+      "What happens when the main model is unavailable changed over time. On 10 Sep a weaker backup model answered a comment about the rain with “Good morning”, and I removed it the same day. Since 30 Sep a local model is the backup again, by choice, and its replies pass the same delivery filter.",
       "A reply must trace to a recent inbound message: one grant per chat, used once, expiring in five minutes (described in my learning log).",
     ],
     outcome: [
