@@ -1,0 +1,19 @@
+{
+  "day": 31,
+  "title": "Prove a Runtime Setting Reached the Running Service",
+  "date": "2026-09-28",
+  "url": "https://juribuora.github.io/labs/2026/09/28/lab-31-day-240.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "configurationmanagement",
+    "runtimeverification",
+    "availability",
+    "linux",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-31-day-240",
+  "sourcePath": "Labs/_posts/2026-09-28-lab-31-day-240.md",
+  "content": "## Lab Objective\n\nCompare a desired configuration value with the environment of the running process, its service log, and its status endpoint. The lab demonstrates why a changed file is not proof that a live service reloaded the policy.\n\n## Lab Environment\n\n- **Environment:** local Ollama service and a launch/start helper\n- **Setting:** model keep-alive duration\n- **Safety boundary:** read-only inspection first; use a test service or maintenance window for restart work\n- **Evidence:** process environment, service log, and API response\n\n## Scenario\n\nThe launch configuration requested a two-hour keep-alive, but the already-running service still reported twenty-four hours. A control-plane environment update cannot rewrite the environment inherited by an existing process.\n\n## Step 1 - Record the Declared Value\n\nRead the intended value from the launch configuration and record the process identity you expect to serve requests. Do not change anything yet.\n\n## Step 2 - Inspect the Running Process\n\nOn a controlled local system, inspect the service process environment. For Ollama, the source investigation used a command equivalent to:\n\n    ps eww \"$(pgrep -x ollama)\" | tr ' ' '\\n' | grep OLLAMA_KEEP_ALIVE\n\nThe result is evidence about the process that is alive, not about a file that may be used only at the next start.\n\n## Step 3 - Query the Service\n\nAsk the local status endpoint what it believes is active. For the tested local service, the status query was:\n\n    curl 127.0.0.1:11434/api/ps\n\nCompare the reported TTL with the process environment and the declared value.\n\n## Step 4 - Test Startup Ordering\n\nReview the helper's order: guard, restart, then preload. A preload before a quiet-window guard can recreate the condition that blocks a safe restart. The helper must also export the intended environment for the process it starts.\n\n## Step 5 - Prove Consistency\n\nAccept the change only when all three observations agree:\n\n    declared_value=2h\n    process_value=2h\n    service_value=2h\n    result=consistent\n\nIf the values disagree, report the control as not yet active.\n\n## Security Takeaways\n\n1. Runtime state outranks static intent when verifying an active control.\n2. A clean exit code does not prove a postcondition.\n3. Restart, guard, and preload ordering can create hidden failure loops.\n4. Process identity must be tied to the configuration being checked.\n5. Availability and resource controls also need live verification.\n\n## Where This Applies Beyond the Lab\n\nUse the same method for firewall rules, authentication policy, scheduled jobs, endpoint agents, proxy settings, and container environments. Query the component that serves traffic.\n\n<!-- 26-09-2026 21:29 -->\n"
+}

@@ -4,6 +4,151 @@ import type { LoadedPosts } from "./posts";
 export const jekyllSnapshot: LoadedPosts = {
   "posts": [
     {
+      "day": 243,
+      "title": "An Evidence Pipeline Must Be Allowed to Say Not Proven",
+      "date": "2026-10-01",
+      "url": "https://juribuora.github.io/blog/2026/10/01/day-243.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "evidence",
+        "datagovernance",
+        "privacy",
+        "provenance",
+        "automationsecurity",
+        "learningprocess"
+      ],
+      "slug": "day-243",
+      "sourcePath": "Blog/_posts/2026-10-01-day-243.md",
+      "contentPath": "/generated/posts/blog/243.json"
+    },
+    {
+      "day": 242,
+      "title": "A Voice Command Must Be Offered Before It Is Executed",
+      "date": "2026-09-30",
+      "url": "https://juribuora.github.io/blog/2026/09/30/day-242.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "authorization",
+        "voicesecurity",
+        "leastprivilege",
+        "humanintheloop",
+        "learningprocess"
+      ],
+      "slug": "day-242",
+      "sourcePath": "Blog/_posts/2026-09-30-day-242.md",
+      "contentPath": "/generated/posts/blog/242.json"
+    },
+    {
+      "day": 241,
+      "title": "Fresh Task Metadata Is Not Proof of Completion",
+      "date": "2026-09-29",
+      "url": "https://juribuora.github.io/blog/2026/09/29/day-241.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "privacy",
+        "datagovernance",
+        "provenance",
+        "securityoperations",
+        "learningprocess"
+      ],
+      "slug": "day-241",
+      "sourcePath": "Blog/_posts/2026-09-29-day-241.md",
+      "contentPath": "/generated/posts/blog/241.json"
+    },
+    {
+      "day": 240,
+      "title": "The Running Process Was the Source of Truth",
+      "date": "2026-09-28",
+      "url": "https://juribuora.github.io/blog/2026/09/28/day-240.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "configurationmanagement",
+        "runtimeverification",
+        "availability",
+        "ollama",
+        "learningprocess"
+      ],
+      "slug": "day-240",
+      "sourcePath": "Blog/_posts/2026-09-28-day-240.md",
+      "contentPath": "/generated/posts/blog/240.json"
+    },
+    {
+      "day": 239,
+      "title": "An Automated Calendar Write Needs Provenance, Not Just Extraction",
+      "date": "2026-09-27",
+      "url": "https://juribuora.github.io/blog/2026/09/27/day-239.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "dataintegrity",
+        "automationsecurity",
+        "provenance",
+        "privacy",
+        "learningprocess"
+      ],
+      "slug": "day-239",
+      "sourcePath": "Blog/_posts/2026-09-27-day-239.md",
+      "contentPath": "/generated/posts/blog/239.json"
+    },
+    {
+      "day": 238,
+      "title": "The Egress Guard Needed to See What the Message Answered",
+      "date": "2026-09-26",
+      "url": "https://juribuora.github.io/blog/2026/09/26/day-238.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "securedelivery",
+        "outputvalidation",
+        "privacy",
+        "detectionengineering",
+        "learningprocess"
+      ],
+      "slug": "day-238",
+      "sourcePath": "Blog/_posts/2026-09-26-day-238.md",
+      "contentPath": "/generated/posts/blog/238.json"
+    },
+    {
+      "day": 237,
+      "title": "A Tool Schema Is a Capability Boundary, Not Documentation",
+      "date": "2026-09-25",
+      "url": "https://juribuora.github.io/blog/2026/09/25/day-237.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "leastprivilege",
+        "supplychainsecurity",
+        "ai安全",
+        "accesscontrol",
+        "learningprocess"
+      ],
+      "slug": "day-237",
+      "sourcePath": "Blog/_posts/2026-09-25-day-237.md",
+      "contentPath": "/generated/posts/blog/237.json"
+    },
+    {
+      "day": 236,
+      "title": "The First Completion Was Not the Delivered Reply",
+      "date": "2026-09-24",
+      "url": "https://juribuora.github.io/blog/2026/09/24/day-236.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "securitytesting",
+        "ai安全",
+        "detectionengineering",
+        "evidence",
+        "learningprocess"
+      ],
+      "slug": "day-236",
+      "sourcePath": "Blog/_posts/2026-09-24-day-236.md",
+      "contentPath": "/generated/posts/blog/236.json"
+    },
+    {
       "day": 235,
       "title": "A Risk Score Is a Decision Aid, Not Evidence That I Scanned a System",
       "date": "2026-09-23",
@@ -975,6 +1120,80 @@ export const jekyllSnapshot: LoadedPosts = {
       "contentPath": "/generated/posts/blog/182.json"
     },
     {
+      "day": 181,
+      "title": "Using Linux Help Before Making a Change",
+      "date": "2026-07-31",
+      "url": "https://juribuora.github.io/blog/2026/07/31/day-181.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "bash",
+        "commandline",
+        "documentation",
+        "operationalsafety",
+        "googlecybersecuritycertificate",
+        "learningprocess"
+      ],
+      "slug": "day-181",
+      "sourcePath": "Blog/_posts/2026-07-31-day-181.md",
+      "contentPath": "/generated/posts/blog/181.json"
+    },
+    {
+      "day": 180,
+      "title": "A Small Security Skill Allowlist Beats an Everything Install",
+      "date": "2026-07-30",
+      "url": "https://juribuora.github.io/blog/2026/07/30/day-180.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "skillcuration",
+        "supplychainsecurity",
+        "riskassessment",
+        "leastprivilege",
+        "learningprocess"
+      ],
+      "slug": "day-180",
+      "sourcePath": "Blog/_posts/2026-07-30-day-180.md",
+      "contentPath": "/generated/posts/blog/180.json"
+    },
+    {
+      "day": 179,
+      "title": "Extracting Useful Text Without Giving an Agent a Browser",
+      "date": "2026-07-29",
+      "url": "https://juribuora.github.io/blog/2026/07/29/day-179.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "contentextraction",
+        "leastprivilege",
+        "automation",
+        "bash",
+        "learningprocess"
+      ],
+      "slug": "day-179",
+      "sourcePath": "Blog/_posts/2026-07-29-day-179.md",
+      "contentPath": "/generated/posts/blog/179.json"
+    },
+    {
+      "day": 178,
+      "title": "A Fast Index Is Not Automatically Useful",
+      "date": "2026-07-28",
+      "url": "https://juribuora.github.io/blog/2026/07/28/day-178.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "evidence",
+        "toolevaluation",
+        "provenance",
+        "informationsecurity",
+        "learningprocess"
+      ],
+      "slug": "day-178",
+      "sourcePath": "Blog/_posts/2026-07-28-day-178.md",
+      "contentPath": "/generated/posts/blog/178.json"
+    },
+    {
       "day": 177,
       "title": "Choosing Tools by Evidence, Not by Novelty",
       "date": "2026-07-27",
@@ -991,6 +1210,78 @@ export const jekyllSnapshot: LoadedPosts = {
       "slug": "day-177",
       "sourcePath": "Blog/_posts/2026-07-27-day-177.md",
       "contentPath": "/generated/posts/blog/177.json"
+    },
+    {
+      "day": 176,
+      "title": "Execution Depth Presets, a Broken Build, and Unit Tests for the Small Stuff",
+      "date": "2026-07-26",
+      "url": "https://juribuora.github.io/blog/2026/07/26/day-176.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "autonomy",
+        "testing",
+        "progressivedisclosure",
+        "qualitygates",
+        "learningprocess"
+      ],
+      "slug": "day-176",
+      "sourcePath": "Blog/_posts/2026-07-26-day-176.md",
+      "contentPath": "/generated/posts/blog/176.json"
+    },
+    {
+      "day": 175,
+      "title": "Unattended Delegation: Which Lanes Are Allowed to Work While I Sleep",
+      "date": "2026-07-25",
+      "url": "https://juribuora.github.io/blog/2026/07/25/day-175.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "autonomy",
+        "routingpolicy",
+        "launchagent",
+        "riskassessment",
+        "learningprocess"
+      ],
+      "slug": "day-175",
+      "sourcePath": "Blog/_posts/2026-07-25-day-175.md",
+      "contentPath": "/generated/posts/blog/175.json"
+    },
+    {
+      "day": 174,
+      "title": "Shadow Trials: Letting the New Router Watch Before It Acts",
+      "date": "2026-07-24",
+      "url": "https://juribuora.github.io/blog/2026/07/24/day-174.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "shadowmode",
+        "evaluation",
+        "orchestration",
+        "evidencebased",
+        "learningprocess"
+      ],
+      "slug": "day-174",
+      "sourcePath": "Blog/_posts/2026-07-24-day-174.md",
+      "contentPath": "/generated/posts/blog/174.json"
+    },
+    {
+      "day": 173,
+      "title": "Provenance and Recovery: Knowing Who Changed What, and Undoing It",
+      "date": "2026-07-23",
+      "url": "https://juribuora.github.io/blog/2026/07/23/day-173.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "provenance",
+        "rollback",
+        "forensics",
+        "changecontrol",
+        "learningprocess"
+      ],
+      "slug": "day-173",
+      "sourcePath": "Blog/_posts/2026-07-23-day-173.md",
+      "contentPath": "/generated/posts/blog/173.json"
     },
     {
       "day": 172,
@@ -3934,6 +4225,139 @@ export const jekyllSnapshot: LoadedPosts = {
   ],
   "labs": [
     {
+      "day": 34,
+      "title": "Build an Evidence-Bounded Status Importer",
+      "date": "2026-10-01",
+      "url": "https://juribuora.github.io/labs/2026/10/01/lab-34-day-243.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "evidence",
+        "provenance",
+        "privacy",
+        "datagovernance",
+        "automationsecurity",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-34-day-243",
+      "sourcePath": "Labs/_posts/2026-10-01-lab-34-day-243.md",
+      "contentPath": "/generated/posts/lab/34.json"
+    },
+    {
+      "day": 33,
+      "title": "Gate a Voice-Triggered Agent Job",
+      "date": "2026-09-30",
+      "url": "https://juribuora.github.io/labs/2026/09/30/lab-33-day-242.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "authorization",
+        "voicesecurity",
+        "humanintheloop",
+        "leastprivilege",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-33-day-242",
+      "sourcePath": "Labs/_posts/2026-09-30-lab-33-day-242.md",
+      "contentPath": "/generated/posts/lab/33.json"
+    },
+    {
+      "day": 32,
+      "title": "Build a Metadata-Only Status Receipt With Freshness",
+      "date": "2026-09-29",
+      "url": "https://juribuora.github.io/labs/2026/09/29/lab-32-day-241.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "privacy",
+        "datagovernance",
+        "provenance",
+        "securityoperations",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-32-day-241",
+      "sourcePath": "Labs/_posts/2026-09-29-lab-32-day-241.md",
+      "contentPath": "/generated/posts/lab/32.json"
+    },
+    {
+      "day": 31,
+      "title": "Prove a Runtime Setting Reached the Running Service",
+      "date": "2026-09-28",
+      "url": "https://juribuora.github.io/labs/2026/09/28/lab-31-day-240.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "configurationmanagement",
+        "runtimeverification",
+        "availability",
+        "linux",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-31-day-240",
+      "sourcePath": "Labs/_posts/2026-09-28-lab-31-day-240.md",
+      "contentPath": "/generated/posts/lab/31.json"
+    },
+    {
+      "day": 30,
+      "title": "Gate an Automated Calendar Write on Source Evidence",
+      "date": "2026-09-27",
+      "url": "https://juribuora.github.io/labs/2026/09/27/lab-30-day-239.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "dataintegrity",
+        "automationsecurity",
+        "provenance",
+        "privacy",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-30-day-239",
+      "sourcePath": "Labs/_posts/2026-09-27-lab-30-day-239.md",
+      "contentPath": "/generated/posts/lab/30.json"
+    },
+    {
+      "day": 29,
+      "title": "Reviewing an Agent Tool Bundle for Least Privilege",
+      "date": "2026-09-25",
+      "url": "https://juribuora.github.io/labs/2026/09/25/lab-29-day-237.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "leastprivilege",
+        "accesscontrol",
+        "supplychainsecurity",
+        "ai安全",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-29-day-237",
+      "sourcePath": "Labs/_posts/2026-09-25-lab-29-day-237.md",
+      "contentPath": "/generated/posts/lab/29.json"
+    },
+    {
+      "day": 28,
+      "title": "Testing the Message a Person Would Actually Receive",
+      "date": "2026-09-24",
+      "url": "https://juribuora.github.io/labs/2026/09/24/lab-28-day-236.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "securitytesting",
+        "outputvalidation",
+        "detectionengineering",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-28-day-236",
+      "sourcePath": "Labs/_posts/2026-09-24-lab-28-day-236.md",
+      "contentPath": "/generated/posts/lab/28.json"
+    },
+    {
       "day": 27,
       "title": "Assessing a Found USB Drive Without Plugging It In",
       "date": "2026-09-22",
@@ -4432,6 +4856,7 @@ export const jekyllSnapshot: LoadedPosts = {
     "aiagents",
     "aios",
     "aisecurity",
+    "ai安全",
     "approvals",
     "approvalworkflow",
     "appsec",
@@ -4464,7 +4889,9 @@ export const jekyllSnapshot: LoadedPosts = {
     "cicd",
     "codereview",
     "commandline",
+    "configurationmanagement",
     "consistency",
+    "contentextraction",
     "continuousimprovement",
     "controlplaneconfusion",
     "costtracking",
@@ -4503,6 +4930,8 @@ export const jekyllSnapshot: LoadedPosts = {
     "emailsecurity",
     "encryption",
     "endpointsecurity",
+    "evaluation",
+    "evidence",
     "evidencebased",
     "evidencegating",
     "failclosed",
@@ -4512,6 +4941,7 @@ export const jekyllSnapshot: LoadedPosts = {
     "featureflags",
     "filepermissions",
     "filesystem",
+    "forensics",
     "foundations",
     "git",
     "github",
@@ -4534,6 +4964,7 @@ export const jekyllSnapshot: LoadedPosts = {
     "identityverification",
     "incidentresponse",
     "independentreview",
+    "informationsecurity",
     "inputvalidation",
     "integrity",
     "ios",
@@ -4544,6 +4975,7 @@ export const jekyllSnapshot: LoadedPosts = {
     "kalilinux",
     "knowledgemanagement",
     "labs",
+    "launchagent",
     "launchd",
     "learninginpublic",
     "learningprocess",
@@ -4582,9 +5014,11 @@ export const jekyllSnapshot: LoadedPosts = {
     "obsidian",
     "ollama",
     "openssl",
+    "operationalsafety",
     "operationalsecurity",
     "orchestration",
     "osint",
+    "outputvalidation",
     "owasp",
     "packagemanagement",
     "packets",
@@ -4603,9 +5037,11 @@ export const jekyllSnapshot: LoadedPosts = {
     "processes",
     "productionrollback",
     "productsecurity",
+    "progressivedisclosure",
     "provenance",
     "python",
     "qualityassurance",
+    "qualitygates",
     "raceconditions",
     "rag",
     "rbenv",
@@ -4622,8 +5058,11 @@ export const jekyllSnapshot: LoadedPosts = {
     "riskassessment",
     "riskmanagement",
     "riskscoring",
+    "rollback",
+    "routingpolicy",
     "rss",
     "ruby",
+    "runtimeverification",
     "scheduling",
     "secretredaction",
     "secretscanning",
@@ -4632,7 +5071,11 @@ export const jekyllSnapshot: LoadedPosts = {
     "securedelivery",
     "securemessaging",
     "securityassessment",
+    "securityoperations",
+    "securitytesting",
     "shadowdeployment",
+    "shadowmode",
+    "skillcuration",
     "socialengineering",
     "sql",
     "sqlite",
@@ -4665,6 +5108,7 @@ export const jekyllSnapshot: LoadedPosts = {
     "verification",
     "virtualmachine",
     "visualization",
+    "voicesecurity",
     "vscode",
     "vulnerabilityassessment",
     "vulnerabilitymanagement",

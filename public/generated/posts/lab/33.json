@@ -1,0 +1,19 @@
+{
+  "day": 33,
+  "title": "Gate a Voice-Triggered Agent Job",
+  "date": "2026-09-30",
+  "url": "https://juribuora.github.io/labs/2026/09/30/lab-33-day-242.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "authorization",
+    "voicesecurity",
+    "humanintheloop",
+    "leastprivilege",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-33-day-242",
+  "sourcePath": "Labs/_posts/2026-09-30-lab-33-day-242.md",
+  "content": "## Lab Objective\n\nBuild a local, no-send confirmation gate that treats speech transcription as untrusted input and allows an agent job to start only after the authorized owner confirms the exact proposal.\n\n## Lab Environment\n\n- **Environment:** local Python test harness or equivalent small command dispatcher\n- **Input types:** typed text, voice transcription, and forwarded text\n- **Authorized surface:** one owner-controlled test channel\n- **Safety rule:** the harness never starts a real agent job or sends a message\n\n## Scenario\n\nA voice note says “Claude, check the repository.” Speech recognition may mishear the model name or the command. A forwarded message may look like it came from the owner. The system must offer a proposal and wait for an exact confirmation.\n\n## Step 1 - Create the Proposal\n\nNormalize the transcription only enough to display it. Assign a short, expiring confirmation code and store a hash of the proposed action. Do not execute the action at this stage.\n\n## Step 2 - Enforce the Caller Boundary\n\nRequire the expected platform, owner identifier, private channel, and non-forwarded source. Reject every other fixture before it reaches the dispatcher.\n\n## Step 3 - Confirm the Exact Proposal\n\nAccept `confirm <code>` only from the same authorized principal and only while the code is valid. The confirmation must refer to the stored proposal, not merely to a new piece of text that sounds similar.\n\n## Step 4 - Test Failure Fixtures\n\nTest a normal voice proposal, a misheard destructive phrase, a forwarded message, the wrong sender, an expired code, a reused code, and a confirmation for a different proposal. The expected result is offer, reject, reject, reject, reject, reject, and reject respectively.\n\n## Security Takeaways\n\n1. Transcription is data, not authorization.\n2. Confirmation must be bound to the exact proposed action.\n3. The executable gate must enforce identity and channel restrictions.\n4. Tests should prove that destructive-looking or forwarded input cannot start work.\n5. A no-send harness is safer than using a real person as a test endpoint.\n\n## Where This Applies Beyond the Lab\n\nThe same pattern fits administrative commands, password-reset workflows, deployment approvals, and high-impact actions exposed through chat or voice interfaces.\n\n<!-- 01-10-2026 14:35 -->\n"
+}

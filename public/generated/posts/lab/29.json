@@ -1,0 +1,19 @@
+{
+  "day": 29,
+  "title": "Reviewing an Agent Tool Bundle for Least Privilege",
+  "date": "2026-09-25",
+  "url": "https://juribuora.github.io/labs/2026/09/25/lab-29-day-237.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "leastprivilege",
+    "accesscontrol",
+    "supplychainsecurity",
+    "ai安全",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-29-day-237",
+  "sourcePath": "Labs/_posts/2026-09-25-lab-29-day-237.md",
+  "content": "## Lab Objective\n\nReview the effective tools exposed to an inbound messaging agent and remove capabilities that are unnecessary or credential-bearing.\n\n## Lab Environment\n\n- **Environment:** local agent configuration, tool resolver, and a test-only message surface\n- **Scenario:** a persona needs bounded lookups and local task tools\n- **Safety boundary:** do not send a message; do not unlock, fill, or inspect stored credentials\n- **Evidence:** resolved tool names and negative checks for forbidden tool categories\n\n## Scenario\n\nThe configuration declared a placeholder toolset that resolved to no real tools. The fix was not to attach every available tool. A universal bundle would have included browser-vault operations and would have expanded the authority of whoever could send an inbound message.\n\n## Step 1 - Inspect Effective Resolution\n\nDo not rely only on the configuration label. Resolve the surface through the same code path used at runtime and record:\n\n    surface\n    effective_tool_count\n    tool_names_or_categories\n    credential_capabilities\n    write_capabilities\n    network_capabilities\n\nIn the source exercise, the placeholder resolved to nothing. After a bounded bundle was attached, 19 tools were effective; the credential-bearing browser category was intentionally excluded from the 29-tool universe.\n\n## Step 2 - Classify Each Capability\n\nFor every tool, ask:\n\n- Can it read private files?\n- Can it reach a network or external account?\n- Can it use a browser session or stored credential?\n- Can it write durable state or schedule work?\n- Is it required for the task being tested?\n\nKeep the smallest set that answers the task. A tool that is merely interesting is not a justification for exposing it.\n\n## Step 3 - Test the Negative Boundary\n\nRun a local canary that requests an unavailable or forbidden capability. The expected result is a safe failure or a normal response that does not claim the action happened. Also verify that the tool schema does not expose credential operations.\n\n## Step 4 - Keep Prompt Guidance Narrow\n\nUse a short instruction to call an available tool instead of guessing and not mention internal tool use. Do not use prompt prose as the permission boundary. The schema and runtime resolver must enforce the capability decision.\n\n## Step 5 - Record the Result\n\n    requested_surface=inbound_messaging\n    resolved_tools=19\n    credential_tools=0\n    forbidden_tool_call=refused\n    external_action=not_performed\n\n## Security Takeaways\n\n1. Tool attachment is an authorization decision.\n2. A placeholder can create a capability gap; “attach everything” creates an authority gap.\n3. Credential-bearing tools deserve a separate review and usually a separate surface.\n4. Effective runtime resolution is stronger evidence than a configuration name.\n5. Negative controls prove that an unavailable capability stays unavailable.\n\n## Where This Applies Beyond the Lab\n\nThis review method applies to CI runners, serverless functions, browser extensions, chatbots, plugins, and integration accounts. Build a capability inventory before granting a new identity access to an existing tool bundle.\n\n<!-- 26-09-2026 21:29 -->\n"
+}

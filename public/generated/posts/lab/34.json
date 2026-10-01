@@ -1,0 +1,20 @@
+{
+  "day": 34,
+  "title": "Build an Evidence-Bounded Status Importer",
+  "date": "2026-10-01",
+  "url": "https://juribuora.github.io/labs/2026/10/01/lab-34-day-243.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "evidence",
+    "provenance",
+    "privacy",
+    "datagovernance",
+    "automationsecurity",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-34-day-243",
+  "sourcePath": "Labs/_posts/2026-10-01-lab-34-day-243.md",
+  "content": "## Lab Objective\n\nCreate a local importer that accepts only the metadata needed for a current-status brief, rejects content-bearing or stale records, and refuses to claim completion without a separate artifact.\n\n## Lab Environment\n\n- **Environment:** local JSON fixtures, an allowlist validator, and a temporary ledger\n- **Accepted fields:** stable task ID, normalized state, source timestamp, and project/workspace ID\n- **Rejected fields:** previews, summaries, bodies, transcript paths, and raw session exports\n- **Freshness limit:** choose and document a short window, such as forty-eight hours\n\n## Scenario\n\nA daily report must show which tasks are active. Importing entire conversations would expand the privacy boundary and make the report difficult to audit. The report also must not call a task complete merely because an inventory entry exists.\n\n## Step 1 - Define the Allowlist\n\nWrite the accepted schema first. Reject unknown fields rather than persisting them and filtering later. Include the source timestamp and adapter name so the observation can be explained.\n\n## Step 2 - Validate Fixtures\n\nAccept a valid metadata-only receipt. Reject fixtures containing a preview, summary, transcript path, duplicate task, malformed timestamp, or unsupported state. Record only the rejection reason and stable test ID.\n\n## Step 3 - Enforce Freshness\n\nCompare each source timestamp with the current time. Label records outside the freshness window as stale and exclude them from current-state decisions. A fresh record remains an observation, not completion proof.\n\n## Step 4 - Separate Status From Completion\n\nRender “observed active” or “last status received.” Require a separate completion artifact before rendering “completed.” A task title, count, or AI-generated sentence is not enough.\n\n## Step 5 - Verify the No-Send Preview\n\nRun a preview that updates only the temporary ledger and produces no outbound delivery. Confirm that a second run does not create a duplicate receipt for the same source observation.\n\n## Security Takeaways\n\n1. Reject sensitive fields at the source boundary.\n2. Freshness is part of the meaning of a status record.\n3. Historical context must not masquerade as current state.\n4. “Not proven” is a useful, testable outcome.\n5. Independent checks should verify the producer's claim rather than repeat it.\n\n## Where This Applies Beyond the Lab\n\nThis pattern fits SOC dashboards, incident queues, backup reports, deployment monitors, and compliance evidence where a small, current receipt is safer than a copied transcript.\n\n<!-- 01-10-2026 14:35 -->\n"
+}
