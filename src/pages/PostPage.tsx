@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
-import { stripHtmlComments } from "@/lib/postContent";
+import { resolvePostImages, stripHtmlComments } from "@/lib/postContent";
 import "highlight.js/styles/github-dark.css";
 import BlogHeader from "@/components/BlogHeader";
 import BlogFooter from "@/components/BlogFooter";
@@ -93,7 +93,7 @@ const PostPage = () => {
   const loading = !!post && contentState.path !== post.contentPath;
   const error = !!post && contentState.path === post.contentPath && contentState.error;
   const rawContent = contentState.path === post?.contentPath ? contentState.content : null;
-  const content = useMemo(() => (rawContent ? stripHtmlComments(rawContent) : rawContent), [rawContent]);
+  const content = useMemo(() => (rawContent ? resolvePostImages(stripHtmlComments(rawContent)) : rawContent), [rawContent]);
 
   useCodeCopyButtons(!loading && !error && !!content);
 
@@ -131,7 +131,7 @@ const PostPage = () => {
       <BlogHeader />
       <ScrollToTop />
 
-      <div className="container mx-auto px-4 py-12 flex gap-8 max-w-5xl">
+      <main className="container mx-auto px-4 py-12 flex gap-8 max-w-5xl">
         <article className="min-w-0 flex-1 max-w-3xl">
           <Link
             to={post.category === "portfolio" ? collectionPath(post.category) : "/"}
@@ -259,7 +259,7 @@ const PostPage = () => {
         </article>
 
         <TableOfContents contentReady={!loading && !error && !!content} />
-      </div>
+      </main>
 
       <BlogFooter />
     </div>

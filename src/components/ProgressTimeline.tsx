@@ -2,12 +2,16 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { usePosts } from "@/hooks/usePosts";
 import { Progress } from "@/components/ui/progress";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const GOAL_DAYS = 240;
 
 const ProgressTimeline = () => {
   const { posts } = usePosts();
   const [hoveredDay, setHoveredDay] = useState<number | null>(null);
+  // On a phone the grid cells are about 10px wide, far below a usable touch target,
+  // so there they are a picture of progress and the post list below is the way in.
+  const isMobile = useIsMobile();
 
   const sortedPosts = useMemo(
     () => [...posts].sort((a, b) => a.day - b.day),
@@ -56,9 +60,15 @@ const ProgressTimeline = () => {
           <span>Day 1</span>
           <span className="text-primary">{totalDays} days logged</span>
         </div>
-        <Progress value={(totalDays / GOAL_DAYS) * 100} className="h-2" />
+        <Progress
+          value={Math.min(100, (totalDays / GOAL_DAYS) * 100)}
+          className="h-2"
+          aria-label={`Progress toward the ${GOAL_DAYS}-day goal`}
+        />
         <p className="font-mono text-[11px] text-muted-foreground mt-1">
-          {Math.round((totalDays / GOAL_DAYS) * 100)}% toward {GOAL_DAYS}-day goal
+          {totalDays >= GOAL_DAYS
+            ? `${GOAL_DAYS}-day goal reached, ${totalDays - GOAL_DAYS} days past it`
+            : `${Math.round((totalDays / GOAL_DAYS) * 100)}% toward ${GOAL_DAYS}-day goal`}
         </p>
       </div>
 
@@ -67,12 +77,14 @@ const ProgressTimeline = () => {
         <h3 className="font-mono text-[11px] text-muted-foreground mb-3 uppercase tracking-wider">
           Activity Grid
         </h3>
-        <div className="grid gap-[2px]" style={{ gridTemplateColumns: 'repeat(30, 1fr)' }}>
-          {Array.from({ length: GOAL_DAYS }, (_, i) => {
+        <div className="grid gap-[2px] grid-cols-[repeat(30,1fr)] md:grid-cols-[repeat(26,1fr)]">
+          {Array.from({ length: Math.max(GOAL_DAYS, totalDays) }, (_, i) => {
             const day = i + 1;
             const post = sortedPosts.find((p) => p.day === day);
             const isActive = !!post;
-            return isActive ? (
+            return isActive && isMobile ? (
+              <div key={day} className="aspect-square rounded-[2px] bg-primary" title={`Day ${day}: ${post.title}`} />
+            ) : isActive ? (
               <Link
                 key={day}
                 to={`/${post.category}/${post.day}`}
@@ -80,6 +92,7 @@ const ProgressTimeline = () => {
                 onMouseLeave={() => setHoveredDay(null)}
                 className="aspect-square rounded-[2px] transition-all duration-200 bg-primary hover:bg-primary/80 hover:scale-150 cursor-pointer"
                 title={`Day ${day}: ${post.title}`}
+                aria-label={`Day ${day}: ${post.title}`}
               />
             ) : (
               <div

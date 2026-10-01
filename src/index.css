@@ -49,7 +49,7 @@ All colors MUST be HSL.
     --sidebar-ring: 142 70% 35%;
 
     --terminal-green: 142 70% 35%;
-    --terminal-dim: 142 30% 60%;
+    --terminal-dim: 142 45% 28%;
     --glow-green: 142 100% 40%;
   }
 
@@ -94,7 +94,7 @@ All colors MUST be HSL.
     --sidebar-ring: 142 70% 45%;
 
     --terminal-green: 142 70% 45%;
-    --terminal-dim: 142 30% 25%;
+    --terminal-dim: 142 30% 62%;
     --glow-green: 142 100% 50%;
   }
 }

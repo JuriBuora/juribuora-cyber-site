@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { stripHtmlComments } from "./postContent";
+import { resolvePostImages, stripHtmlComments } from "./postContent";
 
 describe("stripHtmlComments", () => {
   it("removes a trailing edit stamp", () => {
@@ -30,5 +30,26 @@ describe("stripHtmlComments", () => {
   it("returns ordinary markdown unchanged", () => {
     const md = "# Title\n\nPlain text.\n\n- item\n";
     expect(stripHtmlComments(md)).toBe(md);
+  });
+});
+
+describe("resolvePostImages", () => {
+  it("points site-absolute images at the source site", () => {
+    expect(resolvePostImages("![a](/assets/images/posts/x.png)")).toBe(
+      "![a](https://juribuora.github.io/assets/images/posts/x.png)",
+    );
+  });
+
+  it("unwraps a Liquid relative_url and encodes spaces", () => {
+    expect(resolvePostImages("![t]({{ '/assets/images/posts/day-38/Shot 1.png' | relative_url }})")).toBe(
+      "![t](https://juribuora.github.io/assets/images/posts/day-38/Shot%201.png)",
+    );
+  });
+
+  it("does not double-encode, and leaves external and relative images alone", () => {
+    expect(resolvePostImages("![](/a/b%20c.png)")).toBe("![](https://juribuora.github.io/a/b%20c.png)");
+    expect(resolvePostImages("![x](https://example.com/i.png) ![y](local.png)")).toBe(
+      "![x](https://example.com/i.png) ![y](local.png)",
+    );
   });
 });

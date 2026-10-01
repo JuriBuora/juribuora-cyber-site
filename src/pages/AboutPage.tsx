@@ -37,6 +37,7 @@ const AboutPage = () => {
     <div className="min-h-screen bg-background">
       <ScrollToTop />
       <BlogHeader />
+      <main>
 
       {/* Hero */}
       <section className="relative border-b border-border bg-card">
@@ -210,6 +211,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+      </main>
 
       <BlogFooter />
     </div>

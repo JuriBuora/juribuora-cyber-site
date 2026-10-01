@@ -1,4 +1,6 @@
 import heroBg from "@/assets/hero-bg.jpg";
+import heroBgWide from "@/assets/hero-bg-1600.webp";
+import heroBgNarrow from "@/assets/hero-bg-800.webp";
 import { usePosts } from "@/hooks/usePosts";
 import { formatPostDate } from "@/lib/postDates";
 
@@ -17,13 +19,18 @@ const HeroSection = () => {
   const range = formatRange([...posts, ...labs].map((p) => p.date));
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-      <img
-        src={heroBg}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
-        width={1920}
-        height={1080}
-      />
+      <picture>
+        <source type="image/webp" srcSet={`${heroBgNarrow} 800w, ${heroBgWide} 1600w`} sizes="100vw" />
+        <img
+          src={heroBg}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          decoding="async"
+        />
+      </picture>
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
         <div className="inline-block mb-4">

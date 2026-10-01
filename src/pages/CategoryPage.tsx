@@ -50,6 +50,7 @@ const CategoryPage = () => {
     <div className="min-h-screen bg-background">
       <ScrollToTop />
       <BlogHeader />
+      <main>
 
       <section className="border-b border-border bg-card">
         <div className="container mx-auto max-w-4xl px-4 py-14">
@@ -83,6 +84,8 @@ const CategoryPage = () => {
       </section>
 
       <PostList key={canonicalPath} lockedTab={normalizedCollection} />
+      </main>
+
       <BlogFooter />
     </div>
   );

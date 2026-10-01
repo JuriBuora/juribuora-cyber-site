@@ -8,6 +8,7 @@
     <link rel="canonical" href="https://juribuora.com/" />
     <meta name="description" content="A public, structured learning log documenting Juri Buora's journey from zero to cybersecurity — daily logs, hands-on labs, and honest notes." />
     <meta name="author" content="Juri Buora" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="theme-color" content="#0a0a0a" />
 
     <!-- Open Graph -->
@@ -25,16 +26,8 @@
     <meta name="twitter:description" content="A public, structured learning log: daily logs, hands-on labs, and honest notes on the journey into cybersecurity." />
     <meta name="twitter:image" content="https://juribuora.com/og-image.png" />
 
-    <!-- GitHub Pages SPA redirect (paired with public/404.html) -->
-    <script>
-      (function () {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
-        }
-      })();
-    </script>
+    <!-- GitHub Pages SPA redirect (paired with public/404.html). A file, not inline, so the policy below needs no script exception. -->
+    <script src="/spa-redirect.js"></script>
   </head>
   <body>
     <div id="root"></div>

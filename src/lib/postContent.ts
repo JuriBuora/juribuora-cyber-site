@@ -66,3 +66,21 @@ export function stripHtmlComments(markdown: string): string {
 
   return out.join("\n").replace(/\n+$/, "\n");
 }
+
+const SOURCE_SITE = "https://juribuora.github.io";
+
+/**
+ * Makes images written for the Jekyll site load here too.
+ *
+ * Posts reference images as `/assets/...` or through Liquid
+ * (`{{ '/assets/x y.png' | relative_url }}`). Those files live on the source
+ * site, and Liquid is not run here, so both forms were broken images.
+ */
+export function resolvePostImages(markdown: string): string {
+  return markdown.replace(/(!\[[^\]]*\]\()([^)]*)(\))/g, (_all, open: string, target: string, close: string) => {
+    const liquid = target.match(/^\{\{\s*['"]([^'"]+)['"]\s*\|\s*relative_url\s*\}\}$/);
+    const path = (liquid ? liquid[1] : target).trim();
+    if (!path.startsWith("/")) return `${open}${target}${close}`;
+    return `${open}${SOURCE_SITE}${encodeURI(decodeURI(path))}${close}`;
+  });
+}
