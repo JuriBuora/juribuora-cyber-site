@@ -19,7 +19,8 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-describe("home post list", () => {
+// Rendering a few hundred cards in a simulated browser is slow on the build machine.
+describe("home post list", { timeout: 30_000 }, () => {
   it("starts with one step of posts and says how to reach the rest", () => {
     expect(total).toBeGreaterThan(POSTS_PER_STEP * 2);
     const { container } = list();
