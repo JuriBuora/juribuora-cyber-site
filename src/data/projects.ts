@@ -26,6 +26,8 @@ export type Project = {
   /** Retired projects: how it could be brought back. */
   restore?: string;
   link?: { label: string; href: string; external?: boolean };
+  /** Related posts on this site. */
+  reading?: { label: string; to: string }[];
   related?: string[];
 };
 
@@ -107,13 +109,54 @@ export const projects: Project[] = [
     related: ["foresight", "supervisor", "qwen-lane"],
   },
   {
+    slug: "messaging-assistant",
+    name: "WhatsApp auto-reply assistant",
+    status: "active",
+    period: "Aug 2026 – now",
+    tagline: "An assistant that answers on a messaging app, built around one idea: a message cannot be unsent, so the moment before delivery is the control point.",
+    why: [
+      "I wanted an assistant that could handle routine messages in my own conversations while I am busy.",
+      "A reply to a real person is irreversible. That makes the delivery boundary the place to put the controls, not the prompt.",
+    ],
+    what: [
+      "A model with a prompt, a refusing filter at the delivery boundary, and a shaping step that rewrites replies that are good but badly formed.",
+      "Per-conversation on and off, and a temporary tone instruction that expires by itself.",
+      "Calendar-aware answers that use dated lookups rather than asking the model to work out weekdays.",
+      "A measurement setup in three layers: a probe of 123 scenarios run three times each that never sends, a canary that runs one real turn through the production path, and unit tests for the delivery rules.",
+    ],
+    decisions: [
+      "Prompts plateau and mechanisms hold. Each recurring defect moved from a prompt rule to a filter or shaping rule.",
+      "The credential vault tools are switched off on this surface, because the caller is whoever messages me.",
+      "The tool manual is not given to the model on this surface. Cutting the assembled prompt from 61,923 to 28,790 characters reduced assistant-sounding output.",
+      "Silence beats a degraded reply. When the preferred model is unavailable the assistant stays quiet rather than answering with a weaker model.",
+      "A reply must trace to a recent inbound message: one grant per chat, used once, expiring in five minutes (described in my learning log).",
+    ],
+    outcome: [
+      "Running. Two nights of measuring found a long list of defects. Examples: 1,178 characters of model reasoning delivered as the message, raw provider errors and voice-note transcripts reaching the sender, and replies of 700 characters where two sentences were wanted. Each became a filter or shaping rule that is now tested.",
+      "A weak local model turned out to be the root cause of a whole day's defects. Moving this surface to a hosted model fixed more than any wording change had.",
+    ],
+    learned:
+      "Treat the assistant like a system under test: measure it repeatedly, fix the harness when the harness is wrong, and put the hard rules where the model cannot talk its way past them.",
+    evidence: [
+      "the private issue list of defects found on 25–26 Sep 2026",
+      "three posts in my public learning log, linked below",
+    ],
+    tags: ["LLM safety", "Egress filtering", "Adversarial testing", "Capability-based authorisation"],
+    reading: [
+      { label: "Red-teaming my own chatbot (day 200)", to: "/blog/200" },
+      { label: "A reply is a capability, not a suggestion (day 206)", to: "/blog/206" },
+      { label: "Lab 17: a minimal adversarial test harness", to: "/labs/17" },
+    ],
+    related: ["foresight", "hermes-gateway"],
+  },
+  {
     slug: "foresight",
     name: "Foresight: a pre-mortem and release gate",
     status: "active",
     period: "Aug 2026 – now",
     tagline: "A checklist of 34 ways things break, plus a tool that refuses to call work done until each relevant one is proven.",
     why: [
-      "A messaging assistant I run produced about a dozen defects over two days: a duplicated greeting, internal model details sent to a contact, assistant-sounding replies where a person was expected, a group chat silently skipped.",
+      "A WhatsApp auto-reply assistant I run produced about a dozen defects over two days: a duplicated greeting, internal model details sent to a contact, assistant-sounding replies where a person was expected, a group chat silently skipped.",
       "Every defect was found by reading what real people had already received. I wanted to find the same failures at my desk instead.",
     ],
     what: [
@@ -124,7 +167,7 @@ export const projects: Project[] = [
     ],
     decisions: [
       "Size is not a risk proxy. The size floor that skips tiny changes is suspended for the red zone, because a one-line change can flip a security setting.",
-      "Prefer a mechanism to an instruction. A persona rule held 5 times in 6 trials, which is not a guarantee on a surface a real person reads, so the hard constraint also exists as an outbound filter.",
+      "Prefer a mechanism to an instruction. A voice rule held 5 times in 6 trials, which is not a guarantee on a surface a real person reads, so the hard constraint also exists as an outbound filter.",
       "Never use an unaware real person as the test. Use a test recipient, a sandbox or a canary I own.",
       "Hashes bind code, not the world, so proofs that depend on external state record what was observed and when.",
     ],
@@ -138,7 +181,7 @@ export const projects: Project[] = [
       "the 34-row catalogue; failure counts from repeated trials",
     ],
     tags: ["Risk analysis", "Change control", "Verification", "Defence in depth"],
-    related: ["hermes-gateway", "supervisor", "continuity"],
+    related: ["messaging-assistant", "hermes-gateway", "supervisor", "continuity"],
   },
   {
     slug: "supervisor",

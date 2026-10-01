@@ -45,6 +45,9 @@ const WorkstationPage = () => (
             Ask for a live walkthrough
           </a>
         </div>
+        <p className="mt-5 text-sm text-muted-foreground">
+          Short on time? Read <Link to="/what-im-doing" className="text-primary underline underline-offset-4">what I'm doing</Link>, the five-minute version.
+        </p>
       </div>
     </section>
 

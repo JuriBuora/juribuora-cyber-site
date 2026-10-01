@@ -4,10 +4,14 @@ import dataSrc from "./workstation.ts?raw";
 import projectsSrc from "./projects.ts?raw";
 import pageSrc from "../pages/WorkstationPage.tsx?raw";
 import projectPageSrc from "../pages/ProjectPage.tsx?raw";
+import doingSrc from "./doing.ts?raw";
+import doingPageSrc from "../pages/WhatImDoingPage.tsx?raw";
+import visualsSrc from "../components/doing/Visuals.tsx?raw";
 import chartSrc from "../components/workstation/ActivityChart.tsx?raw";
 import stackSrc from "../components/workstation/ArchitectureStack.tsx?raw";
 import { caseStudies, stats, weeklyCommits, weeklyCommitsTotal } from "./workstation";
 import { projectBySlug, projects, statusLabel } from "./projects";
+import { chapters } from "./doing";
 
 describe("workstation page content", () => {
   it("weekly series sums to the headline commit total", () => {
@@ -20,7 +24,7 @@ describe("workstation page content", () => {
   });
 
   it("source files contain nothing private", () => {
-    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc };
+    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc, doingSrc, doingPageSrc, visualsSrc };
     for (const [name, text] of Object.entries(files)) {
       expect({ name, hits: scrub(text) }).toEqual({ name, hits: [] });
     }
@@ -39,7 +43,7 @@ describe("workstation page content", () => {
       "id 7374750226",
       "Juri Personale",
       "Antonella",
-      "the family group on WhatsApp",
+      "the family group chat",
       "someone@example.org",
     ];
     expect(planted.map((p) => scrub(p).length > 0)).toEqual(planted.map(() => true));
@@ -75,6 +79,15 @@ describe("project pages", () => {
   it("related links and case-study slugs resolve", () => {
     for (const p of projects) for (const r of p.related ?? []) expect(projectBySlug(r), `${p.slug} -> ${r}`).toBeDefined();
     for (const c of caseStudies) expect(projectBySlug(c.slug), c.slug).toBeDefined();
+  });
+
+  it("every what-im-doing chapter links to a real project page", () => {
+    for (const c of chapters) expect(projectBySlug(c.slug), c.slug).toBeDefined();
+  });
+
+  it("every mockup says it is illustrative or sourced", () => {
+    const labels = visualsSrc.match(/Illustrative example|Real numbers from|paraphrased|Simplified diagram/g) ?? [];
+    expect(labels.length).toBeGreaterThanOrEqual(5);
   });
 
   it("slugs cannot collide with top-level routes", () => {

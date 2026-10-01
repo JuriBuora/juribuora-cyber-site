@@ -122,7 +122,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Release gate",
     title: "Foresight: find the failure at the desk, not on a real person",
     problem:
-      "An AI assistant I run sends messages to real people. Over two days its output produced about a dozen defects: a duplicated greeting, internal model details sent to a contact, assistant-sounding replies in a personal chat, and a group chat silently skipped. Every one was found by reading what people had already received.",
+      "A WhatsApp auto-reply assistant I run sends messages to real people. Over two days its output produced about a dozen defects: a duplicated greeting, internal model details sent to a contact, assistant-sounding replies in a personal chat, and a group chat silently skipped. Every one was found by reading what people had already received.",
     lesson:
       "Where a failure would reach a person, build a mechanism. A written rule is a quality hint, not a control.",
     skills: ["Risk analysis", "Change control", "Defence in depth", "Verification design"],

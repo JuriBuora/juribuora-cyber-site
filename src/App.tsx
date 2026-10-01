@@ -11,6 +11,7 @@ const CategoryPage = lazy(() => import("./pages/CategoryPage.tsx"));
 const PortfolioPage = lazy(() => import("./pages/PortfolioPage.tsx"));
 const WorkstationPage = lazy(() => import("./pages/WorkstationPage.tsx"));
 const ProjectPage = lazy(() => import("./pages/ProjectPage.tsx"));
+const WhatImDoingPage = lazy(() => import("./pages/WhatImDoingPage.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const App = () => (
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/what-im-doing" element={<WhatImDoingPage />} />
             <Route path="/workstation" element={<WorkstationPage />} />
             <Route path="/workstation/:slug" element={<ProjectPage />} />
             <Route path="/:collection" element={<CategoryPage />} />

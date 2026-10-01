@@ -121,6 +121,21 @@ const ProjectPage = () => {
             ))}
         </section>
 
+        {project.reading && project.reading.length > 0 && (
+          <section aria-labelledby="reading">
+            <h2 id="reading" className={eyebrow}>From my learning log</h2>
+            <ul className="mt-3 space-y-2 text-sm">
+              {project.reading.map((r) => (
+                <li key={r.to}>
+                  <Link to={r.to} className="text-primary underline underline-offset-4">
+                    {r.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {related.length > 0 && (
           <section aria-labelledby="related">
             <h2 id="related" className={eyebrow}>Related</h2>
