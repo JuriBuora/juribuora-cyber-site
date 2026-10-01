@@ -16,9 +16,9 @@ const BlogHeader = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between h-14 px-4">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2" aria-label="juri@security home">
           <Shield className="w-5 h-5 text-primary" />
-          <span className="font-mono text-sm font-semibold text-foreground">
+          <span className="hidden min-[480px]:inline font-mono text-sm font-semibold text-foreground">
             juri<span className="text-primary">@</span>security
           </span>
         </Link>
@@ -34,6 +34,12 @@ const BlogHeader = () => {
             className="px-2 py-1 rounded-md text-xs font-mono text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
           >
             Portfolio
+          </Link>
+          <Link
+            to="/workstation"
+            className="px-2 py-1 rounded-md text-xs font-mono text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
+          >
+            Workstation
           </Link>
           <button
             onClick={toggle}

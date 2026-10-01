@@ -10,6 +10,7 @@
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { projects } from "../src/data/projects";
 
 const SITE = "https://juribuora.com";
 const MANIFEST_PATH = path.resolve("public/generated/manifest.json");
@@ -143,6 +144,16 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
       title: "Portfolio — Juri Buora",
       description: "Selected cybersecurity work, labs, and engineering evidence from Juri Buora.",
     },
+    {
+      routePath: "/workstation",
+      title: "The Workstation — Juri Buora",
+      description: "A personal AI operations lab: local and cloud models, safety gates, and the case studies behind it. Built with AI pair-programming, reviewed by Juri Buora.",
+    },
+    ...projects.map((project) => ({
+      routePath: `/workstation/${project.slug}`,
+      title: `${project.name} — Juri Buora`,
+      description: project.tagline,
+    })),
     ...manifest.posts.map((post) => ({
       routePath: `/${post.category}/${post.day}`,
       title: `${post.title} — Juri Buora`,
@@ -197,6 +208,8 @@ export async function generateSitemap(outDir: string): Promise<void> {
     { loc: `${SITE}/labs`, lastmod: today, changefreq: "weekly", priority: 0.9 },
     { loc: `${SITE}/about`, lastmod: today, changefreq: "monthly", priority: 0.8 },
     { loc: `${SITE}/portfolio`, lastmod: today, changefreq: "monthly", priority: 0.8 },
+    { loc: `${SITE}/workstation`, lastmod: today, changefreq: "monthly", priority: 0.8 },
+    ...projects.map((p) => ({ loc: `${SITE}/workstation/${p.slug}`, lastmod: today, changefreq: "monthly", priority: 0.6 })),
   ];
 
   let mirroredEntries: Entry[] = [];
@@ -228,7 +241,7 @@ export async function generateSitemap(outDir: string): Promise<void> {
 export function sitemapPlugin() {
   return {
     name: "generate-sitemap",
-    apply: "build" as const,
+    apply: "build",
     async closeBundle() {
       await generateSitemap(path.resolve("dist"));
     },
