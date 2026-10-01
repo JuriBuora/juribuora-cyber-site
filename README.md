@@ -20,6 +20,10 @@ Public React/Vite site for [juribuora.com](https://juribuora.com/). It presents 
 4. The React app reads those local snapshots, so the browser does not depend on the GitHub API.
 5. GitHub Actions rebuilds the site on pushes and on a schedule.
 
+## Posts written ahead
+
+A post dated in the future can be pushed to the blog repository at any time. The content sync (`scripts/sync-jekyll-content.mjs`, rule in `scripts/release-date.mjs`) leaves out anything dated after today in Italy and prints what it held back, so the daily build publishes each post on its own date. To rehearse a later day locally: `SYNC_TODAY=2026-10-04 npm run build && npm test`, then run a normal build again before committing the generated files.
+
 ## Showcase pages
 
 - `/what-im-doing` is the short, outcome-first page. Content lives in `src/data/doing.ts`.

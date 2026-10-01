@@ -1,6 +1,7 @@
 import { existsSync } from "node:fs";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { isReleased, releaseDay } from "./release-date.mjs";
 
 const ROOT = process.cwd();
 const GENERATED_MANIFEST_TS = path.join(ROOT, "src/data/jekyllSnapshot.generated.ts");
@@ -222,6 +223,8 @@ function buildSummary(post) {
 async function buildSnapshot() {
   const files = await listSourceFiles();
   const collected = [];
+  const today = releaseDay();
+  const heldBack = [];
 
   for (const file of files) {
     const folderConfig = UPSTREAM.folders.find(({ folder }) => file.path.startsWith(`${folder}/_posts/`));
@@ -245,6 +248,12 @@ async function buildSnapshot() {
       frontMatter.date,
       dateFromName || new Date().toISOString().slice(0, 10),
     );
+
+    // Written ahead: it waits upstream and is picked up by the build on its own date.
+    if (!isReleased(date, today)) {
+      heldBack.push(`${folderConfig.category} ${day} (${date})`);
+      continue;
+    }
 
     const slug = filename
       .replace(/\.(?:md|markdown)$/i, "")
@@ -276,6 +285,12 @@ async function buildSnapshot() {
       content: stripFrontMatter(markdown),
     });
   }
+
+  console.log(
+    heldBack.length
+      ? `[jekyll-sync] Release day ${today}. Held back until their date: ${heldBack.sort().join(", ")}`
+      : `[jekyll-sync] Release day ${today}. Nothing is dated in the future.`,
+  );
 
   const posts = collected
     .filter((post) => post.category === "blog")
