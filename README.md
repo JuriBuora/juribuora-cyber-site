@@ -52,3 +52,15 @@ The custom domain is configured through `public/CNAME`.
 ## Notes for reviewers
 
 This is not meant to be a complex backend application. The point is to show that I can maintain a real public site, automate content ingestion, keep dependencies clean, test small pieces of behavior, and explain how the publishing flow works end to end.
+
+## Static route rendering
+
+Production builds render every route into its HTML shell, including the full Markdown body of each local post. `src/AppContent.tsx` owns the shared providers and routes; `src/App.tsx` supplies lazy browser pages and `src/prerender.tsx` supplies eager pages under `StaticRouter`. The sitemap plugin builds a temporary server renderer under `node_modules/.cache/`, reads post JSON from disk, writes the HTML bodies, and removes that renderer before finishing. Missing or invalid snapshots fail the build.
+
+The browser hydrates a matching shell. For post URLs it resolves the post from the static manifest and fetches its existing local JSON before hydration; other SPA navigations retain the existing post fetch. There is no inline state script. Dark theme and English are the initial render defaults; saved preferences are restored after mount with a transition so they cannot interrupt lazy hydration. If the initial post JSON fails to load, the static article remains readable and the hydration failure is logged.
+
+`vite preview` serves the generated shell for extensionless route URLs. Its preview-only middleware leaves unknown routes to the existing SPA fallback. The GitHub Pages 404 redirect remains unchanged; a restored URL that differs from the rendered shell uses client rendering.
+
+`npm run build && npm test` exercises all generated shells, post bodies, CSP, the existing privacy scrub, and preference hydration with an unresolved lazy page. A build is required for the artifact tests; they are skipped when `dist/` is absent.
+
+01-10-2026 19:42

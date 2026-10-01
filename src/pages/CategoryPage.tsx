@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { ArrowRight, BookOpen, FlaskConical } from "lucide-react";
-import { Link, Navigate, useLocation, useParams } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import BlogFooter from "@/components/BlogFooter";
 import BlogHeader from "@/components/BlogHeader";
 import PostList from "@/components/PostList";
@@ -32,6 +33,14 @@ const CategoryPage = () => {
   const { collection } = useParams<{ collection: string }>();
   const location = useLocation();
   const normalizedCollection = normalizeCollectionSlug(collection);
+  const navigate = useNavigate();
+  // Render alias content on both sides; canonicalize only after hydration.
+  useEffect(() => {
+    if (normalizedCollection === "blog" || normalizedCollection === "lab") {
+      const canonical = collectionPath(normalizedCollection);
+      if (trimTrailingSlash(location.pathname) !== canonical) navigate(canonical, { replace: true });
+    }
+  }, [normalizedCollection, location.pathname, navigate]);
 
   if (!normalizedCollection || normalizedCollection === "portfolio") {
     return <NotFound />;
@@ -41,9 +50,6 @@ const CategoryPage = () => {
   }
 
   const canonicalPath = collectionPath(normalizedCollection);
-  if (trimTrailingSlash(location.pathname) !== canonicalPath) {
-    return <Navigate replace to={canonicalPath} />;
-  }
 
   const alternateCollection = normalizedCollection === "blog" ? "lab" : "blog";
   const copy = COLLECTION_COPY[normalizedCollection];

@@ -27,6 +27,7 @@ export function shouldReloadForStaleBuild(now: number, lastReloadAt: string | nu
 export function lazyPage<T extends ComponentType<any>>(load: () => Promise<{ default: T }>) {
   return lazy(() =>
     load().catch((error: unknown) => {
+      if (typeof window === "undefined") throw error;
       let last: string | null;
       try {
         last = sessionStorage.getItem(RELOAD_KEY);

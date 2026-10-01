@@ -5,11 +5,14 @@
  * `scripts/sync-jekyll-content.mjs` and writes `dist/sitemap.xml` with entries
  * for the homepage, about page, and every mirrored post route.
  *
- * If the manifest is unavailable, the build still succeeds with a static-only
- * sitemap so deploys never fail on content sync hiccups.
+ * Renders route bodies from local data. Missing snapshots fail the build so
+ * incomplete HTML cannot be published silently.
  */
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { build } from "vite";
+import { pathToFileURL } from "node:url";
+import react from "@vitejs/plugin-react-swc";
 import { plainRoles } from "../src/data/plainRoles";
 import { projects } from "../src/data/projects";
 
@@ -115,6 +118,8 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
   const rootHtml = await readFile(path.join(outDir, "index.html"), "utf8");
 
   const routes: RouteShell[] = [
+    { routePath: "/", title: "From Zero to Cybersecurity — Juri Buora",
+      description: "A public, structured learning log documenting Juri Buora's journey from zero to cybersecurity — daily logs, hands-on labs, and honest notes." },
     {
       routePath: "/blog",
       title: "Blog Archive — Juri Buora",
@@ -206,17 +211,45 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
     })),
   ];
 
-  for (const route of routes) {
-    const routeHtml = injectRouteMeta(
-      rootHtml,
-      route.canonicalPath ?? route.routePath,
-      route.title,
-      route.description,
-      route.image,
-    );
-    const target = path.join(outDir, route.routePath.replace(/^\//, ""), "index.html");
-    await mkdir(path.dirname(target), { recursive: true });
-    await writeFile(target, routeHtml, "utf8");
+  // Bundle with production transforms: lazy pages are imported eagerly by the
+  // entry, and asset URLs match the client build. Keep server-only code out of dist.
+  const cacheDir = path.resolve("node_modules/.cache");
+  await mkdir(cacheDir, { recursive: true });
+  const serverDir = await mkdtemp(path.join(cacheDir, "prerender-"));
+  try {
+    await build({
+      configFile: false,
+      plugins: [react()],
+      publicDir: false,
+      logLevel: "warn",
+      resolve: { alias: { "@": path.resolve("src") }, dedupe: ["react", "react-dom"] },
+      build: { ssr: "src/prerender.tsx", outDir: serverDir, minify: false,
+        rolldownOptions: { output: { entryFileNames: "prerender.js" } } },
+    });
+    const { renderRoute } = await import(pathToFileURL(path.join(serverDir, "prerender.js")).href) as {
+      renderRoute: (location: string) => Promise<string>;
+    };
+    for (const route of routes) {
+      const body = await renderRoute(route.routePath);
+      if (!body.includes("<main") || !body.includes("<h1")) {
+        throw new Error(`Route did not render its content: ${route.routePath}`);
+      }
+      const routeHtml = injectRouteMeta(
+        rootHtml,
+        route.canonicalPath ?? route.routePath,
+        route.title,
+        route.description,
+        route.image,
+      ).replace('<div id="root"></div>', () => `<div id="root" data-prerendered-path="${escapeHtml(route.routePath)}">${body}</div>`);
+      if (routeHtml === rootHtml || !rootHtml.includes('<div id="root"></div>')) {
+        throw new Error("Missing root placeholder in Vite HTML template");
+      }
+      const target = path.join(outDir, route.routePath.replace(/^\//, ""), "index.html");
+      await mkdir(path.dirname(target), { recursive: true });
+      await writeFile(target, routeHtml, "utf8");
+    }
+  } finally {
+    await rm(serverDir, { recursive: true, force: true });
   }
 
   console.log(`[routes] Wrote ${routes.length} static route shells`);
@@ -256,19 +289,11 @@ export async function generateSitemap(outDir: string): Promise<void> {
     ...projects.map((p) => ({ loc: `${SITE}/workstation/${p.slug}`, lastmod: today, changefreq: "monthly", priority: 0.6 })),
   ];
 
-  let mirroredEntries: Entry[] = [];
-  let manifest: GeneratedManifest | null = null;
-
-  try {
-    manifest = await readManifest();
-    mirroredEntries = await readManifestEntries();
-    console.log(`[sitemap] Indexed ${mirroredEntries.length} mirrored post URLs`);
-  } catch (error) {
-    console.warn(
-      "[sitemap] Falling back to static-only sitemap:",
-      (error as Error).message,
-    );
-  }
+  // Missing or invalid snapshots must fail the build, rather than silently
+  // publishing empty or incomplete route shells.
+  const manifest = await readManifest();
+  const mirroredEntries = await readManifestEntries();
+  console.log(`[sitemap] Indexed ${mirroredEntries.length} mirrored post URLs`);
 
   const xml = renderXml([...staticEntries, ...mirroredEntries]);
   await mkdir(outDir, { recursive: true });

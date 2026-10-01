@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { startTransition, useEffect, useState } from "react";
 import type { Lang } from "@/data/plain";
 
 const LANG_KEY = "plain-words-lang";
@@ -15,7 +15,12 @@ function initialLang(): Lang {
 
 /** The reader's language for the plain-words pages: remembered, else taken from the browser. */
 export function usePlainLang(): [Lang, () => void] {
-  const [lang, setLang] = useState<Lang>(initialLang);
+  const [lang, setLang] = useState<Lang>("en");
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => startTransition(() => setLang(initialLang())), 0);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = lang;

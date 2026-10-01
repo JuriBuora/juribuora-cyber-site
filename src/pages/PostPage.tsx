@@ -18,18 +18,14 @@ import { formatPostDate } from "@/lib/postDates";
 
 const SKELETON_LINE_WIDTHS = [92, 78, 88, 64, 96, 72, 84, 68];
 
-const PostPage = () => {
+const PostPage = ({ initialContent }: { initialContent?: PostContentPayload }) => {
   const { category, day } = useParams<{ category: string; day: string }>();
   const { posts, labs, portfolio, reports } = usePosts();
   const [contentState, setContentState] = useState<{
     content: string | null;
     error: boolean;
     path: string | null;
-  }>({
-    content: null,
-    error: false,
-    path: null,
-  });
+  }>({ content: null, error: false, path: null });
 
   const allPosts = useMemo(
     () => [...posts, ...labs, ...portfolio, ...reports].sort((a, b) => a.day - b.day),
@@ -55,6 +51,9 @@ const PostPage = () => {
 
   useEffect(() => {
     if (!post) return;
+    if (initialContent?.category === post.category && initialContent.day === post.day) {
+      return;
+    }
 
     const controller = new AbortController();
 
@@ -88,11 +87,13 @@ const PostPage = () => {
       });
 
     return () => controller.abort();
-  }, [post]);
+  }, [post, initialContent]);
 
-  const loading = !!post && contentState.path !== post.contentPath;
-  const error = !!post && contentState.path === post.contentPath && contentState.error;
-  const rawContent = contentState.path === post?.contentPath ? contentState.content : null;
+  const suppliedContent = post && initialContent?.category === post.category && initialContent.day === post.day
+    ? initialContent.content : null;
+  const loading = !!post && suppliedContent === null && contentState.path !== post.contentPath;
+  const error = !!post && suppliedContent === null && contentState.path === post.contentPath && contentState.error;
+  const rawContent = suppliedContent ?? (contentState.path === post?.contentPath ? contentState.content : null);
   const content = useMemo(() => (rawContent ? resolvePostImages(stripHtmlComments(rawContent)) : rawContent), [rawContent]);
 
   useCodeCopyButtons(!loading && !error && !!content);
