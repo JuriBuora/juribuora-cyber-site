@@ -42,6 +42,10 @@ export type PlainContent = {
   outro: string;
   ctaContact: string;
   ctaDetail: string;
+  /** Labels for the seven role pages. */
+  roleMore: string;
+  roleBack: string;
+  roleNext: string;
 };
 
 const en: PlainContent = {
@@ -158,6 +162,9 @@ const en: PlainContent = {
     "I built a small AI workplace inside a laptop: the models are the brains, the agents do the work, a manager hands out the jobs, an archive remembers, and checks make sure the result is real and can be undone.",
   ctaContact: "Write to me",
   ctaDetail: "See the detailed version",
+  roleMore: "Which ones, and how",
+  roleBack: "All seven roles",
+  roleNext: "Next",
 };
 
 const it: PlainContent = {
@@ -274,6 +281,9 @@ const it: PlainContent = {
     "Ho costruito un piccolo posto di lavoro per l’IA dentro un portatile: i modelli sono i cervelli, gli agenti fanno il lavoro, un direttore distribuisce i compiti, un archivio ricorda, e i controlli garantiscono che il risultato sia vero e si possa annullare.",
   ctaContact: "Scrivimi",
   ctaDetail: "Vedi la versione dettagliata",
+  roleMore: "Quali, e come",
+  roleBack: "Tutti e sette i ruoli",
+  roleNext: "Avanti",
 };
 
 export const plain: Record<Lang, PlainContent> = { en, it };

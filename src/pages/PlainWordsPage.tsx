@@ -1,62 +1,22 @@
-import { useEffect, useState } from "react";
-import {
-  Archive,
-  ArrowRight,
-  BadgeCheck,
-  Brain,
-  Compass,
-  Hand,
-  Languages,
-  LifeBuoy,
-  Mail,
-  Users,
-  type LucideIcon,
-} from "lucide-react";
+import { ArrowRight, Languages, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import BlogFooter from "@/components/BlogFooter";
 import BlogHeader from "@/components/BlogHeader";
 import ScrollToTop from "@/components/ScrollToTop";
-import { plain, type Lang } from "@/data/plain";
+import { plain } from "@/data/plain";
+import { plainRoleSlugs } from "@/data/plainRoles";
 import { usePageTitle } from "@/hooks/usePageTitle";
-
-const castIcons: LucideIcon[] = [Brain, Users, Compass, Hand, Archive, BadgeCheck, LifeBuoy];
-const LANG_KEY = "plain-words-lang";
+import { usePlainLang } from "@/hooks/usePlainLang";
+import { castIcons } from "@/components/plain/castIcons";
 
 const kicker = "font-mono text-xs uppercase tracking-[0.2em] text-primary";
 const focus = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring";
 const h2 = "mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl";
 
-function initialLang(): Lang {
-  try {
-    const saved = localStorage.getItem(LANG_KEY);
-    if (saved === "en" || saved === "it") return saved;
-  } catch {
-    // storage can be unavailable; fall through to the browser language
-  }
-  return typeof navigator !== "undefined" && navigator.language?.toLowerCase().startsWith("it") ? "it" : "en";
-}
-
 const PlainWordsPage = () => {
-  const [lang, setLang] = useState<Lang>(initialLang);
+  const [lang, switchLang] = usePlainLang();
   const t = plain[lang];
   usePageTitle(t.kicker);
-
-  useEffect(() => {
-    document.documentElement.lang = lang;
-    return () => {
-      document.documentElement.lang = "en";
-    };
-  }, [lang]);
-
-  const switchLang = () => {
-    const next: Lang = lang === "en" ? "it" : "en";
-    setLang(next);
-    try {
-      localStorage.setItem(LANG_KEY, next);
-    } catch {
-      // not being able to remember the choice is harmless
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -91,17 +51,26 @@ const PlainWordsPage = () => {
               {t.cast.map((c, i) => {
                 const Icon = castIcons[i];
                 return (
-                  <li key={c.title} className="rounded-3xl border border-border bg-card p-5">
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
-                        <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
-                      </span>
-                      <div>
-                        <h3 className="text-base font-semibold text-card-foreground">{c.title}</h3>
-                        <p className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">{c.role}</p>
+                  <li key={c.title}>
+                    <Link
+                      to={`/in-plain-words/${plainRoleSlugs[i]}`}
+                      className={`group flex h-full flex-col rounded-3xl border border-border bg-card p-5 transition-colors hover:border-primary/50 ${focus}`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
+                          <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                        </span>
+                        <div>
+                          <h3 className="text-base font-semibold text-card-foreground">{c.title}</h3>
+                          <p className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">{c.role}</p>
+                        </div>
                       </div>
-                    </div>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
+                      <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
+                      <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary">
+                        {t.roleMore}
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </span>
+                    </Link>
                   </li>
                 );
               })}

@@ -10,6 +10,7 @@
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { plainRoles } from "../src/data/plainRoles";
 import { projects } from "../src/data/projects";
 
 const SITE = "https://juribuora.com";
@@ -176,6 +177,12 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
       description: "A personal AI operations lab: local and cloud models, safety gates, and the case studies behind it. Built with AI pair-programming, reviewed by Juri Buora.",
       image: SHOWCASE_IMAGE,
     },
+    ...plainRoles.en.map((role) => ({
+      routePath: `/in-plain-words/${role.slug}`,
+      title: `${role.title}, in plain words — Juri Buora`,
+      description: role.oneLine,
+      image: SHOWCASE_IMAGE,
+    })),
     ...projects.map((project) => ({
       routePath: `/workstation/${project.slug}`,
       title: `${project.name} — Juri Buora`,
@@ -245,6 +252,7 @@ export async function generateSitemap(outDir: string): Promise<void> {
     { loc: `${SITE}/what-im-doing`, lastmod: today, changefreq: "monthly", priority: 0.9 },
     { loc: `${SITE}/in-plain-words`, lastmod: today, changefreq: "monthly", priority: 0.9 },
     { loc: `${SITE}/workstation`, lastmod: today, changefreq: "monthly", priority: 0.8 },
+    ...plainRoles.en.map((r) => ({ loc: `${SITE}/in-plain-words/${r.slug}`, lastmod: today, changefreq: "monthly", priority: 0.7 })),
     ...projects.map((p) => ({ loc: `${SITE}/workstation/${p.slug}`, lastmod: today, changefreq: "monthly", priority: 0.6 })),
   ];
 

@@ -8,6 +8,8 @@ import doingSrc from "./doing.ts?raw";
 import doingPageSrc from "../pages/WhatImDoingPage.tsx?raw";
 import visualsSrc from "../components/doing/Visuals.tsx?raw";
 import plainSrc from "./plain.ts?raw";
+import plainRolesSrc from "./plainRoles.ts?raw";
+import plainRolePageSrc from "../pages/PlainRolePage.tsx?raw";
 import plainPageSrc from "../pages/PlainWordsPage.tsx?raw";
 import ogSrc from "../../scripts/assets/og.html?raw";
 import onePagerSrc from "../../scripts/assets/one-pager.html?raw";
@@ -17,6 +19,7 @@ import { caseStudies, stats, weeklyCommits, weeklyCommitsTotal } from "./worksta
 import { projectBySlug, projects, statusLabel } from "./projects";
 import { chapters } from "./doing";
 import { plain } from "./plain";
+import { plainRoles, plainRoleSlugs } from "./plainRoles";
 
 describe("workstation page content", () => {
   it("weekly series sums to the headline commit total", () => {
@@ -36,7 +39,7 @@ describe("workstation page content", () => {
   });
 
   it("source files contain nothing private", () => {
-    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc, doingSrc, doingPageSrc, visualsSrc, ogSrc, onePagerSrc, plainSrc, plainPageSrc };
+    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc, doingSrc, doingPageSrc, visualsSrc, ogSrc, onePagerSrc, plainSrc, plainPageSrc, plainRolesSrc, plainRolePageSrc };
     for (const [name, text] of Object.entries(files)) {
       expect({ name, hits: scrub(text) }).toEqual({ name, hits: [] });
     }
@@ -74,6 +77,17 @@ describe("plain-words page", () => {
 
   it("has one icon per cast member", () => {
     expect(plain.en.cast.length).toBe(7);
+  });
+
+  it("has a detail page for every role, in both languages, in the same order", () => {
+    expect(plainRoles.en.length).toBe(plain.en.cast.length);
+    expect(plainRoles.it.map((r) => r.slug)).toEqual(plainRoleSlugs);
+    plainRoles.en.forEach((role, i) => {
+      expect(role.title).toBe(plain.en.cast[i].title);
+      expect(plainRoles.it[i].title).toBe(plain.it.cast[i].title);
+      expect(plainRoles.it[i].items.length).toBe(role.items.length);
+      expect(plainRoles.it[i].lessons.length).toBe(role.lessons.length);
+    });
   });
 });
 
