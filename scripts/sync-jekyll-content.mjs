@@ -14,6 +14,7 @@ const UPSTREAM = {
   folders: [
     { folder: "Blog", category: "blog", urlPrefix: "blog" },
     { folder: "Labs", category: "lab", urlPrefix: "labs" },
+    { folder: "Portfolio-Material", category: "portfolio", urlPrefix: "portfolio-material" },
   ],
 };
 
@@ -86,12 +87,6 @@ function parseFrontMatter(markdown) {
   return output;
 }
 
-// Tags that reached the source repo garbled. Fix the source when possible;
-// this keeps the published tag list readable meanwhile.
-const TAG_ALIASES = {
-  "ai安全": "aisecurity",
-};
-
 function stripFrontMatter(markdown) {
   return markdown
     .replace(/^---\s*\r?\n[\s\S]*?\r?\n---\s*(\r?\n)?/, "")
@@ -107,6 +102,36 @@ function cleanTitle(rawTitle) {
     .trim();
 }
 
+const SUMMARY_MAX = 220;
+
+function plainText(markdown) {
+  return markdown
+    .replace(/`([^`]*)`/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// A post's one-line description for list pages: the `summary` front matter
+// when the author wrote one, otherwise the first paragraph of its TL;DR.
+function deriveSummary(frontMatter, body) {
+  if (typeof frontMatter.summary === "string" && frontMatter.summary.trim()) {
+    return frontMatter.summary.trim();
+  }
+  // Older posts have no TL;DR; their "Topic" or "Goal" section says the same thing.
+  const match = ["TL;DR", "Topic", "Goal"]
+    .map((heading) =>
+      body.match(new RegExp(`^#+[^\\n]*${heading}[^\\n]*\\n+([\\s\\S]*?)(?=\\n\\s*\\n|\\n#|\\n<!--|$)`, "im")),
+    )
+    .find(Boolean);
+  if (!match) return "";
+  const text = plainText(match[1]);
+  if (text.length <= SUMMARY_MAX) return text;
+  const cut = text.slice(0, SUMMARY_MAX);
+  return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
+}
+
 function normalizeDateString(value, fallback = "") {
   if (typeof value !== "string") return fallback;
   const match = value.match(/\b(\d{4}-\d{2}-\d{2})\b/);
@@ -114,6 +139,11 @@ function normalizeDateString(value, fallback = "") {
 }
 
 function deriveDay(filename, frontMatter, category) {
+  if (category === "portfolio") {
+    const parsed = parseInt(frontMatter.number ?? "", 10);
+    return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
+  }
+
   const frontMatterKey = category === "lab" ? "lab" : "day";
   const frontMatterValue =
     frontMatter[frontMatterKey] ?? frontMatter.number ?? frontMatter.order;
@@ -176,6 +206,7 @@ function buildSummary(post) {
   return {
     day: post.day,
     title: post.title,
+    summary: post.summary,
     date: post.date,
     url: post.url,
     category: post.category,
@@ -223,7 +254,7 @@ async function buildSnapshot() {
         ? [frontMatter.tags]
         : [];
 
-    const tags = rawTags.map((tag) => TAG_ALIASES[tag.toLowerCase()] ?? tag.toLowerCase()).filter(Boolean);
+    const tags = rawTags.map((tag) => tag.toLowerCase()).filter(Boolean);
 
     const title = cleanTitle(
       typeof frontMatter.title === "string" && frontMatter.title ? frontMatter.title : filename,
@@ -239,6 +270,7 @@ async function buildSnapshot() {
       slug,
       sourcePath: file.path,
       contentPath: `/generated/posts/${folderConfig.category}/${day}.json`,
+      summary: deriveSummary(frontMatter, stripFrontMatter(markdown)),
       content: stripFrontMatter(markdown),
     });
   }
@@ -249,10 +281,14 @@ async function buildSnapshot() {
   const labs = collected
     .filter((post) => post.category === "lab")
     .sort((left, right) => right.day - left.day);
+  const portfolio = collected
+    .filter((post) => post.category === "portfolio")
+    .sort((left, right) => right.day - left.day);
 
   const manifest = {
     posts: posts.map(buildSummary),
     labs: labs.map(buildSummary),
+    portfolio: portfolio.map(buildSummary),
     allTags: Array.from(new Set([...posts, ...labs].flatMap((post) => post.tags))).sort(),
     source: "snapshot",
     upstream: {
@@ -262,7 +298,7 @@ async function buildSnapshot() {
     },
   };
 
-  return { manifest, posts, labs };
+  return { manifest, posts, labs, portfolio };
 }
 
 async function writeIfChanged(targetPath, contents) {
@@ -287,7 +323,7 @@ async function writeGeneratedOutputs(snapshot) {
   writes += Number(await writeIfChanged(GENERATED_MANIFEST_TS, manifestTs));
   writes += Number(await writeIfChanged(GENERATED_MANIFEST_JSON, manifestJson));
 
-  for (const post of [...snapshot.posts, ...snapshot.labs]) {
+  for (const post of [...snapshot.posts, ...snapshot.labs, ...snapshot.portfolio]) {
     const payload = {
       day: post.day,
       title: post.title,
@@ -322,7 +358,8 @@ async function main() {
 
     console.log(
       `[sync] Snapshot ready: ${snapshot.manifest.posts.length} blog posts, ` +
-        `${snapshot.manifest.labs.length} labs (${totalPosts} total, ${writes} files written)`,
+        `${snapshot.manifest.labs.length} labs, ${snapshot.manifest.portfolio.length} portfolio pieces ` +
+        `(${totalPosts} posts and labs, ${writes} files written)`,
     );
   } catch (error) {
     const hasFallbackSnapshot =

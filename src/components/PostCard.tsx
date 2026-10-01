@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import type { Post } from "@/data/posts";
+import { entryLabel } from "@/lib/contentRoutes";
 import { formatPostDate } from "@/lib/postDates";
 
 const PostCard = ({ post, onTagClick }: { post: Post; onTagClick?: (tag: string) => void }) => {
@@ -19,13 +20,16 @@ const PostCard = ({ post, onTagClick }: { post: Post; onTagClick?: (tag: string)
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2 mb-2">
             <span className="font-mono text-xs text-primary">
-              {post.category === "lab" ? `Lab ${String(post.day).padStart(2, "0")}` : `Day ${String(post.day).padStart(2, "0")}`}
+              {entryLabel(post.category, post.day)}
             </span>
             <span className="text-xs text-muted-foreground">{formattedDate}</span>
           </div>
           <h3 className="text-sm md:text-base font-medium text-card-foreground group-hover:text-primary transition-colors leading-snug">
             {post.title}
           </h3>
+          {post.summary && (
+            <p className="mt-1.5 text-xs md:text-sm leading-relaxed text-muted-foreground line-clamp-2">{post.summary}</p>
+          )}
           <div className="flex flex-wrap gap-1.5 mt-2">
             {post.tags.map((tag) => (
               <button

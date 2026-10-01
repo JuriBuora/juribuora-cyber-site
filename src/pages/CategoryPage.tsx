@@ -33,7 +33,7 @@ const CategoryPage = () => {
   const location = useLocation();
   const normalizedCollection = normalizeCollectionSlug(collection);
 
-  if (!normalizedCollection) {
+  if (!normalizedCollection || normalizedCollection === "portfolio") {
     return <NotFound />;
   }
 

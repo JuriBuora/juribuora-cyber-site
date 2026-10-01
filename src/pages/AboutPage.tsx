@@ -2,6 +2,8 @@ import BlogHeader from "@/components/BlogHeader";
 import BlogFooter from "@/components/BlogFooter";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Shield, Target, BookOpen, Terminal, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { usePageTitle } from "@/hooks/usePageTitle";
 import { usePosts } from "@/hooks/usePosts";
 
 const GOAL_DAYS = 240;
@@ -11,7 +13,8 @@ const skills = [
   { category: "Operating Systems", items: ["Linux (CLI)", "Windows Security", "File Systems"] },
   { category: "Security Concepts", items: ["Phishing Analysis", "Malware Families", "LOLBins", "APT Groups", "Email Security"] },
   { category: "Tools & Platforms", items: ["TryHackMe", "GitHub", "Burp Suite", "SIEM Basics"] },
-  { category: "Programming", items: ["Python", "JavaScript", "Bash Scripting"] },
+  { category: "Programming", items: ["Python", "JavaScript", "Bash Scripting", "SQL"] },
+  { category: "AI & Automation Security", items: ["Agent Guardrails", "Output Filtering", "Adversarial Testing", "Least-Privilege Tooling"] },
   { category: "Documentation", items: ["Technical Writing", "Incident Reports", "Structured Logging"] },
 ];
 
@@ -22,12 +25,13 @@ const certifications = [
 ];
 
 const AboutPage = () => {
+  usePageTitle("About");
   const { posts, labs } = usePosts();
   const milestones = [
     { number: String(posts.length), label: "Days Logged" },
     { number: String(labs.length), label: "Labs Completed" },
-    { number: String(GOAL_DAYS), label: "Day Goal" },
-    { number: `${Math.round((posts.length / GOAL_DAYS) * 100)}%`, label: "Progress" },
+    { number: String(GOAL_DAYS), label: posts.length >= GOAL_DAYS ? "Day Goal, Reached" : "Day Goal" },
+    { number: `${Math.min(100, Math.round((posts.length / GOAL_DAYS) * 100))}%`, label: "Progress" },
   ];
   return (
     <div className="min-h-screen bg-background">
@@ -44,12 +48,24 @@ const AboutPage = () => {
             Juri Buora
           </h1>
           <p className="font-mono text-sm text-primary mb-4">
-            Aspiring Cybersecurity Professional
+            Security and AI operations · early career
           </p>
           <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto">
             I'm documenting my journey from zero to cybersecurity — building real skills through daily study,
             hands-on labs, and honest documentation, with a solid foundation in networking, Linux,
             web security, and threat analysis.
+          </p>
+          <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto mt-4">
+            Alongside the study I build and run real systems, mostly AI agents and the safety around them. The short
+            version is on{" "}
+            <Link to="/what-im-doing" className="text-primary underline underline-offset-4">
+              what I'm doing
+            </Link>
+            ; the security evidence is in the{" "}
+            <Link to="/portfolio" className="text-primary underline underline-offset-4">
+              portfolio
+            </Link>
+            .
           </p>
         </div>
       </section>
@@ -182,6 +198,13 @@ const AboutPage = () => {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-secondary transition-colors"
             >
               LinkedIn Profile
+              <ExternalLink className="w-4 h-4" />
+            </a>
+            <a
+              href="/juri-buora-one-pager.pdf"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-secondary transition-colors"
+            >
+              One-page PDF
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>

@@ -6,6 +6,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 243,
       "title": "An Evidence Pipeline Must Be Allowed to Say Not Proven",
+      "summary": "I worked on a local Resolver that summarizes open Codex and Claude work from historical sources. The security lesson was that a useful summary must preserve uncertainty instead of turning an inventory, a title, or an AI…",
       "date": "2026-10-01",
       "url": "https://juribuora.github.io/blog/2026/10/01/day-243.html",
       "category": "blog",
@@ -25,6 +26,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 242,
       "title": "A Voice Command Must Be Offered Before It Is Executed",
+      "summary": "I tested a voice path that can start work in Claude Code or Codex from a Telegram message. The security lesson was that transcription is input, not authorization.",
       "date": "2026-09-30",
       "url": "https://juribuora.github.io/blog/2026/09/30/day-242.html",
       "category": "blog",
@@ -43,6 +45,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 241,
       "title": "Fresh Task Metadata Is Not Proof of Completion",
+      "summary": "Fresh metadata can show current status. It cannot replace completion evidence, and it should not become a transcript archive.",
       "date": "2026-09-29",
       "url": "https://juribuora.github.io/blog/2026/09/29/day-241.html",
       "category": "blog",
@@ -61,6 +64,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 240,
       "title": "The Running Process Was the Source of Truth",
+      "summary": "A correct configuration file does not prove a running service changed. Read the process and service state.",
       "date": "2026-09-28",
       "url": "https://juribuora.github.io/blog/2026/09/28/day-240.html",
       "category": "blog",
@@ -79,6 +83,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 239,
       "title": "An Automated Calendar Write Needs Provenance, Not Just Extraction",
+      "summary": "Before an automation writes a calendar event, it needs source evidence, deterministic date handling, duplicate protection, and a receipt.",
       "date": "2026-09-27",
       "url": "https://juribuora.github.io/blog/2026/09/27/day-239.html",
       "category": "blog",
@@ -97,6 +102,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 238,
       "title": "The Egress Guard Needed to See What the Message Answered",
+      "summary": "The last message check needs enough context to understand the reply, and it must inspect the final shaped text before delivery.",
       "date": "2026-09-26",
       "url": "https://juribuora.github.io/blog/2026/09/26/day-238.html",
       "category": "blog",
@@ -115,6 +121,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 237,
       "title": "A Tool Schema Is a Capability Boundary, Not Documentation",
+      "summary": "Prompt prose can describe a capability, but only the effective tool schema grants one. Expose the smallest safe bundle.",
       "date": "2026-09-25",
       "url": "https://juribuora.github.io/blog/2026/09/25/day-237.html",
       "category": "blog",
@@ -133,6 +140,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 236,
       "title": "The First Completion Was Not the Delivered Reply",
+      "summary": "A model's first completion is not necessarily the message a person receives. Security tests must follow the real path to the delivery boundary.",
       "date": "2026-09-24",
       "url": "https://juribuora.github.io/blog/2026/09/24/day-236.html",
       "category": "blog",
@@ -151,6 +159,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 235,
       "title": "A Risk Score Is a Decision Aid, Not Evidence That I Scanned a System",
+      "summary": "A risk score helps decide what to investigate first. It is not a substitute for the scan, logs, configuration review, or authorized test that can prove what is actually happening.",
       "date": "2026-09-23",
       "url": "https://juribuora.github.io/blog/2026/09/23/day-235.html",
       "category": "blog",
@@ -169,6 +178,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 234,
       "title": "A Found USB Drive Is a Data Leak Before It Is a Malware Test",
+      "summary": "A found USB drive can attack through its files before it attacks through its code: report it, do not plug it in, and protect both the device and the information it carries.",
       "date": "2026-09-22",
       "url": "https://juribuora.github.io/blog/2026/09/22/day-234.html",
       "category": "blog",
@@ -187,6 +197,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 233,
       "title": "Information Is Raw; Intelligence Is What You Did With It",
+      "summary": "The internet already has almost everything you need to know — OSINT is just the discipline of turning \"I found this\" into \"here's what I'm doing about it,\" and it turns out I've been half-doing that with MITRE ATT&CK…",
       "date": "2026-09-21",
       "url": "https://juribuora.github.io/blog/2026/09/21/day-233.html",
       "category": "blog",
@@ -204,6 +215,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 232,
       "title": "A Castle Has Five Walls; So Does a Network",
+      "summary": "A castle doesn't rely on one wall, and neither should a network — and it turns out the SSRF defense I built weeks ago is literally on the industry's official top-ten list of things attackers go after most.",
       "date": "2026-09-20",
       "url": "https://juribuora.github.io/blog/2026/09/20/day-232.html",
       "category": "blog",
@@ -223,6 +235,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 231,
       "title": "A Fast Pipeline That Ships Vulnerabilities Is Still Fast",
+      "summary": "A CI/CD pipeline that ships fast but insecure isn't a security win — it's just a faster way to ship the same five vulnerability categories, automated and at scale.",
       "date": "2026-09-19",
       "url": "https://juribuora.github.io/blog/2026/09/19/day-231.html",
       "category": "blog",
@@ -242,6 +255,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 230,
       "title": "A Contractor's Access Outlived His Contract by Four Years",
+      "summary": "A legal contractor's contract ended in 2019; his Admin access didn't — and by the time a 2023 payroll event traced back to his account, the real lesson wasn't about him, it was about every access-control step that…",
       "date": "2026-09-18",
       "url": "https://juribuora.github.io/blog/2026/09/18/day-230.html",
       "category": "blog",
@@ -261,6 +275,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 229,
       "title": "A Hash Can't Be Decrypted Because It Was Never Encrypted",
+      "summary": "A hash isn't a weaker lock — it's not a lock at all. It can't be decrypted because nothing was ever meant to come back out, which is exactly what makes it good for proving nothing was tampered with.",
       "date": "2026-09-17",
       "url": "https://juribuora.github.io/blog/2026/09/17/day-229.html",
       "category": "blog",
@@ -279,6 +294,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 228,
       "title": "Two Keys, One Box: Making Sense of Asymmetric and Symmetric Encryption",
+      "summary": "PKI doesn't pick a favorite between symmetric and asymmetric encryption — it uses asymmetric to shake hands securely, then switches to symmetric because talking fast matters once you actually trust who you're talking to.",
       "date": "2026-09-16",
       "url": "https://juribuora.github.io/blog/2026/09/16/day-228.html",
       "category": "blog",
@@ -297,6 +313,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 227,
       "title": "A JOIN Is Just Data Enrichment With Extra Steps",
+      "summary": "JOINs stopped being four keywords to memorize once I saw them as one question repeated: what am I willing to lose — and the \"keep everything and show me what's missing\" pattern turned out to be the one I'll actually use…",
       "date": "2026-09-15",
       "url": "https://juribuora.github.io/blog/2026/09/15/day-227.html",
       "category": "blog",
@@ -315,6 +332,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 226,
       "title": "Privacy Needs a Lifecycle, an Owner, and Someone Accountable for Every Handoff",
+      "summary": "Protecting data means protecting every handoff: who decides, who handles it, who can access it, and when it should finally disappear.",
       "date": "2026-09-14",
       "url": "https://juribuora.github.io/blog/2026/09/14/day-226.html",
       "category": "blog",
@@ -333,6 +351,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 225,
       "title": "An Inventory Tells Me What I Have; Classification Tells Me How to Protect It",
+      "summary": "An inventory tells me what exists. Classification tells me what it is worth protecting and how careful I need to be.",
       "date": "2026-09-13",
       "url": "https://juribuora.github.io/blog/2026/09/13/day-225.html",
       "category": "blog",
@@ -350,6 +369,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 224,
       "title": "Time Windows Turn Login Rows Into an Investigation",
+      "summary": "Time and numeric filters make SQL useful for security triage. The key is not only knowing the operator; it is knowing whether its boundary matches the question I am trying to investigate.",
       "date": "2026-09-12",
       "url": "https://juribuora.github.io/blog/2026/09/12/day-224.html",
       "category": "blog",
@@ -368,6 +388,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 223,
       "title": "A Browser View Is the Evidence, Not the HTTP Guess",
+      "summary": "For public website checks, the browser’s rendered result is the evidence that matters. A possible technical signal becomes a claim only after the proof supports exactly what I am saying.",
       "date": "2026-09-11",
       "url": "https://juribuora.github.io/blog/2026/09/11/day-223.html",
       "category": "blog",
@@ -386,6 +407,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 222,
       "title": "The Safe Filter Belonged at the Last Delivery Boundary",
+      "summary": "Filtering the main reply path was not enough because direct handlers could bypass it. The safer control belongs at the final WhatsApp delivery boundary—and this repair stays labeled in progress until its final…",
       "date": "2026-09-10",
       "url": "https://juribuora.github.io/blog/2026/09/10/day-222.html",
       "category": "blog",
@@ -404,6 +426,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 221,
       "title": "Removing a Token From Code Was Only the First Half of the Incident",
+      "summary": "Deleting a token from code is containment. The incident is only remediated when the provider invalidates the old credential and the intended single consumer works with the replacement.",
       "date": "2026-09-09",
       "url": "https://juribuora.github.io/blog/2026/09/09/day-221.html",
       "category": "blog",
@@ -422,6 +445,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 220,
       "title": "An Empty Access List Was Not a Deny-All Rule",
+      "summary": "For Hermes, an empty WhatsApp tool list inherited global tools. Replacing it with an explicit deny boundary—and verifying the runtime result—was the real privacy control.",
       "date": "2026-09-08",
       "url": "https://juribuora.github.io/blog/2026/09/08/day-220.html",
       "category": "blog",
@@ -440,6 +464,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 219,
       "title": "An Upgrade Is Not Proven Until the Running Service Names Its Commit",
+      "summary": "An upgrade is not “done” because code was tested or copied. It is done when the running service can prove the commit and environment it is actually using, with a recovery plan that respects newer state.",
       "date": "2026-09-07",
       "url": "https://juribuora.github.io/blog/2026/09/07/day-219.html",
       "category": "blog",
@@ -458,6 +483,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 218,
       "title": "Discovering a Skill Is Not the Same as Proving It Ran",
+      "summary": "Hermes can generate real purchase-report PDFs now — but the gate that verifies it actually ran the skill won't accept \"the runtime found it\" as proof, and an inconclusive test stayed labeled inconclusive instead of…",
       "date": "2026-09-06",
       "url": "https://juribuora.github.io/blog/2026/09/06/day-218.html",
       "category": "blog",
@@ -476,6 +502,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 217,
       "title": "Waking a Machine Needed One Boolean; Putting It to Sleep Needed Its Own Bridge",
+      "summary": "Home Assistant can wake my Mac now with one boolean and zero new authority — and when I wanted sleep too, I built it its own narrow, loopback-only bridge instead of reaching for the easy shortcut.",
       "date": "2026-09-05",
       "url": "https://juribuora.github.io/blog/2026/09/05/day-217.html",
       "category": "blog",
@@ -494,6 +521,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 216,
       "title": "A Telegram Bot That Checks Who's Asking Twice",
+      "summary": "Gave myself remote power control over a second Mac through Telegram — but the bot checks who's actually asking twice, and the network path underneath it now heals itself instead of silently dropping.",
       "date": "2026-09-04",
       "url": "https://juribuora.github.io/blog/2026/09/04/day-216.html",
       "category": "blog",
@@ -512,6 +540,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 215,
       "title": "A Symlink That Works by Hand Can Still Fail at 11:30",
+      "summary": "The watchdog existed, but not in a form the scheduler trusted. A real deployed file and scheduler-driven proof fixed that.",
       "date": "2026-09-03",
       "url": "https://juribuora.github.io/blog/2026/09/03/day-215.html",
       "category": "blog",
@@ -530,6 +559,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 214,
       "title": "A Backup Is Not Real Until It Restores Somewhere Else",
+      "summary": "An encrypted backup became trustworthy only after it restored cleanly on another machine without disturbing the live bridge.",
       "date": "2026-09-02",
       "url": "https://juribuora.github.io/blog/2026/09/02/day-214.html",
       "category": "blog",
@@ -548,6 +578,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 213,
       "title": "One Memory System, With Sources and Boundaries",
+      "summary": "The goal is not an agent that remembers everything; it is local memory that can show its sources and limits.",
       "date": "2026-09-01",
       "url": "https://juribuora.github.io/blog/2026/09/01/day-213.html",
       "category": "blog",
@@ -566,6 +597,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 212,
       "title": "The Fastest Model Was the One That Remembered the Prompt",
+      "summary": "The winning local worker was not merely quick—it was the one that reused the prompt and returned usable work reliably.",
       "date": "2026-08-31",
       "url": "https://juribuora.github.io/blog/2026/08/31/day-212.html",
       "category": "blog",
@@ -584,6 +616,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 211,
       "title": "A Simple Agent Loop Still Needs Hard Boundaries",
+      "summary": "The useful agent loop is simple—but it still needs a lock, a target, a freshness check, and a redaction boundary.",
       "date": "2026-08-30",
       "url": "https://juribuora.github.io/blog/2026/08/30/day-211.html",
       "category": "blog",
@@ -602,6 +635,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 210,
       "title": "Fairness Is a Reliability Control",
+      "summary": "When an unattended job always picks the same “important” work, fairness becomes a reliability control—not a nice-to-have.",
       "date": "2026-08-29",
       "url": "https://juribuora.github.io/blog/2026/08/29/day-210.html",
       "category": "blog",
@@ -620,6 +654,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 209,
       "title": "A Network Blip Is Not a Revoked Credential",
+      "summary": "An offline check should tell me to inspect the network—not to re-authorize a credential that is still valid.",
       "date": "2026-08-28",
       "url": "https://juribuora.github.io/blog/2026/08/28/day-209.html",
       "category": "blog",
@@ -638,6 +673,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 208,
       "title": "A Green Shadow Trial Is Not a Live Cutover",
+      "summary": "A passing fixture is valuable—but it is not proof that a real local model is ready to take over.",
       "date": "2026-08-27",
       "url": "https://juribuora.github.io/blog/2026/08/27/day-208.html",
       "category": "blog",
@@ -656,6 +692,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 207,
       "title": "The One Safe Exception Needs Its Own Gate",
+      "summary": "The only allowed unsolicited message now has to prove it is the right greeting, for the right person, at the right time, once.",
       "date": "2026-08-26",
       "url": "https://juribuora.github.io/blog/2026/08/26/day-207.html",
       "category": "blog",
@@ -674,6 +711,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 206,
       "title": "A Reply Is a Capability, Not a Suggestion",
+      "summary": "A real reply now needs a real, recent inbound message behind it—and can only be sent once.",
       "date": "2026-08-25",
       "url": "https://juribuora.github.io/blog/2026/08/25/day-206.html",
       "category": "blog",
@@ -692,6 +730,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 205,
       "title": "When a Cached Fact Says Good Night at 11:24 in the Morning",
+      "summary": "The bot wished someone good night at 11:24am because of a stale cached clock fact — fixed by making time live instead of cached, and while I was in there, made sure restarts stop silently dropping work in progress.",
       "date": "2026-08-24",
       "url": "https://juribuora.github.io/blog/2026/08/24/day-205.html",
       "category": "blog",
@@ -710,6 +749,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 204,
       "title": "Shadow Days: Making a New Feature Prove Itself Before Anyone Sees It",
+      "summary": "A new briefing feature had to earn its way to me through a chain of shadow trials, delivery-receipt checks, and a reader/internal content boundary — the lesson from an earlier incident, now just how things ship.",
       "date": "2026-08-23",
       "url": "https://juribuora.github.io/blog/2026/08/23/day-204.html",
       "category": "blog",
@@ -728,6 +768,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 203,
       "title": "I Capped It, It Deadlocked the Gateway, and a Prefix Match Almost Revoked the Wrong Person",
+      "summary": "Capped a threshold to fix a real problem, watched it deadlock the gateway instead, reverted it same-day — then caught a prefix match that would have revoked the wrong person, and started building a detector for my own…",
       "date": "2026-08-22",
       "url": "https://juribuora.github.io/blog/2026/08/22/day-203.html",
       "category": "blog",
@@ -746,6 +787,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 202,
       "title": "Giving an Agent Write Access to My Calendar Without Giving It Delete",
+      "summary": "Hermes can write to my calendar now — just not my real one, and never with a delete button, only a tombstone.",
       "date": "2026-08-21",
       "url": "https://juribuora.github.io/blog/2026/08/21/day-202.html",
       "category": "blog",
@@ -764,6 +806,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 201,
       "title": "A New Channel Trusts Too Much in Two Different Ways",
+      "summary": "The new WhatsApp channel had too many tools and too little judgment about who was actually talking — locked the toolset down to what it needs, and taught the greeting logic that \"the group is active\" isn't the same as…",
       "date": "2026-08-20",
       "url": "https://juribuora.github.io/blog/2026/08/20/day-201.html",
       "category": "blog",
@@ -782,6 +825,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 200,
       "title": "Red-Teaming My Own Chatbot: Building an Adversarial Persona Harness",
+      "summary": "Built an automated harness to attack my own chatbot's persona — then had to fix the attacker before I could trust what it was telling me about the target.",
       "date": "2026-08-19",
       "url": "https://juribuora.github.io/blog/2026/08/19/day-200.html",
       "category": "blog",
@@ -800,6 +844,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 199,
       "title": "Who's Allowed to Pull the Plug",
+      "summary": "Something powered my Mac off over WhatsApp with no identifiable agent action behind it — so I default-denied who's allowed to pull the plug, fixed the broken halt ladder, and then nearly lost both fixes in a merge the…",
       "date": "2026-08-18",
       "url": "https://juribuora.github.io/blog/2026/08/18/day-199.html",
       "category": "blog",
@@ -818,6 +863,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 198,
       "title": "Testing My Own Policy Gate Against a New Kind of Personal Data",
+      "summary": "Gave Hermes my location — and made it prove the personal-data policy gate actually covers it before trusting the feature.",
       "date": "2026-08-17",
       "url": "https://juribuora.github.io/blog/2026/08/17/day-198.html",
       "category": "blog",
@@ -836,6 +882,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 197,
       "title": "Scanning for Secrets Before the First Push, Not After",
+      "summary": "New remote, and the secret scan came with it — plus a one-command reauth so recovery never tempts a shortcut.",
       "date": "2026-08-16",
       "url": "https://juribuora.github.io/blog/2026/08/16/day-197.html",
       "category": "blog",
@@ -854,6 +901,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 196,
       "title": "The Same Lie, Told Four Different Ways in One Week",
+      "summary": "Fixed the same lie four times this week before I noticed it was the same lie — now I'm hunting the pattern, not the instances.",
       "date": "2026-08-15",
       "url": "https://juribuora.github.io/blog/2026/08/15/day-196.html",
       "category": "blog",
@@ -872,6 +920,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 195,
       "title": "Narration Is Not a Command: A Control-Plane Confusion Bug",
+      "summary": "Found that \"just describing what happened\" could accidentally become a command — and gave narration its own lane so that can't happen again.",
       "date": "2026-08-14",
       "url": "https://juribuora.github.io/blog/2026/08/14/day-195.html",
       "category": "blog",
@@ -890,6 +939,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 194,
       "title": "The Secretary Doesn't Get to Write and Send Email Anymore",
+      "summary": "The secretary can propose three emails now. It doesn't get to pick one, and it never gets to hit send.",
       "date": "2026-08-13",
       "url": "https://juribuora.github.io/blog/2026/08/13/day-194.html",
       "category": "blog",
@@ -907,6 +957,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 193,
       "title": "Fixing the Approval Queue: Sender Identity, Not Message Identity",
+      "summary": "The approval gate got its own audit — sender-keyed, webhook removed, authenticated, and alerted if it ever goes quiet.",
       "date": "2026-08-12",
       "url": "https://juribuora.github.io/blog/2026/08/12/day-193.html",
       "category": "blog",
@@ -925,6 +976,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 192,
       "title": "Learning to Ask a Database Better Questions",
+      "summary": "Learned to filter, pattern-match, and sort a database — and manually scanning 200 rows made the case for WHERE better than any lecture could.",
       "date": "2026-08-11",
       "url": "https://juribuora.github.io/blog/2026/08/11/day-192.html",
       "category": "blog",
@@ -943,6 +995,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 191,
       "title": "An Alarm Nobody Had Ever Heard Go Off",
+      "summary": "Built an alarm for expiring credentials, then made myself prove it actually rings before trusting it.",
       "date": "2026-08-10",
       "url": "https://juribuora.github.io/blog/2026/08/10/day-191.html",
       "category": "blog",
@@ -961,6 +1014,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 190,
       "title": "Closing the Observation Backlog: Two New Skills Born From Real Recurring Bugs",
+      "summary": "Closed the whole observation backlog and found two real skills hiding inside twenty-three small lessons.",
       "date": "2026-08-09",
       "url": "https://juribuora.github.io/blog/2026/08/09/day-190.html",
       "category": "blog",
@@ -978,6 +1032,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 189,
       "title": "Retiring Aider Properly, and Making Agents Land Their Own Work",
+      "summary": "Retired a dead tool properly, and made sure agents can't call a task done while their work is still lying around uncommitted.",
       "date": "2026-08-08",
       "url": "https://juribuora.github.io/blog/2026/08/08/day-189.html",
       "category": "blog",
@@ -996,6 +1051,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 188,
       "title": "A Memory That Remembers Correctly, and Not Burning a Big Model on 'ok'",
+      "summary": "Gave the assistant's memory real sources and a sense of which fact is current — and stopped burning a big model on \"ok.\"",
       "date": "2026-08-07",
       "url": "https://juribuora.github.io/blog/2026/08/07/day-188.html",
       "category": "blog",
@@ -1014,6 +1070,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 187,
       "title": "Send Is Not Delivery: Evidence-Gating My Own Email Verification",
+      "summary": "The mail said \"sent\"; now it has to prove \"arrived\" — and its evidence trail no longer leaks secrets.",
       "date": "2026-08-06",
       "url": "https://juribuora.github.io/blog/2026/08/06/day-187.html",
       "category": "blog",
@@ -1032,6 +1089,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 186,
       "title": "Hash-Verified Is Not the Same as Trusted: Fixing Citation Integrity",
+      "summary": "A hash matching is not the same as a citation being trustworthy — now the code says so.",
       "date": "2026-08-05",
       "url": "https://juribuora.github.io/blog/2026/08/05/day-186.html",
       "category": "blog",
@@ -1050,6 +1108,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 185,
       "title": "From Observed to Enforced: Two Guards That Only Used to Watch",
+      "summary": "Found two guards that only watched. Now they both say no.",
       "date": "2026-08-04",
       "url": "https://juribuora.github.io/blog/2026/08/04/day-185.html",
       "category": "blog",
@@ -1068,6 +1127,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 184,
       "title": "A Unicode Lookalike Almost Broke My 'Cannot Certify Its Own Work' Rule",
+      "summary": "A rule said \"you can't certify your own work\" — a lookalike character almost proved it wrong.",
       "date": "2026-08-03",
       "url": "https://juribuora.github.io/blog/2026/08/03/day-184.html",
       "category": "blog",
@@ -1086,6 +1146,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 183,
       "title": "The Fix Had Two More Holes: A Live DNS-Rebinding Bypass Hunt",
+      "summary": "Reviewed my own SSRF fix like an attacker and found two more ways through it — both closed, both proven live.",
       "date": "2026-08-02",
       "url": "https://juribuora.github.io/blog/2026/08/02/day-183.html",
       "category": "blog",
@@ -1104,6 +1165,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 182,
       "title": "Building an SSRF-Safe Fetcher for an Agent That Reads the Web",
+      "summary": "Gave the agent a web fetcher, and made it prove every request is safe before it ever leaves the house.",
       "date": "2026-08-01",
       "url": "https://juribuora.github.io/blog/2026/08/01/day-182.html",
       "category": "blog",
@@ -1122,6 +1184,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 181,
       "title": "Using Linux Help Before Making a Change",
+      "summary": "Before changing a Linux system, use its own help tools to confirm the command, the option, and the intended result.",
       "date": "2026-07-31",
       "url": "https://juribuora.github.io/blog/2026/07/31/day-181.html",
       "category": "blog",
@@ -1142,6 +1205,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 180,
       "title": "A Small Security Skill Allowlist Beats an Everything Install",
+      "summary": "A small, reviewed allowlist is easier to trust, explain, and maintain than an everything-enabled catalog.",
       "date": "2026-07-30",
       "url": "https://juribuora.github.io/blog/2026/07/30/day-180.html",
       "category": "blog",
@@ -1160,6 +1224,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 179,
       "title": "Extracting Useful Text Without Giving an Agent a Browser",
+      "summary": "Useful extraction does not need a persistent browser or an automatic pipeline: named input, bounded output, human review.",
       "date": "2026-07-29",
       "url": "https://juribuora.github.io/blog/2026/07/29/day-179.html",
       "category": "blog",
@@ -1178,6 +1243,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 178,
       "title": "A Fast Index Is Not Automatically Useful",
+      "summary": "An index is only useful when it makes verified answers easier, not merely faster to read.",
       "date": "2026-07-28",
       "url": "https://juribuora.github.io/blog/2026/07/28/day-178.html",
       "category": "blog",
@@ -1196,6 +1262,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 177,
       "title": "Choosing Tools by Evidence, Not by Novelty",
+      "summary": "A new tool earns its place by solving a verified problem within clear security and rollback boundaries.",
       "date": "2026-07-27",
       "url": "https://juribuora.github.io/blog/2026/07/27/day-177.html",
       "category": "blog",
@@ -1214,6 +1281,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 176,
       "title": "Execution Depth Presets, a Broken Build, and Unit Tests for the Small Stuff",
+      "summary": "Gave autonomy a depth dial, broke the build proving the gates work, and tested the scripts everyone forgets.",
       "date": "2026-07-26",
       "url": "https://juribuora.github.io/blog/2026/07/26/day-176.html",
       "category": "blog",
@@ -1232,6 +1300,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 175,
       "title": "Unattended Delegation: Which Lanes Are Allowed to Work While I Sleep",
+      "summary": "Wrote the night-shift roster for my agents — and one capable-looking lane didn't make the cut.",
       "date": "2026-07-25",
       "url": "https://juribuora.github.io/blog/2026/07/25/day-175.html",
       "category": "blog",
@@ -1250,6 +1319,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 174,
       "title": "Shadow Trials: Letting the New Router Watch Before It Acts",
+      "summary": "The new router had to watch silently and file a report before touching anything real.",
       "date": "2026-07-24",
       "url": "https://juribuora.github.io/blog/2026/07/24/day-174.html",
       "category": "blog",
@@ -1268,6 +1338,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 173,
       "title": "Provenance and Recovery: Knowing Who Changed What, and Undoing It",
+      "summary": "Every agent change now signs its work and comes with a rehearsed undo.",
       "date": "2026-07-23",
       "url": "https://juribuora.github.io/blog/2026/07/23/day-173.html",
       "category": "blog",
@@ -1286,6 +1357,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 172,
       "title": "Parallel Agents Without Collisions: Task Graphs and Git Worktrees",
+      "summary": "Every agent gets its own sandbox copy of the repo; nothing rejoins main without proof.",
       "date": "2026-07-22",
       "url": "https://juribuora.github.io/blog/2026/07/22/day-172.html",
       "category": "blog",
@@ -1304,6 +1376,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 171,
       "title": "Five Ways My Automation Faked Success (and the Fail-Closed Fixes)",
+      "summary": "Found five ways my supervisor could lie to me; now it can't.",
       "date": "2026-07-21",
       "url": "https://juribuora.github.io/blog/2026/07/21/day-171.html",
       "category": "blog",
@@ -1322,6 +1395,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 170,
       "title": "Making Security Work Clear Without Overselling It",
+      "summary": "The useful part of a write-up is not sounding impressive; it is making the work understandable, checkable, and honest.",
       "date": "2026-07-20",
       "url": "https://juribuora.github.io/blog/2026/07/20/day-170.html",
       "category": "blog",
@@ -1339,6 +1413,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 169,
       "title": "Why Safe Rollouts Use Feature Flags, Fixtures, and Evidence Gates",
+      "summary": "Feature flags and fixtures keep a new capability small enough to test honestly before it is trusted with a bigger role.",
       "date": "2026-07-19",
       "url": "https://juribuora.github.io/blog/2026/07/19/day-169.html",
       "category": "blog",
@@ -1357,6 +1432,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 168,
       "title": "Secure Artifact Delivery: Narrow Links, Verified Bytes, and No Duplicate Sends",
+      "summary": "Made file delivery narrow, time-limited, hash-checked, and safe to recover without sending the same result twice.",
       "date": "2026-07-18",
       "url": "https://juribuora.github.io/blog/2026/07/18/day-168.html",
       "category": "blog",
@@ -1375,6 +1451,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 167,
       "title": "Approval-Gated Automation: Making Privileged Agent Work Accountable",
+      "summary": "Sensitive automation now earns a task record, scoped approval, and an audit trail before it earns the right to act.",
       "date": "2026-07-17",
       "url": "https://juribuora.github.io/blog/2026/07/17/day-167.html",
       "category": "blog",
@@ -1393,6 +1470,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 166,
       "title": "Resilient Sessions: What a Torn Journal Taught Me About Safe AI State",
+      "summary": "Built resumable sessions that recover an interrupted final write, but refuse to invent certainty from deeper corruption.",
       "date": "2026-07-16",
       "url": "https://juribuora.github.io/blog/2026/07/16/day-166.html",
       "category": "blog",
@@ -1411,6 +1489,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 165,
       "title": "Bounded Context, Better Decisions: Testing AI Agent Memory Without Blind Trust",
+      "summary": "Built an opt-in context layer that keeps the useful facts, shows their sources, and calls out the parts that no longer agree.",
       "date": "2026-07-15",
       "url": "https://juribuora.github.io/blog/2026/07/15/day-165.html",
       "category": "blog",
@@ -1429,6 +1508,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 164,
       "title": "Verifying the Verifier: A False-Positive Streak in My Own Checks",
+      "summary": "My verifier cried wolf; I tuned the wolf detector instead of shooting the dog.",
       "date": "2026-07-14",
       "url": "https://juribuora.github.io/blog/2026/07/14/day-164.html",
       "category": "blog",
@@ -1447,6 +1527,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 163,
       "title": "Model Fleet Ops: Migrating the Coding Lane to Gemma and Budgeting Tokens Like a Resource",
+      "summary": "Benchmarked the fleet, promoted Gemma, retired the losers, and put every prompt on a token diet.",
       "date": "2026-07-13",
       "url": "https://juribuora.github.io/blog/2026/07/13/day-163.html",
       "category": "blog",
@@ -1465,6 +1546,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 162,
       "title": "An AI Secretary With a Kill Switch: Calendars, Sender Policy, and Emergency Control",
+      "summary": "The secretary got my calendar and my inbox — after it got a policy, an approval flow, and a kill switch.",
       "date": "2026-07-12",
       "url": "https://juribuora.github.io/blog/2026/07/12/day-162.html",
       "category": "blog",
@@ -1483,6 +1565,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 161,
       "title": "Hardening the iOS Companion: Untrusted Links, Redacted Errors, and the 'Full Power' Question",
+      "summary": "Hardened the app against its own agents' output, and told past me no about full power.",
       "date": "2026-07-11",
       "url": "https://juribuora.github.io/blog/2026/07/11/day-161.html",
       "category": "blog",
@@ -1501,6 +1584,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 160,
       "title": "Tailscale Broke My Stack: Node Identity, Hostnames, and Private Services",
+      "summary": "The network was fine; my laptop had an identity crisis.",
       "date": "2026-07-10",
       "url": "https://juribuora.github.io/blog/2026/07/10/day-160.html",
       "category": "blog",
@@ -1519,6 +1603,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 159,
       "title": "Widening an Agent's Write Scope on Purpose (and Making Its Findings Earn Evidence)",
+      "summary": "The agent earned wider access in stages, and its reports lost the right to guess.",
       "date": "2026-07-09",
       "url": "https://juribuora.github.io/blog/2026/07/09/day-159.html",
       "category": "blog",
@@ -1537,6 +1622,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 158,
       "title": "Gated Autonomy: A Phone Approval Loop Before Any Agent Sends Anything",
+      "summary": "The agent drafts, my phone decides, and nothing sends itself.",
       "date": "2026-07-08",
       "url": "https://juribuora.github.io/blog/2026/07/08/day-158.html",
       "category": "blog",
@@ -1555,6 +1641,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 157,
       "title": "WebCheckup: Turning the Mini-Audit Into a Real Multilingual Service",
+      "summary": "The mini-audit became WebCheckup: scored, evidenced, four languages, and zero unverified claims.",
       "date": "2026-07-07",
       "url": "https://juribuora.github.io/blog/2026/07/07/day-157.html",
       "category": "blog",
@@ -1573,6 +1660,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 156,
       "title": "Too Many Projects: Auditing My Own Tool Sprawl Like an Asset Inventory",
+      "summary": "Audited my own shadow IT; the attacker was me, the defense was a list.",
       "date": "2026-07-06",
       "url": "https://juribuora.github.io/blog/2026/07/06/day-156.html",
       "category": "blog",
@@ -1591,6 +1679,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 155,
       "title": "Linux User and Group Management as Access Control Practice",
+      "summary": "Practiced Linux user/group management as a real access-control workflow: onboard, assign access, transfer ownership, change roles, offboard, and clean up.",
       "date": "2026-07-05",
       "url": "https://juribuora.github.io/blog/2026/07/05/day-155.html",
       "category": "blog",
@@ -1610,6 +1699,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 154,
       "title": "Building a Cybersecurity Glossary Without Breaking My Notes",
+      "summary": "Built a broad cybersecurity glossary in Obsidian and learned that bulk note-linking needs backups, skip rules, and validation just like code migrations.",
       "date": "2026-07-04",
       "url": "https://juribuora.github.io/blog/2026/07/04/day-154.html",
       "category": "blog",
@@ -1628,6 +1718,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 153,
       "title": "Testing Hermes Agent: Strong First Builds, Weak Self-Verification",
+      "summary": "Hermes was great at a first app build, but its self-verification was not trustworthy; independent browser testing remained the real source of truth.",
       "date": "2026-07-03",
       "url": "https://juribuora.github.io/blog/2026/07/03/day-153.html",
       "category": "blog",
@@ -1646,6 +1737,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 152,
       "title": "Building an AI Inference Orchestrator With Routing, Retries, and Cost Awareness",
+      "summary": "Built a real inference orchestrator layer: classify tasks, choose models, retry intelligently, track costs, and make routing decisions visible.",
       "date": "2026-07-02",
       "url": "https://juribuora.github.io/blog/2026/07/02/day-152.html",
       "category": "blog",
@@ -1664,6 +1756,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 151,
       "title": "Benchmarking My Local LLM Stack Instead of Trusting Vibes",
+      "summary": "Benchmarked the local model stack and chose Ollama as the daily backend, kept DS4 experimental, and learned again that vibes are not a routing policy.",
       "date": "2026-07-01",
       "url": "https://juribuora.github.io/blog/2026/07/01/day-151.html",
       "category": "blog",
@@ -1683,6 +1776,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 150,
       "title": "Remote Agent Hub and the Discipline of Honest Feature Labels",
+      "summary": "Productized Remote Agent Hub while keeping it honest: supported providers are selectable, planned ones are visible only where they belong, and partial controls are labeled as partial.",
       "date": "2026-06-30",
       "url": "https://juribuora.github.io/blog/2026/06/30/day-150.html",
       "category": "blog",
@@ -1701,6 +1795,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 149,
       "title": "Turning My iPhone Into a Command Center for Local Agents",
+      "summary": "Started turning my iPhone companion app into a real command center for local agents, with better provider health, run visibility, errors, and artifacts.",
       "date": "2026-06-29",
       "url": "https://juribuora.github.io/blog/2026/06/29/day-149.html",
       "category": "blog",
@@ -1719,6 +1814,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 148,
       "title": "Building Least-Privilege Tool Profiles for My AI Agents (and Finding My Own Risk Scorer Was Inverted)",
+      "summary": "Built six least-privilege tool profiles for my AI agents, split an over-broad bundle in two, and caught my own risk scorer quietly grading \"explicitly forbidden\" the same as \"granted.\"",
       "date": "2026-06-28",
       "url": "https://juribuora.github.io/blog/2026/06/28/day-148.html",
       "category": "blog",
@@ -1737,6 +1833,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 147,
       "title": "'Build Succeeded' Isn't Proof: Writing a Real UI Test for the Auth Flow",
+      "summary": "\"Build succeeded\" isn't proof anything works — wrote a real end-to-end test for the auth flow and found two wrong assumptions in my own test before it passed for real.",
       "date": "2026-06-27",
       "url": "https://juribuora.github.io/blog/2026/06/27/day-147.html",
       "category": "blog",
@@ -1755,6 +1852,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 146,
       "title": "Giving My Local Agent Daemon Real Auth (And Almost Leaking the Token in the 401 Page)",
+      "summary": "Added real pairing-token auth to my agent daemon, and the near-miss was almost leaking the token through the same helper that made the auth convenient in the first place.",
       "date": "2026-06-26",
       "url": "https://juribuora.github.io/blog/2026/06/26/day-146.html",
       "category": "blog",
@@ -1773,6 +1871,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 145,
       "title": "Productizing a Website Security Mini-Audit, and Finding an Access Gap in My Own Funnel",
+      "summary": "Shipped a real intake funnel, then found out I couldn't verify my own delivery because I was logged into the wrong inbox.",
       "date": "2026-06-25",
       "url": "https://juribuora.github.io/blog/2026/06/25/day-145.html",
       "category": "blog",
@@ -1791,6 +1890,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 144,
       "title": "A 348-Term Glossary and the False Positives That Came With It",
+      "summary": "348 terms, 3,820 new links, and four notes that had to be rescued from a false-positive linker — the backup is what saved it.",
       "date": "2026-06-24",
       "url": "https://juribuora.github.io/blog/2026/06/24/day-144.html",
       "category": "blog",
@@ -1809,6 +1909,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 143,
       "title": "Building a Local MITRE ATT&CK Technique Library from My Own Notes",
+      "summary": "Sixty-four ATT&CK IDs in my notes, checked against the real thing — two were revoked, six were never MITRE's to begin with.",
       "date": "2026-06-23",
       "url": "https://juribuora.github.io/blog/2026/06/23/day-143.html",
       "category": "blog",
@@ -1827,6 +1928,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 142,
       "title": "Benchmarking an Autonomous Agent: Strong One-Shot Builds, Unreliable Self-Debugging",
+      "summary": "Great builder, bad self-mechanic; plan controls accordingly.",
       "date": "2026-06-22",
       "url": "https://juribuora.github.io/blog/2026/06/22/day-142.html",
       "category": "blog",
@@ -1845,6 +1947,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 141,
       "title": "A Human Memory Layer: The RAG Vault My Agents Write and I Read Anywhere",
+      "summary": "My agents keep a diary; I set the rules and read it anywhere.",
       "date": "2026-06-21",
       "url": "https://juribuora.github.io/blog/2026/06/21/day-141.html",
       "category": "blog",
@@ -1863,6 +1966,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 140,
       "title": "AI-OS: Governance, Routing, and a Verification Gateway for My Local Agents",
+      "summary": "Gave my agents a constitution and a border control.",
       "date": "2026-06-20",
       "url": "https://juribuora.github.io/blog/2026/06/20/day-140.html",
       "category": "blog",
@@ -1881,6 +1985,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 139,
       "title": "Benchmarking a Local LLM Coding Stack: Harness, Routing, and Review Findings",
+      "summary": "Benchmarked the stack; the bugs were hiding in the failure paths.",
       "date": "2026-06-19",
       "url": "https://juribuora.github.io/blog/2026/06/19/day-139.html",
       "category": "blog",
@@ -1899,6 +2004,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 138,
       "title": "An iOS Companion for My Local Agent, Private by Design",
+      "summary": "Phone controls laptop; internet not invited.",
       "date": "2026-06-18",
       "url": "https://juribuora.github.io/blog/2026/06/18/day-138.html",
       "category": "blog",
@@ -1917,6 +2023,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 137,
       "title": "Running DS4: A Serious Local Model on a Laptop With Limits",
+      "summary": "Local AI is ops work with extra gigabytes.",
       "date": "2026-06-17",
       "url": "https://juribuora.github.io/blog/2026/06/17/day-137.html",
       "category": "blog",
@@ -1935,6 +2042,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 136,
       "title": "Linux Permissions and Authorization: A Google Cybersecurity Certificate Portfolio Activity",
+      "summary": "chmod is easy; explaining why is the skill.",
       "date": "2026-06-16",
       "url": "https://juribuora.github.io/blog/2026/06/16/day-136.html",
       "category": "blog",
@@ -1953,6 +2061,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 135,
       "title": "Auditing My Own Website, Then Fixing What the Report Found",
+      "summary": "Audited myself, fixed it, then checked the fix was actually live.",
       "date": "2026-06-15",
       "url": "https://juribuora.github.io/blog/2026/06/15/day-135.html",
       "category": "blog",
@@ -1971,6 +2080,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 134,
       "title": "Building a Website Trust & Security Mini-Audit Service",
+      "summary": "Turned a checklist into a service, honestly scoped.",
       "date": "2026-06-14",
       "url": "https://juribuora.github.io/blog/2026/06/14/day-134.html",
       "category": "blog",
@@ -1989,6 +2099,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 133,
       "title": "When the Learning Log Breaks: Fixing My Blog's Own Publishing Pipeline",
+      "summary": "The blog about verifying systems needed verifying.",
       "date": "2026-06-13",
       "url": "https://juribuora.github.io/blog/2026/06/13/day-133.html",
       "category": "blog",
@@ -2007,6 +2118,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 132,
       "title": "Giving a Local LLM Hands: LM Studio, Function Calling, and MCP Servers",
+      "summary": "A chatbot with hands needs a leash.",
       "date": "2026-06-12",
       "url": "https://juribuora.github.io/blog/2026/06/12/day-132.html",
       "category": "blog",
@@ -2025,6 +2137,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 131,
       "title": "Project Retrospective: Turning a Real Website Build Into Portfolio Evidence",
+      "summary": "Not pure cybersecurity, still real operational proof.",
       "date": "2026-06-11",
       "url": "https://juribuora.github.io/blog/2026/06/11/day-131.html",
       "category": "blog",
@@ -2043,6 +2156,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 130,
       "title": "Public Website Security Review for a Static Business Site",
+      "summary": "Good security review is proportional.",
       "date": "2026-06-10",
       "url": "https://juribuora.github.io/blog/2026/06/10/day-130.html",
       "category": "blog",
@@ -2061,6 +2175,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 129,
       "title": "Testing, Linting, Type Checking, and Build Validation",
+      "summary": "Professional work is checked work.",
       "date": "2026-06-09",
       "url": "https://juribuora.github.io/blog/2026/06/09/day-129.html",
       "category": "blog",
@@ -2079,6 +2194,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 128,
       "title": "Privacy, Analytics, and Consent-Aware Configuration",
+      "summary": "Analytics should be intentional, not accidental.",
       "date": "2026-06-08",
       "url": "https://juribuora.github.io/blog/2026/06/08/day-128.html",
       "category": "blog",
@@ -2097,6 +2213,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 127,
       "title": "Custom Domain, DNS, and Website Availability",
+      "summary": "No DNS, no website.",
       "date": "2026-06-07",
       "url": "https://juribuora.github.io/blog/2026/06/07/day-127.html",
       "category": "blog",
@@ -2115,6 +2232,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 126,
       "title": "GitHub Pages Deployment and CI/CD Trust Boundaries",
+      "summary": "Deployment automation is powerful and privileged.",
       "date": "2026-06-06",
       "url": "https://juribuora.github.io/blog/2026/06/06/day-126.html",
       "category": "blog",
@@ -2133,6 +2251,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 125,
       "title": "Image Optimization and Performance as Operational Security",
+      "summary": "Heavy images can break a good website.",
       "date": "2026-06-05",
       "url": "https://juribuora.github.io/blog/2026/06/05/day-125.html",
       "category": "blog",
@@ -2151,6 +2270,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 124,
       "title": "SEO, Metadata, and Structured Data Without Forgetting Security",
+      "summary": "SEO is visibility; visibility must be intentional.",
       "date": "2026-06-04",
       "url": "https://juribuora.github.io/blog/2026/06/04/day-124.html",
       "category": "blog",
@@ -2169,6 +2289,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 123,
       "title": "Contact Forms, Validation, and Anti-Spam Thinking",
+      "summary": "A contact form is also an attack surface.",
       "date": "2026-06-03",
       "url": "https://juribuora.github.io/blog/2026/06/03/day-123.html",
       "category": "blog",
@@ -2187,6 +2308,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 122,
       "title": "Mobile-First UX and Customer-Facing Reliability",
+      "summary": "Mobile usability is business availability.",
       "date": "2026-06-02",
       "url": "https://juribuora.github.io/blog/2026/06/02/day-122.html",
       "category": "blog",
@@ -2205,6 +2327,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 121,
       "title": "Routing, Pages, and Public Attack Surface",
+      "summary": "Routes are user journeys and exposure points.",
       "date": "2026-06-01",
       "url": "https://juribuora.github.io/blog/2026/06/01/day-121.html",
       "category": "blog",
@@ -2223,6 +2346,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 120,
       "title": "Repository Structure and Operational Hygiene",
+      "summary": "Messy repositories create messy risk.",
       "date": "2026-05-31",
       "url": "https://juribuora.github.io/blog/2026/05/31/day-120.html",
       "category": "blog",
@@ -2241,6 +2365,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 119,
       "title": "React, TypeScript, Vite, and Tailwind as a Production Stack",
+      "summary": "Frontend tools are part of the attack surface.",
       "date": "2026-05-30",
       "url": "https://juribuora.github.io/blog/2026/05/30/day-119.html",
       "category": "blog",
@@ -2259,6 +2384,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 118,
       "title": "Real Client Website Scope and Business Requirements",
+      "summary": "A website starts as requirements, not pixels.",
       "date": "2026-05-29",
       "url": "https://juribuora.github.io/blog/2026/05/29/day-118.html",
       "category": "blog",
@@ -2277,6 +2403,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 117,
       "title": "macOS Persistence, LaunchDaemons, and Endpoint Triage",
+      "summary": "Modern operating systems are already noisy enough that persistence analysis becomes an investigation discipline, not just a checklist.",
       "date": "2026-05-28",
       "url": "https://juribuora.github.io/blog/2026/05/28/day-117.html",
       "category": "blog",
@@ -2294,6 +2421,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 116,
       "title": "Frontend Architecture, Website Optimization, and GitHub Workflows",
+      "summary": "Modern websites are basically infrastructure platforms disguised as web pages.",
       "date": "2026-05-27",
       "url": "https://juribuora.github.io/blog/2026/05/27/day-116.html",
       "category": "blog",
@@ -2310,6 +2438,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 115,
       "title": "Local AI Models, Coding Agents, and Operational Automation",
+      "summary": "AI agents are powerful, but unrestricted automation plus filesystem access can quickly become a security problem.",
       "date": "2026-05-26",
       "url": "https://juribuora.github.io/blog/2026/05/26/day-115.html",
       "category": "blog",
@@ -2326,6 +2455,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 114,
       "title": "OS, Network, and Cloud Hardening",
+      "summary": "Hardening is not glamorous, but attackers love unhardened systems.",
       "date": "2026-05-25",
       "url": "https://juribuora.github.io/blog/2026/05/25/day-114.html",
       "category": "blog",
@@ -2343,6 +2473,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 113,
       "title": "Sniffing, Spoofing, and Interception Tactics",
+      "summary": "Sniffing watches. Spoofing lies. Attacks use both when useful.",
       "date": "2026-05-24",
       "url": "https://juribuora.github.io/blog/2026/05/24/day-113.html",
       "category": "blog",
@@ -2359,6 +2490,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 112,
       "title": "DoS, DDoS, SYN Floods, Smurf, and Amplification",
+      "summary": "DoS is not one attack. It is a family of ways to break availability.",
       "date": "2026-05-23",
       "url": "https://juribuora.github.io/blog/2026/05/23/day-112.html",
       "category": "blog",
@@ -2376,6 +2508,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 111,
       "title": "Reading tcpdump-Style Logs and DNS/ICMP Failures",
+      "summary": "The website may not be down. DNS may have failed before the browser got there.",
       "date": "2026-05-22",
       "url": "https://juribuora.github.io/blog/2026/05/22/day-111.html",
       "category": "blog",
@@ -2394,6 +2527,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 110,
       "title": "Enterprise Network Flow and Attack Surface Mapping",
+      "summary": "Attackers do not need every door. They need one forgotten window.",
       "date": "2026-05-21",
       "url": "https://juribuora.github.io/blog/2026/05/21/day-110.html",
       "category": "blog",
@@ -2410,6 +2544,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 109,
       "title": "Firewalls, VPNs, Proxies, Security Zones, and CIDR",
+      "summary": "Network defense is mostly controlling paths attackers want to abuse.",
       "date": "2026-05-20",
       "url": "https://juribuora.github.io/blog/2026/05/20/day-109.html",
       "category": "blog",
@@ -2426,6 +2561,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 108,
       "title": "Network Protocols, Ports, DNS, HTTP, and Remote Access",
+      "summary": "Ports are not trivia. They are clues.",
       "date": "2026-05-19",
       "url": "https://juribuora.github.io/blog/2026/05/19/day-108.html",
       "category": "blog",
@@ -2444,6 +2580,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 107,
       "title": "Network Architecture, Cloud Networks, and the TCP/IP Model",
+      "summary": "Networking is the map. Logs are the footprints.",
       "date": "2026-05-18",
       "url": "https://juribuora.github.io/blog/2026/05/18/day-107.html",
       "category": "blog",
@@ -2460,6 +2597,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 106,
       "title": "From Risk Management to Portfolio Evidence",
+      "summary": "The certificate is learning. The portfolio is proof.",
       "date": "2026-05-17",
       "url": "https://juribuora.github.io/blog/2026/05/17/day-106.html",
       "category": "blog",
@@ -2475,6 +2613,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 105,
       "title": "Incident Response Playbooks and Escalation Discipline",
+      "summary": "Playbooks stop panic. Evidence stops bad decisions.",
       "date": "2026-05-16",
       "url": "https://juribuora.github.io/blog/2026/05/16/day-105.html",
       "category": "blog",
@@ -2491,6 +2630,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 104,
       "title": "SIEM Logs, Dashboards, and Alert Triage",
+      "summary": "A SIEM does not investigate. It gives the analyst a place to ask better questions.",
       "date": "2026-05-15",
       "url": "https://juribuora.github.io/blog/2026/05/15/day-104.html",
       "category": "blog",
@@ -2507,6 +2647,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 103,
       "title": "Security Frameworks, Controls, NIST CSF, OWASP, and Audits",
+      "summary": "A control is not a checkbox. It is a risk reduction mechanism.",
       "date": "2026-05-14",
       "url": "https://juribuora.github.io/blog/2026/05/14/day-103.html",
       "category": "blog",
@@ -2523,6 +2664,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 102,
       "title": "Threats, Risks, Vulnerabilities, and the NIST RMF",
+      "summary": "Threat is the danger. Vulnerability is the weakness. Risk is what happens if they meet.",
       "date": "2026-05-13",
       "url": "https://juribuora.github.io/blog/2026/05/13/day-102.html",
       "category": "blog",
@@ -2538,6 +2680,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 101,
       "title": "Frameworks, Controls, Ethics, and Analyst Tooling",
+      "summary": "Security is not vibes. It is risk, controls, evidence, and responsibility.",
       "date": "2026-05-12",
       "url": "https://juribuora.github.io/blog/2026/05/12/day-101.html",
       "category": "blog",
@@ -2554,6 +2697,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 100,
       "title": "Attack History, Business Impact, and Security Domains",
+      "summary": "Attack history is useful when it becomes a pattern library, not trivia.",
       "date": "2026-05-11",
       "url": "https://juribuora.github.io/blog/2026/05/11/day-100.html",
       "category": "blog",
@@ -2569,6 +2713,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 99,
       "title": "Cybersecurity Analyst Mindset and Phishing Triage",
+      "summary": "Phishing is not just a bad email. It is a full investigation chain.",
       "date": "2026-05-10",
       "url": "https://juribuora.github.io/blog/2026/05/10/day-99.html",
       "category": "blog",
@@ -2584,6 +2729,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 98,
       "title": "Cookie Banners, Technical Cookies, and Website Privacy Checks",
+      "summary": "Do not guess the cookie banner.",
       "date": "2026-05-09",
       "url": "https://juribuora.github.io/blog/2026/05/09/day-98.html",
       "category": "blog",
@@ -2602,6 +2748,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 97,
       "title": "Privacy-First Website Analytics",
+      "summary": "Analytics is useful.",
       "date": "2026-05-08",
       "url": "https://juribuora.github.io/blog/2026/05/08/day-97.html",
       "category": "blog",
@@ -2619,6 +2766,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 96,
       "title": "IP Spoofing, Sniffing, and Attack Technique Classification",
+      "summary": "Sniffing is watching.",
       "date": "2026-05-07",
       "url": "https://juribuora.github.io/blog/2026/05/07/day-96.html",
       "category": "blog",
@@ -2635,6 +2783,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 95,
       "title": "DoS, DDoS, Smurf Attacks, and Amplification",
+      "summary": "DDoS is not one attack.",
       "date": "2026-05-06",
       "url": "https://juribuora.github.io/blog/2026/05/06/day-95.html",
       "category": "blog",
@@ -2651,6 +2800,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 94,
       "title": "DNS and ICMP Traffic Incident Analysis",
+      "summary": "The website was not necessarily dead.",
       "date": "2026-05-05",
       "url": "https://juribuora.github.io/blog/2026/05/05/day-94.html",
       "category": "blog",
@@ -2668,6 +2818,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 93,
       "title": "Turning Network Concepts into Incident Reports",
+      "summary": "Logs tell you what happened.",
       "date": "2026-05-04",
       "url": "https://juribuora.github.io/blog/2026/05/04/day-93.html",
       "category": "blog",
@@ -2683,6 +2834,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 92,
       "title": "Cybersecurity Roles Across the Attack Surface",
+      "summary": "Cybersecurity is not one superhero.",
       "date": "2026-05-03",
       "url": "https://juribuora.github.io/blog/2026/05/03/day-92.html",
       "category": "blog",
@@ -2697,6 +2849,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 91,
       "title": "Enterprise Attack Surface and Exploitation Points",
+      "summary": "Attackers do not need the strongest door.",
       "date": "2026-05-02",
       "url": "https://juribuora.github.io/blog/2026/05/02/day-91.html",
       "category": "blog",
@@ -2713,6 +2866,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 90,
       "title": "Mapping an Enterprise Network End to End",
+      "summary": "The internet is not magic.",
       "date": "2026-05-01",
       "url": "https://juribuora.github.io/blog/2026/05/01/day-90.html",
       "category": "blog",
@@ -2729,6 +2883,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 89,
       "title": "From Protocol Memorization to SOC Thinking",
+      "summary": "A port tells you what door was used.",
       "date": "2026-04-30",
       "url": "https://juribuora.github.io/blog/2026/04/30/day-89.html",
       "category": "blog",
@@ -2745,6 +2900,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 88,
       "title": "Security Design Principles and OAuth",
+      "summary": "Passwords open doors.",
       "date": "2026-04-29",
       "url": "https://juribuora.github.io/blog/2026/04/29/day-88.html",
       "category": "blog",
@@ -2760,6 +2916,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 87,
       "title": "Network Protocols, Ports, and SOC Visibility",
+      "summary": "Ports are not magic numbers.",
       "date": "2026-04-28",
       "url": "https://juribuora.github.io/blog/2026/04/28/day-87.html",
       "category": "blog",
@@ -2777,6 +2934,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 86,
       "title": "Investigating Botnets and IoT Malware",
+      "summary": "A smart camera with a dumb password can become a soldier in someone else’s army.",
       "date": "2026-04-27",
       "url": "https://juribuora.github.io/blog/2026/04/27/day-86.html",
       "category": "blog",
@@ -2792,6 +2950,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 85,
       "title": "Understanding Cryptomining Malware",
+      "summary": "Ransomware kicks the door down.",
       "date": "2026-04-26",
       "url": "https://juribuora.github.io/blog/2026/04/26/day-85.html",
       "category": "blog",
@@ -2807,6 +2966,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 84,
       "title": "Lateral Movement Techniques in Enterprise Networks",
+      "summary": "Initial access gets the attacker inside.",
       "date": "2026-04-25",
       "url": "https://juribuora.github.io/blog/2026/04/25/day-84.html",
       "category": "blog",
@@ -2823,6 +2983,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 83,
       "title": "The Colonial Pipeline Ransomware Incident",
+      "summary": "Sometimes the attacker does not hack the door.",
       "date": "2026-04-24",
       "url": "https://juribuora.github.io/blog/2026/04/24/day-83.html",
       "category": "blog",
@@ -2837,6 +2998,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 82,
       "title": "The NotPetya Cyberweapon and Destructive Malware",
+      "summary": "WannaCry wanted money.",
       "date": "2026-04-23",
       "url": "https://juribuora.github.io/blog/2026/04/23/day-82.html",
       "category": "blog",
@@ -2852,6 +3014,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 81,
       "title": "The WannaCry Global Ransomware Outbreak",
+      "summary": "WannaCry did not just knock on doors.",
       "date": "2026-04-22",
       "url": "https://juribuora.github.io/blog/2026/04/22/day-81.html",
       "category": "blog",
@@ -2867,6 +3030,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 80,
       "title": "Understanding Ransomware Attacks",
+      "summary": "Ransomware does not start when files get encrypted.",
       "date": "2026-04-21",
       "url": "https://juribuora.github.io/blog/2026/04/21/day-80.html",
       "category": "blog",
@@ -2881,6 +3045,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 79,
       "title": "Squiblydoo and Rundll32 Script Execution",
+      "summary": "Rundll32 is not suspicious because it exists.",
       "date": "2026-04-20",
       "url": "https://juribuora.github.io/blog/2026/04/20/day-79.html",
       "category": "blog",
@@ -2896,6 +3061,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 78,
       "title": "Metasploit and Exploitation Frameworks",
+      "summary": "The exploit opens the window.",
       "date": "2026-04-19",
       "url": "https://juribuora.github.io/blog/2026/04/19/day-78.html",
       "category": "blog",
@@ -2910,6 +3076,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 77,
       "title": "PowerShell Empire and Fileless Malware Techniques",
+      "summary": "PowerShell is not the villain.",
       "date": "2026-04-18",
       "url": "https://juribuora.github.io/blog/2026/04/18/day-77.html",
       "category": "blog",
@@ -2925,6 +3092,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 76,
       "title": "Understanding Cobalt Strike and Post-Exploitation Frameworks",
+      "summary": "Initial access is the door opening.",
       "date": "2026-04-17",
       "url": "https://juribuora.github.io/blog/2026/04/17/day-76.html",
       "category": "blog",
@@ -2939,6 +3107,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 75,
       "title": "Understanding Fail2Ban and Automated Defense",
+      "summary": "Fail2Ban is basically:",
       "date": "2026-04-16",
       "url": "https://juribuora.github.io/blog/2026/04/16/day-75.html",
       "category": "blog",
@@ -2955,6 +3124,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 74,
       "title": "Turning Raw Logs into Patterns and Evidence",
+      "summary": "Logs don’t speak…",
       "date": "2026-04-15",
       "url": "https://juribuora.github.io/blog/2026/04/15/day-74.html",
       "category": "blog",
@@ -2971,6 +3141,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 73,
       "title": "Detecting SSH Brute Force Attacks Using auth.log",
+      "summary": "One failed login = noise",
       "date": "2026-04-14",
       "url": "https://juribuora.github.io/blog/2026/04/14/day-73.html",
       "category": "blog",
@@ -2988,6 +3159,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 72,
       "title": "From Commands to Systems Thinking in Cybersecurity",
+      "summary": "It’s not about the command anymore…",
       "date": "2026-04-13",
       "url": "https://juribuora.github.io/blog/2026/04/13/day-72.html",
       "category": "blog",
@@ -3002,6 +3174,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 71,
       "title": "Verifying Services and Understanding Why Connections Fail",
+      "summary": "The server wasn’t broken…",
       "date": "2026-04-12",
       "url": "https://juribuora.github.io/blog/2026/04/12/day-71.html",
       "category": "blog",
@@ -3018,6 +3191,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 70,
       "title": "Mapping IP Addresses to Devices Using ARP",
+      "summary": "IP tells you where to look…",
       "date": "2026-04-11",
       "url": "https://juribuora.github.io/blog/2026/04/11/day-70.html",
       "category": "blog",
@@ -3033,6 +3207,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 69,
       "title": "Understanding NAT vs Bridged Networking in a Lab Environment",
+      "summary": "If your machines can’t see each other…",
       "date": "2026-04-10",
       "url": "https://juribuora.github.io/blog/2026/04/10/day-69.html",
       "category": "blog",
@@ -3049,6 +3224,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 68,
       "title": "Testing Network Connectivity and Verifying Open Ports",
+      "summary": "Just because you can *ping it*…",
       "date": "2026-04-09",
       "url": "https://juribuora.github.io/blog/2026/04/09/day-68.html",
       "category": "blog",
@@ -3065,6 +3241,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 67,
       "title": "Investigating SSH Connection Failures and Security Warnings",
+      "summary": "SSH didn’t break because of “post-quantum doom”…",
       "date": "2026-04-08",
       "url": "https://juribuora.github.io/blog/2026/04/08/day-67.html",
       "category": "blog",
@@ -3082,6 +3259,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 66,
       "title": "Debugging DNS Resolution and Understanding Hosting Mismatch",
+      "summary": "Understand why a domain was not resolving correctly and learn how DNS interacts with hosting services.",
       "date": "2026-04-07",
       "url": "https://juribuora.github.io/blog/2026/04/07/day-66.html",
       "category": "blog",
@@ -3098,6 +3276,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 65,
       "title": "Understanding GitHub Authentication, Cloning, and Local Repositories",
+      "summary": "Clarify how GitHub authentication works and understand the relationship between remote repositories and local copies.",
       "date": "2026-04-06",
       "url": "https://juribuora.github.io/blog/2026/04/06/day-65.html",
       "category": "blog",
@@ -3114,6 +3293,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 64,
       "title": "AI Agents, Model Context Protocol (MCP), and Security Implications",
+      "summary": "Today’s goal was to explore the emerging concept of AI agents and how protocols like the Model Context Protocol (MCP) allow AI systems to interact with external tools and environments.",
       "date": "2026-04-05",
       "url": "https://juribuora.github.io/blog/2026/04/05/day-64.html",
       "category": "blog",
@@ -3129,6 +3309,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 63,
       "title": "Understanding Local LLM Infrastructure and Model Quantization",
+      "summary": "Today’s focus was understanding how local Large Language Models (LLMs) actually run on personal machines and what makes them possible without requiring massive datacenter hardware.",
       "date": "2026-04-04",
       "url": "https://juribuora.github.io/blog/2026/04/04/day-63.html",
       "category": "blog",
@@ -3144,6 +3325,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 62,
       "title": "Understanding Phishing Attacks and Email Security Controls",
+      "summary": "Today I focused on understanding phishing attacks, one of the most common entry points for security incidents.",
       "date": "2026-04-03",
       "url": "https://juribuora.github.io/blog/2026/04/03/day-62.html",
       "category": "blog",
@@ -3160,6 +3342,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 61,
       "title": "Investigating the Dark Web Safely and Understanding Tor",
+      "summary": "Today’s focus was understanding how analysts safely investigate dark web resources and why operational security is critical when interacting with unknown infrastructure.",
       "date": "2026-04-02",
       "url": "https://juribuora.github.io/blog/2026/04/02/day-61.html",
       "category": "blog",
@@ -3175,6 +3358,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 60,
       "title": "Understanding Local AI, Model Hosting, and the Cloud vs Local Debate",
+      "summary": "Today’s goal was to better understand the growing ecosystem of local AI models and how they compare with cloud-hosted AI services.",
       "date": "2026-04-01",
       "url": "https://juribuora.github.io/blog/2026/04/01/day-60.html",
       "category": "blog",
@@ -3191,6 +3375,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 59,
       "title": "Studying Malware Families: TrickBot, WannaMine and Cryptomining Threats",
+      "summary": "Today I explored several real malware families to understand how modern threats operate.",
       "date": "2026-03-31",
       "url": "https://juribuora.github.io/blog/2026/03/31/day-59.html",
       "category": "blog",
@@ -3205,6 +3390,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 58,
       "title": "DLL Files, Code Signing, and Malware Trust Verification",
+      "summary": "Today I explored how DLL files work in Windows and how security teams verify whether a file is legitimate using digital signatures.",
       "date": "2026-03-30",
       "url": "https://juribuora.github.io/blog/2026/03/30/day-58.html",
       "category": "blog",
@@ -3220,6 +3406,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 57,
       "title": "LOLBins Deep Dive: Squiblydoo (rundll32 and mshtml Abuse)",
+      "summary": "Today I explored one of the most famous LOLBins (Living Off The Land Binaries) techniques used in Windows attacks: Squiblydoo.",
       "date": "2026-03-29",
       "url": "https://juribuora.github.io/blog/2026/03/29/day-57.html",
       "category": "blog",
@@ -3235,6 +3422,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 56,
       "title": "Offensive Security Frameworks and LOLBins",
+      "summary": "Today I explored several well-known offensive security frameworks and techniques used by attackers after initial access.",
       "date": "2026-03-28",
       "url": "https://juribuora.github.io/blog/2026/03/28/day-56.html",
       "category": "blog",
@@ -3249,6 +3437,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 55,
       "title": "Typosquatting and Malicious Domain Impersonation",
+      "summary": "Today I explored typosquatting, a technique attackers use to trick users into visiting malicious domains that closely resemble legitimate websites.",
       "date": "2026-03-27",
       "url": "https://juribuora.github.io/blog/2026/03/27/day-55.html",
       "category": "blog",
@@ -3264,6 +3453,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 54,
       "title": "Investigating Phishing Through Email Gateway Logs",
+      "summary": "Today I focused on understanding email gateway logs, which are an important source of telemetry when investigating phishing incidents.",
       "date": "2026-03-26",
       "url": "https://juribuora.github.io/blog/2026/03/26/day-54.html",
       "category": "blog",
@@ -3279,6 +3469,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 53,
       "title": "Understanding Phishing Attacks and Email Security Layers",
+      "summary": "The goal for today was to deepen my understanding of phishing attacks, which remain one of the most common initial access techniques used by attackers.",
       "date": "2026-03-25",
       "url": "https://juribuora.github.io/blog/2026/03/25/day-53.html",
       "category": "blog",
@@ -3295,6 +3486,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 52,
       "title": "First Steps with Python and JavaScript for Security",
+      "summary": "Today’s goal was to begin exploring basic programming concepts through two introductory TryHackMe rooms:",
       "date": "2026-03-24",
       "url": "https://juribuora.github.io/blog/2026/03/24/day-52.html",
       "category": "blog",
@@ -3310,6 +3502,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 51,
       "title": "CLI Fundamentals, OS Security, and Understanding How Data is Represented",
+      "summary": "Today’s objective was to strengthen foundational cybersecurity knowledge by completing several TryHackMe learning rooms covering:",
       "date": "2026-03-23",
       "url": "https://juribuora.github.io/blog/2026/03/23/day-51.html",
       "category": "blog",
@@ -3327,6 +3520,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 50,
       "title": "Understanding Advanced Persistent Threat (APT) Groups",
+      "summary": "Today’s goal was to explore the concept of Advanced Persistent Threat (APT) groups and understand how nation-state actors conduct long-term cyber operations.",
       "date": "2026-03-22",
       "url": "https://juribuora.github.io/blog/2026/03/22/day-50.html",
       "category": "blog",
@@ -3341,6 +3535,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 49,
       "title": "Investigating Phishing Infrastructure and Email Attacks",
+      "summary": "The focus of today’s study was understanding how phishing campaigns operate and how defenders analyze email infrastructure to identify malicious activity.",
       "date": "2026-03-21",
       "url": "https://juribuora.github.io/blog/2026/03/21/day-49.html",
       "category": "blog",
@@ -3355,6 +3550,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 48,
       "title": "Detecting Authentication Attacks in System Logs",
+      "summary": "The goal for today was to understand how authentication logs reveal brute-force and password-spraying attacks.",
       "date": "2026-03-20",
       "url": "https://juribuora.github.io/blog/2026/03/20/day-48.html",
       "category": "blog",
@@ -3370,6 +3566,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 47,
       "title": "Encoded PowerShell and Obfuscated Command Execution",
+      "summary": "Today’s objective was to understand how attackers hide malicious commands using obfuscation techniques, particularly in PowerShell.",
       "date": "2026-03-19",
       "url": "https://juribuora.github.io/blog/2026/03/19/day-47.html",
       "category": "blog",
@@ -3385,6 +3582,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 46,
       "title": "Understanding LOLBins and Living-off-the-Land Attacks",
+      "summary": "The goal of today’s session was to understand the concept of Living-off-the-Land attacks and the role of LOLBins (Living-Off-the-Land Binaries) in modern intrusion techniques.",
       "date": "2026-03-18",
       "url": "https://juribuora.github.io/blog/2026/03/18/day-46.html",
       "category": "blog",
@@ -3400,6 +3598,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 45,
       "title": "Pivot Training for Log Investigation",
+      "summary": "Today’s focus was on learning pivot training, a technique used by SOC analysts to navigate large log datasets efficiently.",
       "date": "2026-03-17",
       "url": "https://juribuora.github.io/blog/2026/03/17/day-45.html",
       "category": "blog",
@@ -3416,6 +3615,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 44,
       "title": "Detecting Beaconing and Command-and-Control Traffic",
+      "summary": "The goal of today’s session was to understand how malware communicates with external command-and-control (C2) servers and how analysts detect these patterns in logs.",
       "date": "2026-03-16",
       "url": "https://juribuora.github.io/blog/2026/03/16/day-44.html",
       "category": "blog",
@@ -3432,6 +3632,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 43,
       "title": "Detecting Suspicious Process Chains",
+      "summary": "The objective for today was to learn how process relationships reveal malicious behavior.",
       "date": "2026-03-15",
       "url": "https://juribuora.github.io/blog/2026/03/15/day-43.html",
       "category": "blog",
@@ -3448,6 +3649,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 42,
       "title": "SOC Thinking: Turning Logs into Evidence",
+      "summary": "The goal of today’s session was to understand how Security Operations Center (SOC) analysts transform raw logs into actionable evidence.",
       "date": "2026-03-14",
       "url": "https://juribuora.github.io/blog/2026/03/14/day-42.html",
       "category": "blog",
@@ -3464,6 +3666,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 41,
       "title": "Sysmon Telemetry, Lab Automation, and Full Cyber Lab Architecture",
+      "summary": "The objective for today was to transform the Windows VM from a simple investigation machine into a telemetry-generating endpoint and to complete the infrastructure blueprint of the entire cyber lab.",
       "date": "2026-03-13",
       "url": "https://juribuora.github.io/blog/2026/03/13/day-41.html",
       "category": "blog",
@@ -3482,6 +3685,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 40,
       "title": "Building a Reproducible Windows SOC VM and Lab Infrastructure",
+      "summary": "The goal for today was to start transforming the lab from a collection of tools into a structured, reproducible cybersecurity environment.",
       "date": "2026-03-12",
       "url": "https://juribuora.github.io/blog/2026/03/12/day-40.html",
       "category": "blog",
@@ -3500,6 +3704,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 39,
       "title": "Building a Portable Zsh Environment with GitHub Dotfiles",
+      "summary": "The goal of today was to build a portable and reproducible terminal environment.",
       "date": "2026-03-11",
       "url": "https://juribuora.github.io/blog/2026/03/11/day-39.html",
       "category": "blog",
@@ -3518,6 +3723,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 38,
       "title": "SSH Brute-Force Investigation and Automated Defense",
+      "summary": "Develop a first real investigation mindset by:",
       "date": "2026-03-10",
       "url": "https://juribuora.github.io/blog/2026/03/10/day-38.html",
       "category": "blog",
@@ -3535,6 +3741,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 37,
       "title": "Ports, Services, and Investigating Listening Processes",
+      "summary": "Understand how network services actually run on a system by:",
       "date": "2026-03-09",
       "url": "https://juribuora.github.io/blog/2026/03/09/day-37.html",
       "category": "blog",
@@ -3553,6 +3760,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 36,
       "title": "Linux Process Investigation and First Log Exploration",
+      "summary": "Move from memorizing commands to observing real system behavior.",
       "date": "2026-03-07",
       "url": "https://juribuora.github.io/blog/2026/03/07/day-36.html",
       "category": "blog",
@@ -3571,6 +3779,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 35,
       "title": "Linux Process Baselining with ps and top",
+      "summary": "Stop treating Linux commands like trivia and start building a baseline understanding of running processes.",
       "date": "2026-03-05",
       "url": "https://juribuora.github.io/blog/2026/03/05/day-35.html",
       "category": "blog",
@@ -3589,6 +3798,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 34,
       "title": "Networking Mental Model Reset (DNS, TCP/UDP, HTTPS/TLS, QUIC)",
+      "summary": "Rebuild a clear mental model of what actually happens when I type a website address in a browser, without mixing layers or relying on vague explanations.",
       "date": "2026-03-03",
       "url": "https://juribuora.github.io/blog/2026/03/03/day-34.html",
       "category": "blog",
@@ -3608,6 +3818,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 33,
       "title": "Expanding the SOC Learning Roadmap (Identity, Triage, and Hiring Readiness)",
+      "summary": "Convert ongoing cybersecurity study into a structured execution system aimed at SOC employment.",
       "date": "2026-03-02",
       "url": "https://juribuora.github.io/blog/2026/03/02/day-33.html",
       "category": "blog",
@@ -3624,6 +3835,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 32,
       "title": "OSI Model, Encapsulation, and Core Network Protocols",
+      "summary": "Build a solid mental model of networking using the OSI framework in preparation for CompTIA Network+ concepts and future SOC analysis work.",
       "date": "2026-03-01",
       "url": "https://juribuora.github.io/blog/2026/03/01/day-32.html",
       "category": "blog",
@@ -3641,6 +3853,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 31,
       "title": "Regex Behavior and Text Processing Foundations",
+      "summary": "Strengthen text-processing skills through regular expressions and command-line filtering — essential for log analysis and threat hunting.",
       "date": "2026-02-28",
       "url": "https://juribuora.github.io/blog/2026/02/28/day-31.html",
       "category": "blog",
@@ -3658,6 +3871,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 30,
       "title": "Streams, Exit Codes, and Bash Redirection",
+      "summary": "Develop a deeper operational understanding of how Linux commands communicate:",
       "date": "2026-02-27",
       "url": "https://juribuora.github.io/blog/2026/02/27/day-30.html",
       "category": "blog",
@@ -3675,6 +3889,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 29,
       "title": "SOC Thinking with Linux Pipelines, Pivots, and Process Chains",
+      "summary": "Build a stronger SOC analyst mental model using Linux command-line workflows by learning how to turn raw output into evidence through:",
       "date": "2026-02-26",
       "url": "https://juribuora.github.io/blog/2026/02/26/day-29.html",
       "category": "blog",
@@ -3695,6 +3910,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 28,
       "title": "Understanding Command Resolution & Filesystem Investigation with find",
+      "summary": "Move beyond simply using Linux commands and understand:",
       "date": "2026-02-25",
       "url": "https://juribuora.github.io/blog/2026/02/25/day-28.html",
       "category": "blog",
@@ -3714,6 +3930,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 27,
       "title": "Command Resolution, PATH Internals & Shell Environment Investigation",
+      "summary": "Move beyond simply *using commands* and understand how the system decides what actually runs when a command is executed.",
       "date": "2026-02-24",
       "url": "https://juribuora.github.io/blog/2026/02/24/day-27.html",
       "category": "blog",
@@ -3731,6 +3948,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 26,
       "title": "Effective Shell Part 2: Pipelines, Readline Search, Job Control",
+      "summary": "Get faster and more accurate in interactive Bash by building real muscle memory for:",
       "date": "2026-02-22",
       "url": "https://juribuora.github.io/blog/2026/02/22/day-26.html",
       "category": "blog",
@@ -3749,6 +3967,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 25,
       "title": "Effective Shell Fundamentals: ls, du, man, Heredocs, Updates, and Docker Permissions",
+      "summary": "Rebuild clean, reliable shell fundamentals by studying *Effective Shell* Part 1 and turning it into practical command-line muscle memory.",
       "date": "2026-02-18",
       "url": "https://juribuora.github.io/blog/2026/02/18/day-25.html",
       "category": "blog",
@@ -3770,6 +3989,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 24,
       "title": "Tools Lane Setup, Effective Shell, and Shutdown Triage",
+      "summary": "Reinforce general Linux fundamentals with a practical focus on:",
       "date": "2026-02-17",
       "url": "https://juribuora.github.io/blog/2026/02/17/day-24.html",
       "category": "blog",
@@ -3789,6 +4009,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 23,
       "title": "Consolidation, Repetition, and Anki-Driven Recall",
+      "summary": "Consolidate earlier Linux and command-line learning through:",
       "date": "2026-02-15",
       "url": "https://juribuora.github.io/blog/2026/02/15/day-23.html",
       "category": "blog",
@@ -3805,6 +4026,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 22,
       "title": "stdout, stderr, wget, and Output Validation",
+      "summary": "Strengthen core Linux command-line fundamentals by practicing:",
       "date": "2026-02-14",
       "url": "https://juribuora.github.io/blog/2026/02/14/day-22.html",
       "category": "blog",
@@ -3821,6 +4043,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 21,
       "title": "Building My Detection Engineering Repo + Hardening My Blog Setup",
+      "summary": "- Get something real and tangible shipped today (even if I had to stop abruptly).",
       "date": "2026-02-13",
       "url": "https://juribuora.github.io/blog/2026/02/13/day-21.html",
       "category": "blog",
@@ -3841,6 +4064,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 20,
       "title": "Auditing a Media Archive and Taking Control of Backups",
+      "summary": "Stop chaos from spreading.",
       "date": "2026-02-12",
       "url": "https://juribuora.github.io/blog/2026/02/12/day-20.html",
       "category": "blog",
@@ -3859,6 +4083,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 19,
       "title": "Bare-Metal Dual Boot on Intel Mac (macOS + Ubuntu Server)",
+      "summary": "Build a stable, non-destructive dual-boot setup on an Intel MacBook Pro (2013):",
       "date": "2026-02-11",
       "url": "https://juribuora.github.io/blog/2026/02/11/day-19.html",
       "category": "blog",
@@ -3878,6 +4103,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 18,
       "title": "Intel Mac Dual-Boot Experiments, Architecture Friction, and Lab Prep",
+      "summary": "Set up an Intel MacBook Pro (2013) as a dual-boot target machine with:",
       "date": "2026-02-10",
       "url": "https://juribuora.github.io/blog/2026/02/10/day-18.html",
       "category": "blog",
@@ -3895,6 +4121,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 17,
       "title": "Cookies, Sessions, and Trust Boundaries",
+      "summary": "Understand how HTTP authentication works in practice, focusing on:",
       "date": "2026-02-08",
       "url": "https://juribuora.github.io/blog/2026/02/08/day-17.html",
       "category": "blog",
@@ -3913,6 +4140,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 16,
       "title": "Linux Privilege Escalation: SUID, SGID, Sticky Bit (Foundations)",
+      "summary": "Build a correct mental model of Linux privilege escalation foundations by understanding:",
       "date": "2026-02-07",
       "url": "https://juribuora.github.io/blog/2026/02/07/day-16.html",
       "category": "blog",
@@ -3931,6 +4159,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 15,
       "title": "Building a Proper Terminal Logging Pipeline",
+      "summary": "Create a reliable, professional-grade terminal logging system that:",
       "date": "2026-02-06",
       "url": "https://juribuora.github.io/blog/2026/02/06/day-15.html",
       "category": "blog",
@@ -3949,6 +4178,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 14,
       "title": "Linux Permissions, Identity, Pipes, and Data Processing Fundamentals",
+      "summary": "Understand Linux permission models, user/group identity, ownership management, symbolic links, default permission behavior (umask), and gain foundational mastery of pipes, redirection, and core data-processing tools…",
       "date": "2026-02-05",
       "url": "https://juribuora.github.io/blog/2026/02/05/day-14.html",
       "category": "blog",
@@ -3971,6 +4201,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 13,
       "title": "SSH and Networking Flow Between VMs",
+      "summary": "Understand and practice real network communication between two Linux machines by chaining together SSH, SCP, and HTTP file transfers, and reason clearly about where each protocol fits in the networking flow.",
       "date": "2026-02-04",
       "url": "https://juribuora.github.io/blog/2026/02/04/day-13.html",
       "category": "blog",
@@ -3988,6 +4219,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 12,
       "title": "Linux Files, Permissions, and Safety",
+      "summary": "Understand how Linux handles files and permissions at a fundamental level, and build safe, repeatable habits around destructive commands and log inspection.",
       "date": "2026-02-02",
       "url": "https://juribuora.github.io/blog/2026/02/02/day-12.html",
       "category": "blog",
@@ -4006,6 +4238,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 11,
       "title": "Linux Fundamentals Part 3 (Finale)",
+      "summary": "Finish Linux Fundamentals Part 3 and understand how Linux systems are actually managed day-to-day (editors, processes, services, automation, logs).",
       "date": "2026-01-31",
       "url": "https://juribuora.github.io/blog/2026/01/31/day-11.html",
       "category": "blog",
@@ -4029,6 +4262,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 10,
       "title": "Linux Fundamentals Part 2 (SSH, Filesystem, Permissions)",
+      "summary": "Deepen Linux fundamentals by working with remote access, filesystem operations, and permissions, focusing on skills directly transferable to real systems.",
       "date": "2026-01-30",
       "url": "https://juribuora.github.io/blog/2026/01/30/day-10.html",
       "category": "blog",
@@ -4050,6 +4284,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 9,
       "title": "Linux Fundamentals Part 1",
+      "summary": "Get comfortable navigating and interrogating a Linux system using core terminal commands, instead of blindly copy-pasting.",
       "date": "2026-01-27",
       "url": "https://juribuora.github.io/blog/2026/01/27/day-09.html",
       "category": "blog",
@@ -4070,6 +4305,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 8,
       "title": "Killing Minima Ghosts & Owning the Stack",
+      "summary": "Stabilize the blog setup by fully removing leftover theme dependencies, fixing broken assumptions, and taking full ownership of the Jekyll stack.",
       "date": "2026-01-26",
       "url": "https://juribuora.github.io/blog/2026/01/26/day-08.html",
       "category": "blog",
@@ -4090,6 +4326,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 7,
       "title": "Workflow Ergonomics & GitHub Pages Stabilization",
+      "summary": "Reduce daily workflow friction and stabilize my GitHub Pages blog after repeated theme and configuration issues.",
       "date": "2026-01-25",
       "url": "https://juribuora.github.io/blog/2026/01/25/day-07.html",
       "category": "blog",
@@ -4110,6 +4347,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 6,
       "title": "Polishing Website & Fixing Jekyll Environment",
+      "summary": "Polish my GitHub Pages website, troubleshoot Jekyll environment issues, and consolidate past days’ notes for publication.",
       "date": "2026-01-24",
       "url": "https://juribuora.github.io/blog/2026/01/24/day-06.html",
       "category": "blog",
@@ -4131,6 +4369,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 5,
       "title": "Blogging with GitHub Pages (Publishing Foundations)",
+      "summary": "Learn the basics of publishing a blog using GitHub Pages and understand the tooling behind a static site workflow.",
       "date": "2026-01-23",
       "url": "https://juribuora.github.io/blog/2026/01/23/day-05.html",
       "category": "blog",
@@ -4150,6 +4389,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 4,
       "title": "Recovery Day Logged Honestly",
+      "summary": "Maintain continuity and honesty in daily logging, even when no active study or practice happens.",
       "date": "2026-01-22",
       "url": "https://juribuora.github.io/blog/2026/01/22/day-04.html",
       "category": "blog",
@@ -4166,6 +4406,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 3,
       "title": "How Websites Work (Big Picture)",
+      "summary": "Understand how a website works end-to-end, from the user’s device to the server response, and reinforce this understanding through visual mapping.",
       "date": "2026-01-21",
       "url": "https://juribuora.github.io/blog/2026/01/21/day-03.html",
       "category": "blog",
@@ -4185,6 +4426,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 2,
       "title": "Networking & Web Fundamentals (Consolidation Day)",
+      "summary": "Strengthen foundational understanding of how networks and the web work, while improving my personal knowledge system to support long-term learning.",
       "date": "2026-01-20",
       "url": "https://juribuora.github.io/blog/2026/01/20/day-02.html",
       "category": "blog",
@@ -4205,6 +4447,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 1,
       "title": "Environment Setup & Foundations",
+      "summary": "Build a clean, reproducible cybersecurity lab and a unified knowledge system to support long-term learning and documentation.",
       "date": "2026-01-19",
       "url": "https://juribuora.github.io/blog/2026/01/19/day-01.html",
       "category": "blog",
@@ -4226,7 +4469,8 @@ export const jekyllSnapshot: LoadedPosts = {
   "labs": [
     {
       "day": 34,
-      "title": "Build an Evidence-Bounded Status Importer",
+      "title": "Building a Status Importer That Rejects Stale Data and Unproven Completion Claims",
+      "summary": "A local importer that accepts only the metadata a status brief needs, rejects stale or content-bearing records, and will not claim work is done without an artifact.",
       "date": "2026-10-01",
       "url": "https://juribuora.github.io/labs/2026/10/01/lab-34-day-243.html",
       "category": "lab",
@@ -4246,7 +4490,8 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 33,
-      "title": "Gate a Voice-Triggered Agent Job",
+      "title": "Requiring Confirmation Before a Voice Command Starts an Agent Job",
+      "summary": "A local confirmation gate that treats a voice transcription as untrusted and starts an agent job only after the owner confirms the exact proposal.",
       "date": "2026-09-30",
       "url": "https://juribuora.github.io/labs/2026/09/30/lab-33-day-242.html",
       "category": "lab",
@@ -4265,7 +4510,8 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 32,
-      "title": "Build a Metadata-Only Status Receipt With Freshness",
+      "title": "Building a Status Record That Holds No Message Content and Expires",
+      "summary": "A strict status record for tasks that stores metadata only, rejects stale or malformed entries, and never counts as proof of completion.",
       "date": "2026-09-29",
       "url": "https://juribuora.github.io/labs/2026/09/29/lab-32-day-241.html",
       "category": "lab",
@@ -4284,7 +4530,8 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 31,
-      "title": "Prove a Runtime Setting Reached the Running Service",
+      "title": "Checking a Config Change Actually Reached the Running Service",
+      "summary": "Compares the wanted setting with the running process's environment, its log and its status endpoint, showing that a changed file alone proves nothing.",
       "date": "2026-09-28",
       "url": "https://juribuora.github.io/labs/2026/09/28/lab-31-day-240.html",
       "category": "lab",
@@ -4303,7 +4550,8 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 30,
-      "title": "Gate an Automated Calendar Write on Source Evidence",
+      "title": "Letting Automation Add a Calendar Event Only When the Message Proves It",
+      "summary": "A fixture-driven pipeline that writes a calendar event only when the source message supports the date, time and action.",
       "date": "2026-09-27",
       "url": "https://juribuora.github.io/labs/2026/09/27/lab-30-day-239.html",
       "category": "lab",
@@ -4323,6 +4571,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 29,
       "title": "Reviewing an Agent Tool Bundle for Least Privilege",
+      "summary": "Reviews the tools an inbound messaging agent can actually use and removes the ones that are unnecessary or hold credentials.",
       "date": "2026-09-25",
       "url": "https://juribuora.github.io/labs/2026/09/25/lab-29-day-237.html",
       "category": "lab",
@@ -4341,7 +4590,8 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 28,
-      "title": "Testing the Message a Person Would Actually Receive",
+      "title": "Testing an AI Agent's Final Message, Not Its First Draft",
+      "summary": "Builds a local test harness that judges what an AI agent would finally send after tool calls, filtering and rewriting, instead of the model's first output.",
       "date": "2026-09-24",
       "url": "https://juribuora.github.io/labs/2026/09/24/lab-28-day-236.html",
       "category": "lab",
@@ -4360,6 +4610,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 27,
       "title": "Assessing a Found USB Drive Without Plugging It In",
+      "summary": "Google Cybersecurity Certificate exercise: assessing a found USB drive as a data-leak and malware risk without connecting it.",
       "date": "2026-09-22",
       "url": "https://juribuora.github.io/labs/2026/09/22/lab-27-day-234.html",
       "category": "lab",
@@ -4380,6 +4631,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 26,
       "title": "Reviewing a Payroll Change Through Access-Control Evidence",
+      "summary": "Google Cybersecurity Certificate worksheet: analysing a simulated payroll change, what the logs prove about who made it, and which access controls failed.",
       "date": "2026-09-18",
       "url": "https://juribuora.github.io/labs/2026/09/18/lab-26-day-230.html",
       "category": "lab",
@@ -4400,6 +4652,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 25,
       "title": "Proving Two Identical-Looking Files Are Not the Same File",
+      "summary": "Google Cybersecurity Certificate activity: using sha256sum and cmp to show that two files which look identical are different.",
       "date": "2026-09-17",
       "url": "https://juribuora.github.io/labs/2026/09/17/lab-25-day-229.html",
       "category": "lab",
@@ -4419,6 +4672,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 24,
       "title": "Decrypting a Caesar Cipher and an AES-256 File in Linux",
+      "summary": "Google Cybersecurity Certificate activity: finding and decrypting a Caesar-cipher file, then using OpenSSL to decrypt an AES-256 file.",
       "date": "2026-09-16",
       "url": "https://juribuora.github.io/labs/2026/09/16/lab-24-day-228.html",
       "category": "lab",
@@ -4438,6 +4692,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 23,
       "title": "Completing a SQL Join for a Security Incident Investigation",
+      "summary": "Google Cybersecurity Certificate activity: INNER, LEFT and RIGHT joins across machines, employees and login attempts to investigate an incident.",
       "date": "2026-09-15",
       "url": "https://juribuora.github.io/labs/2026/09/15/lab-23-day-227.html",
       "category": "lab",
@@ -4457,6 +4712,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 22,
       "title": "SQL Time-Window Filtering for Authentication Triage",
+      "summary": "Turning an authentication or patching question into SQL filters on dates, times and IDs, based on Google Cybersecurity Certificate material.",
       "date": "2026-09-12",
       "url": "https://juribuora.github.io/labs/2026/09/12/lab-22-day-224.html",
       "category": "lab",
@@ -4475,7 +4731,8 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 21,
-      "title": "Verifying a Locked-Down Loopback HTTP Bridge",
+      "title": "Verifying a Local-Only HTTP Service Cannot Be Reached or Misused",
+      "summary": "Builds a toy HTTP service meant to be reachable only from the same machine and to run one fixed action, then attacks those assumptions.",
       "date": "2026-09-05",
       "url": "https://juribuora.github.io/labs/2026/09/05/lab-21-day-217.html",
       "category": "lab",
@@ -4494,6 +4751,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 20,
       "title": "Verifying an Encrypted Backup Restore Safely",
+      "summary": "Checks that an encrypted backup really restores: restore to an isolated location, inspect it, and avoid starting a second live copy.",
       "date": "2026-09-02",
       "url": "https://juribuora.github.io/labs/2026/09/02/lab-20-day-214.html",
       "category": "lab",
@@ -4512,7 +4770,8 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 19,
-      "title": "Testing a Stale-Message-Safe Agent Relay",
+      "title": "Testing an Agent Relay That Refuses Stale or Replayed Messages",
+      "summary": "Tests the integrity checks in a local relay between agents, using fixtures only, so old or repeated messages are refused.",
       "date": "2026-08-30",
       "url": "https://juribuora.github.io/labs/2026/08/30/lab-19-day-211.html",
       "category": "lab",
@@ -4532,7 +4791,8 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 18,
-      "title": "One-Time Reply Authorization with Local Fixtures",
+      "title": "Allowing Exactly One Reply per Incoming Message",
+      "summary": "A small authorization pattern for automation that messages people: each incoming message permits one short-lived reply to one destination.",
       "date": "2026-08-25",
       "url": "https://juribuora.github.io/labs/2026/08/25/lab-18-day-206.html",
       "category": "lab",
@@ -4553,6 +4813,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 17,
       "title": "Building a Minimal Adversarial Test Harness for a Chat Persona",
+      "summary": "A script that sends the same adversarial prompt to a chatbot many times, measures how often the answer changes, and scores what it reveals about itself.",
       "date": "2026-08-19",
       "url": "https://juribuora.github.io/labs/2026/08/19/lab-17-day-200.html",
       "category": "lab",
@@ -4572,6 +4833,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 16,
       "title": "SELECT, FROM, and ORDER BY for Login-Activity Review",
+      "summary": "Google Cybersecurity Certificate activity: basic SELECT and FROM queries, with ORDER BY to put login events in time order.",
       "date": "2026-08-11",
       "url": "https://juribuora.github.io/labs/2026/08/11/lab-16-day-192.html",
       "category": "lab",
@@ -4591,6 +4853,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 15,
       "title": "Filtering SQL Queries with WHERE and LIKE",
+      "summary": "Google Cybersecurity Certificate activity: narrowing SQL results with WHERE and LIKE to the records a security task needs.",
       "date": "2026-08-11",
       "url": "https://juribuora.github.io/labs/2026/08/11/lab-15-day-192.html",
       "category": "lab",
@@ -4610,6 +4873,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 14,
       "title": "Building and Breaking an SSRF-Safe Fetch Guard",
+      "summary": "Builds a small guard that stops a program fetching internal addresses, then attacks it the way two real bypasses were found.",
       "date": "2026-08-02",
       "url": "https://juribuora.github.io/labs/2026/08/02/lab-14-day-183.html",
       "category": "lab",
@@ -4631,6 +4895,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 11,
       "title": "Assessing a Candidate Tool Before Adoption",
+      "summary": "A security-first review of a third-party command-line tool before installing it: its source, permissions, what it keeps, and how to remove it.",
       "date": "2026-07-27",
       "url": "https://juribuora.github.io/labs/2026/07/27/lab-11-day-177.html",
       "category": "lab",
@@ -4652,6 +4917,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 10,
       "title": "Isolating Parallel Agents with Git Worktrees",
+      "summary": "Uses git worktrees so several automated agents can work on one repository at once without touching each other's files.",
       "date": "2026-07-22",
       "url": "https://juribuora.github.io/labs/2026/07/22/lab-10-day-172.html",
       "category": "lab",
@@ -4673,7 +4939,8 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 9,
-      "title": "Testing an Integrity-Protected Artifact Delivery Path",
+      "title": "Testing Safe File Delivery: Expiring Links and Hash Checks",
+      "summary": "Tests the checks behind handing over a task's output file safely: single-purpose expiring links, hash verification and revocation.",
       "date": "2026-07-18",
       "url": "https://juribuora.github.io/labs/2026/07/18/lab-09-day-168.html",
       "category": "lab",
@@ -4692,7 +4959,8 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 8,
-      "title": "Auditing a Bounded, Source-Attributed Agent Context",
+      "title": "Auditing What an AI Agent Is Given to Read Before It Acts",
+      "summary": "Treats the text handed to an AI agent as security-relevant input: checks where each piece came from and that the total stays within set limits.",
       "date": "2026-07-15",
       "url": "https://juribuora.github.io/labs/2026/07/15/lab-08-day-165.html",
       "category": "lab",
@@ -4712,6 +4980,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 7,
       "title": "Investigating a False-Positive Alert in a Verification Script",
+      "summary": "Handling a noisy alert from my own tooling: reproduce it, find why it fires, narrow it, and keep a test so real problems are still caught.",
       "date": "2026-07-14",
       "url": "https://juribuora.github.io/labs/2026/07/14/lab-07-day-164.html",
       "category": "lab",
@@ -4733,6 +5002,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 6,
       "title": "Linux User and Group Management for Access Control",
+      "summary": "Creating and removing Linux users and groups and assigning ownership, from a security analyst's point of view.",
       "date": "2026-07-05",
       "url": "https://juribuora.github.io/labs/2026/07/05/lab-06-day-155.html",
       "category": "lab",
@@ -4755,6 +5025,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 5,
       "title": "SSH Brute-Force Investigation and Automated Defense",
+      "summary": "A full SSH brute-force exercise on a lab VM: run the attack, pull the evidence from the logs with shell tools, then watch Fail2ban detect and block it.",
       "date": "2026-03-10",
       "url": "https://juribuora.github.io/labs/2026/03/10/lab-05-day-38.html",
       "category": "lab",
@@ -4774,6 +5045,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 4,
       "title": "Endpoint Process Chain Triage with Pipe-Delimited Logs and awk",
+      "summary": "SOC-style triage of a synthetic process-creation log, using Linux pipelines and awk to trace which process started which.",
       "date": "2026-02-26",
       "url": "https://juribuora.github.io/labs/2026/02/26/lab-04-day-29.html",
       "category": "lab",
@@ -4794,6 +5066,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 3,
       "title": "HTTP in Practice (Pentester POV)",
+      "summary": "How a browser proves who it is and what the server trusts: sessions, cookies and headers, studied on real requests rather than exploited.",
       "date": "2026-02-08",
       "url": "https://juribuora.github.io/labs/2026/02/08/lab-03-day-17.html",
       "category": "lab",
@@ -4812,6 +5085,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 2,
       "title": "Real SUID Behavior: Scripts vs Binaries",
+      "summary": "Tests how the SUID bit really behaves on a modern Linux system, and why it works on binaries but not on scripts.",
       "date": "2026-02-07",
       "url": "https://juribuora.github.io/labs/2026/02/07/lab-02-day-16.html",
       "category": "lab",
@@ -4831,6 +5105,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 1,
       "title": "Linux Permissions & Ownership Hands-On Practice",
+      "summary": "Hands-on practice changing file permissions and ownership on Linux, and reading who can access what.",
       "date": "2026-02-05",
       "url": "https://juribuora.github.io/labs/2026/02/05/lab-01_day-14.html",
       "category": "lab",
@@ -4847,6 +5122,172 @@ export const jekyllSnapshot: LoadedPosts = {
       "slug": "lab-01_day-14",
       "sourcePath": "Labs/_posts/2026-02-05-lab-01_day-14.md",
       "contentPath": "/generated/posts/lab/1.json"
+    }
+  ],
+  "portfolio": [
+    {
+      "day": 9,
+      "title": "Vulnerability Assessment of an Internet-Exposed Database (Training Scenario, NIST SP 800-30)",
+      "summary": "A scenario-based assessment of a business-critical MySQL database reachable from the internet: risks identified and prioritised with NIST SP 800-30, plus remediation and validation steps. No live system was touched.",
+      "date": "2026-09-23",
+      "url": "https://juribuora.github.io/portfolio-material/2026/09/23/vulnerability-assessment-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "cybersecurity",
+        "vulnerabilityassessment",
+        "riskassessment",
+        "nist",
+        "databasesecurity",
+        "dataprotection"
+      ],
+      "slug": "vulnerability-assessment-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-09-23-vulnerability-assessment-case-study.md",
+      "contentPath": "/generated/posts/portfolio/9.json"
+    },
+    {
+      "day": 8,
+      "title": "Letting Home Assistant Wake and Sleep a Mac Without Handing It Broad Access",
+      "summary": "Wake and sleep treated as two separate trust decisions: wake adds no new authority, and sleep goes through a local-only bridge that can run one fixed command.",
+      "date": "2026-09-05",
+      "url": "https://juribuora.github.io/portfolio-material/2026/09/05/home-assistant-m4-bridge-defense-in-depth.html",
+      "category": "portfolio",
+      "tags": [
+        "cybersecurity",
+        "leastprivilege",
+        "defenseindepth",
+        "networksecurity",
+        "homeautomation"
+      ],
+      "slug": "home-assistant-m4-bridge-defense-in-depth",
+      "sourcePath": "Portfolio-Material/_posts/2026-09-05-home-assistant-m4-bridge-defense-in-depth.md",
+      "contentPath": "/generated/posts/portfolio/8.json"
+    },
+    {
+      "day": 7,
+      "title": "Proving a Backup Restores: Encrypted Off-Host Backup of an Agent's State",
+      "summary": "An encrypted off-machine backup of my agent's database, verified by restoring it on a second machine and checking structure, contents and integrity.",
+      "date": "2026-09-02",
+      "url": "https://juribuora.github.io/portfolio-material/2026/09/02/recovery-proof-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "cybersecurity",
+        "backuprecovery",
+        "encryption",
+        "sqlite",
+        "incidentresponse",
+        "validation"
+      ],
+      "slug": "recovery-proof-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-09-02-recovery-proof-case-study.md",
+      "contentPath": "/generated/posts/portfolio/7.json"
+    },
+    {
+      "day": 6,
+      "title": "Investigating an Unexplained Remote Shutdown and Locking Down the Power-Off Path",
+      "summary": "A Mac in my setup was powered off by a chat message with no clear cause. I traced the path that allowed it, closed it, and made shutdown default-deny with a record of every caller.",
+      "date": "2026-08-18",
+      "url": "https://juribuora.github.io/portfolio-material/2026/08/18/default-deny-destructive-action-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "cybersecurity",
+        "accesscontrol",
+        "defaultdeny",
+        "authentication",
+        "changemanagement"
+      ],
+      "slug": "default-deny-destructive-action-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-08-18-default-deny-destructive-action-case-study.md",
+      "contentPath": "/generated/posts/portfolio/6.json"
+    },
+    {
+      "day": 5,
+      "title": "Building an SSRF Guard for an Agent's Web Fetches, Then Finding Two Bypasses in It",
+      "summary": "I built the guard that stops an agent tool fetching internal addresses, ran an independent review of my own fix, and found two live bypasses before either was patched.",
+      "date": "2026-08-02",
+      "url": "https://juribuora.github.io/portfolio-material/2026/08/02/ssrf-defense-in-depth-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "cybersecurity",
+        "ssrf",
+        "dnsrebinding",
+        "appsec",
+        "independentreview"
+      ],
+      "slug": "ssrf-defense-in-depth-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-08-02-ssrf-defense-in-depth-case-study.md",
+      "contentPath": "/generated/posts/portfolio/5.json"
+    },
+    {
+      "day": 4,
+      "title": "Vetting Third-Party Tools Before Installing Them: Source, Permissions, Removal",
+      "summary": "How I evaluated candidate tools: pinned source revisions, comparison with a manual baseline, bounded trials, and clean removal for the ones that did not earn their place.",
+      "date": "2026-07-27",
+      "url": "https://juribuora.github.io/portfolio-material/2026/07/27/evidence-gated-tool-evaluation.html",
+      "category": "portfolio",
+      "tags": [
+        "cybersecurity",
+        "supplychainsecurity",
+        "toolevaluation",
+        "provenance",
+        "leastprivilege"
+      ],
+      "slug": "evidence-gated-tool-evaluation",
+      "sourcePath": "Portfolio-Material/_posts/2026-07-27-evidence-gated-tool-evaluation.md",
+      "contentPath": "/generated/posts/portfolio/4.json"
+    },
+    {
+      "day": 3,
+      "title": "Stopping an AI Agent from Claiming Success It Cannot Prove",
+      "summary": "The verification layer around my agent supervisor: success needs evidence, checks fail closed, decision changes are shadow-tested, and recovery is rehearsed.",
+      "date": "2026-07-21",
+      "url": "https://juribuora.github.io/portfolio-material/2026/07/21/fail-closed-verification-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "cybersecurity",
+        "failclosed",
+        "verification",
+        "automation",
+        "integrity"
+      ],
+      "slug": "fail-closed-verification-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-07-21-fail-closed-verification-case-study.md",
+      "contentPath": "/generated/posts/portfolio/3.json"
+    },
+    {
+      "day": 2,
+      "title": "Sharing an Agent's Output Files Safely: Expiring Links and Hash Checks",
+      "summary": "A way to hand one task's report to one recipient without giving storage access: single-purpose expiring links, integrity checks before delivery, and durable delivery state.",
+      "date": "2026-07-18",
+      "url": "https://juribuora.github.io/portfolio-material/2026/07/18/artifact-integrity-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "cybersecurity",
+        "integrity",
+        "securedelivery",
+        "hashing",
+        "authorization"
+      ],
+      "slug": "artifact-integrity-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-07-18-artifact-integrity-case-study.md",
+      "contentPath": "/generated/posts/portfolio/2.json"
+    },
+    {
+      "day": 1,
+      "title": "Supervising an AI Agent: Approvals, Audit Logs and Recovery Before It Acts",
+      "summary": "I designed and tested a supervision layer for a local AI agent: task-scoped permissions, approvals, audit records and restart-safe controls. Feature-flagged and fixture-tested, not live.",
+      "date": "2026-07-17",
+      "url": "https://juribuora.github.io/portfolio-material/2026/07/17/secure-automation-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "cybersecurity",
+        "automationsecurity",
+        "leastprivilege",
+        "approvals",
+        "auditability"
+      ],
+      "slug": "secure-automation-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-07-17-secure-automation-case-study.md",
+      "contentPath": "/generated/posts/portfolio/1.json"
     }
   ],
   "allTags": [

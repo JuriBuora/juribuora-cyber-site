@@ -1,0 +1,17 @@
+{
+  "day": 2,
+  "title": "Sharing an Agent's Output Files Safely: Expiring Links and Hash Checks",
+  "date": "2026-07-18",
+  "url": "https://juribuora.github.io/portfolio-material/2026/07/18/artifact-integrity-case-study.html",
+  "category": "portfolio",
+  "tags": [
+    "cybersecurity",
+    "integrity",
+    "securedelivery",
+    "hashing",
+    "authorization"
+  ],
+  "slug": "artifact-integrity-case-study",
+  "sourcePath": "Portfolio-Material/_posts/2026-07-18-artifact-integrity-case-study.md",
+  "content": "## Summary\n\nI extended the supervised-agent design with a controlled way to share task artifacts. The central problem was simple: a completed task may produce a report or file, but giving broad storage access to a recipient is unnecessary and unsafe.\n\nThe solution used one-purpose, expiring artifact links, integrity checks before delivery, and durable delivery state. The result is a design that demonstrates authorization, integrity, logging, and recovery working together.\n\n## Design Decisions\n\n- One token maps to one artifact only.\n- Tokens expire after a fixed period and can be revoked.\n- The database stores a SHA-256 value of the token, never the token itself.\n- The artifact's size and SHA-256 digest are recorded as evidence.\n- A download re-hashes the served bytes and fails closed if the file changed after registration.\n- Only the linked artifact is reachable; logs, backups, and arbitrary paths are not exposed by the delivery route.\n- File delivery requires a completed task, a sealed result contract, a permitted size, successful hash verification, and destination confirmation.\n\n## Evidence\n\n- A fresh-process test retrieved byte-identical content using a valid link.\n- Forged, expired, and revoked links were refused.\n- An expiry test confirmed that a link can expire without deleting the original artifact.\n- Crash and repeat-delivery tests confirmed a recipient does not receive duplicate file messages.\n- The full verification suite passed 219 tests after the artifact-delivery phase.\n\n## Security Relevance\n\nThis work maps directly to practical security decisions:\n\n- **Authorization:** a token grants access to one defined object, not a file browser.\n- **Integrity:** hash verification detects tampering between recording and delivery.\n- **Confidentiality:** opaque tokens and narrow routes reduce accidental exposure.\n- **Accountability:** durable access and delivery metadata makes investigation possible.\n- **Resilience:** the system distinguishes a delivery attempt from a confirmed delivery, which makes safe recovery possible after a crash.\n\n## What I Learned\n\nAn expiring link is not automatically secure. The surrounding details decide whether it is a capability with clear boundaries or just an untracked shortcut into storage. I learned to make those details explicit: scope, expiry, revocation, hashing, size limits, audit records, and duplicate-safe recovery.\n"
+}

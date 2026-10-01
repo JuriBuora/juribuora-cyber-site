@@ -22,9 +22,12 @@ type Entry = {
   priority?: number;
 };
 
+type ManifestEntry = { category: "blog" | "lab" | "portfolio"; day: number; date: string; title: string; summary?: string };
+
 type GeneratedManifest = {
-  posts: Array<{ category: "blog" | "lab"; day: number; date: string; title: string }>;
-  labs: Array<{ category: "blog" | "lab"; day: number; date: string; title: string }>;
+  posts: ManifestEntry[];
+  labs: ManifestEntry[];
+  portfolio?: ManifestEntry[];
 };
 
 type RouteShell = {
@@ -41,7 +44,7 @@ const SHOWCASE_IMAGE = "/og-what-im-doing.png";
 async function readManifestEntries(): Promise<Entry[]> {
   const raw = await readFile(MANIFEST_PATH, "utf8");
   const manifest = JSON.parse(raw) as GeneratedManifest;
-  const mirroredPosts = [...manifest.posts, ...manifest.labs];
+  const mirroredPosts = [...manifest.posts, ...manifest.labs, ...(manifest.portfolio ?? [])];
 
   return mirroredPosts.map((post) => ({
     loc: `${SITE}/${post.category}/${post.day}`,
@@ -181,6 +184,11 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
       routePath: `/${post.category}/${post.day}`,
       title: `${post.title} — Juri Buora`,
       description: `Read "${post.title}" on Juri Buora's mirrored cybersecurity learning log.`,
+    })),
+    ...(manifest.portfolio ?? []).map((post) => ({
+      routePath: `/${post.category}/${post.day}`,
+      title: `${post.title} — Juri Buora`,
+      description: post.summary || `Read "${post.title}", a case study from Juri Buora's cybersecurity portfolio.`,
     })),
   ];
 

@@ -7,6 +7,7 @@ const post = (category: Post["category"], day: number, date: string): Post => ({
   date,
   category,
   title: `${category} ${day}`,
+  summary: "",
   url: "",
   tags: [],
   slug: "",

@@ -1,6 +1,6 @@
 {
   "day": 32,
-  "title": "Build a Metadata-Only Status Receipt With Freshness",
+  "title": "Building a Status Record That Holds No Message Content and Expires",
   "date": "2026-09-29",
   "url": "https://juribuora.github.io/labs/2026/09/29/lab-32-day-241.html",
   "category": "lab",

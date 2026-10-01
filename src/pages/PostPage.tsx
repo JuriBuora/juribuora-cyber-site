@@ -13,14 +13,14 @@ import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag, Clock } from "lucid
 import TableOfContents from "@/components/TableOfContents";
 import ScrollToTop from "@/components/ScrollToTop";
 import useCodeCopyButtons from "@/hooks/useCodeCopyButtons";
-import { normalizeCollectionSlug } from "@/lib/contentRoutes";
+import { collectionLabel, collectionPath, entryLabel, normalizeCollectionSlug } from "@/lib/contentRoutes";
 import { formatPostDate } from "@/lib/postDates";
 
 const SKELETON_LINE_WIDTHS = [92, 78, 88, 64, 96, 72, 84, 68];
 
 const PostPage = () => {
   const { category, day } = useParams<{ category: string; day: string }>();
-  const { posts, labs } = usePosts();
+  const { posts, labs, portfolio } = usePosts();
   const [contentState, setContentState] = useState<{
     content: string | null;
     error: boolean;
@@ -32,8 +32,8 @@ const PostPage = () => {
   });
 
   const allPosts = useMemo(
-    () => [...posts, ...labs].sort((a, b) => a.day - b.day),
-    [posts, labs],
+    () => [...posts, ...labs, ...portfolio].sort((a, b) => a.day - b.day),
+    [posts, labs, portfolio],
   );
 
   const post = useMemo(() => {
@@ -134,19 +134,17 @@ const PostPage = () => {
       <div className="container mx-auto px-4 py-12 flex gap-8 max-w-5xl">
         <article className="min-w-0 flex-1 max-w-3xl">
           <Link
-            to="/"
+            to={post.category === "portfolio" ? collectionPath(post.category) : "/"}
             className="inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground hover:text-primary transition-colors mb-8"
           >
             <ArrowLeft className="w-3 h-3" />
-            Back to all posts
+            {post.category === "portfolio" ? `Back to ${collectionLabel(post.category)}` : "Back to all posts"}
           </Link>
 
           <header className="mb-10">
             <div className="flex items-center gap-3 mb-4">
               <span className="font-mono text-xs text-primary border border-primary/30 rounded px-2 py-1">
-                {post.category === "lab"
-                  ? `Lab ${String(post.day).padStart(2, "0")}`
-                  : `Day ${String(post.day).padStart(2, "0")}`}
+                {entryLabel(post.category, post.day)}
               </span>
               <span className="flex items-center gap-1 text-xs text-muted-foreground">
                 <Calendar className="w-3 h-3" />

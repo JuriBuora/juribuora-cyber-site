@@ -1,6 +1,6 @@
 {
   "day": 34,
-  "title": "Build an Evidence-Bounded Status Importer",
+  "title": "Building a Status Importer That Rejects Stale Data and Unproven Completion Claims",
   "date": "2026-10-01",
   "url": "https://juribuora.github.io/labs/2026/10/01/lab-34-day-243.html",
   "category": "lab",

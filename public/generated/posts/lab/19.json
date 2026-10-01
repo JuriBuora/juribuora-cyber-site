@@ -1,6 +1,6 @@
 {
   "day": 19,
-  "title": "Testing a Stale-Message-Safe Agent Relay",
+  "title": "Testing an Agent Relay That Refuses Stale or Replayed Messages",
   "date": "2026-08-30",
   "url": "https://juribuora.github.io/labs/2026/08/30/lab-19-day-211.html",
   "category": "lab",

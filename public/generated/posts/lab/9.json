@@ -1,6 +1,6 @@
 {
   "day": 9,
-  "title": "Testing an Integrity-Protected Artifact Delivery Path",
+  "title": "Testing Safe File Delivery: Expiring Links and Hash Checks",
   "date": "2026-07-18",
   "url": "https://juribuora.github.io/labs/2026/07/18/lab-09-day-168.html",
   "category": "lab",
