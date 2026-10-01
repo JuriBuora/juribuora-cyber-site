@@ -17,12 +17,18 @@ function walk(dir: string): string[] {
 
 describe.skipIf(!existsSync(DIST))("built workstation output", () => {
   it("contains nothing private, in route shells or page chunks", () => {
-    const shells = walk(join(DIST, "workstation")).filter((f) => f.endsWith(".html"));
+    // Every prerendered showcase page: the text is now in the HTML itself.
+    // The synced posts under /portfolio/N, /blog and so on are public writing and are not scanned.
+    const shells = [
+      ...["workstation", "in-plain-words"].flatMap((dir) => walk(join(DIST, dir))),
+      ...["what-im-doing", "about", "portfolio"].map((dir) => join(DIST, dir, "index.html")),
+    ].filter((f) => f.endsWith(".html"));
     const chunks = walk(join(DIST, "assets")).filter(
       // The showcase data, not the synced blog manifest: public posts may name tools freely.
       (f) => f.endsWith(".js") && readFileSync(f, "utf8").includes("mcp-profile-launcher"),
     );
-    expect(shells.length).toBeGreaterThan(10);
+    expect(shells.length).toBeGreaterThan(30);
+    expect(shells.some((f) => f.includes("in-plain-words/brains"))).toBe(true);
     expect(chunks.length).toBeGreaterThan(0); // positive control: the scanner found the page data
     for (const f of [...shells, ...chunks]) {
       expect({ f, hits: scrub(readFileSync(f, "utf8")) }).toEqual({ f, hits: [] });

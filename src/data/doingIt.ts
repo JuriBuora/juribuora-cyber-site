@@ -71,7 +71,7 @@ export const chaptersIt: Record<string, ChapterText> = {
       "Uso un assistente che risponde in automatico su WhatsApp nelle mie conversazioni, con persone che sanno che c’è. Poiché un messaggio sbagliato non si può ritirare, tratto l’istante prima dell’invio come punto di controllo e misuro l’assistente come un sistema sotto test.",
     benefits: [
       "Tra il modello e il destinatario ci sono un filtro e un passaggio di rifinitura, così note interne, ragionamenti del modello ed errori degli strumenti non escono mai.",
-      "Acceso o spento per singola conversazione, un’indicazione di tono temporanea che scade da sola, e il silenzio al posto di una risposta scadente.",
+      "Acceso o spento per singola conversazione, un’indicazione di tono temporanea che scade da sola, e una risposta che non supera i controlli finali non viene inviata.",
       "Misurato, non sperato: 123 scenari di prova eseguiti tre volte ciascuno, più un turno reale di controllo sul percorso di produzione.",
     ],
     proof: [

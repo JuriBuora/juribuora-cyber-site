@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Languages } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronDown, Languages, Sparkles } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import BlogFooter from "@/components/BlogFooter";
 import BlogHeader from "@/components/BlogHeader";
@@ -6,6 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { castIcons } from "@/components/plain/castIcons";
 import { plain } from "@/data/plain";
 import { plainRoles } from "@/data/plainRoles";
+import { roleMore } from "@/data/plainRoleMore";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { usePlainLang } from "@/hooks/usePlainLang";
 import NotFound from "./NotFound";
@@ -25,6 +26,7 @@ const PlainRolePage = () => {
   if (!detail) return <NotFound />;
 
   const Icon = castIcons[index];
+  const more = roleMore[lang][detail.slug] ?? [];
   const next = roles[(index + 1) % roles.length];
 
   return (
@@ -81,18 +83,83 @@ const PlainRolePage = () => {
             <h2 id="list" className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
               {detail.listTitle}
             </h2>
-            <ul className="mt-7 space-y-3">
-              {detail.items.map((item) => (
-                <li key={item.name} className="rounded-3xl border border-border bg-card p-5">
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <h3 className="text-base font-semibold text-card-foreground">{item.name}</h3>
-                    {item.tag && (
-                      <span className="font-mono text-[11px] uppercase tracking-wider text-primary">{item.tag}</span>
-                    )}
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-                </li>
-              ))}
+            <p className="mt-2 text-sm text-muted-foreground">{t.roleOpenHint}</p>
+            <ul className="mt-6 space-y-3">
+              {detail.items.map((item, i) => {
+                const extra = more[i];
+                // Direct children of <summary>, so the heading stays valid HTML there.
+                const heading = (
+                  <>
+                    <h3 className="col-start-1 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-base font-semibold text-card-foreground">
+                      {item.name}
+                      {item.tag && (
+                        <span className="font-mono text-[11px] font-normal uppercase tracking-wider text-primary">{item.tag}</span>
+                      )}
+                    </h3>
+                    <span className="col-start-1 mt-2 block text-sm leading-relaxed text-muted-foreground">{item.body}</span>
+                  </>
+                );
+                if (!extra) {
+                  return (
+                    <li key={item.name} className="rounded-3xl border border-border bg-card p-5">
+                      {heading}
+                    </li>
+                  );
+                }
+                return (
+                  <li key={item.name}>
+                    {/* A native disclosure: it opens without JavaScript and its text is in the page for every reader. */}
+                    <details className="group rounded-3xl border border-border bg-card transition-colors open:border-primary/40 [@media(hover:hover)]:hover:border-primary/40">
+                      <summary
+                        className={`grid cursor-pointer list-none grid-cols-[minmax(0,1fr)_auto] gap-x-4 rounded-3xl p-5 [&::-webkit-details-marker]:hidden ${focus}`}
+                      >
+                        {heading}
+                        <span className="col-start-2 row-span-2 row-start-1 mt-0.5 flex h-8 w-8 items-center justify-center self-start rounded-full border border-border text-muted-foreground transition-colors group-open:border-primary/50 group-open:text-primary">
+                          <ChevronDown
+                            className="h-4 w-4 transition-transform duration-200 ease-out group-open:rotate-180 motion-reduce:transition-none"
+                            aria-hidden="true"
+                          />
+                        </span>
+                      </summary>
+                      <div className="border-t border-border px-5 pb-5 pt-4 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-top-1 motion-safe:duration-200">
+                        <div className="space-y-3 text-sm leading-relaxed text-card-foreground/90">
+                          {extra.text.map((p) => (
+                            <p key={p}>{p}</p>
+                          ))}
+                        </div>
+                        {extra.facts && (
+                          <dl className="mt-5 grid gap-x-6 gap-y-4 sm:grid-cols-3">
+                            {extra.facts.map((f) => (
+                              <div key={f.label} className="flex flex-col-reverse">
+                                <dt className="mt-1 text-xs leading-snug text-muted-foreground">{f.label}</dt>
+                                <dd className="font-mono text-xl font-semibold tabular-nums text-primary">{f.value}</dd>
+                              </div>
+                            ))}
+                          </dl>
+                        )}
+                        {extra.aside && (
+                          <div className="mt-5 rounded-2xl bg-primary/5 p-4">
+                            <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-primary">
+                              <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+                              {t.roleCuriosity}
+                            </p>
+                            <p className="mt-2 text-sm leading-relaxed text-card-foreground/90">{extra.aside}</p>
+                          </div>
+                        )}
+                        {extra.link && (
+                          <Link
+                            to={extra.link.to}
+                            className={`mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary underline-offset-4 hover:underline ${focus}`}
+                          >
+                            {extra.link.label}
+                            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                          </Link>
+                        )}
+                      </div>
+                    </details>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>

@@ -46,6 +46,8 @@ export type PlainContent = {
   roleMore: string;
   roleBack: string;
   roleNext: string;
+  roleOpenHint: string;
+  roleCuriosity: string;
 };
 
 const en: PlainContent = {
@@ -165,6 +167,8 @@ const en: PlainContent = {
   roleMore: "Which ones, and how",
   roleBack: "All seven roles",
   roleNext: "Next",
+  roleOpenHint: "Open a card for the story behind it.",
+  roleCuriosity: "A curiosity",
 };
 
 const it: PlainContent = {
@@ -284,6 +288,8 @@ const it: PlainContent = {
   roleMore: "Quali, e come",
   roleBack: "Tutti e sette i ruoli",
   roleNext: "Avanti",
+  roleOpenHint: "Apri una scheda per la storia che c’è dietro.",
+  roleCuriosity: "Una curiosità",
 };
 
 export const plain: Record<Lang, PlainContent> = { en, it };

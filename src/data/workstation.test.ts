@@ -10,6 +10,7 @@ import visualsSrc from "../components/doing/Visuals.tsx?raw";
 import plainSrc from "./plain.ts?raw";
 import doingItSrc from "./doingIt.ts?raw";
 import plainRolesSrc from "./plainRoles.ts?raw";
+import plainRoleMoreSrc from "./plainRoleMore.ts?raw";
 import plainRolePageSrc from "../pages/PlainRolePage.tsx?raw";
 import plainPageSrc from "../pages/PlainWordsPage.tsx?raw";
 import ogSrc from "../../scripts/assets/og.html?raw";
@@ -22,6 +23,8 @@ import { chapters, roles } from "./doing";
 import { chaptersIt, doingUi, rolesIt } from "./doingIt";
 import { plain } from "./plain";
 import { plainRoles, plainRoleSlugs } from "./plainRoles";
+import { roleMore } from "./plainRoleMore";
+import { jekyllSnapshot } from "./jekyllSnapshot.generated";
 
 describe("workstation page content", () => {
   it("weekly series sums to the headline commit total", () => {
@@ -41,7 +44,7 @@ describe("workstation page content", () => {
   });
 
   it("source files contain nothing private", () => {
-    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc, doingSrc, doingPageSrc, visualsSrc, ogSrc, onePagerSrc, plainSrc, plainPageSrc, plainRolesSrc, plainRolePageSrc, doingItSrc };
+    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc, doingSrc, doingPageSrc, visualsSrc, ogSrc, onePagerSrc, plainSrc, plainPageSrc, plainRolesSrc, plainRolePageSrc, doingItSrc, plainRoleMoreSrc };
     for (const [name, text] of Object.entries(files)) {
       expect({ name, hits: scrub(text) }).toEqual({ name, hits: [] });
     }
@@ -105,6 +108,40 @@ describe("plain-words page", () => {
       expect(plainRoles.it[i].items.length).toBe(role.items.length);
       expect(plainRoles.it[i].lessons.length).toBe(role.lessons.length);
     });
+  });
+
+  it("has the story behind every card, with the same shape in both languages", () => {
+    expect(Object.keys(roleMore.en).sort()).toEqual([...plainRoleSlugs].sort());
+    expect(Object.keys(roleMore.it).sort()).toEqual([...plainRoleSlugs].sort());
+    for (const role of plainRoles.en) {
+      const en = roleMore.en[role.slug];
+      const it = roleMore.it[role.slug];
+      expect(en.length, role.slug).toBe(role.items.length);
+      expect(it.length, role.slug).toBe(role.items.length);
+      en.forEach((item, i) => {
+        const where = `${role.slug} #${i + 1}`;
+        expect(item.text.length, where).toBeGreaterThan(0);
+        expect(it[i].text.length, where).toBe(item.text.length);
+        expect(it[i].facts?.length ?? 0, where).toBe(item.facts?.length ?? 0);
+        expect(!!it[i].aside, where).toBe(!!item.aside);
+        expect(it[i].link?.to, where).toBe(item.link?.to);
+        // Numbers are written the Italian way in Italian, but must be the same numbers.
+        const digits = (v: string) => v.replace(/[^0-9]/g, "");
+        item.facts?.forEach((fact, k) => expect(digits(it[i].facts![k].value), where).toBe(digits(fact.value)));
+      });
+    }
+  });
+
+  it("links every story to a page that exists", () => {
+    const routes = new Set([
+      "/workstation",
+      ...projects.map((p) => `/workstation/${p.slug}`),
+      ...jekyllSnapshot.reports.map((r) => `/report/${r.day}`),
+      ...jekyllSnapshot.posts.map((r) => `/blog/${r.day}`),
+    ]);
+    const links = Object.values(roleMore.en).flat().flatMap((item) => (item.link ? [item.link.to] : []));
+    expect(links.length).toBeGreaterThan(10);
+    for (const to of links) expect(routes.has(to), to).toBe(true);
   });
 });
 
