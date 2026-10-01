@@ -5170,6 +5170,27 @@ export const jekyllSnapshot: LoadedPosts = {
   ],
   "portfolio": [
     {
+      "day": 10,
+      "title": "PASTA Threat Model: Sneaker Marketplace Mobile App",
+      "summary": "A practical PASTA threat-modeling exercise for a mobile sneaker marketplace, covering business objectives, architecture, data flows, threats, vulnerabilities, attack paths, and mitigations.",
+      "date": "2026-10-01",
+      "url": "https://juribuora.github.io/portfolio-material/2026/10/01/pasta-threat-model-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "cybersecurity",
+        "threat-modeling",
+        "pasta",
+        "application-security",
+        "sql-injection",
+        "authentication",
+        "api-security",
+        "data-protection"
+      ],
+      "slug": "pasta-threat-model-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-10-01-pasta-threat-model-case-study.md",
+      "contentPath": "/generated/posts/portfolio/10.json"
+    },
+    {
       "day": 9,
       "title": "Vulnerability Assessment of an Internet-Exposed Database (Training Scenario, NIST SP 800-30)",
       "summary": "A scenario-based assessment of a business-critical MySQL database reachable from the internet: risks identified and prioritised with NIST SP 800-30, plus remediation and validation steps. No live system was touched.",
