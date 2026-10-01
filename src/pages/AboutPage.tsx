@@ -4,9 +4,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { Shield, Target, BookOpen, Terminal, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { usePageTitle } from "@/hooks/usePageTitle";
+import { goalProgress } from "@/lib/goal";
 import { usePosts } from "@/hooks/usePosts";
-
-const GOAL_DAYS = 240;
 
 const skills = [
   { category: "Networking", items: ["TCP/IP", "DNS", "HTTP/S", "Wireshark", "Nmap"] },
@@ -27,11 +26,12 @@ const certifications = [
 const AboutPage = () => {
   usePageTitle("About");
   const { posts, labs } = usePosts();
+  const goal = goalProgress(posts.length);
   const milestones = [
     { number: String(posts.length), label: "Days Logged" },
     { number: String(labs.length), label: "Labs Completed" },
-    { number: String(GOAL_DAYS), label: posts.length >= GOAL_DAYS ? "Day Goal, Reached" : "Day Goal" },
-    { number: `${Math.min(100, Math.round((posts.length / GOAL_DAYS) * 100))}%`, label: "Progress" },
+    { number: String(goal.target), label: goal.reached ? `New Target (${goal.reached} Reached)` : "Day Goal" },
+    { number: `${goal.percent}%`, label: "Progress" },
   ];
   return (
     <div className="min-h-screen bg-background">

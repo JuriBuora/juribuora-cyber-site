@@ -117,7 +117,7 @@ export const projects: Project[] = [
     period: "Aug 2026 – now",
     tagline: "An assistant that answers on a messaging app, built around one idea: a message cannot be unsent, so the moment before delivery is the control point.",
     why: [
-      "I wanted an assistant that could handle routine messages in my own conversations while I am busy.",
+      "I wanted an assistant that could handle routine messages in my own conversations while I am busy. The people it answers know about it.",
       "A reply to a real person is irreversible. That makes the delivery boundary the place to put the controls, not the prompt.",
     ],
     what: [

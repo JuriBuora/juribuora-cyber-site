@@ -83,7 +83,7 @@ export const chapters: Chapter[] = [
     kicker: "Applied AI · Fail-safe delivery",
     headline: "AI that talks to people, with a safety net at the door.",
     lead:
-      "I run an auto-reply assistant on WhatsApp for my own conversations. Because a wrong message cannot be unsent, I treat the moment before delivery as the control point and measure the assistant like a system under test.",
+      "I run an auto-reply assistant on WhatsApp for my own conversations, with people who know it is there. Because a wrong message cannot be unsent, I treat the moment before delivery as the control point and measure the assistant like a system under test.",
     benefits: [
       "A filter and a shaping step sit between the model and the recipient, so internal notices, leaked reasoning and tool errors never go out.",
       "Per-conversation on and off, a temporary tone instruction that expires on its own, and silence instead of a poor reply.",

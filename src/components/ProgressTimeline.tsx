@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { usePosts } from "@/hooks/usePosts";
 import { Progress } from "@/components/ui/progress";
 import { useIsMobile } from "@/hooks/use-mobile";
-
-const GOAL_DAYS = 240;
+import { goalProgress } from "@/lib/goal";
 
 const ProgressTimeline = () => {
   const { posts } = usePosts();
@@ -19,6 +18,7 @@ const ProgressTimeline = () => {
   );
 
   const totalDays = sortedPosts.length;
+  const goal = goalProgress(totalDays);
 
   // Group by week for the weekly breakdown
   const weeks = useMemo(() => {
@@ -61,14 +61,14 @@ const ProgressTimeline = () => {
           <span className="text-primary">{totalDays} days logged</span>
         </div>
         <Progress
-          value={Math.min(100, (totalDays / GOAL_DAYS) * 100)}
+          value={goal.percent}
           className="h-2"
-          aria-label={`Progress toward the ${GOAL_DAYS}-day goal`}
+          aria-label={`Progress toward the ${goal.target}-day target`}
         />
         <p className="font-mono text-[11px] text-muted-foreground mt-1">
-          {totalDays >= GOAL_DAYS
-            ? `${GOAL_DAYS}-day goal reached, ${totalDays - GOAL_DAYS} days past it`
-            : `${Math.round((totalDays / GOAL_DAYS) * 100)}% toward ${GOAL_DAYS}-day goal`}
+          {goal.reached && goal.reached !== goal.target
+            ? `${goal.reached}-day goal reached. New target: ${goal.target} days (${goal.percent}%)`
+            : `${goal.percent}% toward ${goal.target}-day goal`}
         </p>
       </div>
 
@@ -78,7 +78,7 @@ const ProgressTimeline = () => {
           Activity Grid
         </h3>
         <div className="grid gap-[2px] grid-cols-[repeat(30,1fr)] md:grid-cols-[repeat(26,1fr)]">
-          {Array.from({ length: Math.max(GOAL_DAYS, totalDays) }, (_, i) => {
+          {Array.from({ length: Math.max(goal.target, totalDays) }, (_, i) => {
             const day = i + 1;
             const post = sortedPosts.find((p) => p.day === day);
             const isActive = !!post;
