@@ -35,5 +35,8 @@ describe("collection helpers", () => {
     expect(entryLabel("blog", 7)).toBe("Day 07");
     expect(entryLabel("lab", 34)).toBe("Lab 34");
     expect(entryLabel("portfolio", 9)).toBe("Case study 09");
+    expect(normalizeCollectionSlug("Reports")).toBe("report");
+    expect(collectionPath("report")).toBe("/portfolio");
+    expect(entryLabel("report", 1)).toBe("Report 01");
   });
 });

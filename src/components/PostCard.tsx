@@ -40,7 +40,7 @@ const PostCard = ({ post, onTagClick }: { post: Post; onTagClick?: (tag: string)
                   e.stopPropagation();
                   onTagClick?.(tag);
                 }}
-                className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-secondary text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors"
+                className="inline-flex min-h-6 items-center text-[10px] font-mono px-2 rounded bg-secondary text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors"
               >
                 {tag}
               </button>

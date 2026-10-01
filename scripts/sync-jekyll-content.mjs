@@ -15,6 +15,7 @@ const UPSTREAM = {
     { folder: "Blog", category: "blog", urlPrefix: "blog" },
     { folder: "Labs", category: "lab", urlPrefix: "labs" },
     { folder: "Portfolio-Material", category: "portfolio", urlPrefix: "portfolio-material" },
+    { folder: "Reports", category: "report", urlPrefix: "reports" },
   ],
 };
 
@@ -139,7 +140,7 @@ function normalizeDateString(value, fallback = "") {
 }
 
 function deriveDay(filename, frontMatter, category) {
-  if (category === "portfolio") {
+  if (category === "portfolio" || category === "report") {
     const parsed = parseInt(frontMatter.number ?? "", 10);
     return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
   }
@@ -284,11 +285,15 @@ async function buildSnapshot() {
   const portfolio = collected
     .filter((post) => post.category === "portfolio")
     .sort((left, right) => right.day - left.day);
+  const reports = collected
+    .filter((post) => post.category === "report")
+    .sort((left, right) => right.day - left.day);
 
   const manifest = {
     posts: posts.map(buildSummary),
     labs: labs.map(buildSummary),
     portfolio: portfolio.map(buildSummary),
+    reports: reports.map(buildSummary),
     allTags: Array.from(new Set([...posts, ...labs].flatMap((post) => post.tags))).sort(),
     source: "snapshot",
     upstream: {
@@ -298,7 +303,7 @@ async function buildSnapshot() {
     },
   };
 
-  return { manifest, posts, labs, portfolio };
+  return { manifest, posts, labs, portfolio, reports };
 }
 
 async function writeIfChanged(targetPath, contents) {
@@ -323,7 +328,7 @@ async function writeGeneratedOutputs(snapshot) {
   writes += Number(await writeIfChanged(GENERATED_MANIFEST_TS, manifestTs));
   writes += Number(await writeIfChanged(GENERATED_MANIFEST_JSON, manifestJson));
 
-  for (const post of [...snapshot.posts, ...snapshot.labs, ...snapshot.portfolio]) {
+  for (const post of [...snapshot.posts, ...snapshot.labs, ...snapshot.portfolio, ...snapshot.reports]) {
     const payload = {
       day: post.day,
       title: post.title,
@@ -358,7 +363,8 @@ async function main() {
 
     console.log(
       `[sync] Snapshot ready: ${snapshot.manifest.posts.length} blog posts, ` +
-        `${snapshot.manifest.labs.length} labs, ${snapshot.manifest.portfolio.length} portfolio pieces ` +
+        `${snapshot.manifest.labs.length} labs, ${snapshot.manifest.portfolio.length} portfolio pieces, ` +
+        `${snapshot.manifest.reports.length} reports ` +
         `(${totalPosts} posts and labs, ${writes} files written)`,
     );
   } catch (error) {

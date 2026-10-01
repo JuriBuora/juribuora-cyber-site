@@ -20,7 +20,7 @@ const SKELETON_LINE_WIDTHS = [92, 78, 88, 64, 96, 72, 84, 68];
 
 const PostPage = () => {
   const { category, day } = useParams<{ category: string; day: string }>();
-  const { posts, labs, portfolio } = usePosts();
+  const { posts, labs, portfolio, reports } = usePosts();
   const [contentState, setContentState] = useState<{
     content: string | null;
     error: boolean;
@@ -32,8 +32,8 @@ const PostPage = () => {
   });
 
   const allPosts = useMemo(
-    () => [...posts, ...labs, ...portfolio].sort((a, b) => a.day - b.day),
-    [posts, labs, portfolio],
+    () => [...posts, ...labs, ...portfolio, ...reports].sort((a, b) => a.day - b.day),
+    [posts, labs, portfolio, reports],
   );
 
   const post = useMemo(() => {
@@ -125,6 +125,7 @@ const PostPage = () => {
   });
 
   const postPath = (entry: Post) => `/${entry.category}/${entry.day}`;
+  const inPortfolio = post.category === "portfolio" || post.category === "report";
 
   return (
     <div className="min-h-screen bg-background">
@@ -134,11 +135,11 @@ const PostPage = () => {
       <main className="container mx-auto px-4 py-12 flex gap-8 max-w-5xl">
         <article className="min-w-0 flex-1 max-w-3xl">
           <Link
-            to={post.category === "portfolio" ? collectionPath(post.category) : "/"}
+            to={inPortfolio ? collectionPath(post.category) : "/"}
             className="inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground hover:text-primary transition-colors mb-8"
           >
             <ArrowLeft className="w-3 h-3" />
-            {post.category === "portfolio" ? `Back to ${collectionLabel(post.category)}` : "Back to all posts"}
+            {inPortfolio ? `Back to ${collectionLabel(post.category)}` : "Back to all posts"}
           </Link>
 
           <header className="mb-10">

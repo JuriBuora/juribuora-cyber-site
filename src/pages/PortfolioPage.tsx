@@ -42,7 +42,7 @@ const Entry = ({ post }: { post: Post }) => (
     {post.summary && <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{post.summary}</p>}
     <div className="mt-4 flex flex-wrap gap-2">
       {post.tags
-        .filter((t) => t !== "cybersecurity" && t !== "labs" && t !== "learningprocess")
+        .filter((t) => t !== "cybersecurity" && t !== "labs" && t !== "learningprocess" && t !== "reports")
         .map((tag) => (
           <span key={tag} className="border border-primary/20 bg-primary/10 px-2 py-1 font-mono text-xs text-primary">
             {tag}
@@ -61,7 +61,7 @@ const Entry = ({ post }: { post: Post }) => (
 
 const PortfolioPage = () => {
   usePageTitle("Portfolio");
-  const { portfolio, labs } = usePosts();
+  const { portfolio, reports, labs } = usePosts();
   const featuredLabs = FEATURED_LABS.map((n) => labs.find((l) => l.day === n)).filter((l) => l !== undefined);
 
   return (
@@ -97,6 +97,22 @@ const PortfolioPage = () => {
             </div>
           ))}
         </div>
+
+        {reports.length > 0 && (
+          <section className="mt-10" aria-labelledby="reports">
+            <h2 id="reports" className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
+              Reports
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Finished documents written for someone to act on: findings, evidence, priorities and what was fixed.
+            </p>
+            <div className="mt-5 grid gap-4">
+              {reports.map((post) => (
+                <Entry key={post.day} post={post} />
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="mt-10" aria-labelledby="case-studies">
           <h2 id="case-studies" className="font-mono text-xs uppercase tracking-[0.24em] text-primary">

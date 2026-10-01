@@ -36,6 +36,9 @@ const CategoryPage = () => {
   if (!normalizedCollection || normalizedCollection === "portfolio") {
     return <NotFound />;
   }
+  if (normalizedCollection === "report") {
+    return <Navigate replace to="/portfolio" />;
+  }
 
   const canonicalPath = collectionPath(normalizedCollection);
   if (trimTrailingSlash(location.pathname) !== canonicalPath) {

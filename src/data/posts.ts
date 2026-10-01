@@ -1,4 +1,4 @@
-export type PostCategory = "blog" | "lab" | "portfolio";
+export type PostCategory = "blog" | "lab" | "portfolio" | "report";
 
 export type Post = {
   day: number;
@@ -18,6 +18,7 @@ export type LoadedPosts = {
   posts: Post[];
   labs: Post[];
   portfolio: Post[];
+  reports: Post[];
   allTags: string[];
   source: "snapshot";
   upstream: {
