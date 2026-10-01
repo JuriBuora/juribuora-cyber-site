@@ -23,7 +23,7 @@ const PlainWordsPage = () => {
       <ScrollToTop />
       <BlogHeader />
 
-      <main lang={lang}>
+      <main lang={lang} data-bilingual>
         <section className="px-4 pb-14 pt-14 sm:pb-20 sm:pt-24">
           <div className="mx-auto max-w-3xl text-center">
             <p className={kicker}>{t.kicker}</p>

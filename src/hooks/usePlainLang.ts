@@ -1,5 +1,6 @@
 import { startTransition, useEffect, useState } from "react";
 import type { Lang } from "@/data/plain";
+import { useClientReady } from "@/lib/clientReady";
 
 const LANG_KEY = "plain-words-lang";
 
@@ -15,12 +16,26 @@ function initialLang(): Lang {
 
 /** The reader's language for the plain-words pages: remembered, else taken from the browser. */
 export function usePlainLang(): [Lang, () => void] {
-  const [lang, setLang] = useState<Lang>("en");
+  // The prerendered HTML is English, so hydration must start in English too.
+  // After that, pages opened by in-app navigation start in the right language.
+  const ready = useClientReady();
+  const [lang, setLang] = useState<Lang>(() => (ready ? initialLang() : "en"));
+  const [resolved, setResolved] = useState(ready);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => startTransition(() => setLang(initialLang())), 0);
+    if (resolved) return;
+    const timer = window.setTimeout(() => startTransition(() => {
+      setLang(initialLang());
+      setResolved(true);
+    }), 0);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [resolved]);
+
+  // public/first-paint.js hides the English text for Italian readers; show the
+  // page again once it is in their language.
+  useEffect(() => {
+    if (resolved) document.documentElement.classList.remove("lang-pending");
+  }, [resolved]);
 
   useEffect(() => {
     document.documentElement.lang = lang;

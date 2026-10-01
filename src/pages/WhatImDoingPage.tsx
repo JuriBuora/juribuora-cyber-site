@@ -33,7 +33,7 @@ const WhatImDoingPage = () => {
       <ScrollToTop />
       <BlogHeader />
 
-      <main lang={lang}>
+      <main lang={lang} data-bilingual>
         <section className="px-4 pb-16 pt-16 sm:pb-24 sm:pt-28">
           <div className="mx-auto max-w-4xl text-center">
             <p className={kicker}>{ui.kicker}</p>

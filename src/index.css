@@ -125,6 +125,13 @@ All colors MUST be HSL.
   }
 }
 
+/* Set by public/first-paint.js for Italian readers while the prerendered
+   English text of a two-language page is swapped. Removed by usePlainLang,
+   or by the script itself after a few seconds if the app never starts. */
+html.lang-pending [data-bilingual] {
+  visibility: hidden;
+}
+
 @layer utilities {
   .text-glow {
     text-shadow: 0 0 10px hsl(var(--glow-green) / 0.5), 0 0 20px hsl(var(--glow-green) / 0.3);

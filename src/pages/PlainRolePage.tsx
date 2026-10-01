@@ -32,7 +32,7 @@ const PlainRolePage = () => {
       <ScrollToTop />
       <BlogHeader />
 
-      <main lang={lang}>
+      <main lang={lang} data-bilingual>
         <section className="px-4 pb-12 pt-12 sm:pb-16 sm:pt-20">
           <div className="mx-auto max-w-3xl">
             <div className="flex flex-wrap items-center justify-between gap-3">
