@@ -1,5 +1,8 @@
-import { useState, useMemo } from "react";
+import { startTransition, useEffect, useMemo, useRef, useState } from "react";
+import { Link, useNavigationType } from "react-router-dom";
 import { usePosts } from "@/hooks/usePosts";
+import { useClientReady } from "@/lib/clientReady";
+import { POSTS_PER_STEP, pageWasRestored, readSavedList, saveList, type SavedList } from "@/lib/postWindow";
 import type { PostCategory } from "@/data/posts";
 import { formatPostDate } from "@/lib/postDates";
 import { sortNewestFirst } from "@/lib/postOrder";
@@ -18,6 +21,23 @@ const PostList = ({ lockedTab }: PostListProps) => {
   // On a phone the full topic list is several screens tall, so it starts folded there.
   const [tagsOpen, setTagsOpen] = useState(false);
 
+  // The home page grows as the reader scrolls. The archive pages (one kind of
+  // post each) keep the whole list, so every post is reachable without JavaScript.
+  const windowed = !lockedTab;
+  const clientReady = useClientReady();
+  const navigationType = useNavigationType();
+  // "in-app": Back inside the site, where the first render may already use what was loaded.
+  // "page": the whole page was reloaded or restored, and has to hydrate with the first step only.
+  const [restoreMode] = useState<"none" | "in-app" | "page">(() => {
+    if (!windowed) return "none";
+    if (clientReady) return navigationType === "POP" ? "in-app" : "none";
+    return pageWasRestored() ? "page" : "none";
+  });
+  const [count, setCount] = useState(() =>
+    restoreMode === "in-app" ? (readSavedList()?.count ?? POSTS_PER_STEP) : POSTS_PER_STEP,
+  );
+  const showFirstStep = () => setCount(POSTS_PER_STEP);
+
   const allPosts = useMemo(() => sortNewestFirst([...posts, ...labs]), [posts, labs]);
   const selectedTab = lockedTab ?? activeTab;
   const scopedPosts = useMemo(() => {
@@ -30,6 +50,7 @@ const PostList = ({ lockedTab }: PostListProps) => {
   }, [allTags, lockedTab, scopedPosts]);
 
   const toggleTag = (tag: string) => {
+    showFirstStep();
     setActiveTags((prev) => {
       const next = new Set(prev);
       if (next.has(tag)) next.delete(tag);
@@ -53,10 +74,73 @@ const PostList = ({ lockedTab }: PostListProps) => {
     }
     return items;
   }, [activeTags, scopedPosts, search]);
+  const shown = useMemo(() => (windowed ? filtered.slice(0, count) : filtered), [count, filtered, windowed]);
+  const remaining = filtered.length - shown.length;
+
+  // Add the next step well before the reader reaches the end, so they never wait.
+  const listEnd = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const node = listEnd.current;
+    if (!node || remaining <= 0 || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) setCount((c) => c + POSTS_PER_STEP);
+      },
+      { rootMargin: "1600px 0px" },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [remaining]);
+
+  // Remember how much was loaded and where the reader was, for Back and reload.
+  const section = useRef<HTMLElement>(null);
+  const latestCount = useRef(count);
+  useEffect(() => {
+    latestCount.current = count;
+  }, [count]);
+  useEffect(() => {
+    if (!windowed) return;
+    let y = window.scrollY;
+    const onScroll = () => {
+      // Leaving the page shrinks the document and moves the scroll position; that is not the reader.
+      if (section.current?.isConnected) y = window.scrollY;
+    };
+    const save = () => saveList({ count: latestCount.current, y });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("pagehide", save);
+    return () => {
+      save();
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("pagehide", save);
+    };
+  }, [windowed]);
+
+  // Put the reader back where they were, once the list is as long as it was.
+  const [target, setTarget] = useState<SavedList | null>(null);
+  useEffect(() => {
+    if (restoreMode === "none") return;
+    const saved = readSavedList();
+    if (!saved) return;
+    const timer = window.setTimeout(
+      () =>
+        startTransition(() => {
+          setCount((c) => Math.max(c, saved.count));
+          setTarget(saved);
+        }),
+      0,
+    );
+    return () => window.clearTimeout(timer);
+  }, [restoreMode]);
+  const returned = useRef(false);
+  useEffect(() => {
+    if (!target || returned.current || count < target.count) return;
+    returned.current = true;
+    if (Math.abs(window.scrollY - target.y) > 50) window.scrollTo({ top: target.y, left: 0, behavior: "auto" });
+  }, [count, target]);
 
   const grouped = useMemo(() => {
     const map = new Map<string, typeof filtered>();
-    for (const post of filtered) {
+    for (const post of shown) {
       const key = formatPostDate(post.date, {
         month: "long",
         year: "numeric",
@@ -65,10 +149,10 @@ const PostList = ({ lockedTab }: PostListProps) => {
       map.get(key)!.push(post);
     }
     return Array.from(map.entries());
-  }, [filtered]);
+  }, [shown]);
 
   return (
-    <section className="container mx-auto px-4 py-16 max-w-3xl">
+    <section ref={section} className="container mx-auto px-4 py-16 max-w-3xl">
       <div className="flex flex-col sm:flex-row gap-4 mb-4">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -76,7 +160,10 @@ const PostList = ({ lockedTab }: PostListProps) => {
             type="text"
             placeholder="Search posts..."
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              showFirstStep();
+              setSearch(e.target.value);
+            }}
             className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-card text-card-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
           />
         </div>
@@ -85,7 +172,10 @@ const PostList = ({ lockedTab }: PostListProps) => {
             {(["all", "blog", "lab"] as const).map((tab) => (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => {
+                  showFirstStep();
+                  setActiveTab(tab);
+                }}
                 className={`px-3 py-2 rounded transition-colors ${
                   activeTab === tab
                     ? "bg-primary text-primary-foreground"
@@ -129,7 +219,10 @@ const PostList = ({ lockedTab }: PostListProps) => {
         ))}
         {activeTags.size > 0 && (
           <button
-            onClick={() => setActiveTags(new Set())}
+            onClick={() => {
+              showFirstStep();
+              setActiveTags(new Set());
+            }}
             className="font-mono text-[11px] px-2 py-1 rounded-md border border-destructive/30 text-destructive flex items-center gap-1 hover:bg-destructive/10 transition-colors"
           >
             <X className="w-3 h-3" />
@@ -156,6 +249,29 @@ const PostList = ({ lockedTab }: PostListProps) => {
           </div>
         </div>
       ))}
+
+      {remaining > 0 && (
+        <div ref={listEnd} className="flex flex-col items-center gap-3 pt-2 text-center">
+          <button
+            type="button"
+            onClick={() => setCount((c) => c + POSTS_PER_STEP)}
+            className="rounded-lg border border-border bg-card px-4 py-2 font-mono text-xs text-card-foreground transition-colors hover:border-primary/50 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          >
+            Show {Math.min(POSTS_PER_STEP, remaining)} more
+          </button>
+          <p className="font-mono text-[11px] text-muted-foreground">
+            {shown.length} of {filtered.length} shown. More load as you scroll, or open the full{" "}
+            <Link to="/blog" className="text-primary underline underline-offset-4">
+              blog
+            </Link>{" "}
+            and{" "}
+            <Link to="/labs" className="text-primary underline underline-offset-4">
+              labs
+            </Link>{" "}
+            archives.
+          </p>
+        </div>
+      )}
     </section>
   );
 };
