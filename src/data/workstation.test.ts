@@ -8,6 +8,7 @@ import doingSrc from "./doing.ts?raw";
 import doingPageSrc from "../pages/WhatImDoingPage.tsx?raw";
 import visualsSrc from "../components/doing/Visuals.tsx?raw";
 import plainSrc from "./plain.ts?raw";
+import doingItSrc from "./doingIt.ts?raw";
 import plainRolesSrc from "./plainRoles.ts?raw";
 import plainRolePageSrc from "../pages/PlainRolePage.tsx?raw";
 import plainPageSrc from "../pages/PlainWordsPage.tsx?raw";
@@ -17,7 +18,8 @@ import chartSrc from "../components/workstation/ActivityChart.tsx?raw";
 import stackSrc from "../components/workstation/ArchitectureStack.tsx?raw";
 import { caseStudies, stats, weeklyCommits, weeklyCommitsTotal } from "./workstation";
 import { projectBySlug, projects, statusLabel } from "./projects";
-import { chapters } from "./doing";
+import { chapters, roles } from "./doing";
+import { chaptersIt, doingUi, rolesIt } from "./doingIt";
 import { plain } from "./plain";
 import { plainRoles, plainRoleSlugs } from "./plainRoles";
 
@@ -39,7 +41,7 @@ describe("workstation page content", () => {
   });
 
   it("source files contain nothing private", () => {
-    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc, doingSrc, doingPageSrc, visualsSrc, ogSrc, onePagerSrc, plainSrc, plainPageSrc, plainRolesSrc, plainRolePageSrc };
+    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc, doingSrc, doingPageSrc, visualsSrc, ogSrc, onePagerSrc, plainSrc, plainPageSrc, plainRolesSrc, plainRolePageSrc, doingItSrc };
     for (const [name, text] of Object.entries(files)) {
       expect({ name, hits: scrub(text) }).toEqual({ name, hits: [] });
     }
@@ -64,6 +66,21 @@ describe("workstation page content", () => {
     expect(planted.map((p) => scrub(p).length > 0)).toEqual(planted.map(() => true));
     const hit = new Set(planted.flatMap(scrub));
     for (const r of scrubRules) expect(hit.has(r.name)).toBe(true);
+  });
+});
+
+describe("what-im-doing in Italian", () => {
+  it("translates every chapter with the same shape", () => {
+    for (const c of chapters) {
+      const tr = chaptersIt[c.id];
+      expect(tr, c.id).toBeDefined();
+      expect(tr.benefits.length).toBe(c.benefits.length);
+      expect(tr.proof.length).toBe(c.proof.length);
+      expect(tr.reading?.length ?? 0).toBe(c.reading?.length ?? 0);
+    }
+    expect(Object.keys(chaptersIt).length).toBe(chapters.length);
+    expect(rolesIt.length).toBe(roles.length);
+    expect(Object.keys(doingUi.it).sort()).toEqual(Object.keys(doingUi.en).sort());
   });
 });
 
@@ -125,10 +142,11 @@ describe("project pages", () => {
   });
 
   it("every mockup says it is illustrative or sourced", () => {
-    const labels = visualsSrc.match(/Illustrative example|Real numbers from|Real deliverables|paraphrased|Simplified diagram/g) ?? [];
     const mockups = visualsSrc.match(/export const \w+Mock/g) ?? [];
     expect(mockups.length).toBe(6);
-    expect(labels.length).toBeGreaterThanOrEqual(mockups.length);
+    // one caption per mockup, in each language, and every mockup renders one
+    expect((visualsSrc.match(/illustrative: "|caption: "/g) ?? []).length).toBe(mockups.length * 2);
+    expect((visualsSrc.match(/<Caption>/g) ?? []).length).toBe(mockups.length);
   });
 
   it("slugs cannot collide with top-level routes", () => {
