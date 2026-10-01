@@ -5378,143 +5378,6 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 8,
-      "title": "Test Report: Restoring an Encrypted Backup of My AI Agent's Data on a Second Machine",
-      "summary": "A restore drill, written up as a test report. The backup was encrypted and kept off the main machine, then restored elsewhere and checked: 2,606 files, 21 database tables, 64,977 rows, without touching the live service.",
-      "date": "2026-10-01",
-      "url": "https://juribuora.github.io/reports/2026/10/01/backup-restore-drill-agent-state.html",
-      "category": "report",
-      "tags": [
-        "cybersecurity",
-        "reports",
-        "backuprecovery",
-        "disasterrecovery",
-        "encryption",
-        "sqlite",
-        "validation"
-      ],
-      "slug": "backup-restore-drill-agent-state",
-      "sourcePath": "Reports/_posts/2026-10-01-backup-restore-drill-agent-state.md",
-      "contentPath": "/generated/posts/report/8.json"
-    },
-    {
-      "day": 7,
-      "title": "Audit Report: Security and Quality Review of My iPhone App for Controlling AI Agents",
-      "summary": "An audit of the iPhone app and the service behind it that let me run AI agents remotely. It found an unauthenticated service, a command filter that could be bypassed, and tasks marked done that were not. All were fixed and re-audited the same week.",
-      "date": "2026-10-01",
-      "url": "https://juribuora.github.io/reports/2026/10/01/security-audit-iphone-agent-app.html",
-      "category": "report",
-      "tags": [
-        "cybersecurity",
-        "reports",
-        "mobilesecurity",
-        "authentication",
-        "commandinjection",
-        "auditlogging",
-        "qualityassurance"
-      ],
-      "slug": "security-audit-iphone-agent-app",
-      "sourcePath": "Reports/_posts/2026-10-01-security-audit-iphone-agent-app.md",
-      "contentPath": "/generated/posts/report/7.json"
-    },
-    {
-      "day": 6,
-      "title": "Incident Report: A Service Stopped Answering Because It Never Closed Its Database Connections",
-      "summary": "A root-cause report on a local web service that degraded until it refused connections. One helper function leaked a file handle on every call. The report covers the diagnosis, a one-place fix, and a test that could have failed.",
-      "date": "2026-10-01",
-      "url": "https://juribuora.github.io/reports/2026/10/01/incident-database-connection-leak.html",
-      "category": "report",
-      "tags": [
-        "cybersecurity",
-        "reports",
-        "incidentresponse",
-        "availability",
-        "rootcauseanalysis",
-        "python",
-        "sqlite"
-      ],
-      "slug": "incident-database-connection-leak",
-      "sourcePath": "Reports/_posts/2026-10-01-incident-database-connection-leak.md",
-      "contentPath": "/generated/posts/report/6.json"
-    },
-    {
-      "day": 5,
-      "title": "Incident Report: An Exposed Bot Token, and a Rotation That Reported Success While the Service Was Down",
-      "summary": "A chat-bot credential was sitting in an automation workflow. This report covers containment, why deleting it was not enough, the rotation, and a second failure where the rotation tool said it had worked and had not.",
-      "date": "2026-10-01",
-      "url": "https://juribuora.github.io/reports/2026/10/01/incident-exposed-bot-token.html",
-      "category": "report",
-      "tags": [
-        "cybersecurity",
-        "reports",
-        "incidentresponse",
-        "secretsmanagement",
-        "credentialrotation",
-        "verification"
-      ],
-      "slug": "incident-exposed-bot-token",
-      "sourcePath": "Reports/_posts/2026-10-01-incident-exposed-bot-token.md",
-      "contentPath": "/generated/posts/report/5.json"
-    },
-    {
-      "day": 4,
-      "title": "Incident Report: A Chat Message Powered Off My Computer and Nothing Could Say Who Did It",
-      "summary": "A post-incident report on an unexplained remote shutdown in my AI agent setup: what was ruled out, the path that allowed it, the fixes, and how both fixes were nearly lost in a merge the next day.",
-      "date": "2026-10-01",
-      "url": "https://juribuora.github.io/reports/2026/10/01/incident-unexplained-remote-shutdown.html",
-      "category": "report",
-      "tags": [
-        "cybersecurity",
-        "reports",
-        "incidentresponse",
-        "accesscontrol",
-        "defaultdeny",
-        "changemanagement"
-      ],
-      "slug": "incident-unexplained-remote-shutdown",
-      "sourcePath": "Reports/_posts/2026-10-01-incident-unexplained-remote-shutdown.md",
-      "contentPath": "/generated/posts/report/4.json"
-    },
-    {
-      "day": 3,
-      "title": "Vulnerability Report: DNS-Rebinding SSRF in a Web-Reading Tool for an AI Agent",
-      "summary": "A formal write-up of a server-side request forgery flaw in a tool I built so an AI agent could read web pages. Four independent review rounds found five ways past its protections. All five are fixed and regression-tested; one transport remains untested.",
-      "date": "2026-10-01",
-      "url": "https://juribuora.github.io/reports/2026/10/01/dns-rebinding-ssrf-browser-tool.html",
-      "category": "report",
-      "tags": [
-        "cybersecurity",
-        "reports",
-        "ssrf",
-        "dnsrebinding",
-        "appsec",
-        "vulnerabilityreport",
-        "independentreview"
-      ],
-      "slug": "dns-rebinding-ssrf-browser-tool",
-      "sourcePath": "Reports/_posts/2026-10-01-dns-rebinding-ssrf-browser-tool.md",
-      "contentPath": "/generated/posts/report/3.json"
-    },
-    {
-      "day": 2,
-      "title": "Audit Report: Dependency Vulnerabilities in My Self-Hosted AI Agent Gateway, From 76 Findings to Zero",
-      "summary": "A dependency security audit of the agent gateway I run on my own machine. 76 known-vulnerability findings were reduced to 2 in a first pass and to 0 in a second, without hiding any behind a version number.",
-      "date": "2026-10-01",
-      "url": "https://juribuora.github.io/reports/2026/10/01/dependency-security-audit-agent-gateway.html",
-      "category": "report",
-      "tags": [
-        "cybersecurity",
-        "reports",
-        "supplychainsecurity",
-        "dependencymanagement",
-        "vulnerabilitymanagement",
-        "patchmanagement"
-      ],
-      "slug": "dependency-security-audit-agent-gateway",
-      "sourcePath": "Reports/_posts/2026-10-01-dependency-security-audit-agent-gateway.md",
-      "contentPath": "/generated/posts/report/2.json"
-    },
-    {
-      "day": 1,
       "title": "WebCheckup Report: External Check-Up of juribuora.com, With Fixes and a Re-Test",
       "summary": "I ran my own website check-up service against my own site. It found nine things. Six were fixed and one partly fixed the same day, and re-checked. Two are still open, and the tool got two things wrong.",
       "date": "2026-10-01",
@@ -5531,6 +5394,143 @@ export const jekyllSnapshot: LoadedPosts = {
       ],
       "slug": "webcheckup-juribuora-com",
       "sourcePath": "Reports/_posts/2026-10-01-webcheckup-juribuora-com.md",
+      "contentPath": "/generated/posts/report/8.json"
+    },
+    {
+      "day": 7,
+      "title": "Incident Report: An Exposed Bot Token, and a Rotation That Reported Success While the Service Was Down",
+      "summary": "A chat-bot credential was sitting in an automation workflow. This report covers containment, why deleting it was not enough, the rotation, and a second failure where the rotation tool said it had worked and had not.",
+      "date": "2026-09-10",
+      "url": "https://juribuora.github.io/reports/2026/09/10/incident-exposed-bot-token.html",
+      "category": "report",
+      "tags": [
+        "cybersecurity",
+        "reports",
+        "incidentresponse",
+        "secretsmanagement",
+        "credentialrotation",
+        "verification"
+      ],
+      "slug": "incident-exposed-bot-token",
+      "sourcePath": "Reports/_posts/2026-09-10-incident-exposed-bot-token.md",
+      "contentPath": "/generated/posts/report/7.json"
+    },
+    {
+      "day": 6,
+      "title": "Test Report: Restoring an Encrypted Backup of My AI Agent's Data on a Second Machine",
+      "summary": "A restore drill, written up as a test report. The backup was encrypted and kept off the main machine, then restored elsewhere and checked: 2,606 files, 21 database tables, 64,977 rows, without touching the live service.",
+      "date": "2026-09-03",
+      "url": "https://juribuora.github.io/reports/2026/09/03/backup-restore-drill-agent-state.html",
+      "category": "report",
+      "tags": [
+        "cybersecurity",
+        "reports",
+        "backuprecovery",
+        "disasterrecovery",
+        "encryption",
+        "sqlite",
+        "validation"
+      ],
+      "slug": "backup-restore-drill-agent-state",
+      "sourcePath": "Reports/_posts/2026-09-03-backup-restore-drill-agent-state.md",
+      "contentPath": "/generated/posts/report/6.json"
+    },
+    {
+      "day": 5,
+      "title": "Incident Report: A Chat Message Powered Off My Computer and Nothing Could Say Who Did It",
+      "summary": "A post-incident report on an unexplained remote shutdown in my AI agent setup: what was ruled out, the path that allowed it, the fixes, and how both fixes were nearly lost in a merge the next day.",
+      "date": "2026-08-19",
+      "url": "https://juribuora.github.io/reports/2026/08/19/incident-unexplained-remote-shutdown.html",
+      "category": "report",
+      "tags": [
+        "cybersecurity",
+        "reports",
+        "incidentresponse",
+        "accesscontrol",
+        "defaultdeny",
+        "changemanagement"
+      ],
+      "slug": "incident-unexplained-remote-shutdown",
+      "sourcePath": "Reports/_posts/2026-08-19-incident-unexplained-remote-shutdown.md",
+      "contentPath": "/generated/posts/report/5.json"
+    },
+    {
+      "day": 4,
+      "title": "Vulnerability Report: DNS-Rebinding SSRF in a Web-Reading Tool for an AI Agent",
+      "summary": "A formal write-up of a server-side request forgery flaw in a tool I built so an AI agent could read web pages. Four independent review rounds found five ways past its protections. All five are fixed and regression-tested; one transport remains untested.",
+      "date": "2026-08-03",
+      "url": "https://juribuora.github.io/reports/2026/08/03/dns-rebinding-ssrf-browser-tool.html",
+      "category": "report",
+      "tags": [
+        "cybersecurity",
+        "reports",
+        "ssrf",
+        "dnsrebinding",
+        "appsec",
+        "vulnerabilityreport",
+        "independentreview"
+      ],
+      "slug": "dns-rebinding-ssrf-browser-tool",
+      "sourcePath": "Reports/_posts/2026-08-03-dns-rebinding-ssrf-browser-tool.md",
+      "contentPath": "/generated/posts/report/4.json"
+    },
+    {
+      "day": 3,
+      "title": "Audit Report: Dependency Vulnerabilities in My Self-Hosted AI Agent Gateway, From 76 Findings to Zero",
+      "summary": "A dependency security audit of the agent gateway I run on my own machine. 76 known-vulnerability findings were reduced to 2 in a first pass and to 0 in a second, without hiding any behind a version number.",
+      "date": "2026-08-02",
+      "url": "https://juribuora.github.io/reports/2026/08/02/dependency-security-audit-agent-gateway.html",
+      "category": "report",
+      "tags": [
+        "cybersecurity",
+        "reports",
+        "supplychainsecurity",
+        "dependencymanagement",
+        "vulnerabilitymanagement",
+        "patchmanagement"
+      ],
+      "slug": "dependency-security-audit-agent-gateway",
+      "sourcePath": "Reports/_posts/2026-08-02-dependency-security-audit-agent-gateway.md",
+      "contentPath": "/generated/posts/report/3.json"
+    },
+    {
+      "day": 2,
+      "title": "Incident Report: A Service Stopped Answering Because It Never Closed Its Database Connections",
+      "summary": "A root-cause report on a local web service that degraded until it refused connections. One helper function leaked a file handle on every call. The report covers the diagnosis, a one-place fix, and a test that could have failed.",
+      "date": "2026-07-23",
+      "url": "https://juribuora.github.io/reports/2026/07/23/incident-database-connection-leak.html",
+      "category": "report",
+      "tags": [
+        "cybersecurity",
+        "reports",
+        "incidentresponse",
+        "availability",
+        "rootcauseanalysis",
+        "python",
+        "sqlite"
+      ],
+      "slug": "incident-database-connection-leak",
+      "sourcePath": "Reports/_posts/2026-07-23-incident-database-connection-leak.md",
+      "contentPath": "/generated/posts/report/2.json"
+    },
+    {
+      "day": 1,
+      "title": "Audit Report: Security and Quality Review of My iPhone App for Controlling AI Agents",
+      "summary": "An audit of the iPhone app and the service behind it that let me run AI agents remotely. It found an unauthenticated service, a command filter that could be bypassed, and tasks marked done that were not. All were fixed and re-audited the same week.",
+      "date": "2026-07-06",
+      "url": "https://juribuora.github.io/reports/2026/07/06/security-audit-iphone-agent-app.html",
+      "category": "report",
+      "tags": [
+        "cybersecurity",
+        "reports",
+        "mobilesecurity",
+        "authentication",
+        "commandinjection",
+        "auditlogging",
+        "qualityassurance"
+      ],
+      "slug": "security-audit-iphone-agent-app",
+      "sourcePath": "Reports/_posts/2026-07-06-security-audit-iphone-agent-app.md",
       "contentPath": "/generated/posts/report/1.json"
     }
   ],
