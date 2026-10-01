@@ -5290,7 +5290,28 @@ export const jekyllSnapshot: LoadedPosts = {
       "contentPath": "/generated/posts/portfolio/1.json"
     }
   ],
-  "reports": [],
+  "reports": [
+    {
+      "day": 1,
+      "title": "WebCheckup Report: External Check-Up of juribuora.com, With Fixes and a Re-Test",
+      "summary": "I ran my own website check-up service against my own site. It found nine things. Four were fixed and one partly fixed, all re-measured the same day. Four are still open, and the tool got two things wrong.",
+      "date": "2026-10-01",
+      "url": "https://juribuora.github.io/reports/2026/10/01/webcheckup-juribuora-com.html",
+      "category": "report",
+      "tags": [
+        "cybersecurity",
+        "reports",
+        "websecurity",
+        "securityheaders",
+        "accessibility",
+        "webperformance",
+        "emailsecurity"
+      ],
+      "slug": "webcheckup-juribuora-com",
+      "sourcePath": "Reports/_posts/2026-10-01-webcheckup-juribuora-com.md",
+      "contentPath": "/generated/posts/report/1.json"
+    }
+  ],
   "allTags": [
     "aaa",
     "accesscontrol",
