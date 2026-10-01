@@ -5495,7 +5495,7 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 1,
       "title": "WebCheckup Report: External Check-Up of juribuora.com, With Fixes and a Re-Test",
-      "summary": "I ran my own website check-up service against my own site. It found nine things. Five were fixed and one partly fixed the same day, and re-checked. Three are still open, and the tool got two things wrong.",
+      "summary": "I ran my own website check-up service against my own site. It found nine things. Six were fixed and one partly fixed the same day, and re-checked. Two are still open, and the tool got two things wrong.",
       "date": "2026-10-01",
       "url": "https://juribuora.github.io/reports/2026/10/01/webcheckup-juribuora-com.html",
       "category": "report",
