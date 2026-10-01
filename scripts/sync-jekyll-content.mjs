@@ -86,6 +86,12 @@ function parseFrontMatter(markdown) {
   return output;
 }
 
+// Tags that reached the source repo garbled. Fix the source when possible;
+// this keeps the published tag list readable meanwhile.
+const TAG_ALIASES = {
+  "ai安全": "aisecurity",
+};
+
 function stripFrontMatter(markdown) {
   return markdown
     .replace(/^---\s*\r?\n[\s\S]*?\r?\n---\s*(\r?\n)?/, "")
@@ -217,7 +223,7 @@ async function buildSnapshot() {
         ? [frontMatter.tags]
         : [];
 
-    const tags = rawTags.map((tag) => tag.toLowerCase()).filter(Boolean);
+    const tags = rawTags.map((tag) => TAG_ALIASES[tag.toLowerCase()] ?? tag.toLowerCase()).filter(Boolean);
 
     const title = cleanTitle(
       typeof frontMatter.title === "string" && frontMatter.title ? frontMatter.title : filename,

@@ -119,7 +119,7 @@
         "cybersecurity",
         "leastprivilege",
         "supplychainsecurity",
-        "ai安全",
+        "aisecurity",
         "accesscontrol",
         "learningprocess"
       ],
@@ -136,7 +136,7 @@
       "tags": [
         "cybersecurity",
         "securitytesting",
-        "ai安全",
+        "aisecurity",
         "detectionengineering",
         "evidence",
         "learningprocess"
@@ -4328,7 +4328,7 @@
         "leastprivilege",
         "accesscontrol",
         "supplychainsecurity",
-        "ai安全",
+        "aisecurity",
         "labs",
         "learningprocess"
       ],
@@ -4853,7 +4853,6 @@
     "aiagents",
     "aios",
     "aisecurity",
-    "ai安全",
     "approvals",
     "approvalworkflow",
     "appsec",

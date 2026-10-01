@@ -122,7 +122,7 @@ export const jekyllSnapshot: LoadedPosts = {
         "cybersecurity",
         "leastprivilege",
         "supplychainsecurity",
-        "ai安全",
+        "aisecurity",
         "accesscontrol",
         "learningprocess"
       ],
@@ -139,7 +139,7 @@ export const jekyllSnapshot: LoadedPosts = {
       "tags": [
         "cybersecurity",
         "securitytesting",
-        "ai安全",
+        "aisecurity",
         "detectionengineering",
         "evidence",
         "learningprocess"
@@ -4331,7 +4331,7 @@ export const jekyllSnapshot: LoadedPosts = {
         "leastprivilege",
         "accesscontrol",
         "supplychainsecurity",
-        "ai安全",
+        "aisecurity",
         "labs",
         "learningprocess"
       ],
@@ -4856,7 +4856,6 @@ export const jekyllSnapshot: LoadedPosts = {
     "aiagents",
     "aios",
     "aisecurity",
-    "ai安全",
     "approvals",
     "approvalworkflow",
     "appsec",

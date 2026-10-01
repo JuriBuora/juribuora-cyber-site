@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { usePosts } from "@/hooks/usePosts";
 import type { PostCategory } from "@/data/posts";
 import { formatPostDate } from "@/lib/postDates";
+import { sortNewestFirst } from "@/lib/postOrder";
 import PostCard from "./PostCard";
 import { Search, X } from "lucide-react";
 
@@ -15,7 +16,7 @@ const PostList = ({ lockedTab }: PostListProps) => {
   const [activeTab, setActiveTab] = useState<"all" | "blog" | "lab">("all");
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
 
-  const allPosts = useMemo(() => [...posts, ...labs], [posts, labs]);
+  const allPosts = useMemo(() => sortNewestFirst([...posts, ...labs]), [posts, labs]);
   const selectedTab = lockedTab ?? activeTab;
   const scopedPosts = useMemo(() => {
     if (selectedTab === "all") return allPosts;

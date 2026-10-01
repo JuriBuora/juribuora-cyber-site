@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
+import { stripHtmlComments } from "@/lib/postContent";
 import "highlight.js/styles/github-dark.css";
 import BlogHeader from "@/components/BlogHeader";
 import BlogFooter from "@/components/BlogFooter";
@@ -91,7 +92,8 @@ const PostPage = () => {
 
   const loading = !!post && contentState.path !== post.contentPath;
   const error = !!post && contentState.path === post.contentPath && contentState.error;
-  const content = contentState.path === post?.contentPath ? contentState.content : null;
+  const rawContent = contentState.path === post?.contentPath ? contentState.content : null;
+  const content = useMemo(() => (rawContent ? stripHtmlComments(rawContent) : rawContent), [rawContent]);
 
   useCodeCopyButtons(!loading && !error && !!content);
 
