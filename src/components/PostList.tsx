@@ -4,7 +4,7 @@ import type { PostCategory } from "@/data/posts";
 import { formatPostDate } from "@/lib/postDates";
 import { sortNewestFirst } from "@/lib/postOrder";
 import PostCard from "./PostCard";
-import { Search, X } from "lucide-react";
+import { ChevronDown, Search, X } from "lucide-react";
 
 type PostListProps = {
   lockedTab?: PostCategory;
@@ -15,6 +15,8 @@ const PostList = ({ lockedTab }: PostListProps) => {
   const [search, setSearch] = useState("");
   const [activeTab, setActiveTab] = useState<"all" | "blog" | "lab">("all");
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
+  // On a phone the full topic list is several screens tall, so it starts folded there.
+  const [tagsOpen, setTagsOpen] = useState(false);
 
   const allPosts = useMemo(() => sortNewestFirst([...posts, ...labs]), [posts, labs]);
   const selectedTab = lockedTab ?? activeTab;
@@ -98,7 +100,20 @@ const PostList = ({ lockedTab }: PostListProps) => {
       </div>
 
       {/* Tag filter chips */}
-      <div className="flex flex-wrap gap-1.5 mb-8">
+      <button
+        type="button"
+        onClick={() => setTagsOpen((open) => !open)}
+        aria-expanded={tagsOpen}
+        aria-controls="topic-filters"
+        className="md:hidden mb-3 flex w-full items-center justify-between rounded-lg border border-border bg-card px-3 py-2 font-mono text-xs text-muted-foreground"
+      >
+        <span>
+          Filter by topic ({visibleTags.length})
+          {activeTags.size > 0 && <span className="ml-2 text-primary">{activeTags.size} selected</span>}
+        </span>
+        <ChevronDown className={`h-4 w-4 transition-transform ${tagsOpen ? "rotate-180" : ""}`} />
+      </button>
+      <div id="topic-filters" className={`${tagsOpen ? "flex" : "hidden"} md:flex flex-wrap gap-1.5 mb-8`}>
         {visibleTags.map((tag) => (
           <button
             key={tag}

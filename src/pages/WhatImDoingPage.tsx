@@ -58,6 +58,13 @@ const WhatImDoingPage = () => {
                 <FileDown className="h-4 w-4" /> One-page PDF
               </a>
             </div>
+            <p className="mt-5 text-sm text-muted-foreground">
+              Not in tech?{" "}
+              <Link to="/in-plain-words" className="text-primary underline underline-offset-4">
+                Read it in plain words
+              </Link>
+              , in English or Italian.
+            </p>
 
             <dl className="mx-auto mt-14 grid max-w-2xl grid-cols-3 gap-4">
               {heroStats.map((s) => (

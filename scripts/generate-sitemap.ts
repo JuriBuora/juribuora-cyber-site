@@ -165,6 +165,12 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
       image: SHOWCASE_IMAGE,
     },
     {
+      routePath: "/in-plain-words",
+      title: "In plain words — Juri Buora",
+      description: "What I build with AI and security, explained without jargon, in English and Italian: who does what, what went wrong, and why it matters.",
+      image: SHOWCASE_IMAGE,
+    },
+    {
       routePath: "/workstation",
       title: "The Workstation — Juri Buora",
       description: "A personal AI operations lab: local and cloud models, safety gates, and the case studies behind it. Built with AI pair-programming, reviewed by Juri Buora.",
@@ -237,6 +243,7 @@ export async function generateSitemap(outDir: string): Promise<void> {
     { loc: `${SITE}/about`, lastmod: today, changefreq: "monthly", priority: 0.8 },
     { loc: `${SITE}/portfolio`, lastmod: today, changefreq: "monthly", priority: 0.8 },
     { loc: `${SITE}/what-im-doing`, lastmod: today, changefreq: "monthly", priority: 0.9 },
+    { loc: `${SITE}/in-plain-words`, lastmod: today, changefreq: "monthly", priority: 0.9 },
     { loc: `${SITE}/workstation`, lastmod: today, changefreq: "monthly", priority: 0.8 },
     ...projects.map((p) => ({ loc: `${SITE}/workstation/${p.slug}`, lastmod: today, changefreq: "monthly", priority: 0.6 })),
   ];

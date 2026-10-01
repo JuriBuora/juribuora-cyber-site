@@ -7,6 +7,8 @@ import projectPageSrc from "../pages/ProjectPage.tsx?raw";
 import doingSrc from "./doing.ts?raw";
 import doingPageSrc from "../pages/WhatImDoingPage.tsx?raw";
 import visualsSrc from "../components/doing/Visuals.tsx?raw";
+import plainSrc from "./plain.ts?raw";
+import plainPageSrc from "../pages/PlainWordsPage.tsx?raw";
 import ogSrc from "../../scripts/assets/og.html?raw";
 import onePagerSrc from "../../scripts/assets/one-pager.html?raw";
 import chartSrc from "../components/workstation/ActivityChart.tsx?raw";
@@ -14,6 +16,7 @@ import stackSrc from "../components/workstation/ArchitectureStack.tsx?raw";
 import { caseStudies, stats, weeklyCommits, weeklyCommitsTotal } from "./workstation";
 import { projectBySlug, projects, statusLabel } from "./projects";
 import { chapters } from "./doing";
+import { plain } from "./plain";
 
 describe("workstation page content", () => {
   it("weekly series sums to the headline commit total", () => {
@@ -33,7 +36,7 @@ describe("workstation page content", () => {
   });
 
   it("source files contain nothing private", () => {
-    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc, doingSrc, doingPageSrc, visualsSrc, ogSrc, onePagerSrc };
+    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc, doingSrc, doingPageSrc, visualsSrc, ogSrc, onePagerSrc, plainSrc, plainPageSrc };
     for (const [name, text] of Object.entries(files)) {
       expect({ name, hits: scrub(text) }).toEqual({ name, hits: [] });
     }
@@ -58,6 +61,19 @@ describe("workstation page content", () => {
     expect(planted.map((p) => scrub(p).length > 0)).toEqual(planted.map(() => true));
     const hit = new Set(planted.flatMap(scrub));
     for (const r of scrubRules) expect(hit.has(r.name)).toBe(true);
+  });
+});
+
+describe("plain-words page", () => {
+  it("English and Italian carry the same points", () => {
+    const shape = (c: (typeof plain)["en"]) =>
+      [c.cast, c.journey, c.stories, c.uses, c.company, c.words, c.faq].map((list) => list.length);
+    expect(shape(plain.it)).toEqual(shape(plain.en));
+    expect(Object.keys(plain.it).sort()).toEqual(Object.keys(plain.en).sort());
+  });
+
+  it("has one icon per cast member", () => {
+    expect(plain.en.cast.length).toBe(7);
   });
 });
 

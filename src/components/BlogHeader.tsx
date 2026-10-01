@@ -6,6 +6,7 @@ import { useTheme } from "@/hooks/use-theme";
 const navLinks = [
   { to: "/", label: "Home", end: true },
   { to: "/what-im-doing", label: "What I'm doing" },
+  { to: "/in-plain-words", label: "In plain words" },
   { to: "/workstation", label: "Workstation" },
   { to: "/portfolio", label: "Portfolio" },
   { to: "/about", label: "About" },
