@@ -1023,7 +1023,7 @@ const it: Record<string, ItemMore[]> = {
       ],
       aside:
         "È cominciato con una modifica di venti righe che mi ha zittito per un’intera mattina in una chat di gruppo di dodici persone. E quando ho eseguito il controllo sulla sua stessa costruzione, ha trovato errori che i suoi test non avevano visto.",
-      link: { label: "Il controllo prima del volo nel dettaglio (in inglese)", to: "/workstation/foresight" },
+      link: { label: "Il controllo prima del decollo nel dettaglio (in inglese)", to: "/workstation/foresight" },
     },
     {
       text: [
