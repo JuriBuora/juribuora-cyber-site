@@ -2,7 +2,7 @@
   "posts": [
     {
       "day": 243,
-      "title": "An Evidence Pipeline Must Be Allowed to Say Not Proven",
+      "title": "Building a Work Summary Tool That Says 'Not Proven' When Evidence Is Missing",
       "summary": "I worked on a local Resolver that summarizes open Codex and Claude work from historical sources. The security lesson was that a useful summary must preserve uncertainty instead of turning an inventory, a title, or an AI…",
       "date": "2026-10-01",
       "url": "https://juribuora.github.io/blog/2026/10/01/day-243.html",
@@ -22,7 +22,7 @@
     },
     {
       "day": 242,
-      "title": "A Voice Command Must Be Offered Before It Is Executed",
+      "title": "Testing a Voice Command Path That Starts Coding-Agent Jobs from Telegram",
       "summary": "I tested a voice path that can start work in Claude Code or Codex from a Telegram message. The security lesson was that transcription is input, not authorization.",
       "date": "2026-09-30",
       "url": "https://juribuora.github.io/blog/2026/09/30/day-242.html",
@@ -41,8 +41,8 @@
     },
     {
       "day": 241,
-      "title": "Fresh Task Metadata Is Not Proof of Completion",
-      "summary": "Fresh metadata can show current status. It cannot replace completion evidence, and it should not become a transcript archive.",
+      "title": "Keeping a Daily Status Digest from Becoming a Transcript Archive",
+      "summary": "I helped tighten a daily project-status digest that combines current task metadata with historical records. The security problem was not simply how to import data. It was how to keep a short status receipt from becoming…",
       "date": "2026-09-29",
       "url": "https://juribuora.github.io/blog/2026/09/29/day-241.html",
       "category": "blog",
@@ -60,8 +60,8 @@
     },
     {
       "day": 240,
-      "title": "The Running Process Was the Source of Truth",
-      "summary": "A correct configuration file does not prove a running service changed. Read the process and service state.",
+      "title": "Finding a Setting That Was Correct in the File but Wrong in the Running Service",
+      "summary": "I investigated a model keep-alive setting that looked correct in a launch configuration but was still wrong in the running service. The value in the file said two hours; the process and server reported twenty-four.",
       "date": "2026-09-28",
       "url": "https://juribuora.github.io/blog/2026/09/28/day-240.html",
       "category": "blog",
@@ -79,8 +79,8 @@
     },
     {
       "day": 239,
-      "title": "An Automated Calendar Write Needs Provenance, Not Just Extraction",
-      "summary": "Before an automation writes a calendar event, it needs source evidence, deterministic date handling, duplicate protection, and a receipt.",
+      "title": "Turning a Message into a Calendar Event Safely: Evidence, Dates, Duplicates",
+      "summary": "I worked on a local capture path that turns a message containing a future commitment into a calendar event. The security lesson was that extraction is not enough. A write needs evidence, deterministic date handling, an…",
       "date": "2026-09-27",
       "url": "https://juribuora.github.io/blog/2026/09/27/day-239.html",
       "category": "blog",
@@ -98,8 +98,8 @@
     },
     {
       "day": 238,
-      "title": "The Egress Guard Needed to See What the Message Answered",
-      "summary": "The last message check needs enough context to understand the reply, and it must inspect the final shaped text before delivery.",
+      "title": "Extending an Outgoing-Message Guard to Check the Message It Replies To",
+      "summary": "I extended an outgoing-message guard after discovering that some failures cannot be detected from the reply alone. Whether a message is safe can depend on the inbound message it answers, the language it used, and…",
       "date": "2026-09-26",
       "url": "https://juribuora.github.io/blog/2026/09/26/day-238.html",
       "category": "blog",
@@ -117,8 +117,8 @@
     },
     {
       "day": 237,
-      "title": "A Tool Schema Is a Capability Boundary, Not Documentation",
-      "summary": "Prompt prose can describe a capability, but only the effective tool schema grants one. Expose the smallest safe bundle.",
+      "title": "Reviewing Which Tools a Messaging Agent Can Really Use",
+      "summary": "I reviewed what capabilities a messaging-facing agent could actually reach. The lesson was simple but important: describing a tool in a prompt does not grant a capability, while attaching a tool schema can make that…",
       "date": "2026-09-25",
       "url": "https://juribuora.github.io/blog/2026/09/25/day-237.html",
       "category": "blog",
@@ -136,8 +136,8 @@
     },
     {
       "day": 236,
-      "title": "The First Completion Was Not the Delivered Reply",
-      "summary": "A model's first completion is not necessarily the message a person receives. Security tests must follow the real path to the delivery boundary.",
+      "title": "Testing a Messaging Bot's Final Message Instead of the Model's First Output",
+      "summary": "I spent time testing a local messaging persona with tools attached. The most important discovery was about the measuring instrument: scoring the first model completion was not the same as scoring the message that a…",
       "date": "2026-09-24",
       "url": "https://juribuora.github.io/blog/2026/09/24/day-236.html",
       "category": "blog",
@@ -155,8 +155,8 @@
     },
     {
       "day": 235,
-      "title": "A Risk Score Is a Decision Aid, Not Evidence That I Scanned a System",
-      "summary": "A risk score helps decide what to investigate first. It is not a substitute for the scan, logs, configuration review, or authorized test that can prove what is actually happening.",
+      "title": "Writing a Vulnerability Assessment Report for an Internet-Exposed Database (Simulated)",
+      "summary": "I prepared a simulated vulnerability-assessment report for a scenario involving a business-critical database exposed to the public internet. The valuable lesson was not a magic number in a risk table. It was learning to…",
       "date": "2026-09-23",
       "url": "https://juribuora.github.io/blog/2026/09/23/day-235.html",
       "category": "blog",
@@ -174,8 +174,8 @@
     },
     {
       "day": 234,
-      "title": "A Found USB Drive Is a Data Leak Before It Is a Malware Test",
-      "summary": "A found USB drive can attack through its files before it attacks through its code: report it, do not plug it in, and protect both the device and the information it carries.",
+      "title": "Assessing a Found USB Drive as a Data-Leak and Malware Risk",
+      "summary": "I completed a removable-media risk exercise built around a found USB drive. The obvious danger is plugging in an unknown device and executing malware. The less obvious lesson was that the files already on the drive can…",
       "date": "2026-09-22",
       "url": "https://juribuora.github.io/blog/2026/09/22/day-234.html",
       "category": "blog",
@@ -193,8 +193,8 @@
     },
     {
       "day": 233,
-      "title": "Information Is Raw; Intelligence Is What You Did With It",
-      "summary": "The internet already has almost everything you need to know — OSINT is just the discipline of turning \"I found this\" into \"here's what I'm doing about it,\" and it turns out I've been half-doing that with MITRE ATT&CK…",
+      "title": "OSINT: Turning Public Information into Security Intelligence (Google Cybersecurity Certificate)",
+      "summary": "Closing out this stretch of the Google Cybersecurity Certificate, I studied open-source intelligence (OSINT) — the practice of turning publicly available information into usable security intelligence — and the specific…",
       "date": "2026-09-21",
       "url": "https://juribuora.github.io/blog/2026/09/21/day-233.html",
       "category": "blog",
@@ -211,8 +211,8 @@
     },
     {
       "day": 232,
-      "title": "A Castle Has Five Walls; So Does a Network",
-      "summary": "A castle doesn't rely on one wall, and neither should a network — and it turns out the SSRF defense I built weeks ago is literally on the industry's official top-ten list of things attackers go after most.",
+      "title": "Defense in Depth, CVE, CVSS and the OWASP Top 10 (Google Cybersecurity Certificate)",
+      "summary": "Continuing the vulnerability module, I studied the defense-in-depth model, how the CVE list standardizes vulnerability tracking globally, how CVSS scores severity, and the OWASP Top 10 — the ten most commonly exploited…",
       "date": "2026-09-20",
       "url": "https://juribuora.github.io/blog/2026/09/20/day-232.html",
       "category": "blog",
@@ -231,8 +231,8 @@
     },
     {
       "day": 231,
-      "title": "A Fast Pipeline That Ships Vulnerabilities Is Still Fast",
-      "summary": "A CI/CD pipeline that ships fast but insecure isn't a security win — it's just a faster way to ship the same five vulnerability categories, automated and at scale.",
+      "title": "Vulnerability Management and CI/CD Pipeline Security (Google Cybersecurity Certificate)",
+      "summary": "Starting the vulnerability module of the Google Cybersecurity Certificate, I studied the four-step vulnerability management cycle and zero-days, then went deep on CI/CD pipeline security specifically — the automated…",
       "date": "2026-09-19",
       "url": "https://juribuora.github.io/blog/2026/09/19/day-231.html",
       "category": "blog",
@@ -251,8 +251,8 @@
     },
     {
       "day": 230,
-      "title": "A Contractor's Access Outlived His Contract by Four Years",
-      "summary": "A legal contractor's contract ended in 2019; his Admin access didn't — and by the time a 2023 payroll event traced back to his account, the real lesson wasn't about him, it was about every access-control step that…",
+      "title": "Access Control: AAA, IAM, and a Contractor Account Left Active for Four Years",
+      "summary": "Studying the authentication, authorization, and accounting (AAA) framework alongside identity and access management (IAM), I worked through SSO, MFA, authorization mechanisms, and the MAC/DAC/RBAC models — then grounded…",
       "date": "2026-09-18",
       "url": "https://juribuora.github.io/blog/2026/09/18/day-230.html",
       "category": "blog",
@@ -271,8 +271,8 @@
     },
     {
       "day": 229,
-      "title": "A Hash Can't Be Decrypted Because It Was Never Encrypted",
-      "summary": "A hash isn't a weaker lock — it's not a lock at all. It can't be decrypted because nothing was ever meant to come back out, which is exactly what makes it good for proving nothing was tampered with.",
+      "title": "Hash Functions and Why They Are Not Encryption (Google Cybersecurity Certificate)",
+      "summary": "Studying hash functions in the Google Cybersecurity Certificate clarified something I'd been fuzzy on: hashing isn't a weaker form of encryption, it's a fundamentally different tool — one-way, irreversible, and built…",
       "date": "2026-09-17",
       "url": "https://juribuora.github.io/blog/2026/09/17/day-229.html",
       "category": "blog",
@@ -290,8 +290,8 @@
     },
     {
       "day": 228,
-      "title": "Two Keys, One Box: Making Sense of Asymmetric and Symmetric Encryption",
-      "summary": "PKI doesn't pick a favorite between symmetric and asymmetric encryption — it uses asymmetric to shake hands securely, then switches to symmetric because talking fast matters once you actually trust who you're talking to.",
+      "title": "How PKI Combines Symmetric and Asymmetric Encryption (Google Cybersecurity Certificate)",
+      "summary": "Starting the encryption module of the Google Cybersecurity Certificate, I studied how public key infrastructure combines symmetric and asymmetric encryption with digital certificates to make online communication both…",
       "date": "2026-09-16",
       "url": "https://juribuora.github.io/blog/2026/09/16/day-228.html",
       "category": "blog",
@@ -309,8 +309,8 @@
     },
     {
       "day": 227,
-      "title": "A JOIN Is Just Data Enrichment With Extra Steps",
-      "summary": "JOINs stopped being four keywords to memorize once I saw them as one question repeated: what am I willing to lose — and the \"keep everything and show me what's missing\" pattern turned out to be the one I'll actually use…",
+      "title": "SQL JOINs for Combining Security Logs (Google Cybersecurity Certificate)",
+      "summary": "Finishing the SQL module of the Google Cybersecurity Certificate, I studied JOINs — INNER, LEFT, RIGHT, and FULL OUTER — not as four separate syntax rules to memorize, but as one underlying idea: security telemetry is…",
       "date": "2026-09-15",
       "url": "https://juribuora.github.io/blog/2026/09/15/day-227.html",
       "category": "blog",
@@ -328,8 +328,8 @@
     },
     {
       "day": 226,
-      "title": "Privacy Needs a Lifecycle, an Owner, and Someone Accountable for Every Handoff",
-      "summary": "Protecting data means protecting every handoff: who decides, who handles it, who can access it, and when it should finally disappear.",
+      "title": "Data Privacy: Lifecycle, Ownership and Handoffs (Google Cybersecurity Certificate)",
+      "summary": "In the next Google Cybersecurity Certificate material, I studied how data protection depends on more than encryption or a login prompt. Privacy and security have to follow information through its full lifecycle, with…",
       "date": "2026-09-14",
       "url": "https://juribuora.github.io/blog/2026/09/14/day-226.html",
       "category": "blog",
@@ -347,8 +347,8 @@
     },
     {
       "day": 225,
-      "title": "An Inventory Tells Me What I Have; Classification Tells Me How to Protect It",
-      "summary": "An inventory tells me what exists. Classification tells me what it is worth protecting and how careful I need to be.",
+      "title": "Asset Security: From Inventory to Classification (Google Cybersecurity Certificate)",
+      "summary": "Continuing the Google Cybersecurity Certificate, I studied asset security and the step after inventory that is easy to overlook: classification.",
       "date": "2026-09-13",
       "url": "https://juribuora.github.io/blog/2026/09/13/day-225.html",
       "category": "blog",
@@ -365,8 +365,8 @@
     },
     {
       "day": 224,
-      "title": "Time Windows Turn Login Rows Into an Investigation",
-      "summary": "Time and numeric filters make SQL useful for security triage. The key is not only knowing the operator; it is knowing whether its boundary matches the question I am trying to investigate.",
+      "title": "SQL for Security Triage: Filtering Logins by Date, Time and Number",
+      "summary": "In the Google Cybersecurity Certificate material I studied how SQL comparison operators and time ranges turn a large login table into a focused investigation. The important shift was not SQL syntax on its own; it was…",
       "date": "2026-09-12",
       "url": "https://juribuora.github.io/blog/2026/09/12/day-224.html",
       "category": "blog",
@@ -384,8 +384,8 @@
     },
     {
       "day": 223,
-      "title": "A Browser View Is the Evidence, Not the HTTP Guess",
-      "summary": "For public website checks, the browser’s rendered result is the evidence that matters. A possible technical signal becomes a claim only after the proof supports exactly what I am saying.",
+      "title": "Basing Website Security Claims on What a Real Browser Shows",
+      "summary": "While automating website trust checks, I learned that a security claim should be based on what a real browser can verify, not on a thin technical signal that sounds equivalent. A redirect, certificate check, or fetch…",
       "date": "2026-09-11",
       "url": "https://juribuora.github.io/blog/2026/09/11/day-223.html",
       "category": "blog",
@@ -403,8 +403,8 @@
     },
     {
       "day": 222,
-      "title": "The Safe Filter Belonged at the Last Delivery Boundary",
-      "summary": "Filtering the main reply path was not enough because direct handlers could bypass it. The safer control belongs at the final WhatsApp delivery boundary—and this repair stays labeled in progress until its final…",
+      "title": "Moving a Message Safety Filter to the Final Delivery Step",
+      "summary": "During an in-progress Hermes WhatsApp repair, I found that filtering assistant responses was not enough. Direct handlers and maintenance notices could bypass that path and reach the delivery adapter. The defensive…",
       "date": "2026-09-10",
       "url": "https://juribuora.github.io/blog/2026/09/10/day-222.html",
       "category": "blog",
@@ -422,8 +422,8 @@
     },
     {
       "day": 221,
-      "title": "Removing a Token From Code Was Only the First Half of the Incident",
-      "summary": "Deleting a token from code is containment. The incident is only remediated when the provider invalidates the old credential and the intended single consumer works with the replacement.",
+      "title": "Handling a Leaked Bot Token: Removing It from Code Is Not Revoking It",
+      "summary": "While improving a WebCheckup watchdog, I worked through a credential-exposure lesson that is easy to state and easy to underdo: removing a bot token from a workflow is cleanup, not revocation.",
       "date": "2026-09-09",
       "url": "https://juribuora.github.io/blog/2026/09/09/day-221.html",
       "category": "blog",
@@ -441,8 +441,8 @@
     },
     {
       "day": 220,
-      "title": "An Empty Access List Was Not a Deny-All Rule",
-      "summary": "For Hermes, an empty WhatsApp tool list inherited global tools. Replacing it with an explicit deny boundary—and verifying the runtime result—was the real privacy control.",
+      "title": "Finding That an Empty Tool List Meant 'Inherit Everything', Not 'Deny All'",
+      "summary": "While enabling local, source-attributed conversation recall for Hermes, I found an easy-to-misread authorization setting: an empty WhatsApp tool list did not mean “no tools.” In that version of the platform, it…",
       "date": "2026-09-08",
       "url": "https://juribuora.github.io/blog/2026/09/08/day-220.html",
       "category": "blog",
@@ -460,8 +460,8 @@
     },
     {
       "day": 219,
-      "title": "An Upgrade Is Not Proven Until the Running Service Names Its Commit",
-      "summary": "An upgrade is not “done” because code was tested or copied. It is done when the running service can prove the commit and environment it is actually using, with a recovery plan that respects newer state.",
+      "title": "Upgrading a Live Service and Proving Which Commit Is Actually Running",
+      "summary": "Upgrading Hermes taught me that a clean test run and a new source checkout are not enough evidence for a security-sensitive service. The important question is more concrete: *what code is the live process actually…",
       "date": "2026-09-07",
       "url": "https://juribuora.github.io/blog/2026/09/07/day-219.html",
       "category": "blog",
@@ -479,8 +479,8 @@
     },
     {
       "day": 218,
-      "title": "Discovering a Skill Is Not the Same as Proving It Ran",
-      "summary": "Hermes can generate real purchase-report PDFs now — but the gate that verifies it actually ran the skill won't accept \"the runtime found it\" as proof, and an inconclusive test stayed labeled inconclusive instead of…",
+      "title": "Verifying That an Agent Really Ran a Skill Before Accepting Its PDF Report",
+      "summary": "Letting Hermes generate real financial-adjacent PDFs — an Amazon purchase register, a shareable spending note — meant building a supervision layer that refuses to let \"the runtime found the skill\" count as \"the skill…",
       "date": "2026-09-06",
       "url": "https://juribuora.github.io/blog/2026/09/06/day-218.html",
       "category": "blog",
@@ -498,8 +498,8 @@
     },
     {
       "day": 217,
-      "title": "Waking a Machine Needed One Boolean; Putting It to Sleep Needed Its Own Bridge",
-      "summary": "Home Assistant can wake my Mac now with one boolean and zero new authority — and when I wanted sleep too, I built it its own narrow, loopback-only bridge instead of reaching for the easy shortcut.",
+      "title": "Connecting Home Assistant to a Mac's Wake and Sleep with Minimal Access",
+      "summary": "Connecting Home Assistant to my M4 Mac's power state started with fixing a broken wake toggle — a fix so narrow it added no new capability at all. Hours later, adding the ability to put the machine to sleep from the…",
       "date": "2026-09-05",
       "url": "https://juribuora.github.io/blog/2026/09/05/day-217.html",
       "category": "blog",
@@ -517,8 +517,8 @@
     },
     {
       "day": 216,
-      "title": "A Telegram Bot That Checks Who's Asking Twice",
-      "summary": "Gave myself remote power control over a second Mac through Telegram — but the bot checks who's actually asking twice, and the network path underneath it now heals itself instead of silently dropping.",
+      "title": "Building Remote Power Control for a Mac over Telegram, with Two Sender Checks",
+      "summary": "Building remote power control for a second machine (an M4 Mac) over Telegram meant answering two separate questions at once: who is allowed to send this command, and does the network path even stay reliable enough for…",
       "date": "2026-09-04",
       "url": "https://juribuora.github.io/blog/2026/09/04/day-216.html",
       "category": "blog",
@@ -536,8 +536,8 @@
     },
     {
       "day": 215,
-      "title": "A Symlink That Works by Hand Can Still Fail at 11:30",
-      "summary": "The watchdog existed, but not in a form the scheduler trusted. A real deployed file and scheduler-driven proof fixed that.",
+      "title": "Finding Why a Scheduled Watchdog Never Ran: The Scheduler Rejected a Symlink",
+      "summary": "Finding that a scheduled Hermes watchdog was versioned and manually runnable, yet silently blocked in the actual scheduler because the deployed path was a symlink.",
       "date": "2026-09-03",
       "url": "https://juribuora.github.io/blog/2026/09/03/day-215.html",
       "category": "blog",
@@ -555,8 +555,8 @@
     },
     {
       "day": 214,
-      "title": "A Backup Is Not Real Until It Restores Somewhere Else",
-      "summary": "An encrypted backup became trustworthy only after it restored cleanly on another machine without disturbing the live bridge.",
+      "title": "Building an Encrypted Off-Host Backup and Proving It Restores on Another Machine",
+      "summary": "Building encrypted off-host backup for Hermes state, then proving the restore on the disaster machine without interrupting the live messaging bridge.",
       "date": "2026-09-02",
       "url": "https://juribuora.github.io/blog/2026/09/02/day-214.html",
       "category": "blog",
@@ -574,8 +574,8 @@
     },
     {
       "day": 213,
-      "title": "One Memory System, With Sources and Boundaries",
-      "summary": "The goal is not an agent that remembers everything; it is local memory that can show its sources and limits.",
+      "title": "Unifying Agent Memory into One Source-Attributed Retrieval Path",
+      "summary": "Unifying local memory retrieval so different agents use a shared, source-attributed path instead of accumulating disconnected notes and hidden context.",
       "date": "2026-09-01",
       "url": "https://juribuora.github.io/blog/2026/09/01/day-213.html",
       "category": "blog",
@@ -593,8 +593,8 @@
     },
     {
       "day": 212,
-      "title": "The Fastest Model Was the One That Remembered the Prompt",
-      "summary": "The winning local worker was not merely quick—it was the one that reused the prompt and returned usable work reliably.",
+      "title": "Choosing a Local Coding Model by Measuring Repeated Full Rounds",
+      "summary": "Choosing a local coding model by measuring complete repeated rounds, not by model size or a one-off first response.",
       "date": "2026-08-31",
       "url": "https://juribuora.github.io/blog/2026/08/31/day-212.html",
       "category": "blog",
@@ -612,8 +612,8 @@
     },
     {
       "day": 211,
-      "title": "A Simple Agent Loop Still Needs Hard Boundaries",
-      "summary": "The useful agent loop is simple—but it still needs a lock, a target, a freshness check, and a redaction boundary.",
+      "title": "Building a Relay Between ChatGPT and a Local Coding Agent, Guarded Against Stale and Duplicate Messages",
+      "summary": "Building a local ChatGPT-to-OpenCode relay that keeps the workflow simple without letting stale replies, duplicate loops, or leaked worker output control the next step.",
       "date": "2026-08-30",
       "url": "https://juribuora.github.io/blog/2026/08/30/day-211.html",
       "category": "blog",
@@ -631,8 +631,8 @@
     },
     {
       "day": 210,
-      "title": "Fairness Is a Reliability Control",
-      "summary": "When an unattended job always picks the same “important” work, fairness becomes a reliability control—not a nice-to-have.",
+      "title": "Fixing an Unattended Job That Kept Picking the Same Files and Starved the Rest",
+      "summary": "Finding that an unattended document-reconciliation job was repeatedly choosing the same high-priority files and silently starving the rest of its registry.",
       "date": "2026-08-29",
       "url": "https://juribuora.github.io/blog/2026/08/29/day-210.html",
       "category": "blog",
@@ -650,8 +650,8 @@
     },
     {
       "day": 209,
-      "title": "A Network Blip Is Not a Revoked Credential",
-      "summary": "An offline check should tell me to inspect the network—not to re-authorize a credential that is still valid.",
+      "title": "Fixing a Watchdog That Mistook a Network Failure for an Expired Credential",
+      "summary": "Fixing an authentication watchdog that could turn a transient network failure into a confident but wrong credential-expiry diagnosis.",
       "date": "2026-08-28",
       "url": "https://juribuora.github.io/blog/2026/08/28/day-209.html",
       "category": "blog",
@@ -669,8 +669,8 @@
     },
     {
       "day": 208,
-      "title": "A Green Shadow Trial Is Not a Live Cutover",
-      "summary": "A passing fixture is valuable—but it is not proof that a real local model is ready to take over.",
+      "title": "Adding a Live Trial Because Passing Fixture Tests Did Not Prove a Local Model Was Ready",
+      "summary": "Adding an explicit, opt-in live-evidence path because deterministic shadow tests cannot prove how a real local model will behave.",
       "date": "2026-08-27",
       "url": "https://juribuora.github.io/blog/2026/08/27/day-208.html",
       "category": "blog",
@@ -688,8 +688,8 @@
     },
     {
       "day": 207,
-      "title": "The One Safe Exception Needs Its Own Gate",
-      "summary": "The only allowed unsolicited message now has to prove it is the right greeting, for the right person, at the right time, once.",
+      "title": "Gating the One Scheduled Message a Bot May Send Without Being Asked",
+      "summary": "Making the one allowed non-reply WhatsApp action—a scheduled morning greeting—prove that it is exactly that and nothing broader.",
       "date": "2026-08-26",
       "url": "https://juribuora.github.io/blog/2026/08/26/day-207.html",
       "category": "blog",
@@ -707,8 +707,8 @@
     },
     {
       "day": 206,
-      "title": "A Reply Is a Capability, Not a Suggestion",
-      "summary": "A real reply now needs a real, recent inbound message behind it—and can only be sent once.",
+      "title": "Requiring a Recent Incoming Message Before a Bot May Reply, Once",
+      "summary": "Treating a reply to a real person as a short-lived, one-use authorization—not as something a local process can invent because it can reach an API.",
       "date": "2026-08-25",
       "url": "https://juribuora.github.io/blog/2026/08/25/day-206.html",
       "category": "blog",
@@ -726,8 +726,8 @@
     },
     {
       "day": 205,
-      "title": "When a Cached Fact Says Good Night at 11:24 in the Morning",
-      "summary": "The bot wished someone good night at 11:24am because of a stale cached clock fact — fixed by making time live instead of cached, and while I was in there, made sure restarts stop silently dropping work in progress.",
+      "title": "Fixing a Bot That Said Good Night at 11:24 in the Morning (Stale Cached Time)",
+      "summary": "Two real incidents — \"Buonanotte zia!\" sent at 11:24 in the morning, and \"Buongiorno zia!\" sent at 13:41 in the afternoon — traced back to a stale cached fact baked into the persona's config by an hourly cron job. In…",
       "date": "2026-08-24",
       "url": "https://juribuora.github.io/blog/2026/08/24/day-205.html",
       "category": "blog",
@@ -745,8 +745,8 @@
     },
     {
       "day": 204,
-      "title": "Shadow Days: Making a New Feature Prove Itself Before Anyone Sees It",
-      "summary": "A new briefing feature had to earn its way to me through a chain of shadow trials, delivery-receipt checks, and a reader/internal content boundary — the lesson from an earlier incident, now just how things ship.",
+      "title": "Shadow-Testing a New Briefing Feature Before It Reaches Anyone",
+      "summary": "Rolling out a new \"Phase 4\" briefing feature meant reusing a pattern from earlier this month — shadow trials before anything reaches a real user — but this time as deliberate, staged, standard practice:…",
       "date": "2026-08-23",
       "url": "https://juribuora.github.io/blog/2026/08/23/day-204.html",
       "category": "blog",
@@ -764,8 +764,8 @@
     },
     {
       "day": 203,
-      "title": "I Capped It, It Deadlocked the Gateway, and a Prefix Match Almost Revoked the Wrong Person",
-      "summary": "Capped a threshold to fix a real problem, watched it deadlock the gateway instead, reverted it same-day — then caught a prefix match that would have revoked the wrong person, and started building a detector for my own…",
+      "title": "A Config Cap That Deadlocked the Gateway, and a Prefix Match That Nearly Revoked the Wrong User",
+      "summary": "One day carried three separate lessons: a compression-threshold cap meant to fix a real problem instead deadlocked the whole gateway and had to be reverted, an access-revocation for a user I'd asked to stop turned into…",
       "date": "2026-08-22",
       "url": "https://juribuora.github.io/blog/2026/08/22/day-203.html",
       "category": "blog",
@@ -784,7 +784,7 @@
     {
       "day": 202,
       "title": "Giving an Agent Write Access to My Calendar Without Giving It Delete",
-      "summary": "Hermes can write to my calendar now — just not my real one, and never with a delete button, only a tombstone.",
+      "summary": "Hermes needed to write calendar events on my behalf. Instead of pointing it at my real calendar with full write access, I scoped the capability down to a dedicated calendar it owns, banned deletion outright, and used a…",
       "date": "2026-08-21",
       "url": "https://juribuora.github.io/blog/2026/08/21/day-202.html",
       "category": "blog",
@@ -802,8 +802,8 @@
     },
     {
       "day": 201,
-      "title": "A New Channel Trusts Too Much in Two Different Ways",
-      "summary": "The new WhatsApp channel had too many tools and too little judgment about who was actually talking — locked the toolset down to what it needs, and taught the greeting logic that \"the group is active\" isn't the same as…",
+      "title": "Locking Down a New WhatsApp Channel: Too Many Tools, Too Much Trust in the Sender",
+      "summary": "Rolling WhatsApp out as a real channel for Hermes surfaced two unrelated ways a new surface can end up trusting more than it should: a default toolset that handed a chat-facing persona terminal and code execution, and a…",
       "date": "2026-08-20",
       "url": "https://juribuora.github.io/blog/2026/08/20/day-201.html",
       "category": "blog",
@@ -822,7 +822,7 @@
     {
       "day": 200,
       "title": "Red-Teaming My Own Chatbot: Building an Adversarial Persona Harness",
-      "summary": "Built an automated harness to attack my own chatbot's persona — then had to fix the attacker before I could trust what it was telling me about the target.",
+      "summary": "Rolling out a WhatsApp-facing persona for Hermes meant I could no longer eyeball a handful of test messages and call it safe. I built an automated adversarial harness to attack the persona itself — and then had to fix…",
       "date": "2026-08-19",
       "url": "https://juribuora.github.io/blog/2026/08/19/day-200.html",
       "category": "blog",
@@ -840,8 +840,8 @@
     },
     {
       "day": 199,
-      "title": "Who's Allowed to Pull the Plug",
-      "summary": "Something powered my Mac off over WhatsApp with no identifiable agent action behind it — so I default-denied who's allowed to pull the plug, fixed the broken halt ladder, and then nearly lost both fixes in a merge the…",
+      "title": "Investigating an Unexplained Mac Shutdown and Restricting Who Can Power It Off",
+      "summary": "A WhatsApp message powered my Mac off. Nothing in the agent's own turn could have caused it — no model response had even landed yet, no tool had executed — which meant the real caller was unidentified and unaccountable.…",
       "date": "2026-08-18",
       "url": "https://juribuora.github.io/blog/2026/08/18/day-199.html",
       "category": "blog",
@@ -859,8 +859,8 @@
     },
     {
       "day": 198,
-      "title": "Testing My Own Policy Gate Against a New Kind of Personal Data",
-      "summary": "Gave Hermes my location — and made it prove the personal-data policy gate actually covers it before trusting the feature.",
+      "title": "Testing My Personal-Data Policy Gate with Phone Location",
+      "summary": "I gave Hermes access to my phone's location so it could use it for real tasks — then treated that as a test case for the deny-first personal-data policy gate built a couple of weeks ago, instead of assuming it would…",
       "date": "2026-08-17",
       "url": "https://juribuora.github.io/blog/2026/08/17/day-198.html",
       "category": "blog",
@@ -878,8 +878,8 @@
     },
     {
       "day": 197,
-      "title": "Scanning for Secrets Before the First Push, Not After",
-      "summary": "New remote, and the secret scan came with it — plus a one-command reauth so recovery never tempts a shortcut.",
+      "title": "Adding a Secret Scan Before Every Push to a New Repository",
+      "summary": "Standing up a new private remote for Hermes' binaries was the excuse to build the habit I should have had from day one: a pre-push secret scan, plus a one-command Google reauth so recovering from an expired credential…",
       "date": "2026-08-16",
       "url": "https://juribuora.github.io/blog/2026/08/16/day-197.html",
       "category": "blog",
@@ -897,8 +897,8 @@
     },
     {
       "day": 196,
-      "title": "The Same Lie, Told Four Different Ways in One Week",
-      "summary": "Fixed the same lie four times this week before I noticed it was the same lie — now I'm hunting the pattern, not the instances.",
+      "title": "Four Bugs, One Pattern: Code That Claimed Success Without Proof",
+      "summary": "Four unrelated bugs this week — an audit ordering flaw, a stale test expectation, a push notification, and a night batch runner — turned out to be the exact same failure shape wearing different clothes: something…",
       "date": "2026-08-15",
       "url": "https://juribuora.github.io/blog/2026/08/15/day-196.html",
       "category": "blog",
@@ -916,8 +916,8 @@
     },
     {
       "day": 195,
-      "title": "Narration Is Not a Command: A Control-Plane Confusion Bug",
-      "summary": "Found that \"just describing what happened\" could accidentally become a command — and gave narration its own lane so that can't happen again.",
+      "title": "Fixing a Bug Where Narration Text Was Executed as a Task",
+      "summary": "A deliberate audit of the task supervisor, run while it was intentionally deactivated, found that text meant purely as narration — commentary about what was happening — could get routed into supervised execution as if…",
       "date": "2026-08-14",
       "url": "https://juribuora.github.io/blog/2026/08/14/day-195.html",
       "category": "blog",
@@ -935,8 +935,8 @@
     },
     {
       "day": 194,
-      "title": "The Secretary Doesn't Get to Write and Send Email Anymore",
-      "summary": "The secretary can propose three emails now. It doesn't get to pick one, and it never gets to hit send.",
+      "title": "Stopping the AI Secretary from Writing and Sending Email on Its Own",
+      "summary": "The personal secretary had been asking the Hermes agent to compose email and send it automatically. I stopped both halves of that and replaced them with a three-draft picker over Telegram — real human choice, not a…",
       "date": "2026-08-13",
       "url": "https://juribuora.github.io/blog/2026/08/13/day-194.html",
       "category": "blog",
@@ -953,8 +953,8 @@
     },
     {
       "day": 193,
-      "title": "Fixing the Approval Queue: Sender Identity, Not Message Identity",
-      "summary": "The approval gate got its own audit — sender-keyed, webhook removed, authenticated, and alerted if it ever goes quiet.",
+      "title": "Auditing My Phone-Approval Gate: Wrong Identity Key, Silent Policy Hook, Exposed Webhook",
+      "summary": "A real audit of the phone-approval gate from a few weeks back found several concrete weaknesses: an approval queue keyed on the wrong identity, a policy hook that could be knocked over silently, and a webhook sitting on…",
       "date": "2026-08-12",
       "url": "https://juribuora.github.io/blog/2026/08/12/day-193.html",
       "category": "blog",
@@ -972,8 +972,8 @@
     },
     {
       "day": 192,
-      "title": "Learning to Ask a Database Better Questions",
-      "summary": "Learned to filter, pattern-match, and sort a database — and manually scanning 200 rows made the case for WHERE better than any lecture could.",
+      "title": "SQL Labs: Filtering with WHERE and LIKE, Sorting with ORDER BY",
+      "summary": "Two Google Cybersecurity Certificate SQL labs today: filtering with WHERE and LIKE, then plain SELECT/FROM and sorting with ORDER BY. Small syntax, but the framing is the point — every query was tied to a security…",
       "date": "2026-08-11",
       "url": "https://juribuora.github.io/blog/2026/08/11/day-192.html",
       "category": "blog",
@@ -991,8 +991,8 @@
     },
     {
       "day": 191,
-      "title": "An Alarm Nobody Had Ever Heard Go Off",
-      "summary": "Built an alarm for expiring credentials, then made myself prove it actually rings before trusting it.",
+      "title": "Building a Watchdog for Expiring Credentials and Proving the Alarm Fires",
+      "summary": "The personal secretary went quiet, and the root cause traced back to Google OAuth credentials expiring with no alert firing. I built an independent watchdog — then made myself prove the alarm actually rings before…",
       "date": "2026-08-10",
       "url": "https://juribuora.github.io/blog/2026/08/10/day-191.html",
       "category": "blog",
@@ -1011,7 +1011,7 @@
     {
       "day": 190,
       "title": "Closing the Observation Backlog: Two New Skills Born From Real Recurring Bugs",
-      "summary": "Closed the whole observation backlog and found two real skills hiding inside twenty-three small lessons.",
+      "summary": "Weeks of skill observations — small lessons captured during real tasks — had accumulated into a backlog. Closing it meant a genuine review, not a rubber stamp, and it produced two new skills built from patterns that…",
       "date": "2026-08-09",
       "url": "https://juribuora.github.io/blog/2026/08/09/day-190.html",
       "category": "blog",
@@ -1029,7 +1029,7 @@
     {
       "day": 189,
       "title": "Retiring Aider Properly, and Making Agents Land Their Own Work",
-      "summary": "Retired a dead tool properly, and made sure agents can't call a task done while their work is still lying around uncommitted.",
+      "summary": "Aider stopped being installed a while ago, but the stack was still quietly shelling out to it. Retiring the lane properly, and adding a rule that agents must commit their own work before finishing, closed two different…",
       "date": "2026-08-08",
       "url": "https://juribuora.github.io/blog/2026/08/08/day-189.html",
       "category": "blog",
@@ -1047,8 +1047,8 @@
     },
     {
       "day": 188,
-      "title": "A Memory That Remembers Correctly, and Not Burning a Big Model on 'ok'",
-      "summary": "Gave the assistant's memory real sources and a sense of which fact is current — and stopped burning a big model on \"ok.\"",
+      "title": "Giving Agent Memory Real Sources, and Routing Trivial Turns to a Small Model",
+      "summary": "Two upgrades to how Hermes thinks day to day: a memory index that tracks real sources and supersession instead of an undifferentiated pile of facts, and a tiering proxy that stops routing trivial turns to an expensive…",
       "date": "2026-08-07",
       "url": "https://juribuora.github.io/blog/2026/08/07/day-188.html",
       "category": "blog",
@@ -1066,8 +1066,8 @@
     },
     {
       "day": 187,
-      "title": "Send Is Not Delivery: Evidence-Gating My Own Email Verification",
-      "summary": "The mail said \"sent\"; now it has to prove \"arrived\" — and its evidence trail no longer leaks secrets.",
+      "title": "Making Email Verification Prove Delivery, Not Just Sending",
+      "summary": "A \"verified Apple Mail delivery\" feature was reporting success the moment a send call returned — not when the message actually arrived. Fixing that, and finding secrets leaking into diagnostic evidence along the way,…",
       "date": "2026-08-06",
       "url": "https://juribuora.github.io/blog/2026/08/06/day-187.html",
       "category": "blog",
@@ -1085,8 +1085,8 @@
     },
     {
       "day": 186,
-      "title": "Hash-Verified Is Not the Same as Trusted: Fixing Citation Integrity",
-      "summary": "A hash matching is not the same as a citation being trustworthy — now the code says so.",
+      "title": "Fixing a Citation Check That Treated a Matching Hash as Trust",
+      "summary": "The memory-fabric's citation verifier had a naming problem masking a real one: content that hash-verified correctly could still be wrongly treated as trustworthy, because hash integrity and promotion eligibility had…",
       "date": "2026-08-05",
       "url": "https://juribuora.github.io/blog/2026/08/05/day-186.html",
       "category": "blog",
@@ -1104,8 +1104,8 @@
     },
     {
       "day": 185,
-      "title": "From Observed to Enforced: Two Guards That Only Used to Watch",
-      "summary": "Found two guards that only watched. Now they both say no.",
+      "title": "Turning Two Log-Only Guards into Guards That Block",
+      "summary": "Two separate audit findings shared the same shape: a guard that computed the right answer and then did nothing with it. A personal-data policy that defaulted to allow, and a provider-authority check that only logged…",
       "date": "2026-08-04",
       "url": "https://juribuora.github.io/blog/2026/08/04/day-185.html",
       "category": "blog",
@@ -1123,8 +1123,8 @@
     },
     {
       "day": 184,
-      "title": "A Unicode Lookalike Almost Broke My 'Cannot Certify Its Own Work' Rule",
-      "summary": "A rule said \"you can't certify your own work\" — a lookalike character almost proved it wrong.",
+      "title": "Fixing a Self-Certification Check That a Unicode Lookalike Could Bypass",
+      "summary": "A rule I trusted — a worker cannot certify its own attempt — turned out to be enforced by a string comparison that never normalized Unicode. A homoglyph lookalike of a worker's identity could slip past it.",
       "date": "2026-08-03",
       "url": "https://juribuora.github.io/blog/2026/08/03/day-184.html",
       "category": "blog",
@@ -1143,7 +1143,7 @@
     {
       "day": 183,
       "title": "The Fix Had Two More Holes: A Live DNS-Rebinding Bypass Hunt",
-      "summary": "Reviewed my own SSRF fix like an attacker and found two more ways through it — both closed, both proven live.",
+      "summary": "An independent security review of yesterday's SSRF fix — Chromium IP-pinning meant to close DNS-rebinding — found two further bypasses, both confirmed live against a real browser and a real local server, before either…",
       "date": "2026-08-02",
       "url": "https://juribuora.github.io/blog/2026/08/02/day-183.html",
       "category": "blog",
@@ -1162,7 +1162,7 @@
     {
       "day": 182,
       "title": "Building an SSRF-Safe Fetcher for an Agent That Reads the Web",
-      "summary": "Gave the agent a web fetcher, and made it prove every request is safe before it ever leaves the house.",
+      "summary": "Giving an agent the ability to fetch and cite real web pages means giving it a network client — which means building it as if it were hostile from day one. I put together the SSRF-hardening layer for the…",
       "date": "2026-08-01",
       "url": "https://juribuora.github.io/blog/2026/08/01/day-182.html",
       "category": "blog",
@@ -1181,7 +1181,7 @@
     {
       "day": 181,
       "title": "Using Linux Help Before Making a Change",
-      "summary": "Before changing a Linux system, use its own help tools to confirm the command, the option, and the intended result.",
+      "summary": "Using Linux's built-in help resources to identify commands and options before changing a system.",
       "date": "2026-07-31",
       "url": "https://juribuora.github.io/blog/2026/07/31/day-181.html",
       "category": "blog",
@@ -1201,8 +1201,8 @@
     },
     {
       "day": 180,
-      "title": "A Small Security Skill Allowlist Beats an Everything Install",
-      "summary": "A small, reviewed allowlist is easier to trust, explain, and maintain than an everything-enabled catalog.",
+      "title": "Reviewing a Skill Catalog and Installing Only a Small Allowlist",
+      "summary": "Curating a small set of defensive skills instead of installing a large catalog into an active workflow.",
       "date": "2026-07-30",
       "url": "https://juribuora.github.io/blog/2026/07/30/day-180.html",
       "category": "blog",
@@ -1221,7 +1221,7 @@
     {
       "day": 179,
       "title": "Extracting Useful Text Without Giving an Agent a Browser",
-      "summary": "Useful extraction does not need a persistent browser or an automatic pipeline: named input, bounded output, human review.",
+      "summary": "Building a small, bounded way to extract readable content from a local HTML file or a single URL.",
       "date": "2026-07-29",
       "url": "https://juribuora.github.io/blog/2026/07/29/day-179.html",
       "category": "blog",
@@ -1239,8 +1239,8 @@
     },
     {
       "day": 178,
-      "title": "A Fast Index Is Not Automatically Useful",
-      "summary": "An index is only useful when it makes verified answers easier, not merely faster to read.",
+      "title": "Testing Whether a Codebase Index Actually Helps Find Evidence",
+      "summary": "Testing whether a codebase index improves evidence gathering rather than assuming that faster retrieval is a security win.",
       "date": "2026-07-28",
       "url": "https://juribuora.github.io/blog/2026/07/28/day-178.html",
       "category": "blog",
@@ -1259,7 +1259,7 @@
     {
       "day": 177,
       "title": "Choosing Tools by Evidence, Not by Novelty",
-      "summary": "A new tool earns its place by solving a verified problem within clear security and rollback boundaries.",
+      "summary": "Evaluating a third-party tool before it becomes part of a local security workflow.",
       "date": "2026-07-27",
       "url": "https://juribuora.github.io/blog/2026/07/27/day-177.html",
       "category": "blog",
@@ -1278,7 +1278,7 @@
     {
       "day": 176,
       "title": "Execution Depth Presets, a Broken Build, and Unit Tests for the Small Stuff",
-      "summary": "Gave autonomy a depth dial, broke the build proving the gates work, and tested the scripts everyone forgets.",
+      "summary": "Two threads that turned out to be the same lesson: giving the Captain agent user-facing execution depth presets, and giving even my smallest helper scripts real unit tests — with a broken build in between to make the…",
       "date": "2026-07-26",
       "url": "https://juribuora.github.io/blog/2026/07/26/day-176.html",
       "category": "blog",
@@ -1297,7 +1297,7 @@
     {
       "day": 175,
       "title": "Unattended Delegation: Which Lanes Are Allowed to Work While I Sleep",
-      "summary": "Wrote the night-shift roster for my agents — and one capable-looking lane didn't make the cut.",
+      "summary": "Not every automation lane deserves to run unattended. I documented which ones do, wired the Headroom proxy in properly as a managed service, and explicitly banned a lane that looked fine but was not.",
       "date": "2026-07-25",
       "url": "https://juribuora.github.io/blog/2026/07/25/day-175.html",
       "category": "blog",
@@ -1316,7 +1316,7 @@
     {
       "day": 174,
       "title": "Shadow Trials: Letting the New Router Watch Before It Acts",
-      "summary": "The new router had to watch silently and file a report before touching anything real.",
+      "summary": "Before trusting changes to the AI-OS routing layer, I ran them in shadow mode: the candidate logic sees every real task and records what it *would* have done, while the proven path keeps doing the actual work.",
       "date": "2026-07-24",
       "url": "https://juribuora.github.io/blog/2026/07/24/day-174.html",
       "category": "blog",
@@ -1335,7 +1335,7 @@
     {
       "day": 173,
       "title": "Provenance and Recovery: Knowing Who Changed What, and Undoing It",
-      "summary": "Every agent change now signs its work and comes with a rehearsed undo.",
+      "summary": "A baseline for the whole agent stack: every change attributable to the agent and task that made it, and every change reversible through a documented recovery path.",
       "date": "2026-07-23",
       "url": "https://juribuora.github.io/blog/2026/07/23/day-173.html",
       "category": "blog",
@@ -1354,7 +1354,7 @@
     {
       "day": 172,
       "title": "Parallel Agents Without Collisions: Task Graphs and Git Worktrees",
-      "summary": "Every agent gets its own sandbox copy of the repo; nothing rejoins main without proof.",
+      "summary": "Letting multiple agents work at the same time without trampling each other: a task graph to order the work, and git worktrees so every agent gets its own isolated copy of the repository.",
       "date": "2026-07-22",
       "url": "https://juribuora.github.io/blog/2026/07/22/day-172.html",
       "category": "blog",
@@ -1373,7 +1373,7 @@
     {
       "day": 171,
       "title": "Five Ways My Automation Faked Success (and the Fail-Closed Fixes)",
-      "summary": "Found five ways my supervisor could lie to me; now it can't.",
+      "summary": "A hardening pass on the task supervisor uncovered something uncomfortable: several code paths where an autonomous task could look successful without being successful. Today was about closing every one of them.",
       "date": "2026-07-21",
       "url": "https://juribuora.github.io/blog/2026/07/21/day-171.html",
       "category": "blog",
@@ -1392,7 +1392,7 @@
     {
       "day": 170,
       "title": "Making Security Work Clear Without Overselling It",
-      "summary": "The useful part of a write-up is not sounding impressive; it is making the work understandable, checkable, and honest.",
+      "summary": "Writing clearer summaries of recent labs and engineering work: not a list of buzzwords, but short case studies that connect an outcome, the controls used, the evidence collected, and the limits of the claim.",
       "date": "2026-07-20",
       "url": "https://juribuora.github.io/blog/2026/07/20/day-170.html",
       "category": "blog",
@@ -1410,7 +1410,7 @@
     {
       "day": 169,
       "title": "Why Safe Rollouts Use Feature Flags, Fixtures, and Evidence Gates",
-      "summary": "Feature flags and fixtures keep a new capability small enough to test honestly before it is trusted with a bigger role.",
+      "summary": "Turning several recent automation projects into one rollout principle: build new capability additively, prove it under controlled conditions, and do not confuse successful testing with permission to change production…",
       "date": "2026-07-19",
       "url": "https://juribuora.github.io/blog/2026/07/19/day-169.html",
       "category": "blog",
@@ -1429,7 +1429,7 @@
     {
       "day": 168,
       "title": "Secure Artifact Delivery: Narrow Links, Verified Bytes, and No Duplicate Sends",
-      "summary": "Made file delivery narrow, time-limited, hash-checked, and safe to recover without sending the same result twice.",
+      "summary": "Extending the supervised-agent workflow with an artifact-delivery design that limits access to one intended file and verifies the content before it reaches a recipient.",
       "date": "2026-07-18",
       "url": "https://juribuora.github.io/blog/2026/07/18/day-168.html",
       "category": "blog",
@@ -1448,7 +1448,7 @@
     {
       "day": 167,
       "title": "Approval-Gated Automation: Making Privileged Agent Work Accountable",
-      "summary": "Sensitive automation now earns a task record, scoped approval, and an audit trail before it earns the right to act.",
+      "summary": "Adding an autonomous-supervisor layer that creates a durable task record before sensitive work begins, and gives an operator approval, cancellation, and recovery controls.",
       "date": "2026-07-17",
       "url": "https://juribuora.github.io/blog/2026/07/17/day-167.html",
       "category": "blog",
@@ -1467,7 +1467,7 @@
     {
       "day": 166,
       "title": "Resilient Sessions: What a Torn Journal Taught Me About Safe AI State",
-      "summary": "Built resumable sessions that recover an interrupted final write, but refuse to invent certainty from deeper corruption.",
+      "summary": "Designing resumable agent sessions that preserve critical facts across a restart without treating corrupted state as trustworthy.",
       "date": "2026-07-16",
       "url": "https://juribuora.github.io/blog/2026/07/16/day-166.html",
       "category": "blog",
@@ -1486,7 +1486,7 @@
     {
       "day": 165,
       "title": "Bounded Context, Better Decisions: Testing AI Agent Memory Without Blind Trust",
-      "summary": "Built an opt-in context layer that keeps the useful facts, shows their sources, and calls out the parts that no longer agree.",
+      "summary": "Building a bounded, source-attributed working context for a local AI agent, then measuring it without pretending that a benchmark is the same thing as live intelligence.",
       "date": "2026-07-15",
       "url": "https://juribuora.github.io/blog/2026/07/15/day-165.html",
       "category": "blog",
@@ -1505,7 +1505,7 @@
     {
       "day": 164,
       "title": "Verifying the Verifier: A False-Positive Streak in My Own Checks",
-      "summary": "My verifier cried wolf; I tuned the wolf detector instead of shooting the dog.",
+      "summary": "My verification tooling cried wolf: hermes-verify produced a streak of false MISMATCH alerts, and today was about fixing the check itself — plus hardening timeouts, regression-testing the guardrails, and automating the…",
       "date": "2026-07-14",
       "url": "https://juribuora.github.io/blog/2026/07/14/day-164.html",
       "category": "blog",
@@ -1524,7 +1524,7 @@
     {
       "day": 163,
       "title": "Model Fleet Ops: Migrating the Coding Lane to Gemma and Budgeting Tokens Like a Resource",
-      "summary": "Benchmarked the fleet, promoted Gemma, retired the losers, and put every prompt on a token diet.",
+      "summary": "The local models got treated like a fleet instead of a collection: benchmarked, reconfigured, migrated, retired, and put on a token budget.",
       "date": "2026-07-13",
       "url": "https://juribuora.github.io/blog/2026/07/13/day-163.html",
       "category": "blog",
@@ -1543,7 +1543,7 @@
     {
       "day": 162,
       "title": "An AI Secretary With a Kill Switch: Calendars, Sender Policy, and Emergency Control",
-      "summary": "The secretary got my calendar and my inbox — after it got a policy, an approval flow, and a kill switch.",
+      "summary": "Hermes became a real secretary: it can read my calendars and handle personal email — so before it got those powers, it got a sender policy, an approval flow, and a remote emergency stop.",
       "date": "2026-07-12",
       "url": "https://juribuora.github.io/blog/2026/07/12/day-162.html",
       "category": "blog",
@@ -1562,7 +1562,7 @@
     {
       "day": 161,
       "title": "Hardening the iOS Companion: Untrusted Links, Redacted Errors, and the 'Full Power' Question",
-      "summary": "Hardened the app against its own agents' output, and told past me no about full power.",
+      "summary": "A full-app security pass on the iOS companion: how it opens links, downloads images, reports errors, and manages connection state — plus an honest argument with myself about how much power the phone should have.",
       "date": "2026-07-11",
       "url": "https://juribuora.github.io/blog/2026/07/11/day-161.html",
       "category": "blog",
@@ -1581,7 +1581,7 @@
     {
       "day": 160,
       "title": "Tailscale Broke My Stack: Node Identity, Hostnames, and Private Services",
-      "summary": "The network was fine; my laptop had an identity crisis.",
+      "summary": "My private network layer stopped cooperating: connections dropping daily, an iOS companion endpoint that vanished, and services that worked yesterday returning nothing today. The root causes were about node identity and…",
       "date": "2026-07-10",
       "url": "https://juribuora.github.io/blog/2026/07/10/day-160.html",
       "category": "blog",
@@ -1600,7 +1600,7 @@
     {
       "day": 159,
       "title": "Widening an Agent's Write Scope on Purpose (and Making Its Findings Earn Evidence)",
-      "summary": "The agent earned wider access in stages, and its reports lost the right to guess.",
+      "summary": "I deliberately expanded my local agent's write access in stages — one folder, then one repo, then the filesystem with recoverable tasks — and fixed its website audits so they can no longer assert findings they did not…",
       "date": "2026-07-09",
       "url": "https://juribuora.github.io/blog/2026/07/09/day-159.html",
       "category": "blog",
@@ -1619,7 +1619,7 @@
     {
       "day": 158,
       "title": "Gated Autonomy: A Phone Approval Loop Before Any Agent Sends Anything",
-      "summary": "The agent drafts, my phone decides, and nothing sends itself.",
+      "summary": "I built an approval pipeline so autonomous outreach can research and draft on its own, but nothing gets sent until I approve it from my phone.",
       "date": "2026-07-08",
       "url": "https://juribuora.github.io/blog/2026/07/08/day-158.html",
       "category": "blog",
@@ -1638,7 +1638,7 @@
     {
       "day": 157,
       "title": "WebCheckup: Turning the Mini-Audit Into a Real Multilingual Service",
-      "summary": "The mini-audit became WebCheckup: scored, evidenced, four languages, and zero unverified claims.",
+      "summary": "The website mini-audit project grew up: it got a real name — WebCheckup — a scored repeatable rubric, professional PDF reports, and landing pages plus report templates in four languages.",
       "date": "2026-07-07",
       "url": "https://juribuora.github.io/blog/2026/07/07/day-157.html",
       "category": "blog",
@@ -1657,7 +1657,7 @@
     {
       "day": 156,
       "title": "Too Many Projects: Auditing My Own Tool Sprawl Like an Asset Inventory",
-      "summary": "Audited my own shadow IT; the attacker was me, the defense was a list.",
+      "summary": "I reached the point where I honestly did not know what I had anymore: too many projects, apps, agents, and half-finished experiments. So I ran a \"what is going on\" audit across the whole workstation.",
       "date": "2026-07-06",
       "url": "https://juribuora.github.io/blog/2026/07/06/day-156.html",
       "category": "blog",
@@ -1676,7 +1676,7 @@
     {
       "day": 155,
       "title": "Linux User and Group Management as Access Control Practice",
-      "summary": "Practiced Linux user/group management as a real access-control workflow: onboard, assign access, transfer ownership, change roles, offboard, and clean up.",
+      "summary": "I turned a Google Cybersecurity Certificate Linux activity into a blog-ready lab: creating a user, assigning groups, changing file ownership, adding secondary access, deleting the user, and cleaning up leftover groups.",
       "date": "2026-07-05",
       "url": "https://juribuora.github.io/blog/2026/07/05/day-155.html",
       "category": "blog",
@@ -1696,7 +1696,7 @@
     {
       "day": 154,
       "title": "Building a Cybersecurity Glossary Without Breaking My Notes",
-      "summary": "Built a broad cybersecurity glossary in Obsidian and learned that bulk note-linking needs backups, skip rules, and validation just like code migrations.",
+      "summary": "I built a broad cybersecurity glossary inside my Obsidian vault and linked it across existing notes. The work looked like knowledge management, but the real lesson was validation: large automated edits to notes need…",
       "date": "2026-07-04",
       "url": "https://juribuora.github.io/blog/2026/07/04/day-154.html",
       "category": "blog",
@@ -1715,7 +1715,7 @@
     {
       "day": 153,
       "title": "Testing Hermes Agent: Strong First Builds, Weak Self-Verification",
-      "summary": "Hermes was great at a first app build, but its self-verification was not trustworthy; independent browser testing remained the real source of truth.",
+      "summary": "I installed and tested Hermes Agent as a GUI-first autonomous local agent. It was impressive at building a first working app, but the more important lesson came from verification: its self-debugging claims were not…",
       "date": "2026-07-03",
       "url": "https://juribuora.github.io/blog/2026/07/03/day-153.html",
       "category": "blog",
@@ -1734,7 +1734,7 @@
     {
       "day": 152,
       "title": "Building an AI Inference Orchestrator With Routing, Retries, and Cost Awareness",
-      "summary": "Built a real inference orchestrator layer: classify tasks, choose models, retry intelligently, track costs, and make routing decisions visible.",
+      "summary": "I worked on an AI Inference Orchestrator: a layer that classifies tasks, chooses candidate models, runs them through a controlled pipeline, retries when appropriate, records cost/savings information, and surfaces…",
       "date": "2026-07-02",
       "url": "https://juribuora.github.io/blog/2026/07/02/day-152.html",
       "category": "blog",
@@ -1753,7 +1753,7 @@
     {
       "day": 151,
       "title": "Benchmarking My Local LLM Stack Instead of Trusting Vibes",
-      "summary": "Benchmarked the local model stack and chose Ollama as the daily backend, kept DS4 experimental, and learned again that vibes are not a routing policy.",
+      "summary": "I compared the local model stack on my laptop and made a concrete routing decision: Ollama with my juribuora-agent-coder:30b model is the daily backend, DS4 stays installed but experimental, and LM Studio remains useful…",
       "date": "2026-07-01",
       "url": "https://juribuora.github.io/blog/2026/07/01/day-151.html",
       "category": "blog",
@@ -1773,7 +1773,7 @@
     {
       "day": 150,
       "title": "Remote Agent Hub and the Discipline of Honest Feature Labels",
-      "summary": "Productized Remote Agent Hub while keeping it honest: supported providers are selectable, planned ones are visible only where they belong, and partial controls are labeled as partial.",
+      "summary": "I worked on productizing the Remote Agent Hub: a local-first iPhone command center for my workstation agents. The most important part was not adding more buttons. It was making the app honest about what is implemented,…",
       "date": "2026-06-30",
       "url": "https://juribuora.github.io/blog/2026/06/30/day-150.html",
       "category": "blog",
@@ -1792,7 +1792,7 @@
     {
       "day": 149,
       "title": "Turning My iPhone Into a Command Center for Local Agents",
-      "summary": "Started turning my iPhone companion app into a real command center for local agents, with better provider health, run visibility, errors, and artifacts.",
+      "summary": "I worked on the idea that a security tool is only useful if I can understand what it is doing while it runs. My local AI workstation had power, but too much of that power still lived in terminal output, scattered logs,…",
       "date": "2026-06-29",
       "url": "https://juribuora.github.io/blog/2026/06/29/day-149.html",
       "category": "blog",
@@ -1811,7 +1811,7 @@
     {
       "day": 148,
       "title": "Building Least-Privilege Tool Profiles for My AI Agents (and Finding My Own Risk Scorer Was Inverted)",
-      "summary": "Built six least-privilege tool profiles for my AI agents, split an over-broad bundle in two, and caught my own risk scorer quietly grading \"explicitly forbidden\" the same as \"granted.\"",
+      "summary": "My AI agents can currently reach every tool I've connected — filesystem, Gmail, GitHub, everything — regardless of what the task actually needs. I started building scoped permission profiles so each task type only gets…",
       "date": "2026-06-28",
       "url": "https://juribuora.github.io/blog/2026/06/28/day-148.html",
       "category": "blog",
@@ -1830,7 +1830,7 @@
     {
       "day": 147,
       "title": "'Build Succeeded' Isn't Proof: Writing a Real UI Test for the Auth Flow",
-      "summary": "\"Build succeeded\" isn't proof anything works — wrote a real end-to-end test for the auth flow and found two wrong assumptions in my own test before it passed for real.",
+      "summary": "Following up on the pairing-token auth I added to my agent daemon and iOS app: instead of leaving it at \"compiles successfully,\" I wrote a real end-to-end UI test that drives the actual app against the actual live…",
       "date": "2026-06-27",
       "url": "https://juribuora.github.io/blog/2026/06/27/day-147.html",
       "category": "blog",
@@ -1849,7 +1849,7 @@
     {
       "day": 146,
       "title": "Giving My Local Agent Daemon Real Auth (And Almost Leaking the Token in the 401 Page)",
-      "summary": "Added real pairing-token auth to my agent daemon, and the near-miss was almost leaking the token through the same helper that made the auth convenient in the first place.",
+      "summary": "Closing a known, accepted gap: my local agent daemon had zero authentication. Anything on the network that could reach it could control it. I built a real pairing-token layer for the daemon and its iOS companion app.",
       "date": "2026-06-26",
       "url": "https://juribuora.github.io/blog/2026/06/26/day-146.html",
       "category": "blog",
@@ -1868,7 +1868,7 @@
     {
       "day": 145,
       "title": "Productizing a Website Security Mini-Audit, and Finding an Access Gap in My Own Funnel",
-      "summary": "Shipped a real intake funnel, then found out I couldn't verify my own delivery because I was logged into the wrong inbox.",
+      "summary": "Turning a website security mini-audit into an actual sellable service — landing page, intake funnel, and a real GitHub Pages deployment — and catching an access-control gap in my own delivery pipeline along the way.",
       "date": "2026-06-25",
       "url": "https://juribuora.github.io/blog/2026/06/25/day-145.html",
       "category": "blog",
@@ -1887,7 +1887,7 @@
     {
       "day": 144,
       "title": "A 348-Term Glossary and the False Positives That Came With It",
-      "summary": "348 terms, 3,820 new links, and four notes that had to be rescued from a false-positive linker — the backup is what saved it.",
+      "summary": "Building a broad cybersecurity, networking, Linux, and developer-tooling glossary across my study vault, then linking every matching mention — and cleaning up the collateral damage that caused.",
       "date": "2026-06-24",
       "url": "https://juribuora.github.io/blog/2026/06/24/day-144.html",
       "category": "blog",
@@ -1906,7 +1906,7 @@
     {
       "day": 143,
       "title": "Building a Local MITRE ATT&CK Technique Library from My Own Notes",
-      "summary": "Sixty-four ATT&CK IDs in my notes, checked against the real thing — two were revoked, six were never MITRE's to begin with.",
+      "summary": "Turning every MITRE ATT&CK technique ID scattered across my study vault into a real, sourced reference library instead of a bunch of bare T#### mentions.",
       "date": "2026-06-23",
       "url": "https://juribuora.github.io/blog/2026/06/23/day-143.html",
       "category": "blog",
@@ -1925,7 +1925,7 @@
     {
       "day": 142,
       "title": "Benchmarking an Autonomous Agent: Strong One-Shot Builds, Unreliable Self-Debugging",
-      "summary": "Great builder, bad self-mechanic; plan controls accordingly.",
+      "summary": "Testing a fully autonomous local agent (Hermes) on a real app build, plus wiring it to a Telegram control channel.",
       "date": "2026-06-22",
       "url": "https://juribuora.github.io/blog/2026/06/22/day-142.html",
       "category": "blog",
@@ -1944,7 +1944,7 @@
     {
       "day": 141,
       "title": "A Human Memory Layer: The RAG Vault My Agents Write and I Read Anywhere",
-      "summary": "My agents keep a diary; I set the rules and read it anywhere.",
+      "summary": "Setting up an Obsidian vault, synced to my iPhone, as the human-readable memory layer for the local agent system.",
       "date": "2026-06-21",
       "url": "https://juribuora.github.io/blog/2026/06/21/day-141.html",
       "category": "blog",
@@ -1963,7 +1963,7 @@
     {
       "day": 140,
       "title": "AI-OS: Governance, Routing, and a Verification Gateway for My Local Agents",
-      "summary": "Gave my agents a constitution and a border control.",
+      "summary": "Turning a pile of local AI tools into an \"operating system\": routing, governance rules, task contracts, and verified execution.",
       "date": "2026-06-20",
       "url": "https://juribuora.github.io/blog/2026/06/20/day-140.html",
       "category": "blog",
@@ -1982,7 +1982,7 @@
     {
       "day": 139,
       "title": "Benchmarking a Local LLM Coding Stack: Harness, Routing, and Review Findings",
-      "summary": "Benchmarked the stack; the bugs were hiding in the failure paths.",
+      "summary": "Building and benchmarking the local LLM coding stack — a test harness, routing rules, and fixing what code review found.",
       "date": "2026-06-19",
       "url": "https://juribuora.github.io/blog/2026/06/19/day-139.html",
       "category": "blog",
@@ -2001,7 +2001,7 @@
     {
       "day": 138,
       "title": "An iOS Companion for My Local Agent, Private by Design",
-      "summary": "Phone controls laptop; internet not invited.",
+      "summary": "Building an iOS companion app to control the laptop's local agent remotely, without exposing anything to the public internet.",
       "date": "2026-06-18",
       "url": "https://juribuora.github.io/blog/2026/06/18/day-138.html",
       "category": "blog",
@@ -2020,7 +2020,7 @@
     {
       "day": 137,
       "title": "Running DS4: A Serious Local Model on a Laptop With Limits",
-      "summary": "Local AI is ops work with extra gigabytes.",
+      "summary": "Getting the DS4 runtime and a quantized DeepSeek model running locally as my default agent model.",
       "date": "2026-06-17",
       "url": "https://juribuora.github.io/blog/2026/06/17/day-137.html",
       "category": "blog",
@@ -2039,7 +2039,7 @@
     {
       "day": 136,
       "title": "Linux Permissions and Authorization: A Google Cybersecurity Certificate Portfolio Activity",
-      "summary": "chmod is easy; explaining why is the skill.",
+      "summary": "Managing file permissions and authorization in Linux, documented as a portfolio artifact for the Google Cybersecurity Certificate.",
       "date": "2026-06-16",
       "url": "https://juribuora.github.io/blog/2026/06/16/day-136.html",
       "category": "blog",
@@ -2058,7 +2058,7 @@
     {
       "day": 135,
       "title": "Auditing My Own Website, Then Fixing What the Report Found",
-      "summary": "Audited myself, fixed it, then checked the fix was actually live.",
+      "summary": "Running the mini-audit against the Farina website I built myself, and remediating the findings.",
       "date": "2026-06-15",
       "url": "https://juribuora.github.io/blog/2026/06/15/day-135.html",
       "category": "blog",
@@ -2077,7 +2077,7 @@
     {
       "day": 134,
       "title": "Building a Website Trust & Security Mini-Audit Service",
-      "summary": "Turned a checklist into a service, honestly scoped.",
+      "summary": "Packaging what I learned about web security into a small, honest audit service for local Italian businesses.",
       "date": "2026-06-14",
       "url": "https://juribuora.github.io/blog/2026/06/14/day-134.html",
       "category": "blog",
@@ -2096,7 +2096,7 @@
     {
       "day": 133,
       "title": "When the Learning Log Breaks: Fixing My Blog's Own Publishing Pipeline",
-      "summary": "The blog about verifying systems needed verifying.",
+      "summary": "Debugging and fixing the blog's own GitHub Pages publishing so a batch of finished posts could actually go live.",
       "date": "2026-06-13",
       "url": "https://juribuora.github.io/blog/2026/06/13/day-133.html",
       "category": "blog",
@@ -2115,7 +2115,7 @@
     {
       "day": 132,
       "title": "Giving a Local LLM Hands: LM Studio, Function Calling, and MCP Servers",
-      "summary": "A chatbot with hands needs a leash.",
+      "summary": "Turning a local LLM in LM Studio into an agent that can actually do things, using function calling and MCP servers.",
       "date": "2026-06-12",
       "url": "https://juribuora.github.io/blog/2026/06/12/day-132.html",
       "category": "blog",
@@ -2134,7 +2134,7 @@
     {
       "day": 131,
       "title": "Project Retrospective: Turning a Real Website Build Into Portfolio Evidence",
-      "summary": "Not pure cybersecurity, still real operational proof.",
+      "summary": "Converting the Farina website project into honest cybersecurity-adjacent portfolio material.",
       "date": "2026-06-11",
       "url": "https://juribuora.github.io/blog/2026/06/11/day-131.html",
       "category": "blog",
@@ -2153,7 +2153,7 @@
     {
       "day": 130,
       "title": "Public Website Security Review for a Static Business Site",
-      "summary": "Good security review is proportional.",
+      "summary": "Reviewing the Farina website from a practical defender mindset.",
       "date": "2026-06-10",
       "url": "https://juribuora.github.io/blog/2026/06/10/day-130.html",
       "category": "blog",
@@ -2172,7 +2172,7 @@
     {
       "day": 129,
       "title": "Testing, Linting, Type Checking, and Build Validation",
-      "summary": "Professional work is checked work.",
+      "summary": "Using validation commands to catch problems before deployment.",
       "date": "2026-06-09",
       "url": "https://juribuora.github.io/blog/2026/06/09/day-129.html",
       "category": "blog",
@@ -2191,7 +2191,7 @@
     {
       "day": 128,
       "title": "Privacy, Analytics, and Consent-Aware Configuration",
-      "summary": "Analytics should be intentional, not accidental.",
+      "summary": "Keeping analytics useful without making privacy an afterthought.",
       "date": "2026-06-08",
       "url": "https://juribuora.github.io/blog/2026/06/08/day-128.html",
       "category": "blog",
@@ -2210,7 +2210,7 @@
     {
       "day": 127,
       "title": "Custom Domain, DNS, and Website Availability",
-      "summary": "No DNS, no website.",
+      "summary": "Connecting the Farina domain setup to DNS, CNAME, and production reachability.",
       "date": "2026-06-07",
       "url": "https://juribuora.github.io/blog/2026/06/07/day-127.html",
       "category": "blog",
@@ -2229,7 +2229,7 @@
     {
       "day": 126,
       "title": "GitHub Pages Deployment and CI/CD Trust Boundaries",
-      "summary": "Deployment automation is powerful and privileged.",
+      "summary": "Understanding automated deployment as a privileged operational workflow.",
       "date": "2026-06-06",
       "url": "https://juribuora.github.io/blog/2026/06/06/day-126.html",
       "category": "blog",
@@ -2248,7 +2248,7 @@
     {
       "day": 125,
       "title": "Image Optimization and Performance as Operational Security",
-      "summary": "Heavy images can break a good website.",
+      "summary": "Using modern image formats and build scripts to keep the site fast and maintainable.",
       "date": "2026-06-05",
       "url": "https://juribuora.github.io/blog/2026/06/05/day-125.html",
       "category": "blog",
@@ -2267,7 +2267,7 @@
     {
       "day": 124,
       "title": "SEO, Metadata, and Structured Data Without Forgetting Security",
-      "summary": "SEO is visibility; visibility must be intentional.",
+      "summary": "Building discoverability while keeping public information intentional.",
       "date": "2026-06-04",
       "url": "https://juribuora.github.io/blog/2026/06/04/day-124.html",
       "category": "blog",
@@ -2286,7 +2286,7 @@
     {
       "day": 123,
       "title": "Contact Forms, Validation, and Anti-Spam Thinking",
-      "summary": "A contact form is also an attack surface.",
+      "summary": "Reviewing the contact flow as both a conversion path and an abuse target.",
       "date": "2026-06-03",
       "url": "https://juribuora.github.io/blog/2026/06/03/day-123.html",
       "category": "blog",
@@ -2305,7 +2305,7 @@
     {
       "day": 122,
       "title": "Mobile-First UX and Customer-Facing Reliability",
-      "summary": "Mobile usability is business availability.",
+      "summary": "Improving the website for real users on phones, not just desktop previews.",
       "date": "2026-06-02",
       "url": "https://juribuora.github.io/blog/2026/06/02/day-122.html",
       "category": "blog",
@@ -2324,7 +2324,7 @@
     {
       "day": 121,
       "title": "Routing, Pages, and Public Attack Surface",
-      "summary": "Routes are user journeys and exposure points.",
+      "summary": "Mapping website routes as user journeys and public exposure points.",
       "date": "2026-06-01",
       "url": "https://juribuora.github.io/blog/2026/06/01/day-121.html",
       "category": "blog",
@@ -2343,7 +2343,7 @@
     {
       "day": 120,
       "title": "Repository Structure and Operational Hygiene",
-      "summary": "Messy repositories create messy risk.",
+      "summary": "Organizing the Farina website repository so the project remains understandable and maintainable.",
       "date": "2026-05-31",
       "url": "https://juribuora.github.io/blog/2026/05/31/day-120.html",
       "category": "blog",
@@ -2362,7 +2362,7 @@
     {
       "day": 119,
       "title": "React, TypeScript, Vite, and Tailwind as a Production Stack",
-      "summary": "Frontend tools are part of the attack surface.",
+      "summary": "Understanding why the Farina site uses a modern frontend stack instead of plain static HTML.",
       "date": "2026-05-30",
       "url": "https://juribuora.github.io/blog/2026/05/30/day-119.html",
       "category": "blog",
@@ -2381,7 +2381,7 @@
     {
       "day": 118,
       "title": "Real Client Website Scope and Business Requirements",
-      "summary": "A website starts as requirements, not pixels.",
+      "summary": "Planning the Farina Farm website as a real production project rather than a practice page.",
       "date": "2026-05-29",
       "url": "https://juribuora.github.io/blog/2026/05/29/day-118.html",
       "category": "blog",
@@ -2400,7 +2400,7 @@
     {
       "day": 117,
       "title": "macOS Persistence, LaunchDaemons, and Endpoint Triage",
-      "summary": "Modern operating systems are already noisy enough that persistence analysis becomes an investigation discipline, not just a checklist.",
+      "summary": "Investigating macOS persistence mechanisms and practicing endpoint triage methodology using real system artifacts.",
       "date": "2026-05-28",
       "url": "https://juribuora.github.io/blog/2026/05/28/day-117.html",
       "category": "blog",
@@ -2418,7 +2418,7 @@
     {
       "day": 116,
       "title": "Frontend Architecture, Website Optimization, and GitHub Workflows",
-      "summary": "Modern websites are basically infrastructure platforms disguised as web pages.",
+      "summary": "Understanding how modern frontend websites are structured, optimized, deployed, and operationally maintained.",
       "date": "2026-05-27",
       "url": "https://juribuora.github.io/blog/2026/05/27/day-116.html",
       "category": "blog",
@@ -2435,7 +2435,7 @@
     {
       "day": 115,
       "title": "Local AI Models, Coding Agents, and Operational Automation",
-      "summary": "AI agents are powerful, but unrestricted automation plus filesystem access can quickly become a security problem.",
+      "summary": "Exploring local AI models, autonomous coding workflows, and the operational/security implications of AI-assisted development environments.",
       "date": "2026-05-26",
       "url": "https://juribuora.github.io/blog/2026/05/26/day-115.html",
       "category": "blog",
@@ -2452,7 +2452,7 @@
     {
       "day": 114,
       "title": "OS, Network, and Cloud Hardening",
-      "summary": "Hardening is not glamorous, but attackers love unhardened systems.",
+      "summary": "Finishing Course 3 by studying hardening techniques that reduce network and system compromise risk.",
       "date": "2026-05-25",
       "url": "https://juribuora.github.io/blog/2026/05/25/day-114.html",
       "category": "blog",
@@ -2470,7 +2470,7 @@
     {
       "day": 113,
       "title": "Sniffing, Spoofing, and Interception Tactics",
-      "summary": "Sniffing watches. Spoofing lies. Attacks use both when useful.",
+      "summary": "Clarifying the difference between passive traffic observation, forged identity, and interception-style attacks.",
       "date": "2026-05-24",
       "url": "https://juribuora.github.io/blog/2026/05/24/day-113.html",
       "category": "blog",
@@ -2487,7 +2487,7 @@
     {
       "day": 112,
       "title": "DoS, DDoS, SYN Floods, Smurf, and Amplification",
-      "summary": "DoS is not one attack. It is a family of ways to break availability.",
+      "summary": "Studying denial-of-service attacks and how different flooding, reflection, and amplification patterns appear in traffic.",
       "date": "2026-05-23",
       "url": "https://juribuora.github.io/blog/2026/05/23/day-112.html",
       "category": "blog",
@@ -2505,7 +2505,7 @@
     {
       "day": 111,
       "title": "Reading tcpdump-Style Logs and DNS/ICMP Failures",
-      "summary": "The website may not be down. DNS may have failed before the browser got there.",
+      "summary": "Practicing how to interpret packet-level evidence and explain a DNS-related network incident.",
       "date": "2026-05-22",
       "url": "https://juribuora.github.io/blog/2026/05/22/day-111.html",
       "category": "blog",
@@ -2524,7 +2524,7 @@
     {
       "day": 110,
       "title": "Enterprise Network Flow and Attack Surface Mapping",
-      "summary": "Attackers do not need every door. They need one forgotten window.",
+      "summary": "Mapping how data moves through an enterprise environment and where exploitation can happen.",
       "date": "2026-05-21",
       "url": "https://juribuora.github.io/blog/2026/05/21/day-110.html",
       "category": "blog",
@@ -2541,7 +2541,7 @@
     {
       "day": 109,
       "title": "Firewalls, VPNs, Proxies, Security Zones, and CIDR",
-      "summary": "Network defense is mostly controlling paths attackers want to abuse.",
+      "summary": "Understanding the defensive infrastructure that controls network access and visibility.",
       "date": "2026-05-20",
       "url": "https://juribuora.github.io/blog/2026/05/20/day-109.html",
       "category": "blog",
@@ -2558,7 +2558,7 @@
     {
       "day": 108,
       "title": "Network Protocols, Ports, DNS, HTTP, and Remote Access",
-      "summary": "Ports are not trivia. They are clues.",
+      "summary": "Studying common protocols and ports as practical SOC vocabulary.",
       "date": "2026-05-19",
       "url": "https://juribuora.github.io/blog/2026/05/19/day-108.html",
       "category": "blog",
@@ -2577,7 +2577,7 @@
     {
       "day": 107,
       "title": "Network Architecture, Cloud Networks, and the TCP/IP Model",
-      "summary": "Networking is the map. Logs are the footprints.",
+      "summary": "Starting Course 3 by building a practical mental model of network architecture and communication.",
       "date": "2026-05-18",
       "url": "https://juribuora.github.io/blog/2026/05/18/day-107.html",
       "category": "blog",
@@ -2594,7 +2594,7 @@
     {
       "day": 106,
       "title": "From Risk Management to Portfolio Evidence",
-      "summary": "The certificate is learning. The portfolio is proof.",
+      "summary": "Consolidating Course 2 into practical portfolio artifacts: audit notes, SIEM triage, playbooks, and risk language.",
       "date": "2026-05-17",
       "url": "https://juribuora.github.io/blog/2026/05/17/day-106.html",
       "category": "blog",
@@ -2610,7 +2610,7 @@
     {
       "day": 105,
       "title": "Incident Response Playbooks and Escalation Discipline",
-      "summary": "Playbooks stop panic. Evidence stops bad decisions.",
+      "summary": "Using playbooks to turn alerts into repeatable incident response actions.",
       "date": "2026-05-16",
       "url": "https://juribuora.github.io/blog/2026/05/16/day-105.html",
       "category": "blog",
@@ -2627,7 +2627,7 @@
     {
       "day": 104,
       "title": "SIEM Logs, Dashboards, and Alert Triage",
-      "summary": "A SIEM does not investigate. It gives the analyst a place to ask better questions.",
+      "summary": "Understanding how SIEM tools collect logs and help analysts turn raw events into investigations.",
       "date": "2026-05-15",
       "url": "https://juribuora.github.io/blog/2026/05/15/day-104.html",
       "category": "blog",
@@ -2644,7 +2644,7 @@
     {
       "day": 103,
       "title": "Security Frameworks, Controls, NIST CSF, OWASP, and Audits",
-      "summary": "A control is not a checkbox. It is a risk reduction mechanism.",
+      "summary": "Studying how frameworks and controls help organizations reduce risk and how audits turn vague concerns into evidence.",
       "date": "2026-05-14",
       "url": "https://juribuora.github.io/blog/2026/05/14/day-103.html",
       "category": "blog",
@@ -2661,7 +2661,7 @@
     {
       "day": 102,
       "title": "Threats, Risks, Vulnerabilities, and the NIST RMF",
-      "summary": "Threat is the danger. Vulnerability is the weakness. Risk is what happens if they meet.",
+      "summary": "Beginning Course 2 by separating threats, vulnerabilities, and risks, then connecting them to structured risk management.",
       "date": "2026-05-13",
       "url": "https://juribuora.github.io/blog/2026/05/13/day-102.html",
       "category": "blog",
@@ -2677,7 +2677,7 @@
     {
       "day": 101,
       "title": "Frameworks, Controls, Ethics, and Analyst Tooling",
-      "summary": "Security is not vibes. It is risk, controls, evidence, and responsibility.",
+      "summary": "Finishing the foundation course by connecting frameworks, controls, ethics, and common cybersecurity tools to practical analyst work.",
       "date": "2026-05-12",
       "url": "https://juribuora.github.io/blog/2026/05/12/day-101.html",
       "category": "blog",
@@ -2694,7 +2694,7 @@
     {
       "day": 100,
       "title": "Attack History, Business Impact, and Security Domains",
-      "summary": "Attack history is useful when it becomes a pattern library, not trivia.",
+      "summary": "Using cybersecurity history, common attacks, attacker motivation, and security domains as a map for real-world defensive work.",
       "date": "2026-05-11",
       "url": "https://juribuora.github.io/blog/2026/05/11/day-100.html",
       "category": "blog",
@@ -2710,7 +2710,7 @@
     {
       "day": 99,
       "title": "Cybersecurity Analyst Mindset and Phishing Triage",
-      "summary": "Phishing is not just a bad email. It is a full investigation chain.",
+      "summary": "Starting the Google Cybersecurity Certificate by translating the introductory material into practical SOC analyst thinking.",
       "date": "2026-05-10",
       "url": "https://juribuora.github.io/blog/2026/05/10/day-99.html",
       "category": "blog",
@@ -2726,7 +2726,7 @@
     {
       "day": 98,
       "title": "Cookie Banners, Technical Cookies, and Website Privacy Checks",
-      "summary": "Do not guess the cookie banner.",
+      "summary": "Understanding when a website may need a cookie banner and how to verify the real technical behavior of a site.",
       "date": "2026-05-09",
       "url": "https://juribuora.github.io/blog/2026/05/09/day-98.html",
       "category": "blog",
@@ -2745,7 +2745,7 @@
     {
       "day": 97,
       "title": "Privacy-First Website Analytics",
-      "summary": "Analytics is useful.",
+      "summary": "Understanding website analytics from a privacy-first and security-aware perspective.",
       "date": "2026-05-08",
       "url": "https://juribuora.github.io/blog/2026/05/08/day-97.html",
       "category": "blog",
@@ -2763,7 +2763,7 @@
     {
       "day": 96,
       "title": "IP Spoofing, Sniffing, and Attack Technique Classification",
-      "summary": "Sniffing is watching.",
+      "summary": "Clarifying the difference between IP spoofing, sniffing, attacks, and attacker techniques.",
       "date": "2026-05-07",
       "url": "https://juribuora.github.io/blog/2026/05/07/day-96.html",
       "category": "blog",
@@ -2780,7 +2780,7 @@
     {
       "day": 95,
       "title": "DoS, DDoS, Smurf Attacks, and Amplification",
-      "summary": "DDoS is not one attack.",
+      "summary": "Understanding denial-of-service attacks, including floods, reflection, amplification, and Smurf attacks.",
       "date": "2026-05-06",
       "url": "https://juribuora.github.io/blog/2026/05/06/day-95.html",
       "category": "blog",
@@ -2797,7 +2797,7 @@
     {
       "day": 94,
       "title": "DNS and ICMP Traffic Incident Analysis",
-      "summary": "The website was not necessarily dead.",
+      "summary": "Analyzing DNS and ICMP traffic to understand why a website or service failed to respond.",
       "date": "2026-05-05",
       "url": "https://juribuora.github.io/blog/2026/05/05/day-94.html",
       "category": "blog",
@@ -2815,7 +2815,7 @@
     {
       "day": 93,
       "title": "Turning Network Concepts into Incident Reports",
-      "summary": "Logs tell you what happened.",
+      "summary": "Practicing how to turn technical network evidence into a clear incident summary.",
       "date": "2026-05-04",
       "url": "https://juribuora.github.io/blog/2026/05/04/day-93.html",
       "category": "blog",
@@ -2831,7 +2831,7 @@
     {
       "day": 92,
       "title": "Cybersecurity Roles Across the Attack Surface",
-      "summary": "Cybersecurity is not one superhero.",
+      "summary": "Understanding which cybersecurity roles defend different parts of an enterprise environment.",
       "date": "2026-05-03",
       "url": "https://juribuora.github.io/blog/2026/05/03/day-92.html",
       "category": "blog",
@@ -2846,7 +2846,7 @@
     {
       "day": 91,
       "title": "Enterprise Attack Surface and Exploitation Points",
-      "summary": "Attackers do not need the strongest door.",
+      "summary": "Mapping where exploitation can happen across an enterprise network.",
       "date": "2026-05-02",
       "url": "https://juribuora.github.io/blog/2026/05/02/day-91.html",
       "category": "blog",
@@ -2863,7 +2863,7 @@
     {
       "day": 90,
       "title": "Mapping an Enterprise Network End to End",
-      "summary": "The internet is not magic.",
+      "summary": "Understanding how data moves through an enterprise network from user action to application response.",
       "date": "2026-05-01",
       "url": "https://juribuora.github.io/blog/2026/05/01/day-90.html",
       "category": "blog",
@@ -2880,7 +2880,7 @@
     {
       "day": 89,
       "title": "From Protocol Memorization to SOC Thinking",
-      "summary": "A port tells you what door was used.",
+      "summary": "Consolidating network protocol knowledge into a practical SOC investigation mindset.",
       "date": "2026-04-30",
       "url": "https://juribuora.github.io/blog/2026/04/30/day-89.html",
       "category": "blog",
@@ -2897,7 +2897,7 @@
     {
       "day": 88,
       "title": "Security Design Principles and OAuth",
-      "summary": "Passwords open doors.",
+      "summary": "Reviewing core cybersecurity design principles and understanding what OAuth actually does.",
       "date": "2026-04-29",
       "url": "https://juribuora.github.io/blog/2026/04/29/day-88.html",
       "category": "blog",
@@ -2913,7 +2913,7 @@
     {
       "day": 87,
       "title": "Network Protocols, Ports, and SOC Visibility",
-      "summary": "Ports are not magic numbers.",
+      "summary": "Understanding common network protocols, their ports, and why they matter for SOC investigations.",
       "date": "2026-04-28",
       "url": "https://juribuora.github.io/blog/2026/04/28/day-87.html",
       "category": "blog",
@@ -2931,7 +2931,7 @@
     {
       "day": 86,
       "title": "Investigating Botnets and IoT Malware",
-      "summary": "A smart camera with a dumb password can become a soldier in someone else’s army.",
+      "summary": "Understanding botnets, IoT malware, and how compromised devices are coordinated at scale.",
       "date": "2026-04-27",
       "url": "https://juribuora.github.io/blog/2026/04/27/day-86.html",
       "category": "blog",
@@ -2947,7 +2947,7 @@
     {
       "day": 85,
       "title": "Understanding Cryptomining Malware",
-      "summary": "Ransomware kicks the door down.",
+      "summary": "Understanding cryptomining malware and how attackers abuse compromised systems for profit.",
       "date": "2026-04-26",
       "url": "https://juribuora.github.io/blog/2026/04/26/day-85.html",
       "category": "blog",
@@ -2963,7 +2963,7 @@
     {
       "day": 84,
       "title": "Lateral Movement Techniques in Enterprise Networks",
-      "summary": "Initial access gets the attacker inside.",
+      "summary": "Understanding lateral movement and how attackers move from one compromised system to another inside a network.",
       "date": "2026-04-25",
       "url": "https://juribuora.github.io/blog/2026/04/25/day-84.html",
       "category": "blog",
@@ -2980,7 +2980,7 @@
     {
       "day": 83,
       "title": "The Colonial Pipeline Ransomware Incident",
-      "summary": "Sometimes the attacker does not hack the door.",
+      "summary": "Studying the Colonial Pipeline ransomware incident and how credential compromise can affect critical infrastructure.",
       "date": "2026-04-24",
       "url": "https://juribuora.github.io/blog/2026/04/24/day-83.html",
       "category": "blog",
@@ -2995,7 +2995,7 @@
     {
       "day": 82,
       "title": "The NotPetya Cyberweapon and Destructive Malware",
-      "summary": "WannaCry wanted money.",
+      "summary": "Studying NotPetya as destructive malware disguised as ransomware.",
       "date": "2026-04-23",
       "url": "https://juribuora.github.io/blog/2026/04/23/day-82.html",
       "category": "blog",
@@ -3011,7 +3011,7 @@
     {
       "day": 81,
       "title": "The WannaCry Global Ransomware Outbreak",
-      "summary": "WannaCry did not just knock on doors.",
+      "summary": "Studying the WannaCry ransomware outbreak and how worm-like propagation created global impact.",
       "date": "2026-04-22",
       "url": "https://juribuora.github.io/blog/2026/04/22/day-81.html",
       "category": "blog",
@@ -3027,7 +3027,7 @@
     {
       "day": 80,
       "title": "Understanding Ransomware Attacks",
-      "summary": "Ransomware does not start when files get encrypted.",
+      "summary": "Understanding how ransomware attacks work and why encryption is usually the final stage of a longer intrusion.",
       "date": "2026-04-21",
       "url": "https://juribuora.github.io/blog/2026/04/21/day-80.html",
       "category": "blog",
@@ -3042,7 +3042,7 @@
     {
       "day": 79,
       "title": "Squiblydoo and Rundll32 Script Execution",
-      "summary": "Rundll32 is not suspicious because it exists.",
+      "summary": "Understanding Squiblydoo, a LOLBin technique that abuses rundll32.exe for script execution.",
       "date": "2026-04-20",
       "url": "https://juribuora.github.io/blog/2026/04/20/day-79.html",
       "category": "blog",
@@ -3058,7 +3058,7 @@
     {
       "day": 78,
       "title": "Metasploit and Exploitation Frameworks",
-      "summary": "The exploit opens the window.",
+      "summary": "Understanding Metasploit and how exploitation frameworks are used to gain initial access.",
       "date": "2026-04-19",
       "url": "https://juribuora.github.io/blog/2026/04/19/day-78.html",
       "category": "blog",
@@ -3073,7 +3073,7 @@
     {
       "day": 77,
       "title": "PowerShell Empire and Fileless Malware Techniques",
-      "summary": "PowerShell is not the villain.",
+      "summary": "Understanding PowerShell Empire, fileless malware techniques, and why PowerShell abuse matters in Windows investigations.",
       "date": "2026-04-18",
       "url": "https://juribuora.github.io/blog/2026/04/18/day-77.html",
       "category": "blog",
@@ -3089,7 +3089,7 @@
     {
       "day": 76,
       "title": "Understanding Cobalt Strike and Post-Exploitation Frameworks",
-      "summary": "Initial access is the door opening.",
+      "summary": "Understanding how post-exploitation frameworks such as Cobalt Strike are used after attackers gain initial access.",
       "date": "2026-04-17",
       "url": "https://juribuora.github.io/blog/2026/04/17/day-76.html",
       "category": "blog",
@@ -3104,7 +3104,7 @@
     {
       "day": 75,
       "title": "Understanding Fail2Ban and Automated Defense",
-      "summary": "Fail2Ban is basically:",
+      "summary": "Exploring how systems automatically block attackers after repeated failures.",
       "date": "2026-04-16",
       "url": "https://juribuora.github.io/blog/2026/04/16/day-75.html",
       "category": "blog",
@@ -3121,7 +3121,7 @@
     {
       "day": 74,
       "title": "Turning Raw Logs into Patterns and Evidence",
-      "summary": "Logs don’t speak…",
+      "summary": "Understanding how aggregation transforms logs into meaningful signals.",
       "date": "2026-04-15",
       "url": "https://juribuora.github.io/blog/2026/04/15/day-74.html",
       "category": "blog",
@@ -3138,7 +3138,7 @@
     {
       "day": 73,
       "title": "Detecting SSH Brute Force Attacks Using auth.log",
-      "summary": "One failed login = noise",
+      "summary": "Analyzing Linux authentication logs to identify brute-force login attempts.",
       "date": "2026-04-14",
       "url": "https://juribuora.github.io/blog/2026/04/14/day-73.html",
       "category": "blog",
@@ -3156,7 +3156,7 @@
     {
       "day": 72,
       "title": "From Commands to Systems Thinking in Cybersecurity",
-      "summary": "It’s not about the command anymore…",
+      "summary": "Recognizing the shift from using commands to understanding systems.",
       "date": "2026-04-13",
       "url": "https://juribuora.github.io/blog/2026/04/13/day-72.html",
       "category": "blog",
@@ -3171,7 +3171,7 @@
     {
       "day": 71,
       "title": "Verifying Services and Understanding Why Connections Fail",
-      "summary": "The server wasn’t broken…",
+      "summary": "Understanding why a service may fail even when a system is reachable.",
       "date": "2026-04-12",
       "url": "https://juribuora.github.io/blog/2026/04/12/day-71.html",
       "category": "blog",
@@ -3188,7 +3188,7 @@
     {
       "day": 70,
       "title": "Mapping IP Addresses to Devices Using ARP",
-      "summary": "IP tells you where to look…",
+      "summary": "Understanding how to identify devices on a network using ARP (Address Resolution Protocol).",
       "date": "2026-04-11",
       "url": "https://juribuora.github.io/blog/2026/04/11/day-70.html",
       "category": "blog",
@@ -3204,7 +3204,7 @@
     {
       "day": 69,
       "title": "Understanding NAT vs Bridged Networking in a Lab Environment",
-      "summary": "If your machines can’t see each other…",
+      "summary": "Understanding how virtual machine networking works and why NAT vs bridged mode matters in a cybersecurity lab.",
       "date": "2026-04-10",
       "url": "https://juribuora.github.io/blog/2026/04/10/day-69.html",
       "category": "blog",
@@ -3221,7 +3221,7 @@
     {
       "day": 68,
       "title": "Testing Network Connectivity and Verifying Open Ports",
-      "summary": "Just because you can *ping it*…",
+      "summary": "Testing connectivity between systems and verifying whether services are reachable over the network.",
       "date": "2026-04-09",
       "url": "https://juribuora.github.io/blog/2026/04/09/day-68.html",
       "category": "blog",
@@ -3238,7 +3238,7 @@
     {
       "day": 67,
       "title": "Investigating SSH Connection Failures and Security Warnings",
-      "summary": "SSH didn’t break because of “post-quantum doom”…",
+      "summary": "Troubleshooting SSH connection failures and understanding security warnings during remote access.",
       "date": "2026-04-08",
       "url": "https://juribuora.github.io/blog/2026/04/08/day-67.html",
       "category": "blog",
@@ -4890,6 +4890,50 @@
       "contentPath": "/generated/posts/lab/14.json"
     },
     {
+      "day": 13,
+      "title": "Finding Linux Commands with Built-in Help",
+      "summary": "Using Linux's built-in help to find out what a command and its options do before making a system change.",
+      "date": "2026-07-31",
+      "url": "https://juribuora.github.io/labs/2026/07/31/lab-13-day-181.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "bash",
+        "commandline",
+        "documentation",
+        "operationalsafety",
+        "googlecybersecuritycertificate",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-13-day-181",
+      "sourcePath": "Labs/_posts/2026-07-31-lab-13-day-181.md",
+      "contentPath": "/generated/posts/lab/13.json"
+    },
+    {
+      "day": 12,
+      "title": "Extracting Text from a Local HTML File Safely",
+      "summary": "Pulls readable text out of a local HTML file while keeping the operation narrow and easy to inspect.",
+      "date": "2026-07-29",
+      "url": "https://juribuora.github.io/labs/2026/07/29/lab-12-day-179.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "contentextraction",
+        "leastprivilege",
+        "bash",
+        "automation",
+        "datahandling",
+        "verification",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-12-day-179",
+      "sourcePath": "Labs/_posts/2026-07-29-lab-12-day-179.md",
+      "contentPath": "/generated/posts/lab/12.json"
+    },
+    {
       "day": 11,
       "title": "Assessing a Candidate Tool Before Adoption",
       "summary": "A security-first review of a third-party command-line tool before installing it: its source, permissions, what it keeps, and how to remove it.",
@@ -5289,6 +5333,45 @@
   ],
   "reports": [
     {
+      "day": 3,
+      "title": "Vulnerability Report: DNS-Rebinding SSRF in a Web-Reading Tool for an AI Agent",
+      "summary": "A formal write-up of a server-side request forgery flaw in a tool I built so an AI agent could read web pages. Four independent review rounds found five ways past its protections. All five are fixed and regression-tested; one transport remains untested.",
+      "date": "2026-10-01",
+      "url": "https://juribuora.github.io/reports/2026/10/01/dns-rebinding-ssrf-browser-tool.html",
+      "category": "report",
+      "tags": [
+        "cybersecurity",
+        "reports",
+        "ssrf",
+        "dnsrebinding",
+        "appsec",
+        "vulnerabilityreport",
+        "independentreview"
+      ],
+      "slug": "dns-rebinding-ssrf-browser-tool",
+      "sourcePath": "Reports/_posts/2026-10-01-dns-rebinding-ssrf-browser-tool.md",
+      "contentPath": "/generated/posts/report/3.json"
+    },
+    {
+      "day": 2,
+      "title": "Audit Report: Dependency Vulnerabilities in My Self-Hosted AI Agent Gateway, From 76 Findings to Zero",
+      "summary": "A dependency security audit of the agent gateway I run on my own machine. 76 known-vulnerability findings were reduced to 2 in a first pass and to 0 in a second, without hiding any behind a version number.",
+      "date": "2026-10-01",
+      "url": "https://juribuora.github.io/reports/2026/10/01/dependency-security-audit-agent-gateway.html",
+      "category": "report",
+      "tags": [
+        "cybersecurity",
+        "reports",
+        "supplychainsecurity",
+        "dependencymanagement",
+        "vulnerabilitymanagement",
+        "patchmanagement"
+      ],
+      "slug": "dependency-security-audit-agent-gateway",
+      "sourcePath": "Reports/_posts/2026-10-01-dependency-security-audit-agent-gateway.md",
+      "contentPath": "/generated/posts/report/2.json"
+    },
+    {
       "day": 1,
       "title": "WebCheckup Report: External Check-Up of juribuora.com, With Fixes and a Re-Test",
       "summary": "I ran my own website check-up service against my own site. It found nine things. Four were fixed and one partly fixed, all re-measured the same day. Four are still open, and the tool got two things wrong.",
@@ -5365,6 +5448,7 @@
     "dataanalysis",
     "dataenrichment",
     "datagovernance",
+    "datahandling",
     "dataintegrity",
     "datalifecycle",
     "dataprivacy",

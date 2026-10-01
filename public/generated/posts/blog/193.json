@@ -1,6 +1,6 @@
 {
   "day": 193,
-  "title": "Fixing the Approval Queue: Sender Identity, Not Message Identity",
+  "title": "Auditing My Phone-Approval Gate: Wrong Identity Key, Silent Policy Hook, Exposed Webhook",
   "date": "2026-08-12",
   "url": "https://juribuora.github.io/blog/2026/08/12/day-193.html",
   "category": "blog",

@@ -1,6 +1,6 @@
 {
   "day": 195,
-  "title": "Narration Is Not a Command: A Control-Plane Confusion Bug",
+  "title": "Fixing a Bug Where Narration Text Was Executed as a Task",
   "date": "2026-08-14",
   "url": "https://juribuora.github.io/blog/2026/08/14/day-195.html",
   "category": "blog",

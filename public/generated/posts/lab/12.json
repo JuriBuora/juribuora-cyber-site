@@ -1,0 +1,21 @@
+{
+  "day": 12,
+  "title": "Extracting Text from a Local HTML File Safely",
+  "date": "2026-07-29",
+  "url": "https://juribuora.github.io/labs/2026/07/29/lab-12-day-179.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "contentextraction",
+    "leastprivilege",
+    "bash",
+    "automation",
+    "datahandling",
+    "verification",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-12-day-179",
+  "sourcePath": "Labs/_posts/2026-07-29-lab-12-day-179.md",
+  "content": "## Lab Objective\n\nPractice extracting readable text from a local HTML file while keeping the operation narrow and inspectable:\n\n- use one explicit local input\n- enforce a timeout and output cap in the wrapper\n- separate extracted content from source metadata\n- verify the wrapper before use\n- avoid automatic ingestion, browser profiles, and persistent services\n\n---\n\n## Lab Environment\n\n- **System:** Linux or macOS shell\n- **Input:** a non-sensitive local HTML file\n- **Tool:** a local extraction wrapper, for example `scripts/defuddle-extract`\n- **Output:** Markdown on standard output; source metadata on standard error\n- **Boundary:** one-shot command only; no automatic index or knowledge-base import\n\n---\n\n## Scenario\n\nYou need the main text from a saved HTML page for a note. A full browser automation stack would have access to much more state than this task needs, so the extraction must remain a small, visible command with an explicit input and an inspectable output.\n\n---\n\n## Commands Practiced\n\n| Command | Purpose |\n| --- | --- |\n| `zsh -n` | Check shell syntax without running the wrapper |\n| `python3` | Run focused wrapper tests when supplied by the project |\n| `wc -c` | Inspect output size |\n| `shasum -a 256` | Record an integrity hash for the extracted result |\n| `sed -n` | Review a small, readable sample of the output |\n\n---\n\n## Step 1 - Verify the Wrapper Before Running It\n\nInspect the wrapper's stated limits and check its syntax:\n\n```bash\nzsh -n scripts/defuddle-extract\npython3 scripts/test_defuddle_extract.py\n```\n\nThe wrapper should make its boundaries visible: acceptable input type, timeout, output cap, and where it writes data.\n\n---\n\n## Step 2 - Extract One Local File\n\nUse a disposable fixture or a saved page that contains no sensitive information:\n\n```bash\nscripts/defuddle-extract ./fixtures/example.html \\\n  > extracted.md \\\n  2> source-metadata.log\n```\n\nThis separates the readable result from details about the source. Keeping those streams separate makes later review easier.\n\n---\n\n## Step 3 - Inspect Size, Content, and Integrity\n\n```bash\nwc -c extracted.md source-metadata.log\nsed -n '1,80p' extracted.md\ncat source-metadata.log\nshasum -a 256 extracted.md\n```\n\nCheck that the result is within the expected size limit, contains the intended text, and names the source accurately. The hash is useful when a note needs to record exactly which extracted artifact was reviewed.\n\n---\n\n## Step 4 - Check for Unwanted State\n\nThe command should exit when extraction ends. Confirm that it did not create a browser profile, a long-lived service, or an automatic import path:\n\n```bash\nps aux | rg -i \"defuddle|chrome|playwright\" \nfind . -maxdepth 2 -type f | sort\n```\n\nExpected result: the extracted Markdown and metadata files are visible, and no unrelated background process remains.\n\n---\n\n## Step 5 - Decide What Happens Next\n\nReview the Markdown before it is quoted, summarized, or placed in a note. The extraction command ends here; any later storage, indexing, or sharing step should be a separate decision.\n\n---\n\n## Security Takeaways\n\n1. **Explicit input limits collection.** One named file is easier to reason about than a browser session.\n2. **Timeouts and caps are security controls.** They bound resource use and accidental bulk output.\n3. **Metadata preserves provenance.** Store where text came from separately from the text itself.\n4. **One-shot tooling is easier to audit.** Short-lived processes leave a smaller state footprint.\n5. **Extraction is not authorization to ingest.** Review the result before any later workflow consumes it.\n"
+}

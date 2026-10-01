@@ -1,6 +1,6 @@
 {
   "day": 215,
-  "title": "A Symlink That Works by Hand Can Still Fail at 11:30",
+  "title": "Finding Why a Scheduled Watchdog Never Ran: The Scheduler Rejected a Symlink",
   "date": "2026-09-03",
   "url": "https://juribuora.github.io/blog/2026/09/03/day-215.html",
   "category": "blog",

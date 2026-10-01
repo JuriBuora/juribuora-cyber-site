@@ -1,6 +1,6 @@
 {
   "day": 211,
-  "title": "A Simple Agent Loop Still Needs Hard Boundaries",
+  "title": "Building a Relay Between ChatGPT and a Local Coding Agent, Guarded Against Stale and Duplicate Messages",
   "date": "2026-08-30",
   "url": "https://juribuora.github.io/blog/2026/08/30/day-211.html",
   "category": "blog",

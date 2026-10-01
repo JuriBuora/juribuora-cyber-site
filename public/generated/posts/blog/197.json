@@ -1,6 +1,6 @@
 {
   "day": 197,
-  "title": "Scanning for Secrets Before the First Push, Not After",
+  "title": "Adding a Secret Scan Before Every Push to a New Repository",
   "date": "2026-08-16",
   "url": "https://juribuora.github.io/blog/2026/08/16/day-197.html",
   "category": "blog",
