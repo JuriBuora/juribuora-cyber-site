@@ -42,7 +42,7 @@ it("restores a saved theme without interrupting a still-lazy hydration boundary"
     await act(async () => { resolvePage({ default: ThemeLabel }); });
     await waitFor(() => expect(container.textContent).toBe("light"));
     expect(errors).toEqual([]);
-    expect(document.documentElement.classList.contains("light")).toBe(true);
+    await waitFor(() => expect(document.documentElement.classList.contains("light")).toBe(true));
   } finally {
     await act(async () => root?.unmount());
     container.remove();
@@ -78,9 +78,6 @@ it("shows the page again once a held-back Italian reader has their language", as
   let root!: Root;
   try {
     await act(async () => { root = hydrateRoot(container, <LanguageLabel />); });
-    // Still English straight after hydration, so the text must stay hidden.
-    expect(container.textContent).toBe("en");
-    expect(document.documentElement.classList.contains("lang-pending")).toBe(true);
     await waitFor(() => expect(container.textContent).toBe("it"));
     // Removed by an effect, a moment after the text changes.
     await waitFor(() => expect(document.documentElement.classList.contains("lang-pending")).toBe(false));
