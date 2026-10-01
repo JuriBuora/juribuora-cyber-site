@@ -7,6 +7,8 @@ import projectPageSrc from "../pages/ProjectPage.tsx?raw";
 import doingSrc from "./doing.ts?raw";
 import doingPageSrc from "../pages/WhatImDoingPage.tsx?raw";
 import visualsSrc from "../components/doing/Visuals.tsx?raw";
+import ogSrc from "../../scripts/assets/og.html?raw";
+import onePagerSrc from "../../scripts/assets/one-pager.html?raw";
 import chartSrc from "../components/workstation/ActivityChart.tsx?raw";
 import stackSrc from "../components/workstation/ArchitectureStack.tsx?raw";
 import { caseStudies, stats, weeklyCommits, weeklyCommitsTotal } from "./workstation";
@@ -19,12 +21,19 @@ describe("workstation page content", () => {
     expect(stats[0].value).toBe(weeklyCommitsTotal.toLocaleString("en-GB"));
   });
 
+  it("the PDF and share image repeat the same headline numbers as the pages", () => {
+    for (const n of ["1,364", "34", "243"]) {
+      expect(ogSrc).toContain(n);
+      expect(onePagerSrc).toContain(n);
+    }
+  });
+
   it("every stat carries a source", () => {
     for (const s of stats) expect(s.source.length).toBeGreaterThan(10);
   });
 
   it("source files contain nothing private", () => {
-    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc, doingSrc, doingPageSrc, visualsSrc };
+    const files = { dataSrc, projectsSrc, pageSrc, projectPageSrc, chartSrc, stackSrc, doingSrc, doingPageSrc, visualsSrc, ogSrc, onePagerSrc };
     for (const [name, text] of Object.entries(files)) {
       expect({ name, hits: scrub(text) }).toEqual({ name, hits: [] });
     }
@@ -86,8 +95,10 @@ describe("project pages", () => {
   });
 
   it("every mockup says it is illustrative or sourced", () => {
-    const labels = visualsSrc.match(/Illustrative example|Real numbers from|paraphrased|Simplified diagram/g) ?? [];
-    expect(labels.length).toBeGreaterThanOrEqual(5);
+    const labels = visualsSrc.match(/Illustrative example|Real numbers from|Real deliverables|paraphrased|Simplified diagram/g) ?? [];
+    const mockups = visualsSrc.match(/export const \w+Mock/g) ?? [];
+    expect(mockups.length).toBe(6);
+    expect(labels.length).toBeGreaterThanOrEqual(mockups.length);
   });
 
   it("slugs cannot collide with top-level routes", () => {

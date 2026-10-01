@@ -17,7 +17,7 @@ export type Chapter = {
   /** Deep-dive page under /workstation/<slug>. */
   slug: string;
   reading?: { label: string; to: string }[];
-  visual: "report" | "shapes" | "pipeline" | "funnel" | "rebind";
+  visual: "report" | "shapes" | "pipeline" | "funnel" | "rebind" | "deliverables";
 };
 
 export const chapters: Chapter[] = [
@@ -39,6 +39,26 @@ export const chapters: Chapter[] = [
     ],
     slug: "webcheckup",
     visual: "report",
+  },
+  {
+    id: "client-work",
+    kicker: "Client work · Web and data",
+    headline: "Real work for real businesses.",
+    lead:
+      "I built and maintain the production website of a farm business. Separately, for a small business running on two old single-user databases, I analysed the data and planned an affordable move to a shared system, delivering the first usable piece along the way.",
+    benefits: [
+      "A fast, mobile-first site with search metadata, validated forms and analytics that wait for consent.",
+      "Migration planning that starts from the evidence: copies only, originals verified untouched, and the business logic found where it really lives.",
+      "Costed options in plain language, then phased delivery where each step waits for the client's go.",
+    ],
+    proof: [
+      { value: "231", label: "commits on the live site", source: "git rev-list --count HEAD, public farm website repository" },
+      { value: "37", label: "sections in the migration report", source: "client report delivered Jul 2026 (private)" },
+      { value: "10", label: "sheets in the delivered workbook", source: "timesheet prototype delivered Jul 2026 (private)" },
+    ],
+    slug: "farm-website",
+    reading: [{ label: "The migration study", to: "/workstation/access-migration" }],
+    visual: "deliverables",
   },
   {
     id: "foresight",

@@ -174,3 +174,40 @@ export const RebindMock = () => (
     </p>
   </figure>
 );
+
+/* ───────── Client work: real deliverables and where each stands ───────── */
+const deliverables: { label: string; note: string; state: string; done: boolean }[] = [
+  { label: "Production website", note: "Live, public repository", state: "Shipped", done: true },
+  { label: "Database analysis", note: "Two legacy databases, on copies", state: "Delivered", done: true },
+  { label: "Migration report", note: "37 sections, costed options", state: "Delivered", done: true },
+  { label: "Timesheet workbook", note: "10 sheets, protected formulas", state: "Delivered", done: true },
+  { label: "Database migration", note: "Waiting for the client's review", state: "Paused", done: false },
+];
+export const DeliverablesMock = () => (
+  <figure>
+    <div className={frame} role="img" aria-label="Five client deliverables: four shipped or delivered, the migration itself paused">
+      <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Deliverables</p>
+      <ul className="mt-4 divide-y divide-border">
+        {deliverables.map((d) => (
+          <li key={d.label} className="flex items-center justify-between gap-3 py-3">
+            <div>
+              <p className="text-sm font-medium text-card-foreground">{d.label}</p>
+              <p className="text-xs text-muted-foreground">{d.note}</p>
+            </div>
+            <span
+              className={
+                "shrink-0 rounded-full px-2.5 py-1 font-mono text-[11px] " +
+                (d.done ? "bg-primary/15 text-primary" : "bg-secondary text-secondary-foreground")
+              }
+            >
+              {d.state}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+      Real deliverables and their status
+    </p>
+  </figure>
+);

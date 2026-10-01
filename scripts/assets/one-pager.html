@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8" />
+<title>Juri Buora — one page</title>
+<style>
+  @page { size: A4; margin: 14mm 15mm; }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; color: #14181f; font-size: 9.6pt; line-height: 1.42; }
+  h1 { font-size: 25pt; letter-spacing: -0.02em; font-weight: 650; }
+  .role { color: #1a7f3c; font-weight: 600; margin-top: 1mm; font-size: 11pt; }
+  .contact { margin-top: 2mm; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 8.2pt; color: #4b5563; }
+  .summary { margin-top: 4mm; font-size: 10.4pt; max-width: 170mm; }
+  .nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin-top: 5mm; }
+  .nums div { border: 0.3mm solid #d9dee5; border-radius: 2.5mm; padding: 2.6mm 3mm; }
+  .nums strong { display: block; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 15pt; color: #1a7f3c; }
+  .nums span { font-size: 7.8pt; color: #4b5563; }
+  h2 { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 7.8pt; letter-spacing: 0.16em; text-transform: uppercase; color: #1a7f3c; margin: 5.5mm 0 2mm; }
+  .work { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6mm 6mm; }
+  .work h3 { font-size: 10pt; font-weight: 650; }
+  .work p { color: #374151; }
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+  .cols h3 { font-size: 9.6pt; font-weight: 650; margin-bottom: 0.8mm; }
+  .cols p, li { color: #374151; }
+  ul { padding-left: 4mm; }
+  .scope { margin-top: 5mm; border-top: 0.3mm solid #d9dee5; padding-top: 2.5mm; font-size: 8pt; color: #4b5563; }
+</style>
+<body>
+  <h1>Juri Buora</h1>
+  <p class="role">Security and AI operations · early career</p>
+  <p class="contact">juribuora@gmail.com · juribuora.com · linkedin.com/in/juri-buora · github.com/JuriBuora</p>
+
+  <p class="summary">I build AI systems that do real work, and the safety around them, and I write all of it down. I am looking for a junior role in security or AI operations. I work with AI pair-programming: I set the goals, the guardrails and the review.</p>
+
+  <div class="nums">
+    <div><strong>1,364</strong><span>commits in 13 weeks on my workstation project</span></div>
+    <div><strong>34</strong><span>documented failure shapes in my release gate</span></div>
+    <div><strong>243</strong><span>days of public learning notes and labs</span></div>
+    <div><strong>231</strong><span>commits on a live client website</span></div>
+  </div>
+
+  <h2>Selected work</h2>
+  <div class="work">
+    <div><h3>WebCheckup</h3><p>External, non-invasive website check-ups for small businesses: HTTPS, browser protections, mobile, speed, links. An email may state a finding only if the evidence reproduces. Italian and English, kept in sync by a test.</p></div>
+    <div><h3>Client work</h3><p>Built and maintain a production website for a farm business. For a small business, analysed two legacy databases on verified copies and delivered a costed migration report and a first working workbook.</p></div>
+    <div><h3>Foresight release gate</h3><p>A pre-mortem and release check built after an AI system's defects reached real people. Each risky change names what could break, the mechanism that stops it, and a proof that was actually run.</p></div>
+    <div><h3>Fail-safe AI messaging</h3><p>An auto-reply assistant with a filter at the delivery boundary. Measured with 123 scenarios run three times each; leaked reasoning, tool errors and echoed transcripts are blocked before sending.</p></div>
+    <div><h3>Supervised agents, measured honestly</h3><p>Approvals, audit records and crash recovery for an AI agent. In a 17-day live trial, 41 tasks ran and 2 distinct real tasks completed, so I switched it off and fixed the root causes.</p></div>
+    <div><h3>Security review of my own tool</h3><p>Found a DNS-rebinding path in a browser tool I wrote for an agent: the safety check and the browser could reach different addresses. Documented the options and their costs.</p></div>
+  </div>
+
+  <h2>What I bring</h2>
+  <div class="cols">
+    <div><h3>Security</h3><p>Web and network risk basics (TLS, headers, SSRF, DNS), least privilege, detection tuning practice in KQL, Linux and SQL labs, clear write-ups.</p></div>
+    <div><h3>AI operations</h3><p>Running agent gateways, routing between local and cloud models, output filtering, adversarial testing, evaluation with repeated runs.</p></div>
+    <div><h3>Engineering</h3><p>Git, React and TypeScript, Python, SQL, Docker, CI/CD on GitHub Actions, macOS and Linux. Italian and English.</p></div>
+  </div>
+
+  <h2>How I work</h2>
+  <ul>
+    <li>I look for what can go wrong before building, and put the control where it cannot be walked around.</li>
+    <li>I verify what is actually running, not what the configuration says, and I report numbers that do not flatter me.</li>
+    <li>I leave handoff notes so anyone can continue: what is done, what is left, and the next command.</li>
+  </ul>
+
+  <p class="scope">Honest scope: this is solo work, done after hours, with AI pair-programming. Most repositories are private because they hold personal data; the numbers come from git and I will show them in a live walkthrough. Full detail, including projects I stopped and why: juribuora.com/what-im-doing</p>
+</body>
+</html>

@@ -20,6 +20,13 @@ Public React/Vite site for [juribuora.com](https://juribuora.com/). It presents 
 4. The React app reads those local snapshots, so the browser does not depend on the GitHub API.
 5. GitHub Actions rebuilds the site on pushes and on a schedule.
 
+## Showcase pages
+
+- `/what-im-doing` is the short, outcome-first page. Content lives in `src/data/doing.ts`.
+- `/workstation` is the archive, with one page per project under `/workstation/<slug>` from `src/data/projects.ts`, including projects that were stopped and why.
+- These pages describe private projects, so `src/lib/scrub.ts` holds rules for what must never ship (addresses, hosts, tokens, names, private-life details). Tests run the rules over the source and, after a build, over `dist/`. CI runs them on every deploy.
+- The share image and the one-page PDF are rendered from `scripts/assets/*.html` with `scripts/render-assets.sh` and committed under `public/`.
+
 ## Local development
 
 ```bash

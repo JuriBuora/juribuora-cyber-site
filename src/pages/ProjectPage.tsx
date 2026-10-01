@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import BlogFooter from "@/components/BlogFooter";
 import BlogHeader from "@/components/BlogHeader";
 import ScrollToTop from "@/components/ScrollToTop";
+import { usePageTitle } from "@/hooks/usePageTitle";
 import StatusBadge from "@/components/workstation/StatusBadge";
 import { projectBySlug, type ProjectStatus } from "@/data/projects";
 import NotFound from "./NotFound";
@@ -31,6 +32,7 @@ const Bullets = ({ items }: { items: string[] }) => (
 const ProjectPage = () => {
   const { slug = "" } = useParams();
   const project = projectBySlug(slug);
+  usePageTitle(project?.name ?? "Not found");
   if (!project) return <NotFound />;
 
   const related = (project.related ?? []).map(projectBySlug).filter((p) => p !== undefined);

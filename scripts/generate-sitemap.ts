@@ -32,7 +32,11 @@ type RouteShell = {
   canonicalPath?: string;
   title: string;
   description: string;
+  /** Share image path under the site root; defaults to the site-wide image. */
+  image?: string;
 };
+
+const SHOWCASE_IMAGE = "/og-what-im-doing.png";
 
 async function readManifestEntries(): Promise<Entry[]> {
   const raw = await readFile(MANIFEST_PATH, "utf8");
@@ -66,11 +70,17 @@ function injectRouteMeta(
   canonicalPath: string,
   title: string,
   description: string,
+  image?: string,
 ): string {
   const url = `${SITE}${canonicalPath}`;
   const safeTitle = escapeHtml(title);
   const safeDescription = escapeHtml(description);
-  return html
+  const withImage = image
+    ? html
+        .replace(/<meta property="og:image" content="[^"]*" \/>/, `<meta property="og:image" content="${SITE}${image}" />`)
+        .replace(/<meta name="twitter:image" content="[^"]*" \/>/, `<meta name="twitter:image" content="${SITE}${image}" />`)
+    : html;
+  return withImage
     .replace(/<title>.*?<\/title>/, `<title>${safeTitle}</title>`)
     .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${url}" />`)
     .replace(
@@ -147,17 +157,20 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
     {
       routePath: "/what-im-doing",
       title: "What I'm doing — Juri Buora",
-      description: "Five running projects in AI operations and security, what each does for a team, and the numbers behind them.",
+      description: "Real projects in AI operations, security and client work, what each does for a team, and the numbers behind them.",
+      image: SHOWCASE_IMAGE,
     },
     {
       routePath: "/workstation",
       title: "The Workstation — Juri Buora",
       description: "A personal AI operations lab: local and cloud models, safety gates, and the case studies behind it. Built with AI pair-programming, reviewed by Juri Buora.",
+      image: SHOWCASE_IMAGE,
     },
     ...projects.map((project) => ({
       routePath: `/workstation/${project.slug}`,
       title: `${project.name} — Juri Buora`,
       description: project.tagline,
+      image: SHOWCASE_IMAGE,
     })),
     ...manifest.posts.map((post) => ({
       routePath: `/${post.category}/${post.day}`,
@@ -177,6 +190,7 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
       route.canonicalPath ?? route.routePath,
       route.title,
       route.description,
+      route.image,
     );
     const target = path.join(outDir, route.routePath.replace(/^\//, ""), "index.html");
     await mkdir(path.dirname(target), { recursive: true });

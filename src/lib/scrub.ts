@@ -14,7 +14,7 @@ export const scrubRules: { name: string; pattern: RegExp }[] = [
   { name: "whatsapp jid", pattern: /@(?:s\.whatsapp\.net|lid)\b/ },
   { name: "telegram numeric id", pattern: /\b7374750226\b/ },
   { name: "personal vault or folder", pattern: /Juri Personale/ },
-  { name: "private-life details", pattern: /girlfriend|\bfamily\b|\bpartner\b|\bwife\b|\bhusband\b/i },
+  { name: "private-life details", pattern: /girlfriend|(?<!font-)\bfamily\b|\bpartner\b|\bwife\b|\bhusband\b/i },
   { name: "personal contacts", pattern: /\b(?:Aurora|Antonella|Reika)\b/ },
   { name: "personal email other than public one", pattern: /[A-Za-z0-9._%+-]+@(?!gmail\.com)[A-Za-z0-9.-]+\.[a-z]{2,}/ },
 ];

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8" />
+<title>Share image</title>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    background: hsl(220 20% 7%);
+    color: hsl(150 60% 90%);
+    font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    padding: 64px 72px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    background-image: radial-gradient(circle at 85% 0%, hsl(142 70% 45% / 0.16), transparent 55%);
+  }
+  .brand { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 26px; font-weight: 600; display: flex; align-items: center; gap: 14px; }
+  .brand b { color: hsl(142 70% 45%); font-weight: 600; }
+  h1 { font-size: 72px; line-height: 1.04; letter-spacing: -0.03em; font-weight: 650; max-width: 980px; }
+  h1 span { color: hsl(142 70% 45%); }
+  .stats { display: flex; gap: 56px; }
+  .stats div { display: flex; flex-direction: column; gap: 6px; }
+  .stats strong { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 44px; font-weight: 650; }
+  .stats small { font-size: 20px; color: hsl(220 10% 62%); }
+  .foot { display: flex; justify-content: space-between; align-items: flex-end; }
+  .url { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 22px; color: hsl(220 10% 62%); }
+</style>
+<body>
+  <div class="brand">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="hsl(142 70% 45%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+    <span>juri<b>@</b>security</span>
+  </div>
+  <h1>I build AI that does real work, and the <span>safety</span> around it.</h1>
+  <div class="foot">
+    <div class="stats">
+      <div><strong>1,364</strong><small>commits in 13 weeks</small></div>
+      <div><strong>34</strong><small>failure shapes in my release gate</small></div>
+      <div><strong>243</strong><small>days of public learning notes</small></div>
+    </div>
+    <div class="url">juribuora.com</div>
+  </div>
+</body>
+</html>

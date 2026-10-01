@@ -158,7 +158,7 @@ export const caseStudies: CaseStudy[] = [
       "I wanted to test whether small businesses would buy a simple, honest check-up of their public website, without building a SaaS or running anything intrusive.",
     lesson:
       "Anything that contacts a stranger needs a gate on what it is allowed to claim, not just on what it is allowed to send.",
-    skills: ["Web security basics", "Product thinking", "Responsible disclosure", "Bilingual copy"],
+    skills: ["Web security basics", "Product thinking", "Responsible outreach", "Bilingual copy"],
     link: { label: "Public site repository", to: "https://github.com/JuriBuora/webcheckup-online", external: true },
   },
   {
@@ -193,5 +193,5 @@ export const honestScope = [
   "Built with AI pair-programming (Claude Code and Codex). I set the goals, constraints and review bar; the models write much of the code under them.",
   "Solo, personal and after hours. This is a lab, not a production team, and the scale is one person's.",
   "Most repositories are private because they hold personal data. Numbers come from git and are reproducible on request, in a live walkthrough.",
-  "Public work you can open today: this site, the WebCheckup site, and my detection-engineering practice repository.",
+  "Public work you can open today: this site, the WebCheckup site, a production website for a farm business, and my detection-engineering practice repository.",
 ];

@@ -96,7 +96,9 @@ export const projects: Project[] = [
       "Upgrades follow a written procedure: reinstall in place, never re-sync the live environment, because that once threatened a working voice stack.",
     ],
     outcome: [
-      "Live. The fork had silently fallen 17,898 commits behind upstream; reconciling it meant re-porting 78 of my commits through upstream's restructured modules and folding in 31 from the live branch, then cutting over to an immutable release checkout.",
+      "Live. The fork had silently fallen 17,898 commits behind upstream. Reconciling it meant re-porting 78 of my commits through upstream's restructured modules and folding in 31 more from the branch that was actually running.",
+      "To tell real breakage from noise, the full test suite was compared with a clean baseline: 97 failures already existed upstream of my changes and 3 were real regressions, which were fixed. An end-to-end test ran against a fake messaging socket, so no account or person could be reached.",
+      "The live gateway was checkpointed before the cutover. A dependency that the sync had silently dropped was caught before the restart, not after.",
       "Closed 22 Sep 2026. A later upstream upgrade went live the same way on 29 Sep.",
     ],
     learned:
@@ -380,7 +382,7 @@ export const projects: Project[] = [
       "History is complete but never loaded automatically. Retrieval of history is explicit and bounded.",
       "Revertibility instead of pre-approval: skills and policy live in git so a bad self-edit is a reviewable diff.",
     ],
-    outcome: ["In use on every task. 539 files in the handoff folder as of 30 Sep 2026."],
+    outcome: ["In use on every task. More than 500 files in the handoff folder as of 1 Oct 2026."],
     learned:
       "A safety net beats a question. Make undo cheap and let work proceed.",
     evidence: ["handoff folder", "continuity contract document"],
@@ -410,6 +412,112 @@ export const projects: Project[] = [
     tags: ["Learning in public", "Detection engineering", "React", "CI/CD"],
     link: { label: "Browse the daily logs", href: "/blog" },
     related: [],
+  },
+
+  {
+    slug: "farm-website",
+    name: "Production website for a farm business",
+    status: "active",
+    period: "Jan 2025 – now",
+    tagline: "A fast marketing site for a real agricultural business, built and maintained end to end.",
+    why: [
+      "A real business needed a site that loads quickly on a phone, shows up in local search, and lets customers find products and get in touch.",
+    ],
+    what: [
+      "A multi-page static site in React, TypeScript, Vite and Tailwind: products, firewood, gallery, contact, company background and legal pages.",
+      "SEO metadata and structured data, responsive image generation, form validation, and analytics that respect cookie consent.",
+      "Static deployment with a custom domain, plus lint and unit tests.",
+    ],
+    decisions: [
+      "Static over dynamic. There is no server to patch or database to leak, and the site is cheap to host.",
+      "Analytics load only after consent, and the privacy and cookie pages say what is actually collected.",
+    ],
+    outcome: ["Live and in use. 231 commits between January 2025 and August 2026. The repository is public."],
+    learned:
+      "For a small business, the unglamorous parts decide whether a site works: speed on a phone, clear contact paths, and honest legal pages.",
+    evidence: ["public repository and live site"],
+    tags: ["React", "TypeScript", "SEO", "Privacy compliance", "Client work"],
+    link: { label: "Repository on GitHub", href: "https://github.com/JuriBuora/farina-farm-website", external: true },
+    related: ["webcheckup"],
+  },
+  {
+    slug: "access-migration",
+    name: "Legacy database migration study for a small business",
+    status: "paused",
+    period: "Jul 2026 – waiting on the client",
+    tagline: "Analysing two old single-user databases and a spreadsheet, and planning a shared system the business can afford and run.",
+    why: [
+      "A small business ran its sales, purchases and staff hours on two legacy Access databases and an Excel sheet that only one person at a time could use.",
+      "They needed two people editing and one person reading from a phone, without losing years of records or the calculations hidden in old queries.",
+    ],
+    what: [
+      "A full analysis of both databases, done on copies: structure, record counts, and where the business logic actually lives. There was no custom code; the calculations sat in the queries.",
+      "A technical and cost report in 37 sections with several options, from which the client approved one: a small shared database server with the familiar front end kept, redundant storage, 3-2-1 backups, power protection, and read-only access for one role.",
+      "A first deliverable they could use straight away: a cleaned-up timesheet workbook with central pay rates, protected formulas and input validation.",
+    ],
+    decisions: [
+      "Originals were never touched. I worked on copies and verified with hashes that the source files were unchanged.",
+      "No implementation without approval. The report came first, the client chose, and each phase waits for a go.",
+      "Keep the front end people already know. Changing the storage underneath is less risky than retraining everyone at once.",
+      "The files are Windows-only, so I analysed them from a Mac through a virtual machine and scripted exports rather than clicking through by hand.",
+    ],
+    outcome: [
+      "Analysis and the timesheet prototype are delivered. The migration itself is paused until the client reviews the prototype and we agree a test plan for checking the totals match.",
+    ],
+    learned:
+      "In a migration the rows are the easy part. The meaning is in the queries, the rounding and the habits of the people who use it.",
+    evidence: ["the client report and the delivered workbook (private)"],
+    tags: ["Data migration", "SQL", "Backups", "Requirements", "Client work"],
+    related: ["webcheckup"],
+  },
+  {
+    slug: "home-climate",
+    name: "Local control for home air conditioning",
+    status: "active",
+    period: "Aug 2026 – now",
+    tagline: "Controlling two air-conditioning units over the local network, with no vendor cloud, and what that says about their security.",
+    why: [
+      "I wanted to switch and schedule the units from my own tools without depending on a vendor app or account.",
+    ],
+    what: [
+      "A small command-line tool that reads and sets each unit over the local network.",
+      "Home Assistant in Docker on a small home server, driving the same units.",
+    ],
+    decisions: [
+      "It works because the units' network adapters accept local commands without any authentication. That is convenient, and it is also a finding: anything on the same network can control them.",
+      "The server's firewall blocked my private network interface by default, so remote access had to be opened deliberately rather than by accident.",
+      "The server's address changes, so everything refers to it by name instead of by a fixed address.",
+    ],
+    outcome: ["Working day to day."],
+    learned:
+      "Consumer devices often trust the local network completely. Knowing that changes what you allow onto it.",
+    evidence: ["the tool and the Home Assistant configuration (private)"],
+    tags: ["IoT", "Network security", "Docker", "Home Assistant"],
+    related: ["ai-workstation"],
+  },
+  {
+    slug: "lightroom-agent",
+    name: "Lightroom culling helper",
+    status: "active",
+    period: "2026 – experimental",
+    tagline: "A supervised helper that makes a first pass over a big folder of RAW photos, with an honest readiness score.",
+    why: [
+      "Sorting hundreds of RAW photos by hand is slow. I wanted a first pass I could review, not a tool that edits my archive on its own.",
+    ],
+    what: [
+      "Scans a pilot folder of RAW files, extracts previews, builds comparative contact sheets and suggests keepers and low-priority frames.",
+      "Packages the result as one review bundle I can open from my phone.",
+    ],
+    decisions: [
+      "Supervised only. It suggests, I decide. It does not import ratings blindly.",
+      "Its own documentation scores its readiness: 7 out of 10 for a pilot of 80 to 150 photos I review myself, 4 out of 10 for a big batch with checkpoints, 2 out of 10 for running unattended over the whole archive.",
+    ],
+    outcome: ["Useful for small supervised pilots. Not ready for unattended work, and labelled that way."],
+    learned:
+      "Writing down what a tool is not ready for is as useful as listing what it can do.",
+    evidence: ["the project README with its readiness scores (private)"],
+    tags: ["Automation", "Human in the loop", "Honest scope"],
+    related: ["ai-workstation"],
   },
 
   /* ───────────── the graveyard ───────────── */
@@ -471,7 +579,7 @@ export const projects: Project[] = [
     name: "SkillClaw",
     status: "retired",
     period: "Jul 2026 – 1 Aug 2026",
-    tagline: "A local proxy between my agent tools and the models. Retired cleanly during a recovery and hardening pass.",
+    tagline: "A local proxy between my agent tools and the models. Retired when I dropped the approach it came with.",
     why: [
       "An experiment in a layer that sat between my coding tools and local models and recorded the conversations that passed through it.",
     ],
@@ -480,17 +588,18 @@ export const projects: Project[] = [
       "On 26 Jul I wired it into the OpenCode lane with its own proxy port, taking care not to disturb the one already serving the agent gateway. Pointing the coding tool at the wrong proxy would have silently switched it to a different model.",
     ],
     decisions: [
-      "Retired during the 1 Aug recovery and hardening pass, recorded as 'no power or tool boundary reduced'.",
+      "As I recall, it went because I had decided not to use OpenClaw, the tool it came with. The record adds a concrete weakness: it was single-worker and synchronous, so one stuck request could block everything behind it.",
+      "Retired, not merely stopped: the route checker now rejects any stale route to it, and my operator rules say never to reinstall it.",
     ],
     outcome: [
       "Both services were disabled and removed, and everything else moved into a permission-restricted rollback archive outside every directory my agents search.",
       "The agent gateway kept running on the verified proxy it already used, and direct local-model engineering now loads a safe profile without SkillClaw.",
-      "I did not write down a standalone reason for retiring it. That is a gap, and the reason I now record one.",
+      "The retirement record lists what was removed and how to roll back, but not why. I now write the reason down at the time.",
     ],
     restore: "Source, state and wrappers are in the rollback archive. Nothing depends on it, so it can stay retired.",
     learned:
       "Two always-on services with restart-on-crash are a real maintenance cost. Write the reason for retiring something at the time you retire it.",
-    evidence: ["current-state record dated 1 Aug 2026", "26 Jul wiring handoff"],
+    evidence: ["retirement handoff dated 1 Aug 2026", "26 Jul wiring handoff"],
     tags: ["Decommissioning", "Maintenance cost", "Proxy layers"],
     related: ["ai-workstation", "supermemory-eval"],
   },
@@ -578,8 +687,8 @@ export const projects: Project[] = [
     slug: "supermemory-eval",
     name: "Supermemory self-hosted evaluation",
     status: "retired",
-    period: "Jul 2026 – 1 Aug 2026",
-    tagline: "A memory engine I ran fully offline to see if it should replace my own. It never did, and I switched it off.",
+    period: "Jul – Aug 2026",
+    tagline: "A memory engine I ran fully offline to see if it should replace my own. It did not, because I already had one shared memory system.",
     why: [
       "A popular open-source memory engine promised fact extraction, profiles and hybrid search. I wanted to know if it beat the memory layer I had built.",
     ],
@@ -592,13 +701,13 @@ export const projects: Project[] = [
       "Two integration problems were root-caused and fixed: an extraction workflow timeout on 22 Jul, and contention with the agent gateway for the same local model daemon on 28 Jul.",
     ],
     outcome: [
-      "It worked end to end but never became part of the canonical memory system. It was disabled in the 1 Aug recovery and hardening pass and has stayed off since.",
-      "As with SkillClaw, I did not record a separate reason beyond keeping the system small while repairing it.",
+      "It worked end to end but never became part of the canonical memory system. It was switched off in early August.",
+      "The reason is simple: I already had one shared memory and retrieval system that all my agents use. In late August I consolidated on that and uninstalled Supermemory. Two memory systems that can disagree are worse than one.",
     ],
     restore: "The install notes record the version pin and configuration, so it can be reinstalled from them.",
     learned:
       "Evaluate new tools beside your system, not inside it, and pin the version that works.",
-    evidence: ["evaluation notes and resolved-limitation write-ups", "1 Aug 2026 hardening handoff"],
+    evidence: ["evaluation notes and resolved-limitation write-ups", "memory consolidation handoffs, 21–23 Aug 2026"],
     tags: ["Evaluation", "Memory and RAG", "Self-hosting"],
     related: ["ai-workstation", "skillclaw"],
   },
@@ -606,5 +715,32 @@ export const projects: Project[] = [
 
 export const projectBySlug = (slug: string) => projects.find((p) => p.slug === slug);
 
-export const builtProjects = projects.filter((p) => p.status === "active");
-export const otherProjects = projects.filter((p) => p.status !== "active");
+/** Display order for the main list: what a business would care about first. */
+const workOrder = [
+  "webcheckup",
+  "farm-website",
+  "access-migration",
+  "foresight",
+  "messaging-assistant",
+  "hermes-gateway",
+  "browser-research-adapter",
+  "ai-workstation",
+  "capability-integration",
+  "mcp-profile-launcher",
+  "continuity",
+  "nuntorium",
+  "cyber-learning-log",
+  "home-climate",
+  "lightroom-agent",
+];
+
+/** Things I chose to stop. Client work that is merely waiting on someone else is not in here. */
+const isStopped = (p: Project) => p.status === "retired" || p.status === "rejected" || p.slug === "supervisor";
+
+const rank = (slug: string) => {
+  const i = workOrder.indexOf(slug);
+  return i === -1 ? workOrder.length : i;
+};
+
+export const builtProjects = projects.filter((p) => !isStopped(p)).sort((a, b) => rank(a.slug) - rank(b.slug));
+export const otherProjects = projects.filter(isStopped);
