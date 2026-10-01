@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { sitemapPlugin } from "./scripts/generate-sitemap";
 import { routePreviewPlugin } from "./scripts/route-preview";
+import { postSnapshotPlugin } from "./scripts/post-snapshots";
 
 // GitHub Pages cannot send custom response headers, so the content security policy is
 // declared in the page. It is added to built output only: the dev server needs inline
@@ -41,6 +42,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     routePreviewPlugin(),
+    postSnapshotPlugin(),
     mode !== "development" && securityPolicyPlugin(),
     mode !== "development" && sitemapPlugin(),
   ].filter(Boolean),

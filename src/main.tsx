@@ -1,6 +1,7 @@
 import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { postForPath, validatePostContent } from "@/lib/initialPost";
+import { postSnapshots } from "virtual:post-snapshots";
 import type { PostContentPayload } from "@/data/posts";
 import "./index.css";
 
@@ -14,11 +15,18 @@ async function start() {
   let initialPostContent: PostContentPayload | undefined;
   const post = postForPath(window.location.pathname);
   if (post && canHydrate) {
-    // Fetch the existing external JSON before hydrating so the first tree includes
-    // the same body as the build render. No executable or JSON inline script.
-    const response = await fetch(post.contentPath);
-    if (!response.ok) throw new Error(`Content request failed with ${response.status}`);
-    initialPostContent = validatePostContent(await response.json(), post);
+    // Import the snapshot bound to this build. The runtime JSON endpoint is
+    // used by later SPA navigation, never as a gate for initial hydration.
+    try {
+      const snapshot = await postSnapshots[post.contentPath]();
+      initialPostContent = validatePostContent(snapshot.default, post);
+    } catch (error: unknown) {
+      // A missing content chunk must not leave every control inactive. Fall
+      // back to the ordinary SPA, whose post fetch already has an error view.
+      console.error("Build post snapshot unavailable; using client rendering", error);
+      createRoot(root).render(<App />);
+      return;
+    }
   }
   const app = <App initialPostContent={initialPostContent} />;
   if (canHydrate) hydrateRoot(root, app);
@@ -27,5 +35,5 @@ async function start() {
 
 void start().catch((error: unknown) => {
   // Preserve readable prerendered content if its snapshot cannot be loaded.
-  console.error("Could not hydrate the local post snapshot", error);
+  console.error("Could not load the build snapshot for hydration", error);
 });

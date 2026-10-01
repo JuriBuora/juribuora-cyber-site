@@ -57,10 +57,14 @@ This is not meant to be a complex backend application. The point is to show that
 
 Production builds render every route into its HTML shell, including the full Markdown body of each local post. `src/AppContent.tsx` owns the shared providers and routes; `src/App.tsx` supplies lazy browser pages and `src/prerender.tsx` supplies eager pages under `StaticRouter`. The sitemap plugin builds a temporary server renderer under `node_modules/.cache/`, reads post JSON from disk, writes the HTML bodies, and removes that renderer before finishing. Missing or invalid snapshots fail the build.
 
-The browser hydrates a matching shell. For post URLs it resolves the post from the static manifest and fetches its existing local JSON before hydration; other SPA navigations retain the existing post fetch. There is no inline state script. Dark theme and English are the initial render defaults; saved preferences are restored after mount with a transition so they cannot interrupt lazy hydration. If the initial post JSON fails to load, the static article remains readable and the hydration failure is logged.
+The browser hydrates a matching shell. For post URLs it resolves the post from the static manifest and lazily imports an external, content-hashed snapshot module generated from the same JSON used by prerendering; other SPA navigations retain the existing post fetch. A failed runtime JSON endpoint cannot block initial hydration, the theme toggle, or the menu. There is no inline state script. Dark theme and English are the initial render defaults; saved preferences are restored after mount with a transition so they cannot interrupt lazy hydration. If the snapshot module itself cannot load, the app falls back to ordinary client rendering and its runtime post fetch. Controls remain active; if both content sources fail, the existing post error view replaces the static article. Route and application JavaScript assets are still required for interactivity.
 
 `vite preview` serves the generated shell for extensionless route URLs. Its preview-only middleware leaves unknown routes to the existing SPA fallback. The GitHub Pages 404 redirect remains unchanged; a restored URL that differs from the rendered shell uses client rendering.
 
 `npm run build && npm test` exercises all generated shells, post bodies, CSP, the existing privacy scrub, and preference hydration with an unresolved lazy page. A build is required for the artifact tests; they are skipped when `dist/` is absent.
 
 01-10-2026 19:42
+
+Snapshot modules remain lazy: only the current post module loads at startup. Tests boot the real app against a built shell with runtime JSON unavailable and compare every emitted snapshot module with its source JSON. The extra import index adds about 4.4 kB gzip to the entry chunk; post bodies stay in separate chunks.
+
+01-10-2026 20:24
