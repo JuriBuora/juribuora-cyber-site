@@ -4,6 +4,25 @@ import type { LoadedPosts } from "./posts";
 export const jekyllSnapshot: LoadedPosts = {
   "posts": [
     {
+      "day": 244,
+      "title": "Writing an Incident Handler Journal Entry for a Ransomware Scenario With the Five W’s",
+      "summary": "I completed an incident-handler journal entry about a fictional ransomware incident at a small healthcare clinic. The important lesson was not memorizing ransomware terminology. It was learning how to turn an alarming…",
+      "date": "2026-10-02",
+      "url": "https://juribuora.github.io/blog/2026/10/02/day-244.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "incidentresponse",
+        "ransomware",
+        "phishing",
+        "soc",
+        "learningprocess"
+      ],
+      "slug": "day-244",
+      "sourcePath": "Blog/_posts/2026-10-02-day-244.md",
+      "contentPath": "/generated/posts/blog/244.json"
+    },
+    {
       "day": 243,
       "title": "Building a Work Summary Tool That Says 'Not Proven' When Evidence Is Missing",
       "summary": "I worked on a local Resolver that summarizes open Codex and Claude work from historical sources. The security lesson was that a useful summary must preserve uncertainty instead of turning an inventory, a title, or an AI…",
@@ -4468,6 +4487,26 @@ export const jekyllSnapshot: LoadedPosts = {
   ],
   "labs": [
     {
+      "day": 35,
+      "title": "Write an Incident Handler Journal Entry",
+      "summary": "A structured incident record for a training ransomware scenario at a small clinic: who, what, when, where and why, plus the questions that still need evidence.",
+      "date": "2026-10-02",
+      "url": "https://juribuora.github.io/labs/2026/10/02/lab-35-day-244.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "incidentresponse",
+        "ransomware",
+        "phishing",
+        "soc",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-35-day-244",
+      "sourcePath": "Labs/_posts/2026-10-02-lab-35-day-244.md",
+      "contentPath": "/generated/posts/lab/35.json"
+    },
+    {
       "day": 34,
       "title": "Building a Status Importer That Rejects Stale Data and Unproven Completion Claims",
       "summary": "A local importer that accepts only the metadata a status brief needs, rejects stale or content-bearing records, and will not claim work is done without an artifact.",
@@ -5713,6 +5752,7 @@ export const jekyllSnapshot: LoadedPosts = {
     "performanceengineering",
     "permissionmodel",
     "permissions",
+    "phishing",
     "pki",
     "policyenforcement",
     "portfolio",
@@ -5729,6 +5769,7 @@ export const jekyllSnapshot: LoadedPosts = {
     "qualitygates",
     "raceconditions",
     "rag",
+    "ransomware",
     "rbenv",
     "recovery",
     "redteaming",
@@ -5761,6 +5802,7 @@ export const jekyllSnapshot: LoadedPosts = {
     "shadowdeployment",
     "shadowmode",
     "skillcuration",
+    "soc",
     "socialengineering",
     "sql",
     "sqlite",

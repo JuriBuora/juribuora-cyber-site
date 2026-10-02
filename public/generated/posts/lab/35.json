@@ -1,0 +1,19 @@
+{
+  "day": 35,
+  "title": "Write an Incident Handler Journal Entry",
+  "date": "2026-10-02",
+  "url": "https://juribuora.github.io/labs/2026/10/02/lab-35-day-244.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "incidentresponse",
+    "ransomware",
+    "phishing",
+    "soc",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-35-day-244",
+  "sourcePath": "Labs/_posts/2026-10-02-lab-35-day-244.md",
+  "content": "## Lab Objective\n\nCreate a structured incident record from a synthetic ransomware scenario and separate confirmed scenario facts from questions requiring technical evidence.\n\n## Scenario\n\nA small healthcare clinic receives a targeted phishing email with a malicious attachment. An employee opens it, malware executes, ransomware encrypts networked files, and the attacker demands payment. Patient data may also have been copied before encryption.\n\n## Procedure\n\n1. Record the date, incident description, and tools used. If no tool was used, write that explicitly.\n2. Answer who, what, when, where, and why using only the supplied scenario.\n3. List the initial access vector and the affected assets.\n4. Write unanswered questions about the first endpoint, spread, backups, and possible exfiltration.\n5. Add containment and evidence-preservation actions without claiming they were performed.\n\n## Expected Evidence\n\nThe completed journal should contain a concise incident narrative, an explicit phishing hypothesis, a scope question for endpoint and file activity, and a recovery question for isolated backups. It should not claim a live compromise or a confirmed data breach.\n\n## Security Takeaways\n\nThe five W’s create a reliable starting point. They are not a substitute for endpoint, identity, network, email, and backup evidence. A useful incident note makes the next investigation step obvious.\n\n<!-- 01-10-2026 22:36 -->\n"
+}
