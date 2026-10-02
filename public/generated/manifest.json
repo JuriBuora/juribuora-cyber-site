@@ -5210,7 +5210,7 @@
       "title": "PASTA Threat Model: Sneaker Marketplace Mobile App",
       "summary": "A practical PASTA threat-modeling exercise for a mobile sneaker marketplace, covering business objectives, architecture, data flows, threats, vulnerabilities, attack paths, and mitigations.",
       "date": "2026-10-01",
-      "url": "https://juribuora.github.io/portfolio-material/2026/10/01/pasta-threat-model-case-study.html",
+      "url": "https://juribuora.github.io/portfolio-material/2026/10/01/pasta-threat-model-sneaker-marketplace.html",
       "category": "portfolio",
       "tags": [
         "cybersecurity",
