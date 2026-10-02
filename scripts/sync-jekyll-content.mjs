@@ -167,11 +167,12 @@ function deriveDay(filename, frontMatter, category) {
   return firstMatch(DAY_PATTERNS, stem);
 }
 
-function jekyllUrlFor(date, filename, urlPrefix) {
+function jekyllUrlFor(date, filename, urlPrefix, customSlug) {
   const [year, month, day] = date.split("-");
-  const slug = filename
-    .replace(/\.(?:md|markdown)$/i, "")
-    .replace(/^\d{4}-\d{2}-\d{2}-/, "");
+  // Jekyll builds the address from the post's own `slug` when it has one.
+  const slug =
+    (typeof customSlug === "string" && customSlug.trim()) ||
+    filename.replace(/\.(?:md|markdown)$/i, "").replace(/^\d{4}-\d{2}-\d{2}-/, "");
 
   return `${UPSTREAM.site}/${urlPrefix}/${year}/${month}/${day}/${slug}.html`;
 }
@@ -275,7 +276,7 @@ async function buildSnapshot() {
       day,
       title,
       date,
-      url: jekyllUrlFor(date, filename, folderConfig.urlPrefix),
+      url: jekyllUrlFor(date, filename, folderConfig.urlPrefix, frontMatter.slug),
       category: folderConfig.category,
       tags,
       slug,

@@ -24,6 +24,8 @@ Public React/Vite site for [juribuora.com](https://juribuora.com/). It presents 
 
 A post dated in the future can be pushed to the blog repository at any time. The content sync (`scripts/sync-jekyll-content.mjs`, rule in `scripts/release-date.mjs`) leaves out anything dated after today in Italy and prints what it held back, so the daily build publishes each post on its own date. To rehearse a later day locally: `SYNC_TODAY=2026-10-04 npm run build && npm test`, then run a normal build again before committing the generated files.
 
+The daily build cannot be trusted to happen: GitHub's schedule is best-effort and went three weeks without firing here. `scripts/release-due-posts.py` closes that gap from the author's Mac. Every half hour it compares the posts due today (from the published blog branch) with what the two live sites show, and starts the GitHub builds only when something is missing, at most three times a day per site. Install or update it with `scripts/install-release-agent.sh`, check it with `scripts/install-release-agent.sh --status`, and try it without side effects with `python3 scripts/release-due-posts.py --check`. Its tests: `python3 -m unittest scripts/test_release_due_posts.py`.
+
 ## Showcase pages
 
 - `/what-im-doing` is the short, outcome-first page. Content lives in `src/data/doing.ts`.
