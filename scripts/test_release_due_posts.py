@@ -2,6 +2,7 @@
 import datetime as dt
 import importlib.util
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 spec = importlib.util.spec_from_file_location("release", Path(__file__).with_name("release-due-posts.py"))
@@ -22,6 +23,14 @@ PATHS = [
 
 
 class ReleaseRules(unittest.TestCase):
+    def test_linux_state_and_notification_do_not_use_macos(self):
+        with patch.object(release.sys, "platform", "linux"), patch.dict(release.os.environ, {"XDG_STATE_HOME": "/tmp/release-test-state"}):
+            self.assertEqual(release.default_state_dir(), Path("/tmp/release-test-state/juribuora-release"))
+            with patch.object(release.subprocess, "run") as run, patch.object(release, "log") as log:
+                release.notify("build failed")
+                run.assert_not_called()
+                log.assert_called_once_with("ATTENTION build failed")
+
     def test_today_is_the_date_in_italy(self):
         utc = dt.timezone.utc
         self.assertEqual(release.today_in_rome(dt.datetime(2026, 10, 1, 22, 30, tzinfo=utc)), "2026-10-02")

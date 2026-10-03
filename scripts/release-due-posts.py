@@ -22,6 +22,7 @@ import datetime as dt
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import urllib.error
@@ -51,10 +52,16 @@ WINDOW_DAYS = 14
 # A post that cannot build must not be retried all day.
 MAX_DISPATCHES_PER_DAY = 3
 
-STATE_DIR = Path.home() / "Library" / "Application Support" / "juribuora-release"
+def default_state_dir() -> Path:
+    if sys.platform == "darwin":
+        return Path.home() / "Library" / "Application Support" / "juribuora-release"
+    return Path(os.environ.get("XDG_STATE_HOME", str(Path.home() / ".local/state"))) / "juribuora-release"
+
+
+STATE_DIR = Path(os.environ.get("RELEASE_STATE_DIR", str(default_state_dir())))
 STATE_FILE = STATE_DIR / "state.json"
 FORCE_FILE = STATE_DIR / "force-once"
-GH = os.environ.get("GH_BIN", "/opt/homebrew/bin/gh")
+GH = os.environ.get("GH_BIN") or shutil.which("gh") or "gh"
 
 
 def today_in_rome(now: dt.datetime | None = None) -> str:
@@ -145,6 +152,9 @@ def run_is_active(repo: str, workflow: str) -> bool:
 
 
 def notify(message: str) -> None:
+    if sys.platform != "darwin":
+        log(f"ATTENTION {message}")
+        return
     script = f'display notification {json.dumps(message)} with title "juribuora.com release"'
     subprocess.run(["/usr/bin/osascript", "-e", script], capture_output=True, timeout=20)
 

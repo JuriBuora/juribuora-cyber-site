@@ -79,3 +79,11 @@ The home page prerenders the 50 newest posts (`POSTS_PER_STEP` in `src/lib/postW
 Snapshot modules remain lazy: only the current post module loads at startup. Tests boot the real app against a built shell with runtime JSON unavailable and compare every emitted snapshot module with its source JSON. The extra import index adds about 4.4 kB gzip to the entry chunk; post bodies stay in separate chunks.
 
 01-10-2026 20:24
+
+### Linux release scheduler
+
+`scripts/install-release-timer.sh` prepares an independent systemd timer on an always-on Linux host. Install GitHub CLI and authenticate as the owner with `gh auth login`, then run the installer as that owner (not root). It refuses activation until authentication and a read-only live check succeed. The system timer runs every half hour and catches up after downtime, without requiring a login session. Use `--status` to inspect enablement, execution and journal; `--uninstall` removes the units. Code is pinned to a committed release. Linux state lives in `~/.local/state/juribuora-release`; failures are recorded in the system journal.
+
+Keep the Mac scheduler active until a real systemd-started run and both GitHub builds have been verified. Then uninstall the Mac scheduler to avoid independent hosts racing to dispatch the same build. GitHub cron stays as backup.
+
+03-10-2026 23:30
