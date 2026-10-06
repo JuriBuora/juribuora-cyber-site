@@ -1,0 +1,19 @@
+{
+  "day": 37,
+  "title": "Triage a Training Packet Capture with Wireshark",
+  "date": "2026-10-05",
+  "url": "https://juribuora.github.io/labs/2026/10/05/lab-37-day-247.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "wireshark",
+    "packetanalysis",
+    "networksecurity",
+    "incidentresponse",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-37-day-247",
+  "sourcePath": "Labs/_posts/2026-10-05-lab-37-day-247.md",
+  "content": "## Lab Objective\n\nPractise the first stage of network triage: turn a packet capture into a short, evidence-based observation that another analyst can reproduce.\n\nThis is a training exercise using a supplied capture. Do not capture or inspect traffic you are not authorised to handle.\n\n## Setup\n\n- Wireshark installed on a lab machine\n- The course-provided `sample.pcap` file\n- A notes file for recording frame number, timestamp, endpoints, protocol, and uncertainty\n\nOn Windows, packet capture may require an approved driver such as Npcap. The course screenshot showed Wireshark warning that no packet-capture driver was installed on that environment; opening an existing capture does not require starting a new live capture.\n\n## Procedure\n\n1. Open `sample.pcap` in Wireshark.\n2. Confirm the packet count and note the columns visible in the packet list.\n3. Identify a row labelled SSH or another protocol relevant to the exercise.\n4. Select the row and expand Ethernet, Internet Protocol, Transmission Control Protocol, and the application protocol sections.\n5. Record the frame number, timestamp, source and destination addresses, transport ports, protocol, and packet length.\n6. Compare the selected frame with nearby frames to establish direction and sequence.\n7. If using a display filter, write down the exact filter and verify that it changes the displayed set as expected.\n8. Write two separate conclusions: what the packet proves, and what additional evidence would be needed to decide whether the traffic is suspicious.\n\n## Expected Evidence\n\nThe supplied exercise contains a 200-packet view with visible SSH/TCP traffic. A valid result should include a selected frame and a short record such as:\n\n```text\nObserved: the selected frame decodes as Ethernet -> IPv4 -> TCP -> SSH.\nObserved: the transport conversation uses TCP port 22 on one side.\nNot proved: whether the session was authorised or malicious.\n```\n\nDo not publish real endpoint identities or credentials. Use synthetic labels in your notes if the capture contains identifying data.\n\n## Security Takeaway\n\nPacket analysis is strongest when it separates observation from interpretation. A protocol label can guide the investigation, but it is not a verdict about intent or compromise.\n"
+}

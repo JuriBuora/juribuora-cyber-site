@@ -1,0 +1,18 @@
+{
+  "day": 245,
+  "title": "Studying How a SOC Hands Alerts From Tier 1 to Tier 3 and Managers",
+  "date": "2026-10-03",
+  "url": "https://juribuora.github.io/blog/2026/10/03/day-245.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "soc",
+    "securityoperations",
+    "alerttriage",
+    "escalation",
+    "learningprocess"
+  ],
+  "slug": "day-245",
+  "sourcePath": "Blog/_posts/2026-10-03-day-245.md",
+  "content": "# 🔄 Topic\n\nI studied how a Security Operations Center divides work between Tier 1, Tier 2, Tier 3, leads, and managers. The useful insight was that the tiers form an escalation and decision system, not a ranking of who is “better” at security.\n\n# 🎯 Goal\n\nUnderstand what information should move with an alert as it progresses from initial review to deeper investigation and leadership decision-making.\n\n# 🛠 What I Learned\n\nTier 1 analysts monitor, review, prioritize, create, close, and escalate alerts. Their value is disciplined triage: identify what arrived, assess severity and context, document the decision, and move cases that need deeper work.\n\nTier 2 analysts investigate escalated cases in more depth. They correlate identity, endpoint, network, and application evidence, test hypotheses, and determine whether an alert is a false positive, suspicious activity, or a confirmed incident.\n\nTier 3 analysts and SOC leads handle advanced investigation, detection improvement, threat hunting, and complex response decisions. Managers provide staffing, priorities, risk communication, and operational accountability. The boundaries vary by organization, but the core lesson remains: every handoff needs evidence, scope, ownership, and a clear next action.\n\n# 🔗 Key Cybersecurity Connections\n\n- alert severity is not the same as incident certainty\n- escalation should preserve evidence and reasoning\n- ticket closure is a decision that needs a documented basis\n- metrics should measure useful outcomes, not only ticket volume\n- detection engineering improves when investigators feed lessons back into rules\n\n## 🔍 Investigation Questions\n\n- What did the first analyst observe, and what remains unknown?\n- Why was the alert escalated or closed?\n- Which evidence has already been checked?\n- What exact question is the next tier expected to answer?\n- Can a manager understand risk without reading the entire raw alert stream?\n\n## 🚨 Detection Opportunities\n\nA mature SOC monitors repeated false positives, alerts that remain unowned, escalations without evidence, repeated user or host pivots, and cases closed without a stated disposition. These are workflow signals as well as security signals.\n\n# 🧭 MITRE ATT&CK Techniques\n\nNo direct ATT&CK mapping is claimed. This post concerns SOC operating structure and investigative handoffs rather than an observed adversary technique.\n\n# ⚠ Challenges\n\nIt is easy to describe Tier 1 as “basic” and Tier 3 as “advanced.” That framing misses the security control represented by consistent first-line triage. Poorly documented early decisions create more work and can hide real incidents.\n\n# 📚 What I Learned\n\nA SOC is a chain of evidence-preserving decisions. The quality of an escalation depends less on the job title of the sender than on whether the next analyst receives a clear question, useful context, and an honest statement of uncertainty.\n\n# ➡ Next Steps\n\n- practise writing escalation notes from synthetic alerts\n- compare alert closure reasons with the evidence actually available\n- map a sample case from detection through response and lessons learned\n\n<!-- 01-10-2026 22:36 -->\n"
+}

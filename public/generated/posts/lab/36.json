@@ -1,0 +1,20 @@
+{
+  "day": 36,
+  "title": "Threat Model a Sneaker Marketplace with PASTA",
+  "date": "2026-10-04",
+  "url": "https://juribuora.github.io/labs/2026/10/04/lab-36-day-246.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "threatmodeling",
+    "pasta",
+    "applicationsecurity",
+    "sqlinjection",
+    "api",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-36-day-246",
+  "sourcePath": "Labs/_posts/2026-10-04-lab-36-day-246.md",
+  "content": "## Lab Objective\n\nUse the seven PASTA stages to model a fictional mobile sneaker marketplace and connect business objectives to technical risks, attack paths, controls, and detection telemetry.\n\n## Environment and Materials\n\n- a written PASTA worksheet\n- a data-flow diagram for product search and purchase processing\n- an attack tree for user-data compromise\n- a temporary Markdown report or notebook\n\nNo live application, API, database, or payment provider is required.\n\n## Procedure\n\n1. Define business and security objectives for accounts, listings, messaging, purchasing, and payment-related processing.\n2. Define the technical scope: mobile client, APIs, authentication, application server, SQL database, encryption, and payment provider.\n3. Draw the application decomposition and mark trust boundaries.\n4. Identify at least two threats, such as SQL injection and credential theft.\n5. Identify enabling vulnerabilities, such as unsafe SQL construction or missing object-level authorization.\n6. Build attack paths from attacker input to business impact.\n7. Select controls and telemetry that reduce risk and support detection.\n\n## Expected Evidence\n\nThe result should include a data-flow diagram, an attack tree, a risk/control matrix, and explicit limitations. A threat model identifies assumptions to validate; it does not prove that a live system is vulnerable.\n\n## Security Takeaways\n\nPASTA keeps application security connected to business impact. Parameterized queries, strong authentication, server-side authorization, least privilege, encryption, and monitoring work together across trust boundaries.\n\n<!-- 01-10-2026 22:36 -->\n"
+}

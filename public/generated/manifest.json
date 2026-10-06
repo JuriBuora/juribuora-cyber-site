@@ -1,6 +1,86 @@
 {
   "posts": [
     {
+      "day": 248,
+      "title": "Reading IPv4 and IPv6 Headers Without Guessing",
+      "summary": "I studied the structure of IPv4 and IPv6 headers and connected the diagram fields to the decoded packet view in Wireshark.",
+      "date": "2026-10-06",
+      "url": "https://juribuora.github.io/blog/2026/10/06/day-248.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "ipv4",
+        "ipv6",
+        "wireshark",
+        "networksecurity",
+        "googlecert",
+        "learningprocess"
+      ],
+      "slug": "day-248",
+      "sourcePath": "Blog/_posts/2026-10-06-day-248.md",
+      "contentPath": "/generated/posts/blog/248.json"
+    },
+    {
+      "day": 247,
+      "title": "Using Wireshark to Turn Packets Into Security Evidence",
+      "summary": "I opened a supplied sample capture in Wireshark and learned to move from a packet list to defensible observations about Ethernet, IPv4, TCP, and SSH.",
+      "date": "2026-10-05",
+      "url": "https://juribuora.github.io/blog/2026/10/05/day-247.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "wireshark",
+        "networksecurity",
+        "packetanalysis",
+        "incidentresponse",
+        "googlecert",
+        "learningprocess"
+      ],
+      "slug": "day-247",
+      "sourcePath": "Blog/_posts/2026-10-05-day-247.md",
+      "contentPath": "/generated/posts/blog/247.json"
+    },
+    {
+      "day": 246,
+      "title": "Building a PASTA Threat Model for a Fictional Sneaker Marketplace App",
+      "summary": "I completed a PASTA threat-modeling exercise for a fictional sneaker marketplace mobile app. The exercise connected business objectives to data flows, trust boundaries, attack paths, and controls.",
+      "date": "2026-10-04",
+      "url": "https://juribuora.github.io/blog/2026/10/04/day-246.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "threatmodeling",
+        "pasta",
+        "applicationsecurity",
+        "api",
+        "sqlinjection",
+        "learningprocess"
+      ],
+      "slug": "day-246",
+      "sourcePath": "Blog/_posts/2026-10-04-day-246.md",
+      "contentPath": "/generated/posts/blog/246.json"
+    },
+    {
+      "day": 245,
+      "title": "Studying How a SOC Hands Alerts From Tier 1 to Tier 3 and Managers",
+      "summary": "I studied how a Security Operations Center divides work between Tier 1, Tier 2, Tier 3, leads, and managers. The useful insight was that the tiers form an escalation and decision system, not a ranking of who is “better”…",
+      "date": "2026-10-03",
+      "url": "https://juribuora.github.io/blog/2026/10/03/day-245.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "soc",
+        "securityoperations",
+        "alerttriage",
+        "escalation",
+        "learningprocess"
+      ],
+      "slug": "day-245",
+      "sourcePath": "Blog/_posts/2026-10-03-day-245.md",
+      "contentPath": "/generated/posts/blog/245.json"
+    },
+    {
       "day": 244,
       "title": "Writing an Incident Handler Journal Entry for a Ransomware Scenario With the Five W’s",
       "summary": "I completed an incident-handler journal entry about a fictional ransomware incident at a small healthcare clinic. The important lesson was not memorizing ransomware terminology. It was learning how to turn an alarming…",
@@ -4484,6 +4564,68 @@
   ],
   "labs": [
     {
+      "day": 40,
+      "title": "Verify Message Integrity and Channel Authorization with Synthetic Fixtures",
+      "summary": "Run a no-send acceptance check for a multi-channel assistant and verify that authorised owner actions pass while forged origins, ambiguous identities, routing errors, and ordering failures are rejected.",
+      "date": "2026-10-06",
+      "url": "https://juribuora.github.io/labs/2026/10/06/lab-40-day-248-hermes-message-integrity.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "authorization",
+        "messageintegrity",
+        "accesscontrol",
+        "aiagents",
+        "testing",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-40-day-248-hermes-message-integrity",
+      "sourcePath": "Labs/_posts/2026-10-06-lab-40-day-248-hermes-message-integrity.md",
+      "contentPath": "/generated/posts/lab/40.json"
+    },
+    {
+      "day": 37,
+      "title": "Triage a Training Packet Capture with Wireshark",
+      "summary": "Open a supplied sample.pcap file, isolate a candidate conversation, inspect Ethernet/IP/TCP/SSH fields, and record observations without claiming intent from one packet.",
+      "date": "2026-10-05",
+      "url": "https://juribuora.github.io/labs/2026/10/05/lab-37-day-247.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "wireshark",
+        "packetanalysis",
+        "networksecurity",
+        "incidentresponse",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-37-day-247",
+      "sourcePath": "Labs/_posts/2026-10-05-lab-37-day-247.md",
+      "contentPath": "/generated/posts/lab/37.json"
+    },
+    {
+      "day": 36,
+      "title": "Threat Model a Sneaker Marketplace with PASTA",
+      "summary": "The seven PASTA stages applied to a fictional sneaker marketplace app: objectives, data flows and trust boundaries, two threats, attack paths, controls and what to log.",
+      "date": "2026-10-04",
+      "url": "https://juribuora.github.io/labs/2026/10/04/lab-36-day-246.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "threatmodeling",
+        "pasta",
+        "applicationsecurity",
+        "sqlinjection",
+        "api",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-36-day-246",
+      "sourcePath": "Labs/_posts/2026-10-04-lab-36-day-246.md",
+      "contentPath": "/generated/posts/lab/36.json"
+    },
+    {
       "day": 35,
       "title": "Write an Incident Handler Journal Entry",
       "summary": "A structured incident record for a training ransomware scenario at a small clinic: who, what, when, where and why, plus the questions that still need evidence.",
@@ -5206,6 +5348,25 @@
   ],
   "portfolio": [
     {
+      "day": 11,
+      "title": "From Packet Capture to Security Handoff: Wireshark Triage Case Study",
+      "summary": "A training case study showing how I used Wireshark and a supplied sample capture to record network observations, separate facts from interpretation, and prepare a defensible SOC handoff.",
+      "date": "2026-10-05",
+      "url": "https://juribuora.github.io/portfolio-material/2026/10/05/wireshark-packet-triage-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "cybersecurity",
+        "wireshark",
+        "packet-analysis",
+        "network-security",
+        "incident-response",
+        "evidence"
+      ],
+      "slug": "wireshark-packet-triage-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-10-05-wireshark-packet-triage-case-study.md",
+      "contentPath": "/generated/posts/portfolio/11.json"
+    },
+    {
       "day": 10,
       "title": "PASTA Threat Model: Sneaker Marketplace Mobile App",
       "summary": "A practical PASTA threat-modeling exercise for a mobile sneaker marketplace, covering business objectives, architecture, data flows, threats, vulnerabilities, attack paths, and mitigations.",
@@ -5393,6 +5554,26 @@
   ],
   "reports": [
     {
+      "day": 10,
+      "title": "Training Report: Wireshark Packet-Capture Triage and Evidence Handoff",
+      "summary": "A bounded training report on inspecting a supplied sample.pcap in Wireshark, documenting visible network facts, and identifying what the capture cannot prove.",
+      "date": "2026-10-05",
+      "url": "https://juribuora.github.io/reports/2026/10/05/training-packet-capture-triage.html",
+      "category": "report",
+      "tags": [
+        "cybersecurity",
+        "reports",
+        "wireshark",
+        "packetanalysis",
+        "networksecurity",
+        "incidentresponse",
+        "evidence"
+      ],
+      "slug": "training-packet-capture-triage",
+      "sourcePath": "Reports/_posts/2026-10-05-training-packet-capture-triage.md",
+      "contentPath": "/generated/posts/report/10.json"
+    },
+    {
       "day": 9,
       "title": "Risk Assessment of My AI Agent Workstation Using NIST SP 800-30",
       "summary": "A qualitative risk assessment of the system I run: twelve risks identified, scored for likelihood and impact, ranked, and paired with a treatment. Likelihood is grounded in incidents that actually happened here.",
@@ -5577,6 +5758,9 @@
     "aiagents",
     "aios",
     "aisecurity",
+    "alerttriage",
+    "api",
+    "applicationsecurity",
     "approvals",
     "approvalworkflow",
     "appsec",
@@ -5651,6 +5835,7 @@
     "emailsecurity",
     "encryption",
     "endpointsecurity",
+    "escalation",
     "evaluation",
     "evidence",
     "evidencebased",
@@ -5689,6 +5874,8 @@
     "inputvalidation",
     "integrity",
     "ios",
+    "ipv4",
+    "ipv6",
     "isolation",
     "javascript",
     "jekyll",
@@ -5722,6 +5909,7 @@
     "mariadb",
     "mcp",
     "memorysecurity",
+    "messageintegrity",
     "mitre",
     "mobilesecurity",
     "monitoring",
@@ -5742,8 +5930,10 @@
     "outputvalidation",
     "owasp",
     "packagemanagement",
+    "packetanalysis",
     "packets",
     "parallels",
+    "pasta",
     "pathtraversal",
     "patternrecognition",
     "performanceengineering",
@@ -5802,6 +5992,7 @@
     "soc",
     "socialengineering",
     "sql",
+    "sqlinjection",
     "sqlite",
     "ssh",
     "ssrf",
@@ -5818,6 +6009,7 @@
     "testing",
     "threathunting",
     "threatintelligence",
+    "threatmodeling",
     "timesecurity",
     "tokenrotation",
     "toolevaluation",
@@ -5845,6 +6037,7 @@
     "whatsapp",
     "windows",
     "windows11",
+    "wireshark",
     "workflow",
     "worktrees",
     "zeroday"
