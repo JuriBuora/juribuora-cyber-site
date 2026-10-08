@@ -1,6 +1,48 @@
 {
   "posts": [
     {
+      "day": 250,
+      "title": "How a CSIRT and SOC Move an Incident Without Losing Context",
+      "summary": "I studied the responsibilities of security analysts, technical leads, incident coordinators, SOC tiers, and managers, and learned why escalation is a coordination system rather than a status ladder.",
+      "date": "2026-10-08",
+      "url": "https://juribuora.github.io/blog/2026/10/08/day-250.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "csirt",
+        "soc",
+        "incidentresponse",
+        "alerttriage",
+        "escalation",
+        "googlecert",
+        "learningprocess"
+      ],
+      "slug": "day-250",
+      "sourcePath": "Blog/_posts/2026-10-08-day-250.md",
+      "contentPath": "/generated/posts/blog/250.json"
+    },
+    {
+      "day": 249,
+      "title": "IDS and IPS: The Difference Between Seeing and Stopping",
+      "summary": "I studied how intrusion detection and intrusion prevention systems differ, and why an alerting control and a blocking control need different evidence and safety expectations.",
+      "date": "2026-10-07",
+      "url": "https://juribuora.github.io/blog/2026/10/07/day-249.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "ids",
+        "ips",
+        "detectionengineering",
+        "networksecurity",
+        "soc",
+        "googlecert",
+        "learningprocess"
+      ],
+      "slug": "day-249",
+      "sourcePath": "Blog/_posts/2026-10-07-day-249.md",
+      "contentPath": "/generated/posts/blog/249.json"
+    },
+    {
       "day": 248,
       "title": "Reading IPv4 and IPv6 Headers Without Guessing",
       "summary": "I studied the structure of IPv4 and IPv6 headers and connected the diagram fields to the decoded packet view in Wireshark.",
@@ -4585,6 +4627,27 @@
       "contentPath": "/generated/posts/lab/40.json"
     },
     {
+      "day": 38,
+      "title": "Build a CSIRT and SOC Escalation Handoff",
+      "summary": "Practise moving one simulated alert from L1 triage through deeper investigation, technical leadership, coordination, and management reporting while preserving evidence and uncertainty.",
+      "date": "2026-10-08",
+      "url": "https://juribuora.github.io/labs/2026/10/08/lab-38-day-250.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "csirt",
+        "soc",
+        "incidentresponse",
+        "alerttriage",
+        "escalation",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-38-day-250",
+      "sourcePath": "Labs/_posts/2026-10-08-lab-38-day-250.md",
+      "contentPath": "/generated/posts/lab/38.json"
+    },
+    {
       "day": 37,
       "title": "Triage a Training Packet Capture with Wireshark",
       "summary": "Open a supplied sample.pcap file, isolate a candidate conversation, inspect Ethernet/IP/TCP/SSH fields, and record observations without claiming intent from one packet.",
@@ -5802,6 +5865,7 @@
     "credentialhygiene",
     "cron",
     "cryptography",
+    "csirt",
     "css",
     "cve",
     "cybersecurity",
@@ -5868,12 +5932,14 @@
     "identityresolution",
     "identityspoofing",
     "identityverification",
+    "ids",
     "incidentresponse",
     "independentreview",
     "informationsecurity",
     "inputvalidation",
     "integrity",
     "ios",
+    "ips",
     "ipv4",
     "ipv6",
     "isolation",

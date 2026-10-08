@@ -1,0 +1,20 @@
+{
+  "day": 38,
+  "title": "Build a CSIRT and SOC Escalation Handoff",
+  "date": "2026-10-08",
+  "url": "https://juribuora.github.io/labs/2026/10/08/lab-38-day-250.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "csirt",
+    "soc",
+    "incidentresponse",
+    "alerttriage",
+    "escalation",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-38-day-250",
+  "sourcePath": "Labs/_posts/2026-10-08-lab-38-day-250.md",
+  "content": "## Lab Objective\n\nPractise the human workflow of a security incident: triage an alert, escalate it with context, assign technical and coordination responsibilities, and produce a concise management update.\n\nUse a fictional organisation and synthetic data. This is not a real incident.\n\n## Scenario\n\nA monitoring tool reports an unusual SSH login to a fictional server. The alert contains a timestamp, a synthetic source address, a username, and a host identifier. No conclusion has been made yet.\n\n## Procedure\n\n1. **L1 triage:** record the alert source, time, asset, account, initial severity, and the exact reason it was raised.\n2. **Evidence check:** list what is known, what is missing, and which log or owner could confirm each missing fact.\n3. **L2 investigation:** compare nearby authentication events, expected maintenance windows, and the account's normal activity. Record evidence, not guesses.\n4. **L3 or technical-lead decision:** decide whether containment is warranted in the fictional environment and document the reason, scope, and rollback path.\n5. **Incident coordination:** write a handoff that identifies technical owners, business stakeholders, communication needs, and the next review time.\n6. **Manager update:** produce a short status report with impact, current confidence, actions taken, open risks, and next decision.\n\n## Expected Evidence\n\nThe completed exercise should contain one ticket or Markdown record with:\n\n- a timeline;\n- the original observation;\n- investigation steps and results;\n- an explicit confidence or uncertainty statement;\n- the reason for escalation;\n- named fictional roles for technical lead, incident coordinator, and manager;\n- a next action and owner.\n\n## Security Takeaway\n\nEscalation is not a status ladder. It is a transfer of context and authority. If the next role receives only “high severity,” the process has moved the alert but not the investigation.\n"
+}
