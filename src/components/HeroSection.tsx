@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroBgWide from "@/assets/hero-bg-1600.webp";
 import heroBgNarrow from "@/assets/hero-bg-800.webp";
@@ -39,14 +40,18 @@ const HeroSection = () => {
           </span>
         </div>
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-          From Zero to{" "}
-          <span className="text-primary text-glow">Cybersecurity</span>
+          Linux, automation{" "}
+          <span className="text-primary text-glow">& security</span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-          A public, structured learning log documenting the journey into
-          cybersecurity — what I study, build, break, misunderstand, and
-          eventually learn to do properly.
+          I build and operate Linux services, practical automations and AI integrations,
+          with a focus on security and checking that the result actually works.
+          Preparing for a junior role in IT operations, automation or security.
         </p>
+        <div className="mb-8 flex flex-wrap justify-center gap-4 text-sm">
+          <Link to="/portfolio" className="rounded-full bg-primary px-5 py-2.5 font-medium text-primary-foreground hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">Explore selected work</Link>
+          <Link to="/what-im-doing" className="rounded-full border border-border px-5 py-2.5 text-foreground hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">What I’m doing · EN / IT</Link>
+        </div>
         <div className="flex flex-wrap gap-3 justify-center font-mono text-sm text-terminal-dim">
           <span className="border border-border rounded px-3 py-1">{posts.length} daily logs</span>
           <span className="border border-border rounded px-3 py-1">{labs.length} labs</span>

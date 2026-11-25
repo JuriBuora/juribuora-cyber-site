@@ -55,6 +55,17 @@ const PlainRolePage = () => {
               </button>
             </div>
 
+            <aside aria-labelledby="historical-context" className="mt-8 rounded-2xl border border-border bg-card p-5">
+              <h2 id="historical-context" className="text-sm font-semibold text-foreground">{t.roleHistoryTitle}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.roleHistoryBody}</p>
+              <Link
+                to="/what-im-doing"
+                className={`mt-3 inline-flex items-center gap-2 text-sm font-medium text-primary underline underline-offset-4 ${focus}`}
+              >
+                {t.roleHistoryLink} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </aside>
+
             <div className="mt-10 flex items-center gap-4">
               <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-3xl bg-primary/10">
                 <Icon className="h-7 w-7 text-primary" aria-hidden="true" />

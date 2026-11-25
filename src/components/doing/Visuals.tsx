@@ -12,20 +12,20 @@ const text = {
   en: {
     illustrative: "Illustrative example",
     report: {
-      aria: "Example website check-up report with five checks and their status",
-      title: "Website check-up",
+      aria: "Illustrative migration review: source, install, runtime and downstream result",
+      title: "Service review",
       rows: [
-        ["HTTPS and certificate", "ok", "Valid and not expiring soon"],
-        ["Browser protections", "warn", "Two recommended headers missing"],
-        ["Mobile usability", "ok", "Readable and tappable"],
-        ["Speed", "fix", "Home page is heavier than it needs to be"],
-        ["Broken links", "ok", "None found"],
+        ["Source identity", "ok", "Selected files compared"],
+        ["Dependencies", "warn", "Optional services explicit"],
+        ["Runtime", "ok", "Heartbeat observed"],
+        ["Downstream outcome", "warn", "Requires a separate acceptance test"],
+        ["Evidence date", "ok", "Record the observation time"],
       ] as [string, State, string][],
       state: { ok: "Good", warn: "Improve", fix: "Fix first" },
     },
     shapes: {
-      aria: "Four of the thirty-four failure shapes in the Foresight catalogue",
-      title: "4 of 34 failure shapes",
+      aria: "Four failure shapes from the September 2026 Foresight catalogue",
+      title: "4 failure shapes · Sep 2026",
       rows: [
         ["Two writers, one surface", "Two jobs greet the same person"],
         ["Exit code is not the outcome", "Command says success, nothing changed"],
@@ -36,26 +36,26 @@ const text = {
       caption: "Names are from the real catalogue; examples are paraphrased",
     },
     pipeline: {
-      aria: "Pipeline: model, filter, shaping, delivery. The filter blocks internal notices, leaked reasoning and echoed transcripts.",
-      steps: ["Model", "Filter", "Shaping", "Delivered"],
-      caught: "Caught at the filter",
-      stops: ["An internal error notice", "Model reasoning written out as the reply", "A transcript echoed back to the sender"],
-      caption: "Real defect classes found, paraphrased",
+      aria: "Illustrative calendar workflow: interpret, validate, write, read back.",
+      steps: ["Interpret", "Validate", "Write", "Read back"],
+      caught: "Checks before the action",
+      stops: ["Participants are explicit", "Dates resolved with a timezone", "Stored event compared with the request"],
+      caption: "Illustrative workflow; no real conversation",
     },
     funnel: {
-      aria: "Bar chart: 41 tasks, 25 failed with evidence, 8 completed, 2 distinct real tasks completed",
-      title: "Live trial, 18 Jul – 2 Aug 2026",
-      rows: ["Tasks in the live trial", "Failed, with evidence", "Completed", "Distinct real tasks"],
-      caption: "Real numbers from the trial database",
+      aria: "Illustrative video checks: producer progress, completed decode, positive frames and a dated receipt",
+      title: "Useful output checks",
+      rows: ["Producer is making progress", "Decode actually completed", "Decoded frames are present", "Result carries a timestamp"],
+      caption: "Illustrative checklist, not an operational dashboard",
     },
     rebind: {
-      aria: "Three steps: the check sees a public address, the browser later resolves a private one, the fix pins the checked address",
+      aria: "Illustrative device workflow: authorize, request, verify the physical result",
       steps: [
-        ["1. The check", "Safety check resolves the site: a public address. Passes."],
-        ["2. The load", "The browser resolves it again on its own: now a private address."],
-        ["3. The fix", "Pin the browser to the address that was checked, and verify it."],
+        ["1. Authorize", "The owner approves the intended action."],
+        ["2. Request", "A bounded request waits for service readiness."],
+        ["3. Verify", "Readiness, physical effect and useful work need different evidence."],
       ],
-      caption: "Simplified diagram of the finding",
+      caption: "Illustrative workflow; physical acceptance is separate",
     },
     deliverables: {
       aria: "Five client deliverables: four shipped or delivered, the migration itself paused",
@@ -73,20 +73,20 @@ const text = {
   it: {
     illustrative: "Esempio illustrativo",
     report: {
-      aria: "Esempio di rapporto di controllo del sito con cinque verifiche e il loro stato",
-      title: "Controllo del sito",
+      aria: "Revisione illustrativa di una migrazione: sorgente, installazione, runtime e risultato",
+      title: "Revisione del servizio",
       rows: [
-        ["HTTPS e certificato", "ok", "Valido e lontano dalla scadenza"],
-        ["Protezioni del browser", "warn", "Mancano due intestazioni consigliate"],
-        ["Uso da telefono", "ok", "Leggibile e facile da toccare"],
-        ["Velocità", "fix", "La pagina iniziale pesa più del necessario"],
-        ["Link rotti", "ok", "Nessuno trovato"],
+        ["Identità sorgente", "ok", "File selezionati confrontati"],
+        ["Dipendenze", "warn", "Servizi opzionali espliciti"],
+        ["Runtime", "ok", "Heartbeat osservato"],
+        ["Risultato finale", "warn", "Serve una prova di accettazione separata"],
+        ["Data della prova", "ok", "Annotare quando è stato osservato"],
       ] as [string, State, string][],
       state: { ok: "Bene", warn: "Da migliorare", fix: "Da sistemare subito" },
     },
     shapes: {
-      aria: "Quattro dei trentaquattro tipi di guasto nel catalogo Foresight",
-      title: "4 dei 34 tipi di guasto",
+      aria: "Quattro tipi di guasto dal catalogo Foresight di settembre 2026",
+      title: "4 tipi di guasto · set 2026",
       rows: [
         ["Due autori, una sola superficie", "Due processi salutano la stessa persona"],
         ["Il codice di uscita non è il risultato", "Il comando dice riuscito, niente è cambiato"],
@@ -97,26 +97,26 @@ const text = {
       caption: "I nomi vengono dal catalogo reale; gli esempi sono parafrasati",
     },
     pipeline: {
-      aria: "Percorso: modello, filtro, rifinitura, consegna. Il filtro blocca note interne, ragionamenti del modello e trascrizioni rimandate indietro.",
-      steps: ["Modello", "Filtro", "Rifinitura", "Consegnato"],
-      caught: "Fermati dal filtro",
-      stops: ["Un avviso interno di errore", "Il ragionamento del modello scritto come risposta", "Una trascrizione rimandata a chi l’ha inviata"],
-      caption: "Tipi di difetto realmente trovati, parafrasati",
+      aria: "Percorso illustrativo calendario: interpretare, validare, scrivere, rileggere.",
+      steps: ["Interpreta", "Valida", "Scrivi", "Rileggi"],
+      caught: "Controlli prima dell’azione",
+      stops: ["Partecipanti espliciti", "Date risolte con un fuso orario", "Evento salvato confrontato con la richiesta"],
+      caption: "Flusso illustrativo; nessuna conversazione reale",
     },
     funnel: {
-      aria: "Grafico a barre: 41 compiti, 25 falliti con prove, 8 completati, 2 compiti reali distinti completati",
-      title: "Prova dal vivo, 18 lug – 2 ago 2026",
-      rows: ["Compiti nella prova dal vivo", "Falliti, con prove", "Completati", "Compiti reali distinti"],
-      caption: "Numeri reali dal database della prova",
+      aria: "Controlli video illustrativi: avanzamento, decodifica completata, frame e ricevuta datata",
+      title: "Controlli sull’output utile",
+      rows: ["Il processo avanza", "La decodifica è completata", "Ci sono frame decodificati", "Il risultato ha una data"],
+      caption: "Lista illustrativa, non un pannello operativo",
     },
     rebind: {
-      aria: "Tre passi: il controllo vede un indirizzo pubblico, il browser poi ne risolve uno privato, la correzione fissa l’indirizzo controllato",
+      aria: "Flusso dispositivi illustrativo: autorizza, richiedi, verifica il risultato fisico",
       steps: [
-        ["1. Il controllo", "Il controllo di sicurezza risolve il sito: un indirizzo pubblico. Passa."],
-        ["2. Il caricamento", "Il browser lo risolve di nuovo per conto suo: ora è un indirizzo privato."],
-        ["3. La correzione", "Fissare il browser all’indirizzo che è stato controllato, e verificarlo."],
+        ["1. Autorizza", "L’owner approva l’azione prevista."],
+        ["2. Richiedi", "Una richiesta limitata attende la disponibilità del servizio."],
+        ["3. Verifica", "Disponibilità, effetto fisico e lavoro utile richiedono prove diverse."],
       ],
-      caption: "Schema semplificato del problema trovato",
+      caption: "Flusso illustrativo; accettazione fisica separata",
     },
     deliverables: {
       aria: "Cinque consegne per clienti: quattro pubblicate o consegnate, la migrazione in pausa",
@@ -234,7 +234,7 @@ export const PipelineMock = ({ lang }: Props) => {
 };
 
 /* Supervisor: real numbers */
-const funnelValues = [41, 25, 8, 2];
+
 export const FunnelMock = ({ lang }: Props) => {
   const t = text[lang].funnel;
   return (
@@ -243,17 +243,8 @@ export const FunnelMock = ({ lang }: Props) => {
         <p className={label}>{t.title}</p>
         <ul className="mt-4 space-y-3">
           {t.rows.map((row, i) => (
-            <li key={row}>
-              <div className="flex items-baseline justify-between text-sm">
-                <span className="text-card-foreground">{row}</span>
-                <span className="font-mono tabular-nums text-foreground">{funnelValues[i]}</span>
-              </div>
-              <div className="mt-1 h-2 rounded-full bg-secondary">
-                <div
-                  className={"h-2 rounded-full " + (i === funnelValues.length - 1 ? "bg-primary" : "bg-primary/45")}
-                  style={{ width: `${(funnelValues[i] / funnelValues[0]) * 100}%` }}
-                />
-              </div>
+            <li key={row} className="flex items-center gap-3 rounded-2xl bg-background p-3 text-sm text-card-foreground">
+              <span className="font-mono text-primary" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>{row}
             </li>
           ))}
         </ul>
@@ -273,10 +264,10 @@ export const RebindMock = ({ lang }: Props) => {
           {t.steps.map(([title, body], i) => (
             <li
               key={title}
-              className={"rounded-2xl p-3 " + (i === 1 ? "border border-destructive/40 bg-destructive/10" : "bg-background")}
+              className={"rounded-2xl p-3 " + (i === 1 ? "border border-primary/30 bg-primary/5" : "bg-background")}
             >
               <p className="flex items-center gap-2 text-sm font-medium text-card-foreground">
-                {i === 1 && <AlertTriangle className="h-4 w-4 text-destructive" aria-hidden="true" />}
+                {i === 1 && <AlertTriangle className="h-4 w-4 text-primary" aria-hidden="true" />}
                 {title}
               </p>
               <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{body}</p>

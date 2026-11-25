@@ -1,3 +1,4 @@
+import { jekyllSnapshot } from "./jekyllSnapshot.generated";
 /**
  * Deep-dive project pages for /workstation/:slug.
  *
@@ -40,13 +41,222 @@ export const statusLabel: Record<ProjectStatus, string> = {
 };
 
 export const projects: Project[] = [
+  {
+  "slug": "hermes-ubuntu",
+  "name": "Moving an AI assistant gateway to Ubuntu",
+  "status": "active",
+  "period": "Reviewed 25 Nov 2026",
+  "tagline": "Adapting Nous Research’s Hermes Agent, separating gateway operation from optional workstation services.",
+  "why": [
+    "The messaging gateway needed a clearer service boundary than an interactive workstation could provide."
+  ],
+  "what": [
+    "I adapted and deployed the open-source gateway on Ubuntu, with service supervision, dependency handling and custom integrations.",
+    "My contribution is integration, migration, operation and verification, with AI-assisted development; Hermes Agent itself is by Nous Research."
+  ],
+  "decisions": [
+    "Inspect selected installed files and runtime metadata rather than inferring deployment from a checkout.",
+    "Keep optional workstation and cloud dependencies explicit."
+  ],
+  "outcome": [
+    "On 25 Nov the gateway was active, its heartbeat was fresh and selected installed-file hashes matched source.",
+    "This was a passive deployment check, not fresh end-to-end delivery acceptance or proof of complete workstation independence."
+  ],
+  "learned": "Migrating a service means understanding its dependency boundary and checking the deployed result.",
+  "evidence": [
+    "Dated runtime observations and selected installed-file comparisons; sanitized case study below."
+  ],
+  "tags": [
+    "Ubuntu",
+    "systemd",
+    "Python",
+    "Service operations"
+  ],
+  "related": [
+    "hermes-gateway",
+    "conversation-calendar"
+  ],
+  "reading": [
+    {
+      "label": "Case study · English / Italiano",
+      "to": "/portfolio/12"
+    }
+  ]
+},
+  {
+  "slug": "conversation-calendar",
+  "name": "Conversation to checked calendar actions",
+  "status": "active",
+  "period": "Reviewed 25 Nov 2026",
+  "tagline": "Bounded conversation context, explicit participant/date validation and Google Calendar readback.",
+  "why": [
+    "A plausible assistant reply does not prove an appointment exists or has the right participants."
+  ],
+  "what": [
+    "Workflows around Hermes Agent validate participants and dates before calendar writes, then read the stored event back.",
+    "Persistent notification state supports retry after failure. Newer conversation capture is bounded and still under normal-use validation."
+  ],
+  "decisions": [
+    "Use deterministic identifiers to reconcile writes and readback, rather than assuming a timed-out request did nothing.",
+    "Calendar selection is enforced by the application; it is not a claim of narrow OAuth permission. Notifications are at-least-once, so a crash can still duplicate one."
+  ],
+  "outcome": [
+    "A recorded owner-requested transaction on 15 Nov verified a Google Calendar write, a single-event readback and Telegram API acceptance.",
+    "That receipt predates newer script changes and does not certify every current conversational feature."
+  ],
+  "learned": "Treat interpretation, mutation, readback and notification as separate stages with different failure modes.",
+  "evidence": [
+    "A dated owner transaction receipt and source review; no real messages or events published."
+  ],
+  "tags": [
+    "Python",
+    "Google Calendar API",
+    "Validation",
+    "Retry state"
+  ],
+  "related": [
+    "messaging-assistant",
+    "hermes-ubuntu"
+  ],
+  "reading": [
+    {
+      "label": "Case study · English / Italiano",
+      "to": "/portfolio/13"
+    }
+  ]
+},
+  {
+  "slug": "video-reliability",
+  "name": "Checking usable video output",
+  "status": "active",
+  "period": "Reviewed 25 Nov 2026",
+  "tagline": "Progress-based recovery and completed decode checks for a video-recording pipeline.",
+  "why": [
+    "A running recording process and a growing file are weaker signals than usable decoded output."
+  ],
+  "what": [
+    "A recording pipeline with process supervision, progress monitoring and scheduled full-frame integrity checks.",
+    "Failure handling distinguishes a stopped producer from an invalid output and from a checker that did not complete."
+  ],
+  "decisions": [
+    "Keep the output check separate from the producer. Record completion and positive frame counts.",
+    "Publish the engineering approach without deployment details, footage or access information."
+  ],
+  "outcome": [
+    "Passive sampling on 25 Nov showed recording files advancing. The last scheduled full decode had completed successfully with positive frame counts.",
+    "This sampled evidence does not certify an entire archive or promise continuous availability."
+  ],
+  "learned": "Verify the useful artifact and the checker’s completion, not just that a process exists.",
+  "evidence": [
+    "Dated progress observations and completed decode receipts; deployment details remain private."
+  ],
+  "tags": [
+    "FFmpeg",
+    "Python",
+    "Process supervision",
+    "Output integrity"
+  ],
+  "related": [
+    "foresight"
+  ],
+  "reading": [
+    {
+      "label": "Case study · English / Italiano",
+      "to": "/portfolio/14"
+    }
+  ]
+},
+  {
+  "slug": "workstation-on-demand",
+  "name": "Coordinating on-demand workstation access",
+  "status": "evaluating",
+  "period": "Reviewed 25 Nov 2026",
+  "tagline": "Shared request coordination, bounded retries and explicit readiness checks.",
+  "why": [
+    "Optional workstation tools should have a bounded request path and a meaningful unavailable result."
+  ],
+  "what": [
+    "Coordinated requests use a shared lock, attempt limits, cooldown and readiness polling.",
+    "Native power measurements retain uncertainty rather than turning missing evidence into a sleep or wake claim."
+  ],
+  "decisions": [
+    "Distinguish request accepted, endpoint ready, prior sleep state and useful work completed.",
+    "Observe normal use; avoid repeated disruptive power transitions just to create a success receipt."
+  ],
+  "outcome": [
+    "Recorded automatic attempts exercised request and readiness paths.",
+    "An independently observed automatic sleep-to-wake-to-useful-work transition is not yet established."
+  ],
+  "learned": "Readiness is a service observation, not proof that a wake transition occurred.",
+  "evidence": [
+    "Dated request/readiness records and power-state measurements."
+  ],
+  "tags": [
+    "Python",
+    "macOS",
+    "Coordination",
+    "Timeouts"
+  ],
+  "related": [
+    "hermes-ubuntu",
+    "climate-automation"
+  ],
+  "reading": [
+    {
+      "label": "Case study · English / Italiano",
+      "to": "/portfolio/15"
+    }
+  ]
+},
+  {
+  "slug": "climate-automation",
+  "name": "Owner-approved climate automation and reporting",
+  "status": "active",
+  "period": "Reviewed 25 Nov 2026",
+  "tagline": "Separating authorization, reported usage and confirmed physical effects in Home Assistant.",
+  "why": [
+    "Device automation needs an explicit approval boundary and reports that do not hide missing data."
+  ],
+  "what": [
+    "An approval bridge integrated with Home Assistant and durable usage reporting.",
+    "Usage aggregation retains missing coverage and reports time in operating modes."
+  ],
+  "decisions": [
+    "Mode-hours are not electrical energy measurements or evidence of savings.",
+    "Approval, command submission, physical actuation and report delivery are different outcomes."
+  ],
+  "outcome": [
+    "Two scheduled weekly report sends had recorded delivery identifiers by 25 Nov.",
+    "Physical actuation following owner approval and the first monthly report were not verified in this review."
+  ],
+  "learned": "A useful report exposes missing coverage and measures only what its source can support.",
+  "evidence": [
+    "Dated weekly delivery receipts and reporting source review; private schedules omitted."
+  ],
+  "tags": [
+    "Home Assistant",
+    "Python",
+    "Approvals",
+    "Data coverage"
+  ],
+  "related": [
+    "workstation-on-demand",
+    "home-climate"
+  ],
+  "reading": [
+    {
+      "label": "Case study · English / Italiano",
+      "to": "/portfolio/16"
+    }
+  ]
+},
   /* ───────────── built and running ───────────── */
   {
     slug: "ai-workstation",
     name: "Local-first AI workstation",
     status: "active",
     period: "Jun 2026 – now",
-    tagline: "One laptop that routes work across local models and paid frontier models, and remembers what it did.",
+    tagline: "A personal environment spanning Linux services, optional workstation tools and cloud models, with durable working notes.",
     why: [
       "I wanted AI help on everything I do, without sending everything to a cloud model and without paying frontier prices for routine work.",
       "The idea: do routine work locally, escalate to a paid model only when the task is consequential, and keep the whole thing inspectable.",
@@ -82,11 +292,11 @@ export const projects: Project[] = [
     tagline: "A general-purpose agent I can reach from my phone, running on my own hardware, extended with plugins of my own.",
     why: [
       "I wanted a hands-on agent that could be asked in plain words to do things, from a chat app, while I am away from the desk.",
-      "I chose an open-source agent gateway and forked it so I could add the behaviour I needed and keep the safety rules on my side of the line.",
+      "I chose Nous Research’s open-source Hermes Agent and forked it so I could add the behaviour I needed and keep the safety rules on my side of the line.",
     ],
     what: [
       "A self-hosted gateway with a dashboard, a command line and chat channels.",
-      "Nine custom plugins, including: switching the active model in plain words with a timed automatic revert, a daily session reset, and a handoff that launches a detached Claude or Codex job from chat and posts the result back.",
+      "At the September 2026 checkpoint, nine custom plugins included: switching the active model in plain words with a timed automatic revert, a daily session reset, and a handoff that launches a detached Claude or Codex job from chat and posts the result back.",
       "The handoff keeps the model in a proposing role: it suggests a job, and a short code that I send back is what launches it.",
       "A guard around personal documents lets the agent read when I ask, and requires me to approve every change after seeing the diff.",
     ],
@@ -96,7 +306,7 @@ export const projects: Project[] = [
       "Upgrades follow a written procedure: reinstall in place, never re-sync the live environment, because that once threatened a working voice stack.",
     ],
     outcome: [
-      "Live. The fork had silently fallen 17,898 commits behind upstream. Reconciling it meant re-porting 78 of my commits through upstream's restructured modules and folding in 31 more from the branch that was actually running.",
+      "In the September 2026 maintenance work, the fork had silently fallen 17,898 commits behind upstream. Reconciling it meant re-porting 78 of my commits through upstream's restructured modules and folding in 31 more from the branch that was actually running.",
       "To tell real breakage from noise, the full test suite was compared with a clean baseline: 97 failures already existed upstream of my changes and 3 were real regressions, which were fixed. An end-to-end test ran against a fake messaging socket, so no account or person could be reached.",
       "The live gateway was checkpointed before the cutover. A dependency that the sync had silently dropped was caught before the restart, not after.",
       "Closed 22 Sep 2026. A later upstream upgrade went live the same way on 29 Sep.",
@@ -123,7 +333,7 @@ export const projects: Project[] = [
     what: [
       "A model with a prompt, a refusing filter at the delivery boundary, and a shaping step that rewrites replies that are good but badly formed.",
       "Per-conversation on and off, and a temporary tone instruction that expires by itself.",
-      "Calendar-aware answers that use dated lookups rather than asking the model to work out weekdays.",
+      "Calendar-aware answers that use dated lookups rather than asking the model to work out weekdays. The November follow-up adds checked calendar writes and bounded conversation capture.",
       "A measurement setup in three layers: a probe of 123 scenarios run three times each that never sends, a canary that runs one real turn through the production path, and unit tests for the delivery rules.",
     ],
     decisions: [
@@ -147,7 +357,7 @@ export const projects: Project[] = [
     reading: [
       { label: "Red-teaming my own chatbot (day 200)", to: "/blog/200" },
       { label: "A reply is a capability, not a suggestion (day 206)", to: "/blog/206" },
-      { label: "Lab 17: a minimal adversarial test harness", to: "/labs/17" },
+      { label: "Lab 17: a minimal adversarial test harness", to: "/lab/17" },
     ],
     related: ["foresight", "hermes-gateway"],
   },
@@ -187,8 +397,8 @@ export const projects: Project[] = [
   },
   {
     slug: "supervisor",
-    name: "Supervisor service",
-    status: "paused",
+    name: "Supervisor service (historical)",
+    status: "retired",
     period: "Jul 2026 – 3 Aug 2026 (switched off on purpose)",
     tagline: "A layer that makes an agent prove its work, with approvals, audit records and crash recovery. I ran it live, measured it, and switched it off.",
     why: [
@@ -208,9 +418,10 @@ export const projects: Project[] = [
     outcome: [
       "The live trial ran from 18 Jul. It was completely non-functional for its first two days, undetected: a workspace path pointed inside the repository, so every real task crashed on start. I found it on 20 Jul and fixed it.",
       "Between 18 Jul and 2 Aug the trial database held 41 tasks. 8 completed, but 3 were acceptance fixtures and 4 were the same request queued again, so only two distinct real tasks completed in 17 days. 25 ended as failed with evidence. Failed tasks averaged 121 minutes of active work against 19.5 for completed ones. Notifications were not the problem: 24 of the 25 failures sent a message, so I was told every time.",
-      "On 3 Aug I switched it off on purpose, because I wanted to run the assistant plain for a while without a supervision layer in front of it. As of 1 Oct the flags are still off. The code is fixed and the tests pass; this is a pause, not an abandoned project.",
+      "On 3 Aug I switched it off on purpose. Status reviewed on 25 Nov 2026: this Supervisor is retired, not a current operating capability. The trial and its lessons remain in this archive.",
       "Three root causes were fixed the same day: chat narration being routed as supervised work, one routing refusal being paid for twice, and open attempts never being sealed on a failed run. A fourth, an expired login for one repair tool, was an operator action. The lane now reports the tool as unavailable instead of disguising it as a failed repair.",
     ],
+    restore: "Historical code and trial records are retained. Any future replacement would need a new design and acceptance review; this is not a request to re-enable the retired service.",
     learned:
       "A supervision layer should be judged by finished real work, not by gates passing. At one point every readiness gate was green while two real tasks had completed.",
     evidence: [
@@ -406,7 +617,7 @@ export const projects: Project[] = [
       "Include the mistakes. A log that only shows wins is not evidence of learning.",
       "The site rebuilds daily rather than every 30 minutes. 48 rebuilds a day of unchanged content was waste.",
     ],
-    outcome: ["Ongoing. The latest site sync reached day 243."],
+    outcome: [`Ongoing. This site snapshot includes ${jekyllSnapshot.posts.length} public learning entries.`],
     learned: "Public notes make me explain things properly. The explanation is the practice.",
     evidence: ["the public repositories", "this site"],
     tags: ["Learning in public", "Detection engineering", "React", "CI/CD"],
@@ -472,28 +683,19 @@ export const projects: Project[] = [
   },
   {
     slug: "home-climate",
-    name: "Local control for home air conditioning",
+    name: "Climate integration: early work and follow-up",
     status: "active",
-    period: "Aug 2026 – now",
-    tagline: "Controlling two air-conditioning units over the local network, with no vendor cloud, and what that says about their security.",
-    why: [
-      "I wanted to switch and schedule the units from my own tools without depending on a vendor app or account.",
-    ],
-    what: [
-      "A small command-line tool that reads and sets each unit over the local network.",
-      "Home Assistant in Docker on a small home server, driving the same units.",
-    ],
-    decisions: [
-      "It works because the units' network adapters accept local commands without any authentication. That is convenient, and it is also a finding: anything on the same network can control them.",
-      "The server's firewall blocked my private network interface by default, so remote access had to be opened deliberately rather than by accident.",
-      "The server's address changes, so everything refers to it by name instead of by a fixed address.",
-    ],
-    outcome: ["Working day to day."],
-    learned:
-      "Consumer devices often trust the local network completely. Knowing that changes what you allow onto it.",
-    evidence: ["the tool and the Home Assistant configuration (private)"],
-    tags: ["IoT", "Network security", "Docker", "Home Assistant"],
-    related: ["ai-workstation"],
+    period: "Aug – Nov 2026",
+    tagline: "From device integration to owner approval and usage reports in Home Assistant.",
+    why: ["I wanted inspectable automation, with a clear distinction between a proposed action and its physical result."],
+    what: ["An early control integration, followed by an approval bridge and durable usage reporting."],
+    decisions: ["The November follow-up reports observed delivery separately from physical actuation and avoids treating mode-hours as energy consumption."],
+    outcome: ["Reviewed on 25 Nov 2026: weekly report delivery identifiers were recorded. Physical actuation following owner approval remains unverified."],
+    learned: "Configuration, report delivery and physical device behavior require different evidence.",
+    evidence: ["Dated integration records and November reporting receipts; private deployment details omitted."],
+    tags: ["Home Assistant", "Automation", "Reporting"],
+    related: ["climate-automation"],
+    reading: [{ label: "November follow-up · English / Italiano", to: "/portfolio/16" }],
   },
   {
     slug: "lightroom-agent",
@@ -717,6 +919,7 @@ export const projectBySlug = (slug: string) => projects.find((p) => p.slug === s
 
 /** Display order for the main list: what a business would care about first. */
 const workOrder = [
+  "hermes-ubuntu", "conversation-calendar", "video-reliability", "workstation-on-demand", "climate-automation",
   "webcheckup",
   "farm-website",
   "access-migration",

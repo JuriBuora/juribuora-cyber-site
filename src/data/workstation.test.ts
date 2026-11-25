@@ -32,10 +32,13 @@ describe("workstation page content", () => {
     expect(stats[0].value).toBe(weeklyCommitsTotal.toLocaleString("en-GB"));
   });
 
-  it("the PDF and share image repeat the same headline numbers as the pages", () => {
-    for (const n of ["1,364", "34", "243"]) {
-      expect(ogSrc).toContain(n);
-      expect(onePagerSrc).toContain(n);
+  it("the PDF and share image describe the same current role without stale headline counts", () => {
+    expect(onePagerSrc).toContain("Nous Research");
+    expect(onePagerSrc).toContain("25 November 2026");
+    for (const asset of [ogSrc, onePagerSrc]) {
+      expect(asset).toMatch(/Linux, automation/);
+      expect(asset).not.toContain("243");
+      expect(asset).not.toContain("1,364");
     }
   });
 

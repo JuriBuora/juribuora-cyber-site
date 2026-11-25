@@ -1,10 +1,9 @@
 /**
- * Content for /what-im-doing: the short, outcome-first version of the work.
- * Every number traces to a record in the private workstation repositories
- * (see `proof.source`). Copy states what each approach delivers; it does not
- * claim customers, revenue or results that do not exist. The scrub test runs
- * over this file.
+ * Current showcase: bounded claims from the approved 25 Nov 2026 audit.
+ * Historical client deliverables retain their dates. Upstream work is attributed;
+ * deployment details and private evidence stay outside this public module.
  */
+import { jekyllSnapshot } from "./jekyllSnapshot.generated";
 
 export type Chapter = {
   id: string;
@@ -22,139 +21,234 @@ export type Chapter = {
 
 export const chapters: Chapter[] = [
   {
-    id: "webcheckup",
-    kicker: "Product · Web security basics",
-    headline: "Website check-ups a business owner can act on.",
-    lead:
-      "WebCheckup looks at a public website from the outside, the way a customer, a browser or a search engine would, and turns what it finds into a short, prioritised report in plain language.",
-    benefits: [
-      "Spots the visible problems that cost trust: broken HTTPS, missing browser protections, slow or unusable mobile pages, broken links.",
-      "Says who can fix each point and how urgent it is, instead of handing over a scanner dump.",
-      "Never claims what it cannot show: an outreach email may state a finding only if the evidence reproduces.",
+    "id": "hermes-ubuntu",
+    "kicker": "Linux · AI integrations",
+    "headline": "Moving an AI assistant gateway to Ubuntu.",
+    "lead": "I adapted and deployed Nous Research’s open-source Hermes Agent on Ubuntu, separating the messaging gateway from optional workstation services. The 25 November 2026 audit checked runtime metadata and selected installed files; some tasks still depend on cloud models or workstation services.",
+    "benefits": [
+      "Deployment and dependency handling around an existing open-source agent, with upstream and custom work clearly attributed.",
+      "A distinction between a running service, completed work and an accepted result, supported by recorded evidence.",
+      "Operational documentation that keeps optional dependencies and recovery limits visible."
     ],
-    proof: [
-      { value: "2", label: "languages, kept in sync by a test", source: "Italian and English email parity test in the engine repository" },
-      { value: "39", label: "test files in the engine", source: "test files in the private engine repository" },
-      { value: "123", label: "commits since July", source: "git rev-list --count HEAD, engine repository" },
+    "proof": [
+      {
+        "value": "Ubuntu",
+        "label": "gateway observed running on 25 Nov 2026",
+        "source": "25 Nov 2026 audit: service metadata, heartbeat and selected installed-file hashes"
+      },
+      {
+        "value": "Open source",
+        "label": "Hermes Agent by Nous Research",
+        "source": "Hermes upstream baseline and custom integration comparison, 25 Nov 2026"
+      }
     ],
-    slug: "webcheckup",
-    visual: "report",
+    "slug": "hermes-ubuntu",
+    "visual": "report",
+    "reading": [
+      {
+        "label": "Deployment case study",
+        "to": "/portfolio/12"
+      }
+    ]
   },
   {
-    id: "client-work",
-    kicker: "Client work · Web and data",
-    headline: "Real work for real businesses.",
-    lead:
-      "I built and maintain the production website of a farm business. Separately, for a small business running on two old single-user databases, I analysed the data and planned an affordable move to a shared system, delivering the first usable piece along the way.",
-    benefits: [
-      "A fast, mobile-first site with search metadata, validated forms and analytics that wait for consent.",
-      "Migration planning that starts from the evidence: copies only, originals verified untouched, and the business logic found where it really lives.",
-      "Costed options in plain language, then phased delivery where each step waits for the client's go.",
+    "id": "conversation-calendar",
+    "kicker": "WhatsApp · Calendar integration",
+    "headline": "Turning conversation into checked calendar actions.",
+    "lead": "I built workflows around Hermes Agent for bounded conversation capture, participant and date validation, and native Google Calendar writes with readback checks. A recorded owner request verified a write and readback on 15 November 2026; newer conversational features were still under normal-use validation at the 25 November audit.",
+    "benefits": [
+      "Conversation context is limited and validated before a proposed appointment becomes a calendar action.",
+      "Deterministic event IDs and readback checks help detect duplicates and verify the write.",
+      "Persistent notification state supports retries after failures; a crash between remote acceptance and the local receipt can still duplicate a notification."
     ],
-    proof: [
-      { value: "231", label: "commits on the live site", source: "git rev-list --count HEAD, public farm website repository" },
-      { value: "37", label: "sections in the migration report", source: "client report delivered Jul 2026 (private)" },
-      { value: "10", label: "sheets in the delivered workbook", source: "timesheet prototype delivered Jul 2026 (private)" },
+    "proof": [
+      {
+        "value": "15 Nov",
+        "label": "2026: recorded calendar write and readback",
+        "source": "15 Nov 2026 owner-request acceptance receipt; a different script version from the 25 Nov audit"
+      },
+      {
+        "value": "Retry",
+        "label": "persistent notification state, with limits",
+        "source": "25 Nov 2026 source review: bounded outbox and at-least-once notification semantics"
+      }
     ],
-    slug: "farm-website",
-    reading: [{ label: "The migration study", to: "/workstation/access-migration" }],
-    visual: "deliverables",
+    "slug": "conversation-calendar",
+    "visual": "pipeline",
+    "reading": [
+      {
+        "label": "Calendar case study",
+        "to": "/portfolio/13"
+      },
+      {
+        "label": "Earlier messaging work",
+        "to": "/workstation/messaging-assistant"
+      },
+      {
+        "label": "Red-teaming my own chatbot",
+        "to": "/blog/200"
+      },
+      {
+        "label": "A reply is a capability, not a suggestion",
+        "to": "/blog/206"
+      }
+    ]
   },
   {
-    id: "foresight",
-    kicker: "Process · Release safety",
-    headline: "Ship automation without finding the bugs through your customers.",
-    lead:
-      "Foresight is a release gate I built after an AI system's output reached real people with defects nobody had caught. Before a risky change goes out, the failure shapes that apply are named, each gets a mechanism, and each gets a proof that was actually run.",
-    benefits: [
-      "Fewer incidents that are found by the people on the receiving end.",
-      "A written trail: what could break, what stops it, and the evidence it was checked.",
-      "Controls that hold. Where a failure would reach a person, the rule is built into the system rather than left as an instruction.",
+    "id": "video-reliability",
+    "kicker": "Reliability · Video output",
+    "headline": "Checking usable output as well as running processes.",
+    "lead": "I built and operated a video pipeline with progress-based recovery and integrity checks that decode the output. The 25 November 2026 audit found a completed successful decode check and advancing files. That evidence covers the sampled output, rather than continuous availability or every archive.",
+    "benefits": [
+      "Recovery decisions use work progressing, rather than process presence alone.",
+      "Output validation checks whether the produced video can actually be decoded.",
+      "Recorded checks keep observed results separate from failure cases that have not been exercised."
     ],
-    proof: [
-      { value: "34", label: "documented failure shapes", source: "numbered rows in the foresight skill catalogue" },
-      { value: "5 in 6", label: "times a prompt rule held, so it became a filter", source: "repeated-trial measurement recorded in the skill" },
+    "proof": [
+      {
+        "value": "Decode",
+        "label": "completed check observed on 25 Nov 2026",
+        "source": "25 Nov 2026 audit: completed integrity-check result and decoded output"
+      },
+      {
+        "value": "Progress",
+        "label": "advancing output in the audit sample",
+        "source": "25 Nov 2026 audit: passive file-progress sampling; no new fault or playback test"
+      }
     ],
-    slug: "foresight",
-    visual: "shapes",
+    "slug": "video-reliability",
+    "visual": "funnel",
+    "reading": [
+      {
+        "label": "Output reliability case study",
+        "to": "/portfolio/14"
+      }
+    ]
   },
   {
-    id: "safe-messaging",
-    kicker: "Applied AI · Fail-safe delivery",
-    headline: "AI that talks to people, with a safety net at the door.",
-    lead:
-      "I run an auto-reply assistant on WhatsApp for my own conversations, with people who know it is there. Because a wrong message cannot be unsent, I treat the moment before delivery as the control point and measure the assistant like a system under test.",
-    benefits: [
-      "A filter and a shaping step sit between the model and the recipient, so internal notices, leaked reasoning and tool errors never go out.",
-      "Per-conversation on and off, a temporary tone instruction that expires on its own, and a reply that fails the final checks is not sent at all.",
-      "Measured, not hoped for: 123 test scenarios run three times each, plus a real canary turn on the production path.",
+    "id": "workstation-climate",
+    "kicker": "Automation · Devices and control",
+    "headline": "Coordinating requests, readiness and owner approval.",
+    "lead": "I implemented coordinated workstation requests with bounded retries and readiness checks, alongside owner-approved climate workflows and usage reporting. At the 25 November 2026 audit, readiness records did not independently prove an automatic sleep-to-work transition, and physical climate actuation following approval remained unverified.",
+    "benefits": [
+      "Shared coordination, timeouts and readiness polling make optional workstation dependencies explicit.",
+      "Approval boundaries distinguish an authorised request from confirmed physical actuation.",
+      "Usage reporting distinguishes operating-mode hours from energy consumption."
     ],
-    proof: [
-      { value: "123 × 3", label: "scenario runs per measurement round", source: "probe description in the private issue list, 25–26 Sep 2026" },
-      { value: "2 nights", label: "of measuring turned up the defects; most fixes became mechanisms", source: "same issue list" },
+    "proof": [
+      {
+        "value": "Readiness",
+        "label": "request path reviewed on 25 Nov 2026",
+        "source": "25 Nov 2026 audit: recorded requests and readiness evidence; automatic sleep-to-work acceptance remained open"
+      },
+      {
+        "value": "Approval",
+        "label": "control boundary and reporting reviewed",
+        "source": "25 Nov 2026 audit: approval bridge and report receipts; physical actuation remained unverified"
+      }
     ],
-    slug: "messaging-assistant",
-    reading: [
-      { label: "Red-teaming my own chatbot", to: "/blog/200" },
-      { label: "A reply is a capability, not a suggestion", to: "/blog/206" },
-    ],
-    visual: "pipeline",
+    "slug": "workstation-on-demand",
+    "visual": "rebind",
+    "reading": [
+      {
+        "label": "Workstation case study",
+        "to": "/portfolio/15"
+      },
+      {
+        "label": "Climate integration",
+        "to": "/workstation/climate-automation"
+      },
+      {
+        "label": "Climate case study",
+        "to": "/portfolio/16"
+      }
+    ]
   },
   {
-    id: "supervisor",
-    kicker: "Agents · Honest measurement",
-    headline: "Agents that have to prove their work, and a trial I reported honestly.",
-    lead:
-      "I built a supervision layer so an AI agent could not simply say a job was done. I ran it live, measured it, and switched it off while I fixed what the numbers exposed.",
-    benefits: [
-      "Approvals before sensitive steps, an audit record for every decision, and crash recovery that does not repeat side effects.",
-      "Completion needs independent evidence. Self-reported success is rejected.",
-      "A culture of measuring outcomes. A readiness gate that is green is not the same as work getting done.",
+    "id": "web-client-data",
+    "kicker": "Client work · Web and data",
+    "headline": "Practical websites, check-ups and migration planning.",
+    "lead": "WebCheckup turns findings from a public website into a prioritised report. I also built and maintain a farm-business website and, in July 2026, delivered a database migration study and a usable workbook prototype for a small business.",
+    "benefits": [
+      "Website work includes mobile layouts, search metadata, form validation and consent-aware analytics.",
+      "Check-up findings need reproducible evidence and a clear owner for the proposed fix.",
+      "Migration planning uses copies, preserves originals and separates the delivered prototype from a full migration."
     ],
-    proof: [
-      { value: "41", label: "tasks in the live trial", source: "trial database audit, 18 Jul – 2 Aug 2026, in the supervisor current-state record" },
-      { value: "2", label: "distinct real tasks completed", source: "same audit" },
+    "proof": [
+      {
+        "value": "37",
+        "label": "sections in the July 2026 migration report",
+        "source": "Client migration report delivered in July 2026; historical deliverable, not a completed migration"
+      },
+      {
+        "value": "10",
+        "label": "sheets in the July 2026 workbook prototype",
+        "source": "Timesheet workbook prototype delivered in July 2026"
+      }
     ],
-    slug: "supervisor",
-    visual: "funnel",
+    "slug": "webcheckup",
+    "visual": "deliverables",
+    "reading": [
+      {
+        "label": "Farm-business website",
+        "to": "/workstation/farm-website"
+      },
+      {
+        "label": "The migration study",
+        "to": "/workstation/access-migration"
+      }
+    ]
   },
   {
-    id: "security",
-    kicker: "Security · Review and practice",
-    headline: "Finding the flaw in my own tool before anyone else does.",
-    lead:
-      "I reviewed a browser tool I wrote for an AI agent and found a real DNS-rebinding path: the safety check and the browser could end up talking to different addresses. I documented the options and what each costs. Alongside that I keep a public daily learning log and a detection-engineering practice repository.",
-    benefits: [
-      "A habit of attacking my own work, then writing down the reasoning so a reviewer can disagree with it.",
-      "Comfortable with the basics of web and network risk: SSRF, DNS, TLS, headers, least privilege.",
-      "Learning in public: 243 days of notes and labs, including the mistakes.",
+    "id": "security-foresight",
+    "kicker": "Security · Review and release evidence",
+    "headline": "Reviewing my own tools and asking for proof before release.",
+    "lead": "I found a DNS-rebinding path while reviewing my own browser tool in July 2026 and documented the trade-offs. Foresight turns relevant failure cases into mechanisms and recorded checks before a risky change. My public learning log and detection-engineering practice remain part of that work.",
+    "benefits": [
+      "Security reviews explain the reasoning and leave room for a reviewer to challenge it.",
+      "Release checks name what could fail, what mechanism addresses it and which proof was actually run.",
+      "Public notes and labs distinguish research, synthetic checks and observed operational outcomes."
     ],
-    proof: [
-      { value: "243", label: "days in the public log", source: "latest content sync of the public learning log" },
-      { value: "1", label: "real SSRF path found in my own code", source: "browser adapter security review, 27 Jul 2026" },
+    "proof": [
+      {
+        "value": "Review",
+        "label": "browser-tool security study, July 2026",
+        "source": "27 Jul 2026 browser adapter review: DNS-rebinding path and mitigation trade-offs"
+      },
+      {
+        "value": "Evidence",
+        "label": "failure cases, mechanisms and executed checks",
+        "source": "Foresight release-gate method reviewed in the approved 25 Nov 2026 portfolio audit"
+      }
     ],
-    slug: "browser-research-adapter",
-    visual: "rebind",
-  },
+    "slug": "foresight",
+    "visual": "shapes",
+    "reading": [
+      {
+        "label": "Browser-tool security review",
+        "to": "/workstation/browser-research-adapter"
+      }
+    ]
+  }
 ];
 
 export const roles = [
   {
-    title: "Junior security analyst",
-    body: "Triage, detection tuning, web and network risk, careful write-ups. I explain my reasoning and I like being reviewed.",
+    "title": "Junior IT operations",
+    "body": "Linux services, dependency handling, recovery checks and documentation that another operator can use."
   },
   {
-    title: "AI and automation operations",
-    body: "Running agents, routing between models, keeping them safe and measurable, and documenting so anyone can take over.",
+    "title": "AI and automation integrations",
+    "body": "Connecting existing tools and APIs, validating their outputs and keeping authority and failure handling explicit."
   },
   {
-    title: "Small-business web health",
-    body: "Plain-language website check-ups and fixes for HTTPS, performance, mobile and visibility.",
-  },
+    "title": "Junior security analyst",
+    "body": "Triage, detection practice, web and network risk, and write-ups that make the reasoning reviewable."
+  }
 ];
 
 export const heroStats = [
-  { value: "1,364", label: "commits in 13 weeks" },
-  { value: "34", label: "failure shapes in my release gate" },
-  { value: "243", label: "days of public learning notes" },
+  { value: "Linux", label: "services and operations" },
+  { value: "APIs", label: "practical automation integrations" },
+  { value: jekyllSnapshot.posts.length.toLocaleString("en-GB"), label: "public learning-log posts in the synced snapshot" },
 ];

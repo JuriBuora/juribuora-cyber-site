@@ -118,8 +118,8 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
   const rootHtml = await readFile(path.join(outDir, "index.html"), "utf8");
 
   const routes: RouteShell[] = [
-    { routePath: "/", title: "From Zero to Cybersecurity — Juri Buora",
-      description: "A public, structured learning log documenting Juri Buora's journey from zero to cybersecurity — daily logs, hands-on labs, and honest notes." },
+    { routePath: "/", title: "Linux, Automation & Security — Juri Buora",
+      description: "Linux services, practical automations and AI integrations, with verified case studies and a public security learning diary by Juri Buora." },
     {
       routePath: "/blog",
       title: "Blog Archive — Juri Buora",
@@ -162,12 +162,12 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
     {
       routePath: "/portfolio",
       title: "Portfolio — Juri Buora",
-      description: "Selected cybersecurity work, labs, and engineering evidence from Juri Buora.",
+      description: "Linux operations, automation and security case studies with dated evidence and explicit limits.",
     },
     {
       routePath: "/what-im-doing",
       title: "What I'm doing — Juri Buora",
-      description: "Real projects in AI operations, security and client work, what each does for a team, and the numbers behind them.",
+      description: "Linux services, API integrations and automation, explained in English and Italian with dated evidence and limits.",
       image: SHOWCASE_IMAGE,
     },
     {

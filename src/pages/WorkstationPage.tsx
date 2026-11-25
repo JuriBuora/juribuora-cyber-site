@@ -29,7 +29,7 @@ const WorkstationPage = () => {
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
             Since June 2026 I have been building and running my own AI workstation: local and cloud models, a chat-driven
-            assistant, a library of skills, and the safety gates that stop it doing damage. This page is the short version
+            assistant, a library of skills, and controls at consequential boundaries. The gateway now runs on Ubuntu, with optional workstation services. This page is the short version
             of what I built, what broke, and what I changed because of it.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
@@ -56,7 +56,7 @@ const WorkstationPage = () => {
 
       <main className="container mx-auto max-w-4xl space-y-16 px-4 py-12">
         <section aria-labelledby="numbers">
-          <p id="numbers" className={eyebrow}>The numbers</p>
+          <p id="numbers" className={eyebrow}>Historical snapshot · {asOf}</p>
           <dl className="mt-5 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col-reverse justify-end bg-card p-4">
@@ -101,7 +101,7 @@ const WorkstationPage = () => {
 
         <section aria-labelledby="how">
           <p id="how" className={eyebrow}>How it fits together</p>
-          <h2 className="mt-3 text-2xl font-bold text-foreground">One request, five layers</h2>
+          <h2 className="mt-3 text-2xl font-bold text-foreground">A logical view, five layers</h2>
           <div className="mt-5">
             <ArchitectureStack />
           </div>

@@ -79,13 +79,13 @@ export const architecture: Layer[] = [
   },
   {
     name: "Gateway and routing",
-    note: "Decides who does the work",
-    items: ["Self-hosted Hermes agent gateway", "Model routing", "Plugins", "Scheduled jobs"],
+    note: "Ubuntu gateway, optional workstation services",
+    items: ["Hermes Agent by Nous Research", "Custom integrations", "Dependency handling", "Scheduled jobs"],
     tone: "plain",
   },
   {
     name: "Models",
-    note: "Local first, cloud when it earns it",
+    note: "Chosen per task; cloud dependencies are explicit",
     items: ["Ollama", "LM Studio", "Claude", "GPT"],
     tone: "plain",
   },
@@ -97,7 +97,7 @@ export const architecture: Layer[] = [
   },
   {
     name: "Memory and state",
-    note: "Survives any one session",
+    note: "Durable records, checked for freshness",
     items: ["Git everywhere", "Handoff notes", "Skills library", "Append-only history"],
     tone: "plain",
   },
@@ -139,15 +139,13 @@ export const caseStudies: CaseStudy[] = [
     skills: ["Git at scale", "Release engineering", "Rollback planning", "Incident learning"],
   },
   {
-    id: "supervisor",
-    slug: "supervisor",
-    kicker: "Measuring honestly",
-    title: "A supervision layer I built, measured, and switched off",
-    problem:
-      "An assistant that can read mail, move files and run commands is useful and risky in equal measure. I built a supervisor so completion would mean evidence and sensitive steps would wait for my approval.",
-    lesson:
-      "Judge a control layer by finished real work, not by gates passing, and build the way back before the way forward.",
-    skills: ["Least privilege", "Approval flows", "Audit trails", "Honest measurement"],
+    id: "ubuntu",
+    slug: "hermes-ubuntu",
+    kicker: "Linux operations",
+    title: "Moving the assistant gateway to Ubuntu",
+    problem: "A gateway coupled to an interactive workstation made dependencies difficult to reason about. I separated the always-on gateway from optional workstation services and checked selected installed files against source.",
+    lesson: "A running gateway and a fresh heartbeat are useful evidence. They do not prove every downstream workflow completed.",
+    skills: ["Linux", "systemd", "Dependency handling", "Runtime verification"],
   },
   {
     id: "webcheckup",
@@ -191,7 +189,7 @@ export const proves = [
 
 export const honestScope = [
   "Built with AI pair-programming (Claude Code and Codex). I set the goals, constraints and review bar; the models write much of the code under them.",
-  "Solo, personal and after hours. This is a lab, not a production team, and the scale is one person's.",
+  "Solo, personal and after hours, with some services used daily. This is not enterprise or team-scale operations experience.",
   "Most repositories are private because they hold personal data. Numbers come from git and are reproducible on request, in a live walkthrough.",
   "Public work you can open today: this site, the WebCheckup site, a production website for a farm business, and my detection-engineering practice repository.",
 ];

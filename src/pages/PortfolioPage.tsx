@@ -11,6 +11,7 @@ import { formatPostDate } from "@/lib/postDates";
 
 /** Labs that show core analyst skills, picked by hand. */
 const FEATURED_LABS = [7, 6, 14, 26];
+const OPERATED_CASES = [12, 13, 14, 15, 16];
 
 const principles = [
   {
@@ -62,6 +63,8 @@ const Entry = ({ post }: { post: Post }) => (
 const PortfolioPage = () => {
   usePageTitle("Portfolio");
   const { portfolio, reports, labs } = usePosts();
+  const operated = OPERATED_CASES.map((n) => portfolio.find((p) => p.day === n)).filter((p) => p !== undefined);
+  const earlierCases = portfolio.filter((p) => !OPERATED_CASES.includes(p.day));
   const featuredLabs = FEATURED_LABS.map((n) => labs.find((l) => l.day === n)).filter((l) => l !== undefined);
 
   return (
@@ -75,10 +78,10 @@ const PortfolioPage = () => {
             <ShieldCheck className="h-5 w-5 text-primary" />
           </div>
           <p className="mt-5 font-mono text-xs uppercase tracking-[0.24em] text-primary">Selected Evidence</p>
-          <h1 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">Cybersecurity Portfolio</h1>
+          <h1 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">Linux, Automation & Security</h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Security case studies and labs from my learning log. Each one says what I did, how I checked it, and where its
-            limits are. For the wider picture of what I build, see{" "}
+            Systems I built and operated, followed by security reports and training labs. Each case separates implementation,
+            observed results and what remains unverified. For the wider picture of what I build, see{" "}
             <Link to="/what-im-doing" className="text-primary underline underline-offset-4">
               what I'm doing
             </Link>
@@ -98,6 +101,12 @@ const PortfolioPage = () => {
           ))}
         </div>
 
+        <section className="mt-10" aria-labelledby="built-operated">
+          <h2 id="built-operated" className="font-mono text-xs uppercase tracking-[0.24em] text-primary">Built and operated</h2>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">Dated case studies on Linux services, API workflows and reliability. English and Italian in each article. Personal projects, developed with AI assistance.</p>
+          <div className="mt-5 grid gap-4">{operated.map((post) => <Entry key={post.day} post={post} />)}</div>
+        </section>
+
         {reports.length > 0 && (
           <section className="mt-10" aria-labelledby="reports">
             <h2 id="reports" className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
@@ -116,10 +125,10 @@ const PortfolioPage = () => {
 
         <section className="mt-10" aria-labelledby="case-studies">
           <h2 id="case-studies" className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
-            Case Studies
+            Earlier case studies
           </h2>
           <div className="mt-5 grid gap-4">
-            {portfolio.map((post) => (
+            {earlierCases.map((post) => (
               <Entry key={post.day} post={post} />
             ))}
           </div>

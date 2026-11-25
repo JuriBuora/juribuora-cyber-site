@@ -6302,6 +6302,96 @@ export const jekyllSnapshot: LoadedPosts = {
   ],
   "portfolio": [
     {
+      "day": 16,
+      "title": "Integrating Climate Approval with Durable Usage Reporting",
+      "summary": "How I integrated Home Assistant approval requests and persistent usage reports while separating operating-mode observations, delivery acknowledgements and physical actuation.",
+      "date": "2026-11-25",
+      "url": "https://juribuora.github.io/portfolio-material/2026/11/25/climate-approval-reporting-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "homeassistant",
+        "automation",
+        "authorization",
+        "dataquality",
+        "reporting"
+      ],
+      "slug": "climate-approval-reporting-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-11-25-climate-approval-reporting-case-study.md",
+      "contentPath": "/generated/posts/portfolio/16.json"
+    },
+    {
+      "day": 15,
+      "title": "Coordinating On-Demand Workstation Requests and Readiness Checks",
+      "summary": "How I implemented shared request coordination, bounded retries and readiness checks while distinguishing service recovery from an independently verified wake transition.",
+      "date": "2026-11-25",
+      "url": "https://juribuora.github.io/portfolio-material/2026/11/25/workstation-on-demand-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "automation",
+        "concurrency",
+        "reliability",
+        "statemanagement",
+        "verification"
+      ],
+      "slug": "workstation-on-demand-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-11-25-workstation-on-demand-case-study.md",
+      "contentPath": "/generated/posts/portfolio/15.json"
+    },
+    {
+      "day": 14,
+      "title": "Adding Progress Monitoring and Full-Frame Checks to a Video Pipeline",
+      "summary": "How I combined recording progress, bounded recovery and completed full-frame decoding to check whether a video pipeline was producing usable output.",
+      "date": "2026-11-25",
+      "url": "https://juribuora.github.io/portfolio-material/2026/11/25/video-output-reliability-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "linux",
+        "ffmpeg",
+        "reliability",
+        "processsupervision",
+        "dataintegrity"
+      ],
+      "slug": "video-output-reliability-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-11-25-video-output-reliability-case-study.md",
+      "contentPath": "/generated/posts/portfolio/14.json"
+    },
+    {
+      "day": 13,
+      "title": "Building Conversation-to-Calendar Workflows with Readback Checks",
+      "summary": "How I integrated bounded conversation context, date validation, checked calendar writes and persistent notification retries around Hermes Agent.",
+      "date": "2026-11-25",
+      "url": "https://juribuora.github.io/portfolio-material/2026/11/25/conversation-calendar-workflows-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "automation",
+        "calendarintegration",
+        "datavalidation",
+        "apis",
+        "verification"
+      ],
+      "slug": "conversation-calendar-workflows-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-11-25-conversation-calendar-workflows-case-study.md",
+      "contentPath": "/generated/posts/portfolio/13.json"
+    },
+    {
+      "day": 12,
+      "title": "Moving the Hermes Agent Gateway to Ubuntu",
+      "summary": "How I adapted an open-source assistant deployment for Ubuntu, checked installed components and service health, and kept deployment evidence separate from feature acceptance.",
+      "date": "2026-11-25",
+      "url": "https://juribuora.github.io/portfolio-material/2026/11/25/hermes-ubuntu-migration-case-study.html",
+      "category": "portfolio",
+      "tags": [
+        "linux",
+        "ubuntu",
+        "automation",
+        "serviceoperations",
+        "verification"
+      ],
+      "slug": "hermes-ubuntu-migration-case-study",
+      "sourcePath": "Portfolio-Material/_posts/2026-11-25-hermes-ubuntu-migration-case-study.md",
+      "contentPath": "/generated/posts/portfolio/12.json"
+    },
+    {
       "day": 11,
       "title": "From Packet Capture to Security Handoff: Wireshark Triage Case Study",
       "summary": "A training case study showing how I used Wireshark and a supplied sample capture to record network observations, separate facts from interpretation, and prepare a defensible SOC handoff.",

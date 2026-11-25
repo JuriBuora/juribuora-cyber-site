@@ -35,10 +35,10 @@ it.skipIf(!existsSync(shell))("hydrates the English shell for a saved Italian re
     observe() {} unobserve() {} disconnect() {}
   });
   const serverMain = document.querySelector("#root main")!;
-  expect(serverMain.querySelector("h1")?.textContent).toContain("I build AI");
+  expect(serverMain.querySelector("h1")?.textContent).toContain("I build and operate Linux services");
   try {
     await act(async () => { await import("@/main"); });
-    await waitFor(() => expect(document.querySelector("#root h1")?.textContent).toContain("Costruisco IA"));
+    await waitFor(() => expect(document.querySelector("#root h1")?.textContent).toContain("Costruisco e gestisco servizi Linux"));
     expect(mounted.root).toBeDefined();
     expect(mounted.errors).toEqual([]);
     // Same node: the prerendered page was adopted, not rebuilt from scratch.

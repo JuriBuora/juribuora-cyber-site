@@ -138,7 +138,7 @@ const en: Record<string, ItemMore[]> = {
     },
     {
       text: [
-        "I reach them mostly through subscriptions I already pay for, so a heavy day does not produce a surprise bill. My main chat assistant answers with a hosted model and falls back to a local one if that is unavailable.",
+        "I reach them mostly through subscriptions I already pay for, so a heavy day does not produce a surprise bill. In the September–October 2026 setup, my main chat assistant used a hosted model with a local fallback.",
         "The rule for going outside: a local model has failed the same task twice with no clear reason, the decision has real trade-offs, or something security-sensitive or public is about to ship. Not for routine edits, and not to redo work a local model already did correctly.",
       ],
       aside:
@@ -177,7 +177,7 @@ const en: Record<string, ItemMore[]> = {
     },
     {
       text: [
-        "It runs on a local model, so it costs nothing per task and nothing leaves the machine. I give it jobs with a clear finish line.",
+        "In that setup it ran local model computation without a per-call model API charge. That alone did not establish privacy for its tools or the rest of the task. I gave it jobs with a clear finish line.",
         "I check its work on disk. In the September comparison it ran a command, created a file, and fixed a bug and proved the test passed.",
       ],
       facts: [
@@ -474,15 +474,15 @@ const en: Record<string, ItemMore[]> = {
     {
       text: [
         "On 10 September I added a backup so that an outage would give a weaker answer instead of none. Within the hour the main model hit a limit, the backup took over, and it answered a comment about the rain with “Good morning”. I removed that backup the same day and used one as good as the main model.",
-        "Since 30 September the backup is a local model again, by my own choice. Whatever it writes still passes the last look before sending, like every other message.",
+        "In the 30 September 2026 snapshot I had chosen a local backup again, with its output routed through the final filter. This describes that setup, not the current fallback policy or a guarantee about every reply.",
       ],
       aside:
         "The switch itself was never the problem. That day it did exactly what it was built to do: it noticed the limit and changed model without leaking anything. The weak point was what the backup said.",
     },
     {
       text: [
-        "The supervision layer refuses three things outright: a summary written by hand, success reported by the worker that did the job, and repeating a failed step without changing anything.",
-        "In the repair loop I built, 15 of 15 fixable problems were fixed and 3 of 3 impossible ones were stopped honestly, with no false success.",
+        "The old Supervisor was designed to reject a summary written by hand, success reported only by the worker, and an unchanged retry of a failed step. It is now retired and is not part of the current setup.",
+        "In that historical repair-loop test, 15 of 15 fixable problems were fixed and 3 of 3 impossible ones were stopped honestly, with no false success in that test.",
       ],
       facts: [
         { value: "15 / 15", label: "fixable problems repaired" },
@@ -496,7 +496,7 @@ const en: Record<string, ItemMore[]> = {
     {
       text: [
         "When I start a job from chat, the assistant can only propose it. It shows me what it understood and a short code, and the job starts when I send the code back.",
-        "An email from someone it has not seen before reaches my phone as a card with buttons. The live trial of the supervision layer told me about 24 of its 25 failures.",
+        "An email from someone it has not seen before reaches my phone as a card with buttons. In the July–August 2026 trial, the now-retired Supervisor notified me of 24 of its 25 failures. That is a historical measurement, not a current notification guarantee.",
       ],
       facts: [{ value: "24 of 25", label: "failures that reached my phone during the trial" }],
       aside:
@@ -710,7 +710,7 @@ const it: Record<string, ItemMore[]> = {
     },
     {
       text: [
-        "Li raggiungo soprattutto con abbonamenti che pago già, così una giornata pesante non produce un conto a sorpresa. Il mio assistente principale risponde con un modello ospitato e ripiega su uno locale se quello non è disponibile.",
+        "Li raggiungo soprattutto con abbonamenti che pago già, così una giornata pesante non produce un conto a sorpresa. Nell’assetto di settembre–ottobre 2026, il mio assistente principale usava un modello ospitato con una riserva locale.",
         "La regola per andare fuori: un modello locale ha fallito due volte lo stesso compito senza un motivo chiaro, la decisione comporta veri compromessi, oppure sta per uscire qualcosa di pubblico o delicato per la sicurezza. Non per le modifiche di routine, e non per rifare un lavoro che un modello locale ha già fatto bene.",
       ],
       aside:
@@ -749,7 +749,7 @@ const it: Record<string, ItemMore[]> = {
     },
     {
       text: [
-        "Gira su un modello locale, quindi non costa nulla per compito e niente esce dalla macchina. Gli do lavori con un traguardo chiaro.",
+        "In quell’assetto eseguiva il calcolo del modello in locale, senza un costo API del modello per chiamata. Questo da solo non dimostrava la riservatezza degli strumenti o del resto del compito. Gli affidavo lavori con un traguardo chiaro.",
         "Il suo lavoro lo controllo sul disco. Nel confronto di settembre ha eseguito un comando, creato un file, corretto un errore e dimostrato che il test passava.",
       ],
       facts: [
@@ -1046,15 +1046,15 @@ const it: Record<string, ItemMore[]> = {
     {
       text: [
         "Il 10 settembre ho aggiunto una riserva, perché un’interruzione desse una risposta più debole invece di nessuna. Entro un’ora il modello principale ha raggiunto un limite, la riserva è subentrata, e ha risposto “Buongiorno” a un commento sulla pioggia. Ho tolto quella riserva il giorno stesso e ne ho usata una all’altezza del modello principale.",
-        "Dal 30 settembre la riserva è di nuovo un modello locale, per mia scelta. Tutto ciò che scrive passa comunque dall’ultima occhiata prima dell’invio, come ogni altro messaggio.",
+        "Nell’istantanea del 30 settembre 2026 avevo scelto di nuovo una riserva locale, con l’output instradato al filtro finale. Questo descrive quell’assetto, non la politica attuale di fallback né una garanzia su ogni risposta.",
       ],
       aside:
         "Il passaggio in sé non è mai stato il problema. Quel giorno ha fatto esattamente ciò per cui era stato costruito: ha notato il limite e ha cambiato modello senza far trapelare nulla. Il punto debole era ciò che diceva la riserva.",
     },
     {
       text: [
-        "Il livello di supervisione rifiuta in blocco tre cose: un riassunto scritto a mano, un successo dichiarato dal lavoratore che ha fatto il lavoro, e la ripetizione di un passo fallito senza cambiare nulla.",
-        "Nel ciclo di riparazione che ho costruito, 15 problemi riparabili su 15 sono stati riparati e 3 impossibili su 3 sono stati fermati con onestà, senza alcun falso successo.",
+        "Il vecchio Supervisor era progettato per rifiutare un riassunto scritto a mano, un successo dichiarato solo dal lavoratore e un tentativo identico dopo un fallimento. Ora è ritirato e non fa parte dell’assetto attuale.",
+        "In quella prova storica del ciclo di riparazione, 15 problemi riparabili su 15 sono stati riparati e 3 impossibili su 3 sono stati fermati con onestà, senza falsi successi in quella prova.",
       ],
       facts: [
         { value: "15 / 15", label: "problemi riparabili riparati" },
@@ -1068,7 +1068,7 @@ const it: Record<string, ItemMore[]> = {
     {
       text: [
         "Quando avvio un lavoro dalla chat, l’assistente può solo proporlo. Mi mostra cosa ha capito e un breve codice, e il lavoro parte quando gli rimando il codice.",
-        "Un’email da qualcuno che non ha mai visto arriva sul mio telefono come una scheda con dei pulsanti. La prova dal vivo del livello di supervisione mi ha avvisato di 24 dei suoi 25 fallimenti.",
+        "Un’email da qualcuno che non ha mai visto arriva sul mio telefono come una scheda con dei pulsanti. Nella prova di luglio–agosto 2026, il Supervisor ora ritirato mi ha avvisato di 24 dei suoi 25 fallimenti. È una misura storica, non una garanzia attuale sulle notifiche.",
       ],
       facts: [{ value: "24 su 25", label: "fallimenti arrivati sul mio telefono durante la prova" }],
       aside:

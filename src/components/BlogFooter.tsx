@@ -24,7 +24,7 @@ const BlogFooter = () => {
 
           {/* Tagline */}
           <p className="text-xs text-muted-foreground text-center max-w-md">
-            Documenting the journey from zero to cybersecurity — one day at a time.
+            Linux services, practical automation and security — built, checked and documented.
           </p>
 
           {/* Social Links */}
@@ -44,7 +44,7 @@ const BlogFooter = () => {
           </div>
 
           {/* Nav */}
-          <div className="flex items-center gap-4 text-xs font-mono">
+          <div className="flex flex-wrap justify-center items-center gap-4 text-xs font-mono">
             <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
               Home
             </Link>
@@ -63,9 +63,11 @@ const BlogFooter = () => {
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              Source
+              Content source
             </a>
           </div>
+
+          <a href="https://github.com/JuriBuora/juribuora-cyber-site" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-muted-foreground hover:text-primary underline underline-offset-4">Website code</a>
 
           {/* Copyright */}
           <p className="font-mono text-xs text-muted-foreground">

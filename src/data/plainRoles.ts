@@ -29,20 +29,20 @@ const en: RoleDetail[] = [
     oneLine: "The part that thinks. I have run more than ten of them, from small and quick to very large.",
     intro: [
       "An AI model is a program that has read an enormous amount of text and can now read, write and reason. Its size is counted in “parameters”, written with a B for billions. Think of it as the number of adjustable connections in the brain. More usually means smarter, slower, and much hungrier for memory.",
-      "Most people who try this at home run models of 4 to 16 billion. My laptop has 128 GB of memory, which let me run models of up to 120 billion on my own desk, with nothing sent to anyone.",
+      "Most people who try this at home run models of 4 to 16 billion. My laptop has 128 GB of memory, which let me run models of up to 120 billion on my own desk, with local model computation. Tools and other services still need their own privacy checks.",
     ],
     listTitle: "The ones I have worked with",
     items: [
       { name: "gpt-oss 120B", tag: "120 billion · local", body: "The largest I run on my own machine. It takes about 63 GB of memory by itself. I use it for hard reasoning and for coding by hand." },
       { name: "Qwen3 Coder Next", tag: "80 billion · local · retired", body: "A coding specialist. I retired it after real work showed it was the slowest of three candidates and its size bought nothing extra." },
       { name: "DeepSeek V4 Flash", tag: "about 91 GB on disk · local · retired", body: "A very large open model. It ran, but stacked on everything else it exhausted the machine’s memory during testing. Too big and too slow for daily use, so it went." },
-      { name: "Gemma 4, my own agent build", tag: "31 billion · local", body: "For weeks the everyday brain of my assistant. It scored 100 out of 100 in a test shaped like real use, where the model before it scored 70. Today it is the one that can look at pictures." },
+      { name: "Gemma 4, my own agent build", tag: "31 billion · local", body: "For weeks the everyday brain of my assistant. It scored 100 out of 100 in a test shaped like real use, where the model before it scored 70. In the September–October 2026 setup it handled pictures." },
       { name: "Qwen3 and Qwen3 Coder", tag: "30 billion · local · retired", body: "Earlier everyday brains and candidates. One answered with invented tool commands instead of really looking things up, which is how it lost its place." },
       { name: "“Libero”", tag: "27 billion · local", body: "A model with fewer built-in refusals, kept only on my own machine. It is switched on by request, for one conversation or a set time, and then the normal model comes back automatically." },
       { name: "gpt-oss 20B", tag: "20 billion · local", body: "The everyday local brain since late August. Chosen after a head-to-head test on real tasks." },
       { name: "Qwen3 8B", tag: "8 billion · local", body: "The quick one. It answers simple messages in about 0.7 seconds, where the bigger model needs 2." },
       { name: "An embedding model", tag: "local", body: "Not a talker. It turns text into numbers so that the archive can find notes by meaning, not just by matching words." },
-      { name: "Claude, GPT and Gemini", tag: "from outside companies", body: "Much larger models that I reach over the internet for the hardest jobs and for a second opinion. My main chat assistant currently answers with one of these, with a local model as its backup." },
+      { name: "Claude, GPT and Gemini", tag: "from outside companies", body: "Much larger models that I reach over the internet for the hardest jobs and for a second opinion. In the September–October 2026 setup, my main chat assistant used one of these, with a local backup." },
     ],
     lessonsTitle: "What running them taught me",
     lessons: [
@@ -167,7 +167,7 @@ const en: RoleDetail[] = [
       "A guardrail is a limit that holds even when the model, the instructions or I get something wrong. The difference between a rule and a guardrail is simple: a rule asks, a guardrail prevents.",
       "I measured this. A written rule about how my assistant should speak held five times out of six. That is fine for style. It is not fine for anything that reaches a real person, so the important rules became mechanisms.",
     ],
-    listTitle: "The checks in place",
+    listTitle: "Checks in that setup",
     items: [
       { name: "The pre-flight check", tag: "34 known failures", body: "Before a risky change, I go through a list of 34 ways things have gone wrong before, name the ones that apply, and record proof for each." },
       { name: "The last look before sending", body: "Every outgoing message passes a final filter. Internal notes, error text and the model’s own thinking are stopped there." },
@@ -181,7 +181,7 @@ const en: RoleDetail[] = [
     lessons: [
       "Put the control where the worker cannot walk around it.",
       "Never test on a real person who does not know they are part of a test.",
-      "Measure the control itself. I built a supervision layer, ran it for 17 days, found only two real jobs had completed, and switched it off to fix it.",
+      "Measure the control itself. The July–August 2026 Supervisor trial ran for 17 days and completed only two distinct real jobs. That Supervisor is now retired and is not part of the current setup.",
     ],
     fact: { value: "5 in 6", label: "times a written rule held, which is why it became a mechanism" },
   },
@@ -222,20 +222,20 @@ const it: RoleDetail[] = [
     oneLine: "La parte che pensa. Ne ho fatti girare più di dieci, dai piccoli e veloci ai molto grandi.",
     intro: [
       "Un modello di IA è un programma che ha letto una quantità enorme di testi e ora sa leggere, scrivere e ragionare. La sua grandezza si conta in “parametri”, indicati con una B per miliardi. Pensali come il numero di collegamenti regolabili nel cervello. Di più vuol dire di solito più intelligente, più lento e molto più affamato di memoria.",
-      "Chi prova queste cose a casa usa in genere modelli da 4 a 16 miliardi. Il mio portatile ha 128 GB di memoria, e questo mi ha permesso di far girare modelli fino a 120 miliardi sulla mia scrivania, senza inviare niente a nessuno.",
+      "Chi prova queste cose a casa usa in genere modelli da 4 a 16 miliardi. Il mio portatile ha 128 GB di memoria, e questo mi ha permesso di far girare modelli fino a 120 miliardi sulla mia scrivania, con il calcolo del modello in locale. Strumenti e altri servizi richiedono comunque verifiche proprie di riservatezza.",
     ],
     listTitle: "Quelli con cui ho lavorato",
     items: [
       { name: "gpt-oss 120B", tag: "120 miliardi · in locale", body: "Il più grande che faccio girare sulla mia macchina. Da solo occupa circa 63 GB di memoria. Lo uso per ragionamenti difficili e per programmare a mano." },
       { name: "Qwen3 Coder Next", tag: "80 miliardi · in locale · ritirato", body: "Uno specialista della programmazione. L’ho ritirato dopo che il lavoro vero ha mostrato che era il più lento di tre candidati e che la sua grandezza non dava niente in più." },
       { name: "DeepSeek V4 Flash", tag: "circa 91 GB su disco · in locale · ritirato", body: "Un modello aperto molto grande. Funzionava, ma sommato a tutto il resto ha esaurito la memoria della macchina durante i test. Troppo grande e troppo lento per l’uso quotidiano, quindi è uscito." },
-      { name: "Gemma 4, in una mia versione per agenti", tag: "31 miliardi · in locale", body: "Per settimane il cervello di tutti i giorni del mio assistente. Ha ottenuto 100 su 100 in una prova costruita come l’uso reale, dove il modello precedente aveva fatto 70. Oggi è quello che sa guardare le immagini." },
+      { name: "Gemma 4, in una mia versione per agenti", tag: "31 miliardi · in locale", body: "Per settimane il cervello di tutti i giorni del mio assistente. Ha ottenuto 100 su 100 in una prova costruita come l’uso reale, dove il modello precedente aveva fatto 70. Nell’assetto di settembre–ottobre 2026 gestiva le immagini." },
       { name: "Qwen3 e Qwen3 Coder", tag: "30 miliardi · in locale · ritirati", body: "Cervelli quotidiani e candidati delle prime fasi. Uno rispondeva con comandi inventati invece di andare davvero a controllare, ed è così che ha perso il posto." },
       { name: "“Libero”", tag: "27 miliardi · in locale", body: "Un modello con meno rifiuti preimpostati, tenuto solo sulla mia macchina. Si attiva su richiesta, per una conversazione o per un tempo stabilito, e poi torna da solo il modello normale." },
       { name: "gpt-oss 20B", tag: "20 miliardi · in locale", body: "Il cervello locale di tutti i giorni da fine agosto. Scelto dopo un confronto diretto su compiti reali." },
       { name: "Qwen3 8B", tag: "8 miliardi · in locale", body: "Quello veloce. Risponde ai messaggi semplici in circa 0,7 secondi, dove il modello più grande ne impiega 2." },
       { name: "Un modello di embedding", tag: "in locale", body: "Non parla. Trasforma i testi in numeri, così l’archivio trova gli appunti per significato e non solo per parole uguali." },
-      { name: "Claude, GPT e Gemini", tag: "di aziende esterne", body: "Modelli molto più grandi che raggiungo via internet per i lavori più difficili e per un secondo parere. Il mio assistente principale in chat oggi risponde con uno di questi, con un modello locale di riserva." },
+      { name: "Claude, GPT e Gemini", tag: "di aziende esterne", body: "Modelli molto più grandi che raggiungo via internet per i lavori più difficili e per un secondo parere. Nell’assetto di settembre–ottobre 2026, il mio assistente principale in chat usava uno di questi, con una riserva locale." },
     ],
     lessonsTitle: "Cosa mi ha insegnato farli girare",
     lessons: [
@@ -360,7 +360,7 @@ const it: RoleDetail[] = [
       "Una protezione è un limite che regge anche quando il modello, le istruzioni o io sbagliamo qualcosa. La differenza tra una regola e una protezione è semplice: la regola chiede, la protezione impedisce.",
       "L’ho misurato. Una regola scritta su come doveva esprimersi il mio assistente ha retto cinque volte su sei. Va bene per lo stile. Non va bene per qualcosa che arriva a una persona vera, quindi le regole importanti sono diventate meccanismi.",
     ],
-    listTitle: "I controlli in funzione",
+    listTitle: "I controlli di quell’assetto",
     items: [
       { name: "Il controllo prima del decollo", tag: "34 guasti noti", body: "Prima di una modifica rischiosa passo in rassegna un elenco di 34 modi in cui le cose sono già andate storte, indico quelli che riguardano il caso, e registro una prova per ciascuno." },
       { name: "L’ultima occhiata prima dell’invio", body: "Ogni messaggio in uscita passa da un filtro finale. Note interne, testi di errore e i ragionamenti del modello si fermano lì." },
@@ -374,7 +374,7 @@ const it: RoleDetail[] = [
     lessons: [
       "Il controllo va messo dove il lavoratore non può girarci intorno.",
       "Mai fare prove su una persona vera che non sa di far parte di una prova.",
-      "Va misurato anche il controllo. Ho costruito un livello di supervisione, l’ho fatto girare 17 giorni, ho scoperto che erano stati conclusi solo due lavori veri, e l’ho spento per sistemarlo.",
+      "Va misurato anche il controllo. La prova del Supervisor di luglio–agosto 2026 è durata 17 giorni e ha completato solo due lavori reali distinti. Quel Supervisor è ora ritirato e non fa parte dell’assetto attuale.",
     ],
     fact: { value: "5 su 6", label: "le volte in cui una regola scritta ha retto, ed è per questo che è diventata un meccanismo" },
   },

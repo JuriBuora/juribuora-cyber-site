@@ -9,10 +9,10 @@ import { usePosts } from "@/hooks/usePosts";
 
 const skills = [
   { category: "Networking", items: ["TCP/IP", "DNS", "HTTP/S", "Wireshark", "Nmap"] },
-  { category: "Operating Systems", items: ["Linux (CLI)", "Windows Security", "File Systems"] },
+  { category: "Operating Systems", items: ["Linux CLI", "systemd", "Process Supervision", "File Systems"] },
   { category: "Security Concepts", items: ["Phishing Analysis", "Malware Families", "LOLBins", "APT Groups", "Email Security"] },
-  { category: "Tools & Platforms", items: ["TryHackMe", "GitHub", "Burp Suite", "SIEM Basics"] },
-  { category: "Programming", items: ["Python", "JavaScript", "Bash Scripting", "SQL"] },
+  { category: "Tools & Platforms", items: ["GitHub Actions", "FFmpeg", "Home Assistant", "Burp Suite", "SIEM Basics"] },
+  { category: "Programming", items: ["Python", "TypeScript", "Bash", "SQL", "API Integration"] },
   { category: "AI & Automation Security", items: ["Agent Guardrails", "Output Filtering", "Adversarial Testing", "Least-Privilege Tooling"] },
   { category: "Documentation", items: ["Technical Writing", "Incident Reports", "Structured Logging"] },
 ];
@@ -49,20 +49,20 @@ const AboutPage = () => {
             Juri Buora
           </h1>
           <p className="font-mono text-sm text-primary mb-4">
-            Security and AI operations · early career
+            Linux, automation and security · early career
           </p>
           <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto">
-            I'm documenting my journey from zero to cybersecurity — building real skills through daily study,
-            hands-on labs, and honest documentation, with a solid foundation in networking, Linux,
-            web security, and threat analysis.
+            I build and operate Linux services, practical automations and AI integrations, and document
+            how I check the results. I’m preparing for a junior role in IT operations, automation or security,
+            alongside daily study and hands-on security labs.
           </p>
           <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto mt-4">
-            Alongside the study I build and run real systems, mostly AI agents and the safety around them. The short
+            Alongside the study I build and run real systems, including an Ubuntu agent gateway, calendar workflows and video output checks. The short
             version is on{" "}
             <Link to="/what-im-doing" className="text-primary underline underline-offset-4">
               what I'm doing
             </Link>
-            ; the security evidence is in the{" "}
+            ; the case studies and security evidence are in the{" "}
             <Link to="/portfolio" className="text-primary underline underline-offset-4">
               portfolio
             </Link>
@@ -103,14 +103,14 @@ const AboutPage = () => {
               <Terminal className="w-5 h-5 text-primary mb-3" />
               <h3 className="text-sm font-semibold text-card-foreground mb-1">Hands-On Labs</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Every concept gets tested in practice — TryHackMe rooms, custom scripts, and documented exercises.
+                Security labs complement operating services: I compare the requested result with files, readbacks and completed checks.
               </p>
             </div>
             <div className="border border-border rounded-lg p-5 bg-card">
               <BookOpen className="w-5 h-5 text-primary mb-3" />
               <h3 className="text-sm font-semibold text-card-foreground mb-1">Public Documentation</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Everything is logged publicly — mistakes included. Transparency builds trust and accelerates learning.
+                I publish technical lessons and limitations while keeping personal information and deployment details private.
               </p>
             </div>
           </div>

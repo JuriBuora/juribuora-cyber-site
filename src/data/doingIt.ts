@@ -1,10 +1,9 @@
 /**
- * Italian text for /what-im-doing, laid over the English content in doing.ts
- * by chapter id, plus the page's own labels in both languages. Slugs, links
- * and visuals stay in doing.ts so the two languages cannot drift apart in
- * structure; a test checks every chapter has a translation of the same shape.
+ * Italian copy mirrors the six English chapters and their dated claim limits.
+ * Structure, routes and visuals are shared through doing.ts.
  */
 import type { Lang } from "./plain";
+import { jekyllSnapshot } from "./jekyllSnapshot.generated";
 
 export type ChapterText = {
   kicker: string;
@@ -16,121 +15,183 @@ export type ChapterText = {
 };
 
 export const chaptersIt: Record<string, ChapterText> = {
-  webcheckup: {
-    kicker: "Prodotto · Basi di sicurezza web",
-    headline: "Controlli del sito su cui il titolare di un’attività può agire.",
-    lead:
-      "WebCheckup guarda un sito pubblico dall’esterno, come farebbe un cliente, un browser o un motore di ricerca, e trasforma ciò che trova in un rapporto breve, con le priorità, scritto in parole semplici.",
-    benefits: [
-      "Individua i problemi visibili che fanno perdere fiducia: HTTPS non funzionante, protezioni del browser mancanti, pagine lente o inutilizzabili da telefono, link rotti.",
-      "Dice chi può sistemare ogni punto e quanto è urgente, invece di consegnare l’elenco grezzo di uno scanner.",
-      "Non afferma mai ciò che non può dimostrare: un’email di contatto può citare un problema solo se la prova si ripete.",
+  "hermes-ubuntu": {
+    "kicker": "Linux · Integrazioni AI",
+    "headline": "Migrare su Ubuntu il gateway di un assistente AI.",
+    "lead": "Ho personalizzato e distribuito su Ubuntu Hermes Agent, progetto open source di Nous Research, separando il gateway di messaggistica dai servizi opzionali della workstation. L’audit del 25 novembre 2026 ha verificato metadati runtime e file installati selezionati; alcune attività dipendono ancora da modelli cloud o servizi della workstation.",
+    "benefits": [
+      "Distribuzione e gestione delle dipendenze attorno a un agente open source esistente, distinguendo il progetto originale dalle integrazioni personalizzate.",
+      "Distinzione fra servizio in esecuzione, lavoro completato e risultato accettato, sostenuta da prove registrate.",
+      "Documentazione operativa che rende visibili dipendenze opzionali e limiti del recupero."
     ],
-    proof: [
-      { value: "2", label: "lingue, tenute allineate da un test", source: "test di parità tra email in italiano e in inglese, nel repository del motore" },
-      { value: "39", label: "file di test nel motore", source: "file di test nel repository privato del motore" },
-      { value: "123", label: "commit da luglio", source: "git rev-list --count HEAD, repository del motore" },
+    "proof": [
+      {
+        "value": "Ubuntu",
+        "label": "gateway osservato in esecuzione il 25 nov 2026",
+        "source": "Audit del 25 nov 2026: metadati del servizio, heartbeat e hash di file installati selezionati"
+      },
+      {
+        "value": "Open source",
+        "label": "Hermes Agent di Nous Research",
+        "source": "Confronto fra baseline upstream Hermes e integrazioni personalizzate, 25 nov 2026"
+      }
     ],
+    "reading": [
+      "Caso studio sulla migrazione"
+    ]
   },
-  "client-work": {
-    kicker: "Lavoro per clienti · Web e dati",
-    headline: "Lavoro vero per attività vere.",
-    lead:
-      "Ho costruito e mantengo il sito di produzione di un’azienda agricola. A parte, per una piccola attività che lavorava su due vecchi database a utente singolo, ho analizzato i dati e pianificato un passaggio sostenibile a un sistema condiviso, consegnando lungo il percorso il primo pezzo utilizzabile.",
-    benefits: [
-      "Un sito veloce, pensato prima per il telefono, con i dati per i motori di ricerca, moduli validati e statistiche che aspettano il consenso.",
-      "Una migrazione pianificata partendo dalle prove: solo copie, originali verificati intatti, e la logica dell’attività trovata dove vive davvero.",
-      "Opzioni con i costi, spiegate in parole semplici, e poi una consegna a fasi in cui ogni passo aspetta il via del cliente.",
+  "conversation-calendar": {
+    "kicker": "WhatsApp · Integrazione calendario",
+    "headline": "Dalla conversazione ad azioni sul calendario verificate.",
+    "lead": "Ho sviluppato flussi attorno a Hermes Agent per raccogliere contesto conversazionale entro limiti definiti, validare partecipanti e date e scrivere su Google Calendar con rilettura di controllo. Una richiesta reale documentata ha verificato scrittura e rilettura il 15 novembre 2026; all’audit del 25 novembre le nuove capacità conversazionali erano ancora in validazione nell’uso normale.",
+    "benefits": [
+      "Il contesto conversazionale viene limitato e validato prima che un appuntamento proposto diventi un’azione sul calendario.",
+      "ID evento deterministici e rilettura aiutano a rilevare duplicati e verificare la scrittura.",
+      "Lo stato persistente delle notifiche permette di ritentare dopo un errore; un blocco fra accettazione remota e ricevuta locale può ancora duplicare una notifica."
     ],
-    proof: [
-      { value: "231", label: "commit sul sito online", source: "git rev-list --count HEAD, repository pubblico del sito dell’azienda agricola" },
-      { value: "37", label: "sezioni nel rapporto di migrazione", source: "rapporto consegnato al cliente a luglio 2026 (privato)" },
-      { value: "10", label: "fogli nel file di lavoro consegnato", source: "prototipo del foglio ore consegnato a luglio 2026 (privato)" },
+    "proof": [
+      {
+        "value": "15 nov",
+        "label": "2026: scrittura e rilettura calendario registrate",
+        "source": "Ricevuta di accettazione della richiesta owner del 15 nov 2026; versione dello script diversa da quella dell’audit del 25 nov"
+      },
+      {
+        "value": "Retry",
+        "label": "stato persistente delle notifiche, con limiti",
+        "source": "Revisione del sorgente del 25 nov 2026: outbox limitata e notifiche con semantica almeno-una-volta"
+      }
     ],
-    reading: ["Lo studio di migrazione"],
+    "reading": [
+      "Caso studio sul calendario",
+      "Il lavoro precedente sulla messaggistica",
+      "Attaccare il mio stesso chatbot",
+      "Una risposta è un permesso, non un suggerimento"
+    ]
   },
-  foresight: {
-    kicker: "Metodo · Rilasci sicuri",
-    headline: "Mettere in produzione l’automazione senza scoprire gli errori attraverso i clienti.",
-    lead:
-      "Foresight è un controllo prima del rilascio che ho costruito dopo che i risultati di un sistema di IA erano arrivati a persone vere con difetti che nessuno aveva visto. Prima che parta una modifica rischiosa, si indicano i tipi di guasto che la riguardano, ognuno riceve un meccanismo, e ognuno una prova realmente eseguita.",
-    benefits: [
-      "Meno incidenti scoperti da chi sta dall’altra parte.",
-      "Una traccia scritta: cosa poteva rompersi, cosa lo impedisce, e la prova che è stato controllato.",
-      "Controlli che reggono. Dove un guasto arriverebbe a una persona, la regola è costruita nel sistema invece di restare un’istruzione.",
+  "video-reliability": {
+    "kicker": "Affidabilità · Output video",
+    "headline": "Verificare l’output utilizzabile e i processi in esecuzione.",
+    "lead": "Ho costruito e gestito una pipeline video con recupero basato sull’avanzamento e controlli d’integrità che decodificano l’output. L’audit del 25 novembre 2026 ha rilevato una verifica di decodifica completata con successo e file in avanzamento. Queste prove riguardano l’output campionato, senza dimostrare disponibilità continua o integrità di ogni archivio.",
+    "benefits": [
+      "Le decisioni di recupero usano l’avanzamento del lavoro, oltre alla presenza del processo.",
+      "La validazione dell’output controlla se il video prodotto può essere effettivamente decodificato.",
+      "Le verifiche registrate distinguono i risultati osservati dai casi di guasto che non sono stati esercitati."
     ],
-    proof: [
-      { value: "34", label: "tipi di guasto documentati", source: "righe numerate nel catalogo della competenza foresight" },
-      { value: "5 su 6", label: "le volte in cui una regola nel prompt ha retto, ed è diventata un filtro", source: "misura su prove ripetute, registrata nella competenza" },
+    "proof": [
+      {
+        "value": "Decodifica",
+        "label": "verifica completata osservata il 25 nov 2026",
+        "source": "Audit del 25 nov 2026: risultato della verifica d’integrità completata e output decodificato"
+      },
+      {
+        "value": "Avanzamento",
+        "label": "output in crescita nel campione dell’audit",
+        "source": "Audit del 25 nov 2026: campionamento passivo dell’avanzamento dei file; nessun nuovo test guasti o playback"
+      }
     ],
+    "reading": [
+      "Caso studio sull’affidabilità dell’output"
+    ]
   },
-  "safe-messaging": {
-    kicker: "IA applicata · Consegna a prova di errore",
-    headline: "Un’IA che parla con le persone, con una rete di sicurezza sulla porta.",
-    lead:
-      "Uso un assistente che risponde in automatico su WhatsApp nelle mie conversazioni, con persone che sanno che c’è. Poiché un messaggio sbagliato non si può ritirare, tratto l’istante prima dell’invio come punto di controllo e misuro l’assistente come un sistema sotto test.",
-    benefits: [
-      "Tra il modello e il destinatario ci sono un filtro e un passaggio di rifinitura, così note interne, ragionamenti del modello ed errori degli strumenti non escono mai.",
-      "Acceso o spento per singola conversazione, un’indicazione di tono temporanea che scade da sola, e una risposta che non supera i controlli finali non viene inviata.",
-      "Misurato, non sperato: 123 scenari di prova eseguiti tre volte ciascuno, più un turno reale di controllo sul percorso di produzione.",
+  "workstation-climate": {
+    "kicker": "Automazione · Dispositivi e controllo",
+    "headline": "Coordinare richieste, disponibilità e approvazione dell’owner.",
+    "lead": "Ho implementato richieste coordinate alla workstation con tentativi limitati e controlli di disponibilità, insieme a flussi del clima approvati dall’owner e report di utilizzo. All’audit del 25 novembre 2026, le registrazioni di disponibilità non dimostravano indipendentemente una transizione automatica dalla sospensione al lavoro utile e l’attuazione fisica del clima dopo approvazione restava non verificata.",
+    "benefits": [
+      "Coordinamento condiviso, timeout e verifiche di disponibilità rendono esplicite le dipendenze opzionali dalla workstation.",
+      "I confini di approvazione distinguono una richiesta autorizzata dall’attuazione fisica confermata.",
+      "I report di utilizzo distinguono le ore nelle modalità operative dai consumi energetici."
     ],
-    proof: [
-      { value: "123 × 3", label: "esecuzioni di scenari per ogni giro di misura", source: "descrizione della sonda nell’elenco privato dei difetti, 25–26 settembre 2026" },
-      { value: "2 notti", label: "di misure hanno fatto emergere i difetti; quasi tutte le correzioni sono diventate meccanismi", source: "stesso elenco dei difetti" },
+    "proof": [
+      {
+        "value": "Disponibilità",
+        "label": "percorso di richiesta rivisto il 25 nov 2026",
+        "source": "Audit del 25 nov 2026: richieste registrate e prove di disponibilità; accettazione automatica sospensione-lavoro ancora aperta"
+      },
+      {
+        "value": "Approvazione",
+        "label": "confine di controllo e report revisionati",
+        "source": "Audit del 25 nov 2026: bridge di approvazione e ricevute dei report; attuazione fisica ancora non verificata"
+      }
     ],
-    reading: ["Attaccare il mio stesso chatbot", "Una risposta è un permesso, non un suggerimento"],
+    "reading": [
+      "Caso studio sulla workstation",
+      "Integrazione del clima",
+      "Caso studio sul clima"
+    ]
   },
-  supervisor: {
-    kicker: "Agenti · Misurare con onestà",
-    headline: "Agenti che devono dimostrare il loro lavoro, e una prova che ho raccontato con onestà.",
-    lead:
-      "Ho costruito un livello di supervisione perché un agente di IA non potesse semplicemente dire che un lavoro era fatto. L’ho fatto girare dal vivo, l’ho misurato, e l’ho spento mentre correggevo ciò che i numeri avevano messo in luce.",
-    benefits: [
-      "Approvazioni prima dei passi delicati, una registrazione per ogni decisione, e un recupero dopo un blocco che non ripete le azioni già fatte.",
-      "Per dire “finito” serve una prova indipendente. Il successo dichiarato da chi ha fatto il lavoro viene respinto.",
-      "Un’abitudine a misurare i risultati. Un controllo di prontezza verde non è la stessa cosa del lavoro che viene portato a termine.",
+  "web-client-data": {
+    "kicker": "Lavoro per clienti · Web e dati",
+    "headline": "Siti pratici, controlli e pianificazione delle migrazioni.",
+    "lead": "WebCheckup trasforma i riscontri su un sito pubblico in un rapporto con priorità. Ho anche costruito e mantengo il sito di un’azienda agricola e, a luglio 2026, ho consegnato uno studio di migrazione database e un prototipo utilizzabile di un file di lavoro per una piccola attività.",
+    "benefits": [
+      "Il lavoro sui siti comprende layout per telefono, metadati per la ricerca, validazione dei moduli e statistiche subordinate al consenso.",
+      "I riscontri di un controllo richiedono prove riproducibili e un responsabile chiaro per la correzione proposta.",
+      "La pianificazione della migrazione usa copie, preserva gli originali e distingue il prototipo consegnato dalla migrazione completa."
     ],
-    proof: [
-      { value: "41", label: "compiti nella prova dal vivo", source: "verifica del database della prova, 18 luglio – 2 agosto 2026, nel registro di stato del supervisore" },
-      { value: "2", label: "compiti reali distinti completati", source: "stessa verifica" },
+    "proof": [
+      {
+        "value": "37",
+        "label": "sezioni nel rapporto di migrazione di luglio 2026",
+        "source": "Rapporto di migrazione consegnato al cliente a luglio 2026; consegna storica, non migrazione completata"
+      },
+      {
+        "value": "10",
+        "label": "fogli nel prototipo consegnato a luglio 2026",
+        "source": "Prototipo del file ore consegnato a luglio 2026"
+      }
     ],
+    "reading": [
+      "Il sito dell’azienda agricola",
+      "Lo studio di migrazione"
+    ]
   },
-  security: {
-    kicker: "Sicurezza · Revisione e pratica",
-    headline: "Trovare il difetto nel mio strumento prima che lo trovi qualcun altro.",
-    lead:
-      "Ho revisionato uno strumento per il browser che avevo scritto per un agente di IA e ho trovato un vero percorso di DNS rebinding: il controllo di sicurezza e il browser potevano finire a parlare con indirizzi diversi. Ho documentato le opzioni e il costo di ciascuna. In parallelo tengo un diario pubblico quotidiano di studio e un repository di pratica sulle regole di rilevamento.",
-    benefits: [
-      "L’abitudine di attaccare il mio stesso lavoro, e poi di mettere per iscritto il ragionamento perché chi revisiona possa non essere d’accordo.",
-      "A mio agio con le basi del rischio web e di rete: SSRF, DNS, TLS, intestazioni, privilegio minimo.",
-      "Imparare in pubblico: 243 giorni di appunti e laboratori, errori compresi.",
+  "security-foresight": {
+    "kicker": "Sicurezza · Revisione e prove di rilascio",
+    "headline": "Revisionare i miei strumenti e chiedere prove prima del rilascio.",
+    "lead": "A luglio 2026 ho trovato un percorso di DNS rebinding revisionando il mio strumento per il browser e ne ho documentato i compromessi. Foresight associa ai casi di guasto pertinenti meccanismi e verifiche registrate prima di una modifica rischiosa. Il diario pubblico di studio e la pratica sulle regole di rilevamento restano parte del lavoro.",
+    "benefits": [
+      "Le revisioni di sicurezza spiegano il ragionamento e consentono a chi revisiona di metterlo in discussione.",
+      "I controlli di rilascio indicano cosa potrebbe fallire, quale meccanismo lo affronta e quale prova è stata realmente eseguita.",
+      "Appunti pubblici e laboratori distinguono ricerca, verifiche sintetiche e risultati operativi osservati."
     ],
-    proof: [
-      { value: "243", label: "giorni nel diario pubblico", source: "ultima sincronizzazione del diario pubblico di studio" },
-      { value: "1", label: "percorso SSRF reale trovato nel mio codice", source: "revisione di sicurezza dello strumento per il browser, 27 luglio 2026" },
+    "proof": [
+      {
+        "value": "Revisione",
+        "label": "studio di sicurezza sul browser, luglio 2026",
+        "source": "Revisione dell’adapter browser del 27 lug 2026: percorso DNS rebinding e compromessi delle mitigazioni"
+      },
+      {
+        "value": "Prove",
+        "label": "casi di guasto, meccanismi e verifiche eseguite",
+        "source": "Metodo Foresight rivisto nell’audit portfolio approvato del 25 nov 2026"
+      }
     ],
-  },
+    "reading": [
+      "La revisione di sicurezza dello strumento browser"
+    ]
+  }
 };
 
 export const rolesIt = [
   {
-    title: "Analista di sicurezza junior",
-    body: "Triage, messa a punto delle regole di rilevamento, rischio web e di rete, resoconti accurati. Spiego il mio ragionamento e mi piace essere revisionato.",
+    "title": "Operazioni IT junior",
+    "body": "Servizi Linux, gestione delle dipendenze, verifiche di recupero e documentazione utilizzabile da un altro operatore."
   },
   {
-    title: "Gestione di IA e automazione",
-    body: "Far girare agenti, smistare il lavoro tra modelli, tenerli sicuri e misurabili, e documentare in modo che chiunque possa subentrare.",
+    "title": "Integrazioni AI e automazione",
+    "body": "Collegare strumenti e API esistenti, validarne i risultati e rendere espliciti autorizzazioni e gestione dei guasti."
   },
   {
-    title: "Salute dei siti delle piccole attività",
-    body: "Controlli del sito in parole semplici e correzioni per HTTPS, velocità, telefono e visibilità.",
-  },
+    "title": "Analista di sicurezza junior",
+    "body": "Triage, pratica di rilevamento, rischio web e di rete e resoconti che rendono il ragionamento verificabile."
+  }
 ];
 
 export const heroStatsIt = [
-  { value: "1.364", label: "commit in 13 settimane" },
-  { value: "34", label: "tipi di guasto nel mio controllo di rilascio" },
-  { value: "243", label: "giorni di appunti pubblici di studio" },
+  { value: "Linux", label: "servizi e operazioni" },
+  { value: "API", label: "integrazioni pratiche per l’automazione" },
+  { value: jekyllSnapshot.posts.length.toLocaleString("it-IT"), label: "articoli pubblici di studio nello snapshot sincronizzato" },
 ];
 
 export type DoingUi = {
@@ -160,9 +221,9 @@ export type DoingUi = {
 export const doingUi: Record<Lang, DoingUi> = {
   en: {
     kicker: "What I'm doing",
-    headlineA: "I build AI that does real work,",
-    headlineB: "and the safety around it.",
-    lead: "Real projects, what each one does for a team, and the numbers behind them. Built with AI pair-programming. I set the goals, the guardrails and the review.",
+    headlineA: "I build and operate Linux services,",
+    headlineB: "automations and AI integrations.",
+    lead: "Practical projects, dated evidence and clear limits. Built with AI assistance: I set the requirements, integrate the tools and verify the results.",
     contact: "Get in touch",
     seeProjects: "See the projects",
     pdf: "One-page PDF",
@@ -171,10 +232,10 @@ export const doingUi: Record<Lang, DoingUi> = {
     plainB: ", in English or Italian.",
     teamGets: "What a team gets",
     fullStory: "The full story",
-    counted: "How the numbers were counted",
+    counted: "Evidence and scope",
     fitKicker: "Where I fit",
     fitTitle: "Early in my career, and open to what fits.",
-    fitBody: "I am at the start of a move into security and AI operations. I would rather show you the work than describe it, and I learn quickly from review.",
+    fitBody: "I am preparing for a junior role in IT operations, automation or security. These projects show what I have built, how I check it and where I am still learning.",
     longTitle: "Want the long version?",
     longBody: "The workstation page has every project, including the ones I stopped and why. I will also walk you through any of it live.",
     openWorkstation: "Open the workstation",
@@ -183,9 +244,9 @@ export const doingUi: Record<Lang, DoingUi> = {
   },
   it: {
     kicker: "Cosa sto facendo",
-    headlineA: "Costruisco IA che fa lavoro vero,",
-    headlineB: "e la sicurezza che le sta intorno.",
-    lead: "Progetti reali, cosa fa ciascuno per un team, e i numeri che li sostengono. Costruiti programmando in coppia con l’IA. Io stabilisco gli obiettivi, i limiti e la revisione.",
+    headlineA: "Costruisco e gestisco servizi Linux,",
+    headlineB: "automazioni e integrazioni AI.",
+    lead: "Progetti pratici, prove datate e limiti espliciti. Con assistenza AI: io definisco i requisiti, integro gli strumenti e verifico i risultati.",
     contact: "Scrivimi",
     seeProjects: "Vedi i progetti",
     pdf: "PDF di una pagina (in inglese)",
@@ -194,14 +255,14 @@ export const doingUi: Record<Lang, DoingUi> = {
     plainB: ".",
     teamGets: "Cosa ottiene un team",
     fullStory: "La storia completa",
-    counted: "Come sono stati contati i numeri",
+    counted: "Prove e ambito",
     fitKicker: "Dove posso essere utile",
     fitTitle: "All’inizio della carriera, e aperto a ciò che è adatto.",
-    fitBody: "Sto iniziando un percorso nella sicurezza informatica e nella gestione di sistemi di IA. Preferisco mostrarti il lavoro piuttosto che descriverlo, e imparo in fretta dalle revisioni.",
+    fitBody: "Mi preparo a un ruolo junior nelle operazioni IT, nell’automazione o nella sicurezza. Questi progetti mostrano cosa ho costruito, come lo verifico e dove sto ancora imparando.",
     longTitle: "Vuoi la versione lunga?",
     longBody: "La pagina della workstation contiene tutti i progetti, compresi quelli che ho fermato e il perché. Posso anche mostrarti tutto dal vivo.",
     openWorkstation: "Apri la workstation",
     emailMe: "Scrivimi",
-    detailNote: "Le pagine di dettaglio e gli articoli collegati sono in inglese.",
+    detailNote: "Le schede tecniche sono in inglese; i cinque nuovi casi studio includono anche la versione italiana.",
   },
 };
