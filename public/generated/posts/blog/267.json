@@ -1,0 +1,17 @@
+{
+  "day": 267,
+  "title": "Recovering LaunchAgents Without Trusting a Broken Runtime",
+  "date": "2026-10-25",
+  "url": "https://juribuora.github.io/blog/2026/10/25/day-267.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "supplychain",
+    "launchd",
+    "integrity",
+    "learningprocess"
+  ],
+  "slug": "day-267",
+  "sourcePath": "Blog/_posts/2026-10-25-day-267.md",
+  "content": "# 🔄 Recovering LaunchAgents Without Trusting a Broken Runtime\n\nAn update to Homebrew Python caused macOS LaunchAgents to disappear from service. That looked like an availability issue, but it also had a security dimension: a recovery mechanism must not blindly re-register arbitrary files just because a service is missing.\n\n# 🎯 Goal\n\nThe goal was to detect the broken registration, verify the intended source and code-signing state, and re-register only the known LaunchAgents that matched the expected inventory.\n\n# 🛠 What I Did\n\nI added a LaunchAgent code-sign guard and tests around the recovery path. The guard checks the expected service definitions and records what it is doing. The related backup work also records the source file, error number, and error text when a phase fails, so an operator can distinguish a missing registration from a damaged or unreadable executable.\n\n# 🔗 Key Cybersecurity Connections\n\nService recovery is a supply-chain and persistence boundary. Launching a similarly named script from an unexpected path could restore availability while introducing an integrity problem. Recovery needs identity checks, not only existence checks.\n\n## 🚨 Detection Opportunities\n\nMonitor for a service whose label, executable path, signature state, or source hash changes unexpectedly. A recovery alert should say whether the action was a re-registration, a refusal, or an unresolved state.\n\n# ⚠ Challenges\n\nThe failure happened after an environment change rather than an obvious code defect. That makes provenance important: the guard needs to show which source was reviewed and which runtime was actually restored.\n\n# 📚 What I Learned\n\nAvailability tooling can become a persistence mechanism if its authority is too broad. The recovery path should be narrower than the service it repairs.\n\n# 🧠 Reflection\n\nThe safest repair was not “make every missing service start.” It was “recognize this exact service, verify its source, and refuse ambiguity.”\n"
+}

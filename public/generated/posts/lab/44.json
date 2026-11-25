@@ -1,0 +1,17 @@
+{
+  "day": 44,
+  "title": "Test a Safe Voice-Service Fallback",
+  "date": "2026-10-20",
+  "url": "https://juribuora.github.io/labs/2026/10/20/lab-44-day-262-voice-fallback.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "availability",
+    "failsafe",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-44-day-262-voice-fallback",
+  "sourcePath": "Labs/_posts/2026-10-20-lab-44-day-262-voice-fallback.md",
+  "content": "## Lab Objective\n\nTest the boundary between a text response and a voice response when the Mac voice backend is unavailable.\n\n## Lab Environment\n\nUse the Hermes Mac-control tests and synthetic offline conditions. Do not send a real message.\n\n## Steps\n\n1. Run the focused offline voice tests:\n\n   ```bash\n   cd /Users/juribuora/ai-agent-laptop\n   python3 -m pytest tests/test_hermes_tts_offline.py -q\n   ```\n\n2. Exercise the unavailable-backend fixture.\n3. Confirm that synthesis is not started after the dependency check fails.\n4. Confirm that subprocess cleanup runs on failure and timeout paths.\n5. Confirm that any text fallback has a distinct disposition from voice delivery.\n\n## Expected Evidence\n\nThe tests pass, the offline result is explicit, and no voice-delivered receipt is produced for an unavailable backend.\n\n## Security Takeaways\n\nFail-fast behavior limits ambiguous retries and prevents an operator from confusing “text generated” with “voice delivered.” Availability failures need honest receipts.\n"
+}

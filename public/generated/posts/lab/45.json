@@ -1,0 +1,17 @@
+{
+  "day": 45,
+  "title": "Verify a Scoped Telegram Handoff",
+  "date": "2026-10-21",
+  "url": "https://juribuora.github.io/labs/2026/10/21/lab-45-day-263-telegram-scope.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "authorization",
+    "telegram",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-45-day-263-telegram-scope",
+  "sourcePath": "Labs/_posts/2026-10-21-lab-45-day-263-telegram-scope.md",
+  "content": "## Lab Objective\n\nVerify that a handoff route is bound to its prepared source, session, destination, and owner, and that excluded routes fail before side effects.\n\n## Lab Environment\n\nUse the synthetic verifier and prepared evidence bundle in `/Users/juribuora/ai-agent-laptop`. This lab performs no real Telegram or WhatsApp send.\n\n## Steps\n\n1. Run the bounded verifier:\n\n   ```bash\n   python3 -B /Users/juribuora/ai-agent-laptop/scripts/verify-hermes-telegram-handoff-owner.py\n   ```\n\n2. Confirm the positive path switches the actual synthetic session and restores the expected scope.\n3. Confirm that an excluded route is rejected before effects.\n4. Run or inspect the negative mutants for a skipped session switch and an omitted callback join.\n5. Verify that cleanup completes before the resource is released.\n\n## Expected Evidence\n\nThe verifier reports the bounded positive path and the exact mutants as failures. It does not claim live authentication, production activation, or successful real delivery.\n\n## Security Takeaways\n\nInternal routing is still an authorization boundary. A persisted row or a shared process does not grant a route authority over another platform's session.\n"
+}

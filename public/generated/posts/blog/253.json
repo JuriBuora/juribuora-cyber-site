@@ -1,0 +1,19 @@
+{
+  "day": 253,
+  "title": "Moving a Date-Gated Publisher to an Authenticated Ubuntu Timer",
+  "date": "2026-10-11",
+  "url": "https://juribuora.github.io/blog/2026/10/11/day-253.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "linux",
+    "systemd",
+    "authentication",
+    "secureautomation",
+    "changemanagement",
+    "learningprocess"
+  ],
+  "slug": "day-253",
+  "sourcePath": "Blog/_posts/2026-10-11-day-253.md",
+  "content": "# 🔄 Topic\n\nMy future-dated blog posts originally depended on a scheduler running on my Mac. That worked while the Mac was awake, but it was the wrong availability assumption for a publishing job that should continue when the main computer is off.\n\nI prepared a Linux systemd timer on an always-on Ubuntu server and then activated it after owner authentication was available. The interesting security lesson was that moving a timer to another machine also moves authority, credentials, code, state, and failure modes.\n\n# 🎯 Goal\n\nRelease due posts on both websites every half hour, including after downtime, without copying credentials into the server or enabling an unauthenticated publisher.\n\n# 🛠 What I Did\n\nThe installer requires the Linux owner to authenticate the GitHub CLI first. It refuses to install or enable the timer when `gh auth status` fails. It also refuses to pin a dirty release script, copies the script from a committed revision, and performs a read-only check before activating the service.\n\nThe generated systemd service runs as the owner rather than root. Its restrictions include `NoNewPrivileges=true`, `PrivateTmp=true`, `ProtectSystem=strict`, a narrow writable state directory, and a restrictive umask. The timer runs every half hour and uses `Persistent=true` so a missed interval can be caught up after the server returns.\n\nThe important verification was not just reading the unit file. The actual systemd-started service ran successfully, dispatched both owner workflows, and the resulting deployments completed. The installed source hash matched the committed release script. The old Mac scheduler was then removed to prevent two machines racing to dispatch the same build.\n\n# 🧠 What I Learned\n\nAn unattended job is a security boundary. The timer needs an identity, a source revision, a state directory, a network dependency, a failure record, and a recovery rule. “It runs from cron” is not a security design.\n\nI also learned to separate preparation from activation. The first Ubuntu handoff correctly said the timer was prepared but not active. Only after the owner completed the authenticated login and the real systemd service succeeded could I call the migration activated.\n\nThis is the same evidence habit I use in incident response: configuration is an intention; runtime evidence tells me what actually happened.\n\n# ⚠️ Limitations\n\nThe work proved the systemd-started service and deployment path. It did not include a physical reboot of the Ubuntu server, so I am not claiming boot-after-restart proof. GitHub cron remains a backup, and the scheduler records failures rather than silently claiming success.\n\n# ✅ Takeaway\n\nMoving automation to an always-on host improves availability only when the new host has an explicit authentication boundary, least-privilege service settings, pinned code, and a real execution check. A timer is not trustworthy because it is enabled; it is trustworthy when its identity, code, state, and observed run are all accounted for.\n"
+}

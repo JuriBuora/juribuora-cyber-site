@@ -1,0 +1,17 @@
+{
+  "day": 43,
+  "title": "Detect a Stale Backup Mirror",
+  "date": "2026-10-19",
+  "url": "https://juribuora.github.io/labs/2026/10/19/lab-43-day-261-backup-freshness.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "backups",
+    "integrity",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-43-day-261-backup-freshness",
+  "sourcePath": "Labs/_posts/2026-10-19-lab-43-day-261-backup-freshness.md",
+  "content": "## Lab Objective\n\nPractice verifying backup freshness without treating a mounted directory or a successful copy command as proof of recoverability.\n\n## Lab Environment\n\nUse the local backup helper and its test fixtures in `/Users/juribuora/ai-agent-laptop`. Do not use private message content or a real person's account as test data.\n\n## Scenario\n\nA mirror exists, but its last trusted receipt is older than the allowed freshness window. The analyst must identify the stale condition and preserve enough evidence to explain it.\n\n## Steps\n\n1. Run the backup staleness-alert test suite:\n\n   ```bash\n   cd /Users/juribuora/ai-agent-laptop\n   python3 -m pytest tests/test_backup_staleness_alert.py tests/test_hermes_mac_backup.py -q\n   ```\n\n2. Review the fixture for a fresh receipt and a stale receipt.\n3. Confirm that the result names the failed phase or affected file when hashing fails.\n4. Confirm that a stale mirror is not reported as fresh merely because its directory exists.\n5. Record the evidence age, destination state, and remaining coverage.\n\n## Expected Evidence\n\nThe tests pass, and the result distinguishes fresh, stale, unreadable, and unavailable states. No private file contents need to be printed.\n\n## Security Takeaways\n\nBackup freshness is an integrity and availability signal. The useful receipt says what was checked, when, and what remains unproven.\n"
+}

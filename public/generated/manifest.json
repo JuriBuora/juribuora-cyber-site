@@ -1,6 +1,707 @@
 {
   "posts": [
     {
+      "day": 288,
+      "title": "Checking for Missing Helpers in a Deployed Service Release",
+      "summary": "A service release could start while two neighboring helper files were missing. I reviewed the check added after that packaging gap broke separate control functions, despite the main relay process still being available.",
+      "date": "2026-11-25",
+      "url": "https://juribuora.github.io/blog/2026/11/25/day-288.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "configurationintegrity",
+        "monitoring",
+        "availability",
+        "learningprocess"
+      ],
+      "slug": "day-288",
+      "sourcePath": "Blog/_posts/2026-11-25-day-288.md",
+      "contentPath": "/generated/posts/blog/288.json"
+    },
+    {
+      "day": 287,
+      "title": "Forwarding Telegram Photos to a Coding Agent Without Losing the Attachment",
+      "summary": "A delegated request reached a coding agent with its caption but without the attached picture. I reviewed the repair that carried the image through the server-to-laptop relay and preserved it until the agent could read…",
+      "date": "2026-11-22",
+      "url": "https://juribuora.github.io/blog/2026/11/22/day-287.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "inputvalidation",
+        "dataintegrity",
+        "privacy",
+        "learningprocess"
+      ],
+      "slug": "day-287",
+      "sourcePath": "Blog/_posts/2026-11-22-day-287.md",
+      "contentPath": "/generated/posts/blog/287.json"
+    },
+    {
+      "day": 286,
+      "title": "Pausing Recovery When a Repair Worker Needs a Login",
+      "summary": "A repair worker that cannot authenticate has a different problem from a worker that produced an incorrect patch. I reviewed how the recovery state machine records that distinction and waits for an operator instead of…",
+      "date": "2026-11-20",
+      "url": "https://juribuora.github.io/blog/2026/11/20/day-286.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "recovery",
+        "statemachines",
+        "authentication",
+        "learningprocess"
+      ],
+      "slug": "day-286",
+      "sourcePath": "Blog/_posts/2026-11-20-day-286.md",
+      "contentPath": "/generated/posts/blog/286.json"
+    },
+    {
+      "day": 285,
+      "title": "Keeping Repair Agents From Changing Their Own Verifier",
+      "summary": "I reviewed the boundary between an agent that proposes a code repair and the mechanism that accepts it. A repair should not pass because the worker changed the test that was supposed to judge it.",
+      "date": "2026-11-20",
+      "url": "https://juribuora.github.io/blog/2026/11/20/day-285.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "agentsecurity",
+        "verification",
+        "leastprivilege",
+        "learningprocess"
+      ],
+      "slug": "day-285",
+      "sourcePath": "Blog/_posts/2026-11-20-day-285.md",
+      "contentPath": "/generated/posts/blog/285.json"
+    },
+    {
+      "day": 284,
+      "title": "Signing Recovery Requests and Rejecting Replays",
+      "summary": "I reviewed the authentication added to the control requests that let an Ubuntu service ask a Mac to launch, inspect, and verify recovery work. The lesson was how to bind an authenticated request to the operation it…",
+      "date": "2026-11-20",
+      "url": "https://juribuora.github.io/blog/2026/11/20/day-284.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "authentication",
+        "requestintegrity",
+        "replayprotection",
+        "learningprocess"
+      ],
+      "slug": "day-284",
+      "sourcePath": "Blog/_posts/2026-11-20-day-284.md",
+      "contentPath": "/generated/posts/blog/284.json"
+    },
+    {
+      "day": 283,
+      "title": "Checking Temporary Worker Cleanup After an Interrupted Update",
+      "summary": "A recovery drill found that killing an update process could leave its temporary validation worker running. I reviewed the resulting fix and the checks around the interrupted memory-snapshot update.",
+      "date": "2026-11-17",
+      "url": "https://juribuora.github.io/blog/2026/11/17/day-283.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "processlifecycle",
+        "recoverytesting",
+        "learningprocess"
+      ],
+      "slug": "day-283",
+      "sourcePath": "Blog/_posts/2026-11-17-day-283.md",
+      "contentPath": "/generated/posts/blog/283.json"
+    },
+    {
+      "day": 282,
+      "title": "Retrying Failed Notifications With a Bounded Persistent Queue",
+      "summary": "A calendar write and its owner notification can have different outcomes. I reviewed the persistent notification queue added during the Ubuntu migration to keep an unsuccessful send from disappearing behind a successful…",
+      "date": "2026-11-16",
+      "url": "https://juribuora.github.io/blog/2026/11/16/day-282.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "reliability",
+        "deliveryverification",
+        "statemanagement",
+        "learningprocess"
+      ],
+      "slug": "day-282",
+      "sourcePath": "Blog/_posts/2026-11-16-day-282.md",
+      "contentPath": "/generated/posts/blog/282.json"
+    },
+    {
+      "day": 281,
+      "title": "Finding a Missing Python Module During an Encrypted Restore",
+      "summary": "An encrypted backup can contain the data I expect and still lack code needed to use it. During the Ubuntu migration, a real recovery exercise exposed an imported snapshot loader missing from the memory backup.",
+      "date": "2026-11-15",
+      "url": "https://juribuora.github.io/blog/2026/11/15/day-281.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "backuprecovery",
+        "python",
+        "integrity",
+        "learningprocess"
+      ],
+      "slug": "day-281",
+      "sourcePath": "Blog/_posts/2026-11-15-day-281.md",
+      "contentPath": "/generated/posts/blog/281.json"
+    },
+    {
+      "day": 280,
+      "title": "Testing Separate Sessions and Reply Routes for Forum Topics",
+      "summary": "I reviewed a forum-photo routing exercise that checked whether separate Telegram topics received separate sessions and whether replies retained the originating thread. The important boundary was the conversation scope…",
+      "date": "2026-11-14",
+      "url": "https://juribuora.github.io/blog/2026/11/14/day-280.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "telegram",
+        "sessionisolation",
+        "authorization",
+        "learningprocess"
+      ],
+      "slug": "day-280",
+      "sourcePath": "Blog/_posts/2026-11-14-day-280.md",
+      "contentPath": "/generated/posts/blog/280.json"
+    },
+    {
+      "day": 279,
+      "title": "Preserving Image History While Bounding Each AI Request",
+      "summary": "I reviewed a three-turn image-history exercise from the previous day's isolated-worker work. It tested whether two pictures survived persistence and remained available to a later text-only turn, while keeping the…",
+      "date": "2026-11-13",
+      "url": "https://juribuora.github.io/blog/2026/11/13/day-279.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "resourcelimits",
+        "persistence",
+        "inputvalidation",
+        "learningprocess"
+      ],
+      "slug": "day-279",
+      "sourcePath": "Blog/_posts/2026-11-13-day-279.md",
+      "contentPath": "/generated/posts/blog/279.json"
+    },
+    {
+      "day": 278,
+      "title": "Validating JPEG Inputs Before an Isolated AI Worker Uses Them",
+      "summary": "I worked on a bounded image input path for an isolated AI worker. The task was to pass a normalized JPEG into the worker without accepting arbitrary file paths or remote image URLs, and to check the actual image rather…",
+      "date": "2026-11-12",
+      "url": "https://juribuora.github.io/blog/2026/11/12/day-278.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "inputvalidation",
+        "images",
+        "isolation",
+        "learningprocess"
+      ],
+      "slug": "day-278",
+      "sourcePath": "Blog/_posts/2026-11-12-day-278.md",
+      "contentPath": "/generated/posts/blog/278.json"
+    },
+    {
+      "day": 277,
+      "title": "Refusing Queued Events Outside the Trusted Inbound Path",
+      "summary": "An inbound queue is not an authority source; current trusted admission must come first.",
+      "date": "2026-11-09",
+      "url": "https://juribuora.github.io/blog/2026/11/09/day-277.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "telegram",
+        "authorization",
+        "inputvalidation",
+        "learningprocess"
+      ],
+      "slug": "day-277",
+      "sourcePath": "Blog/_posts/2026-11-09-day-277.md",
+      "contentPath": "/generated/posts/blog/277.json"
+    },
+    {
+      "day": 276,
+      "title": "Giving Native Background Tasks an Explicit Owner",
+      "summary": "Background work needs an owner, a generation, and a verified shutdown path just like a foreground request.",
+      "date": "2026-11-08",
+      "url": "https://juribuora.github.io/blog/2026/11/08/day-276.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "concurrency",
+        "authorization",
+        "lifecycle",
+        "learningprocess"
+      ],
+      "slug": "day-276",
+      "sourcePath": "Blog/_posts/2026-11-08-day-276.md",
+      "contentPath": "/generated/posts/blog/276.json"
+    },
+    {
+      "day": 275,
+      "title": "Detecting iCloud Eviction During Backup Verification",
+      "summary": "A backup check is trustworthy only when it reports what survived the check, including files that vanished halfway through it.",
+      "date": "2026-11-07",
+      "url": "https://juribuora.github.io/blog/2026/11/07/day-275.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "backups",
+        "integrity",
+        "monitoring",
+        "learningprocess"
+      ],
+      "slug": "day-275",
+      "sourcePath": "Blog/_posts/2026-11-07-day-275.md",
+      "contentPath": "/generated/posts/blog/275.json"
+    },
+    {
+      "day": 274,
+      "title": "Recovering a Telegram Process Without Reusing Stale Authority",
+      "summary": "Recovery data can help restore state, but it must never become authority by itself.",
+      "date": "2026-11-06",
+      "url": "https://juribuora.github.io/blog/2026/11/06/day-274.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "telegram",
+        "recovery",
+        "authorization",
+        "learningprocess"
+      ],
+      "slug": "day-274",
+      "sourcePath": "Blog/_posts/2026-11-06-day-274.md",
+      "contentPath": "/generated/posts/blog/274.json"
+    },
+    {
+      "day": 273,
+      "title": "Moving Operator Controls to Ubuntu With Explicit Boundaries",
+      "summary": "I learned to migrate controls by authority and evidence, not by copying the old machine's assumptions.",
+      "date": "2026-11-05",
+      "url": "https://juribuora.github.io/blog/2026/11/05/day-273.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "accesscontrol",
+        "operations",
+        "learningprocess"
+      ],
+      "slug": "day-273",
+      "sourcePath": "Blog/_posts/2026-11-05-day-273.md",
+      "contentPath": "/generated/posts/blog/273.json"
+    },
+    {
+      "day": 272,
+      "title": "Joining Receivers Before Releasing Runtime State",
+      "summary": "Safe recovery starts by proving that old receivers have really finished before shared state is released.",
+      "date": "2026-10-30",
+      "url": "https://juribuora.github.io/blog/2026/10/30/day-272.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "concurrency",
+        "lifecycle",
+        "reliability",
+        "learningprocess"
+      ],
+      "slug": "day-272",
+      "sourcePath": "Blog/_posts/2026-10-30-day-272.md",
+      "contentPath": "/generated/posts/blog/272.json"
+    },
+    {
+      "day": 271,
+      "title": "Preserving Original Event Provenance Before Recovery",
+      "summary": "I learned to preserve original event evidence before recovery, while refusing to turn stored data into authority.",
+      "date": "2026-10-29",
+      "url": "https://juribuora.github.io/blog/2026/10/29/day-271.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "dataintegrity",
+        "privacy",
+        "recovery",
+        "learningprocess"
+      ],
+      "slug": "day-271",
+      "sourcePath": "Blog/_posts/2026-10-29-day-271.md",
+      "contentPath": "/generated/posts/blog/271.json"
+    },
+    {
+      "day": 270,
+      "title": "Separating an Admission Receipt From Authorization",
+      "summary": "An event receipt is not automatically an authorization grant or a delivery receipt.",
+      "date": "2026-10-28",
+      "url": "https://juribuora.github.io/blog/2026/10/28/day-270.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "authorization",
+        "telegram",
+        "audit",
+        "learningprocess"
+      ],
+      "slug": "day-270",
+      "sourcePath": "Blog/_posts/2026-10-28-day-270.md",
+      "contentPath": "/generated/posts/blog/270.json"
+    },
+    {
+      "day": 269,
+      "title": "Porting a Security Control Without Porting Mac Assumptions",
+      "summary": "I learned that a portable security tool is one whose authority and failure modes are tested on the new host, not merely copied there.",
+      "date": "2026-10-27",
+      "url": "https://juribuora.github.io/blog/2026/10/27/day-269.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "authorization",
+        "portability",
+        "learningprocess"
+      ],
+      "slug": "day-269",
+      "sourcePath": "Blog/_posts/2026-10-27-day-269.md",
+      "contentPath": "/generated/posts/blog/269.json"
+    },
+    {
+      "day": 268,
+      "title": "Making Offline Replies Fail Honestly",
+      "summary": "I learned to verify not only that a timeout exists, but that a stalled dependency ends in a clear, cleaned-up, and accurately reported state.",
+      "date": "2026-10-26",
+      "url": "https://juribuora.github.io/blog/2026/10/26/day-268.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "reliability",
+        "failsafe",
+        "monitoring",
+        "learningprocess"
+      ],
+      "slug": "day-268",
+      "sourcePath": "Blog/_posts/2026-10-26-day-268.md",
+      "contentPath": "/generated/posts/blog/268.json"
+    },
+    {
+      "day": 267,
+      "title": "Recovering LaunchAgents Without Trusting a Broken Runtime",
+      "summary": "The goal was to detect the broken registration, verify the intended source and code-signing state, and re-register only the known LaunchAgents that matched the expected inventory.",
+      "date": "2026-10-25",
+      "url": "https://juribuora.github.io/blog/2026/10/25/day-267.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "supplychain",
+        "launchd",
+        "integrity",
+        "learningprocess"
+      ],
+      "slug": "day-267",
+      "sourcePath": "Blog/_posts/2026-10-25-day-267.md",
+      "contentPath": "/generated/posts/blog/267.json"
+    },
+    {
+      "day": 266,
+      "title": "Using Local Web Research Without Confusing Retrieval With Trust",
+      "summary": "The goal was to let the local research path gather public references while keeping the result inside the existing UI and test boundaries. The feature needed tests for the worker path instead of relying on a successful…",
+      "date": "2026-10-24",
+      "url": "https://juribuora.github.io/blog/2026/10/24/day-266.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "localai",
+        "research",
+        "trustboundaries",
+        "learningprocess"
+      ],
+      "slug": "day-266",
+      "sourcePath": "Blog/_posts/2026-10-24-day-266.md",
+      "contentPath": "/generated/posts/blog/266.json"
+    },
+    {
+      "day": 265,
+      "title": "Treating Internal Injection as an Authorization Boundary",
+      "summary": "The goal was to admit only prepared internal sources, keep the source and session scope attached to the event, and refuse malformed or mismatched inputs before they reach the consumer.",
+      "date": "2026-10-23",
+      "url": "https://juribuora.github.io/blog/2026/10/23/day-265.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "authorization",
+        "injection",
+        "hermes",
+        "learningprocess"
+      ],
+      "slug": "day-265",
+      "sourcePath": "Blog/_posts/2026-10-23-day-265.md",
+      "contentPath": "/generated/posts/blog/265.json"
+    },
+    {
+      "day": 264,
+      "title": "Making Autonomous Reply Audits Explain What Actually Happened",
+      "summary": "The goal was to make every outcome distinguishable and replayable without creating a duplicate reply. If a reply was recorded but never left the bridge, a later replay needed to replace that incomplete outcome instead…",
+      "date": "2026-10-22",
+      "url": "https://juribuora.github.io/blog/2026/10/22/day-264.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "auditlogs",
+        "integrity",
+        "whatsapp",
+        "learningprocess"
+      ],
+      "slug": "day-264",
+      "sourcePath": "Blog/_posts/2026-10-22-day-264.md",
+      "contentPath": "/generated/posts/blog/264.json"
+    },
+    {
+      "day": 263,
+      "title": "Keeping Telegram Handoff Routes Inside Their Intended Scope",
+      "summary": "The goal was to make the route, source, session key, destination, and owner explicit. Unknown routes should refuse before side effects, and a valid route should not gain access to another platform's state.",
+      "date": "2026-10-21",
+      "url": "https://juribuora.github.io/blog/2026/10/21/day-263.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "authorization",
+        "telegram",
+        "isolation",
+        "learningprocess"
+      ],
+      "slug": "day-263",
+      "sourcePath": "Blog/_posts/2026-10-21-day-263.md",
+      "contentPath": "/generated/posts/blog/263.json"
+    },
+    {
+      "day": 262,
+      "title": "Failing Safely When the Voice Backend Is Offline",
+      "summary": "The goal was to detect the unavailable voice backend before starting synthesis, return a clear failure state, and preserve the text path when that was allowed. The system should not hang, duplicate work, or report…",
+      "date": "2026-10-20",
+      "url": "https://juribuora.github.io/blog/2026/10/20/day-262.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "availability",
+        "failsafe",
+        "hermes",
+        "learningprocess"
+      ],
+      "slug": "day-262",
+      "sourcePath": "Blog/_posts/2026-10-20-day-262.md",
+      "contentPath": "/generated/posts/blog/262.json"
+    },
+    {
+      "day": 261,
+      "title": "Detecting a Stale Backup Mirror Before Trusting It",
+      "summary": "The goal was to detect a mirror that had silently stopped receiving updates. The check had to avoid reading every private file, record enough evidence to explain the result, and alert when the last trustworthy receipt…",
+      "date": "2026-10-19",
+      "url": "https://juribuora.github.io/blog/2026/10/19/day-261.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "backups",
+        "integrity",
+        "monitoring",
+        "learningprocess"
+      ],
+      "slug": "day-261",
+      "sourcePath": "Blog/_posts/2026-10-19-day-261.md",
+      "contentPath": "/generated/posts/blog/261.json"
+    },
+    {
+      "day": 260,
+      "title": "Keeping Test Failures Out of the Real Audit Log",
+      "summary": "I found that mocked timeouts and permission failures from unit tests were being written into the live Apple bridge audit log, then isolated the test log so operational evidence stays trustworthy.",
+      "date": "2026-10-18",
+      "url": "https://juribuora.github.io/blog/2026/10/18/day-260.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "auditability",
+        "testing",
+        "dataintegrity",
+        "observability",
+        "learningprocess"
+      ],
+      "slug": "day-260",
+      "sourcePath": "Blog/_posts/2026-10-18-day-260.md",
+      "contentPath": "/generated/posts/blog/260.json"
+    },
+    {
+      "day": 259,
+      "title": "Keeping Deleted Notes Outside a Search Result",
+      "summary": "I hardened a local Notes bridge so searches and exact reads ignore trashed notes, older valid notes remain readable, and broad searches do not fail because the wrapper asks Apple Events for one title at a time.",
+      "date": "2026-10-17",
+      "url": "https://juribuora.github.io/blog/2026/10/17/day-259.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "privacy",
+        "dataintegrity",
+        "accesscontrol",
+        "secureautomation",
+        "learningprocess"
+      ],
+      "slug": "day-259",
+      "sourcePath": "Blog/_posts/2026-10-17-day-259.md",
+      "contentPath": "/generated/posts/blog/259.json"
+    },
+    {
+      "day": 258,
+      "title": "Treating a Backup Alert as a Security Finding",
+      "summary": "I investigated repeated backup failures caused by an unreachable server and learned to verify the snapshot receipt and expected contents instead of trusting a successful command alone.",
+      "date": "2026-10-16",
+      "url": "https://juribuora.github.io/blog/2026/10/16/day-258.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "backupsecurity",
+        "resilience",
+        "evidence",
+        "linux",
+        "secureoperations",
+        "learningprocess"
+      ],
+      "slug": "day-258",
+      "sourcePath": "Blog/_posts/2026-10-16-day-258.md",
+      "contentPath": "/generated/posts/blog/258.json"
+    },
+    {
+      "day": 257,
+      "title": "Finding Drift Between Deployed Security Scripts and Their Repository",
+      "summary": "I replaced a hardcoded deployment check with an enumerated comparison so live scripts cannot quietly diverge from the reviewed source.",
+      "date": "2026-10-15",
+      "url": "https://juribuora.github.io/blog/2026/10/15/day-257.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "supplychainsecurity",
+        "changemanagement",
+        "configurationintegrity",
+        "secureautomation",
+        "learningprocess"
+      ],
+      "slug": "day-257",
+      "sourcePath": "Blog/_posts/2026-10-15-day-257.md",
+      "contentPath": "/generated/posts/blog/257.json"
+    },
+    {
+      "day": 256,
+      "title": "Keeping an Unreadable Security Record in the Queue",
+      "summary": "I fixed a capture pipeline that could mark messages as processed after a failed extraction, and learned why a security workflow must not advance its evidence boundary on an empty result.",
+      "date": "2026-10-14",
+      "url": "https://juribuora.github.io/blog/2026/10/14/day-256.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "dataintegrity",
+        "auditability",
+        "secureautomation",
+        "reliability",
+        "learningprocess"
+      ],
+      "slug": "day-256",
+      "sourcePath": "Blog/_posts/2026-10-14-day-256.md",
+      "contentPath": "/generated/posts/blog/256.json"
+    },
+    {
+      "day": 255,
+      "title": "Using tcpdump to Capture and Filter Network Traffic",
+      "summary": "I studied tcpdump as a command-line packet analyser and learned how interface selection, bounded captures, numeric output, saved pcaps, and filter expressions turn network traffic into investigation evidence.",
+      "date": "2026-10-13",
+      "url": "https://juribuora.github.io/blog/2026/10/13/day-255.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "tcpdump",
+        "networksecurity",
+        "packetanalysis",
+        "incidentresponse",
+        "googlecert",
+        "learningprocess"
+      ],
+      "slug": "day-255",
+      "sourcePath": "Blog/_posts/2026-10-13-day-255.md",
+      "contentPath": "/generated/posts/blog/255.json"
+    },
+    {
+      "day": 254,
+      "title": "Proving an AI Agent Cannot Borrow Another Channel's Authority",
+      "summary": "I ran a fresh message-integrity acceptance check for Hermes: Telegram owner commands were allowed, forged WhatsApp origins were refused, recipient routing stayed owner-only, and no real contacts received test messages.",
+      "date": "2026-10-12",
+      "url": "https://juribuora.github.io/blog/2026/10/12/day-254.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "aiagents",
+        "authorization",
+        "messageintegrity",
+        "accesscontrol",
+        "securedelivery",
+        "learningprocess"
+      ],
+      "slug": "day-254",
+      "sourcePath": "Blog/_posts/2026-10-12-day-254.md",
+      "contentPath": "/generated/posts/blog/254.json"
+    },
+    {
+      "day": 253,
+      "title": "Moving a Date-Gated Publisher to an Authenticated Ubuntu Timer",
+      "summary": "I prepared and activated a systemd-based Ubuntu release timer that catches up missed publishing runs, requires owner-authenticated GitHub CLI access, and verifies the real service instead of trusting its unit file.",
+      "date": "2026-10-11",
+      "url": "https://juribuora.github.io/blog/2026/10/11/day-253.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "systemd",
+        "authentication",
+        "secureautomation",
+        "changemanagement",
+        "learningprocess"
+      ],
+      "slug": "day-253",
+      "sourcePath": "Blog/_posts/2026-10-11-day-253.md",
+      "contentPath": "/generated/posts/blog/253.json"
+    },
+    {
+      "day": 252,
+      "title": "What Completing Five Google Cybersecurity Courses Actually Gives Me",
+      "summary": "I completed five Google Cybersecurity Certificate courses and reflected on the practical foundation they gave me: risk, assets, networks, Linux, SQL, and incident response.",
+      "date": "2026-10-10",
+      "url": "https://juribuora.github.io/blog/2026/10/10/day-252.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "googlecert",
+        "learningprocess",
+        "riskmanagement",
+        "networksecurity",
+        "linux",
+        "sql"
+      ],
+      "slug": "day-252",
+      "sourcePath": "Blog/_posts/2026-10-10-day-252.md",
+      "contentPath": "/generated/posts/blog/252.json"
+    },
+    {
+      "day": 251,
+      "title": "Incident Response Plans Are Tools, Not Shelf Documents",
+      "summary": "I studied what belongs in an incident response plan and why tabletop exercises, clear procedures, diagrams, contacts, and templates are part of security readiness.",
+      "date": "2026-10-09",
+      "url": "https://juribuora.github.io/blog/2026/10/09/day-251.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "incidentresponse",
+        "playbooks",
+        "documentation",
+        "tabletopexercise",
+        "soc",
+        "googlecert",
+        "learningprocess"
+      ],
+      "slug": "day-251",
+      "sourcePath": "Blog/_posts/2026-10-09-day-251.md",
+      "contentPath": "/generated/posts/blog/251.json"
+    },
+    {
       "day": 250,
       "title": "How a CSIRT and SOC Move an Incident Without Losing Context",
       "summary": "I studied the responsibilities of security analysts, technical leads, incident coordinators, SOC tiers, and managers, and learned why escalation is a coordination system rather than a status ladder.",
@@ -4606,6 +5307,172 @@
   ],
   "labs": [
     {
+      "day": 49,
+      "title": "Gate Queued Events on Current Source Authority",
+      "summary": "Exercise an inbound queue that refuses revoked, orphaned, or source-drifted events before consuming them.",
+      "date": "2026-11-09",
+      "url": "https://juribuora.github.io/labs/2026/11/09/lab-49-day-277-inbound-source-gate.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "telegram",
+        "authorization",
+        "inputvalidation",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-49-day-277-inbound-source-gate",
+      "sourcePath": "Labs/_posts/2026-11-09-lab-49-day-277-inbound-source-gate.md",
+      "contentPath": "/generated/posts/lab/49.json"
+    },
+    {
+      "day": 48,
+      "title": "Capture Event Provenance Before Recovery",
+      "summary": "Test transactional event capture with source binding, digest checks, expiry, quotas, and tamper detection.",
+      "date": "2026-10-29",
+      "url": "https://juribuora.github.io/labs/2026/10/29/lab-48-day-271-durable-event-capture.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "dataintegrity",
+        "privacy",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-48-day-271-durable-event-capture",
+      "sourcePath": "Labs/_posts/2026-10-29-lab-48-day-271-durable-event-capture.md",
+      "contentPath": "/generated/posts/lab/48.json"
+    },
+    {
+      "day": 47,
+      "title": "Distinguish Event Admission From Authorization",
+      "summary": "Use a recording transport to show why a callback receipt does not prove current authorization or completed delivery.",
+      "date": "2026-10-28",
+      "url": "https://juribuora.github.io/labs/2026/10/28/lab-47-day-270-admission-vs-authorization.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "authorization",
+        "audit",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-47-day-270-admission-vs-authorization",
+      "sourcePath": "Labs/_posts/2026-10-28-lab-47-day-270-admission-vs-authorization.md",
+      "contentPath": "/generated/posts/lab/47.json"
+    },
+    {
+      "day": 46,
+      "title": "Verify a Provider Fallback and Its Host Paths",
+      "summary": "Test a provider fallback and confirm that a security control reads the intended Ubuntu paths and identities.",
+      "date": "2026-10-27",
+      "url": "https://juribuora.github.io/labs/2026/10/27/lab-46-day-269-ubuntu-fallback-portability.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "authorization",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-46-day-269-ubuntu-fallback-portability",
+      "sourcePath": "Labs/_posts/2026-10-27-lab-46-day-269-ubuntu-fallback-portability.md",
+      "contentPath": "/generated/posts/lab/46.json"
+    },
+    {
+      "day": 45,
+      "title": "Verify a Scoped Telegram Handoff",
+      "summary": "Use synthetic routes and negative mutants to verify that a Telegram handoff cannot borrow another platform's authority.",
+      "date": "2026-10-21",
+      "url": "https://juribuora.github.io/labs/2026/10/21/lab-45-day-263-telegram-scope.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "authorization",
+        "telegram",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-45-day-263-telegram-scope",
+      "sourcePath": "Labs/_posts/2026-10-21-lab-45-day-263-telegram-scope.md",
+      "contentPath": "/generated/posts/lab/45.json"
+    },
+    {
+      "day": 44,
+      "title": "Test a Safe Voice-Service Fallback",
+      "summary": "Verify that an unavailable voice backend fails clearly and cannot create a false delivery receipt.",
+      "date": "2026-10-20",
+      "url": "https://juribuora.github.io/labs/2026/10/20/lab-44-day-262-voice-fallback.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "availability",
+        "failsafe",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-44-day-262-voice-fallback",
+      "sourcePath": "Labs/_posts/2026-10-20-lab-44-day-262-voice-fallback.md",
+      "contentPath": "/generated/posts/lab/44.json"
+    },
+    {
+      "day": 43,
+      "title": "Detect a Stale Backup Mirror",
+      "summary": "Use a bounded receipt and representative-file check to distinguish a fresh backup mirror from a stale one.",
+      "date": "2026-10-19",
+      "url": "https://juribuora.github.io/labs/2026/10/19/lab-43-day-261-backup-freshness.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "backups",
+        "integrity",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-43-day-261-backup-freshness",
+      "sourcePath": "Labs/_posts/2026-10-19-lab-43-day-261-backup-freshness.md",
+      "contentPath": "/generated/posts/lab/43.json"
+    },
+    {
+      "day": 42,
+      "title": "Isolate Test Failures from a Production Audit Log",
+      "summary": "Build a small command wrapper whose tests record simulated failures in a temporary audit log while the production log remains untouched.",
+      "date": "2026-10-18",
+      "url": "https://juribuora.github.io/labs/2026/10/18/lab-42-day-260-isolate-test-audit-logs.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "auditability",
+        "testing",
+        "dataintegrity",
+        "observability",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-42-day-260-isolate-test-audit-logs",
+      "sourcePath": "Labs/_posts/2026-10-18-lab-42-day-260-isolate-test-audit-logs.md",
+      "contentPath": "/generated/posts/lab/42.json"
+    },
+    {
+      "day": 41,
+      "title": "Preventing Silent Loss in a Capture Pipeline",
+      "summary": "Test a stateful message-capture pipeline so failed extraction does not advance its watermark or hide unread evidence.",
+      "date": "2026-10-16",
+      "url": "https://juribuora.github.io/labs/2026/10/16/lab-41-day-258-watermark-failure-safety.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "dataintegrity",
+        "secureautomation",
+        "testing",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-41-day-258-watermark-failure-safety",
+      "sourcePath": "Labs/_posts/2026-10-16-lab-41-day-258-watermark-failure-safety.md",
+      "contentPath": "/generated/posts/lab/41.json"
+    },
+    {
       "day": 40,
       "title": "Verify Message Integrity and Channel Authorization with Synthetic Fixtures",
       "summary": "Run a no-send acceptance check for a multi-channel assistant and verify that authorised owner actions pass while forged origins, ambiguous identities, routing errors, and ordering failures are rejected.",
@@ -4625,6 +5492,27 @@
       "slug": "lab-40-day-248-hermes-message-integrity",
       "sourcePath": "Labs/_posts/2026-10-06-lab-40-day-248-hermes-message-integrity.md",
       "contentPath": "/generated/posts/lab/40.json"
+    },
+    {
+      "day": 39,
+      "title": "Tabletop-Test an Incident Response Plan",
+      "summary": "Run a small fictional ransomware tabletop using a response plan, asset information, contacts, a timeline, and a post-exercise gap list.",
+      "date": "2026-10-09",
+      "url": "https://juribuora.github.io/labs/2026/10/09/lab-39-day-251.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "incidentresponse",
+        "tabletopexercise",
+        "playbooks",
+        "documentation",
+        "soc",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-39-day-251",
+      "sourcePath": "Labs/_posts/2026-10-09-lab-39-day-251.md",
+      "contentPath": "/generated/posts/lab/39.json"
     },
     {
       "day": 38,
@@ -5818,6 +6706,7 @@
     "aaa",
     "accesscontrol",
     "adversarialtesting",
+    "agentsecurity",
     "aiagents",
     "aios",
     "aisecurity",
@@ -5831,8 +6720,10 @@
     "assetinventory",
     "assetsecurity",
     "attacksurface",
+    "audit",
     "auditability",
     "auditing",
+    "auditlogs",
     "audittrail",
     "authentication",
     "authorization",
@@ -5843,6 +6734,8 @@
     "autonomycontrol",
     "availability",
     "backuprecovery",
+    "backups",
+    "backupsecurity",
     "bash",
     "benchmarking",
     "blastradius",
@@ -5856,6 +6749,8 @@
     "cicd",
     "codereview",
     "commandline",
+    "concurrency",
+    "configurationintegrity",
     "configurationmanagement",
     "consistency",
     "contentextraction",
@@ -5933,9 +6828,11 @@
     "identityspoofing",
     "identityverification",
     "ids",
+    "images",
     "incidentresponse",
     "independentreview",
     "informationsecurity",
+    "injection",
     "inputvalidation",
     "integrity",
     "ios",
@@ -5986,11 +6883,13 @@
     "nist",
     "nonrepudiation",
     "oauth",
+    "observability",
     "obsidian",
     "ollama",
     "openssl",
     "operationalsafety",
     "operationalsecurity",
+    "operations",
     "orchestration",
     "osint",
     "outputvalidation",
@@ -6005,14 +6904,18 @@
     "performanceengineering",
     "permissionmodel",
     "permissions",
+    "persistence",
     "phishing",
     "pki",
+    "playbooks",
     "policyenforcement",
+    "portability",
     "portfolio",
     "privacy",
     "privacybydesign",
     "privacyengineering",
     "processes",
+    "processlifecycle",
     "productionrollback",
     "productsecurity",
     "progressivedisclosure",
@@ -6025,14 +6928,19 @@
     "ransomware",
     "rbenv",
     "recovery",
+    "recoverytesting",
     "redteaming",
     "reliability",
     "remediation",
     "remoteaccess",
     "remoteagenthub",
     "removablemedia",
+    "replayprotection",
     "reporting",
+    "requestintegrity",
+    "research",
     "resilience",
+    "resourcelimits",
     "resourcemanagement",
     "riskassessment",
     "riskmanagement",
@@ -6049,9 +6957,11 @@
     "secureautomation",
     "securedelivery",
     "securemessaging",
+    "secureoperations",
     "securityassessment",
     "securityoperations",
     "securitytesting",
+    "sessionisolation",
     "shadowdeployment",
     "shadowmode",
     "skillcuration",
@@ -6062,15 +6972,21 @@
     "sqlite",
     "ssh",
     "ssrf",
+    "statemachines",
     "statemanagement",
     "staticsite",
     "staticsites",
     "supervisor",
+    "supplychain",
     "supplychainsecurity",
     "swiftui",
+    "systemd",
+    "tabletopexercise",
     "tailscale",
+    "tcpdump",
     "tcpip",
     "technicalwriting",
+    "telegram",
     "testharness",
     "testing",
     "threathunting",
@@ -6082,6 +6998,7 @@
     "tooling",
     "triage",
     "troubleshooting",
+    "trustboundaries",
     "tryhackme",
     "ubuntu",
     "unicodesecurity",

@@ -1,0 +1,17 @@
+{
+  "day": 266,
+  "title": "Using Local Web Research Without Confusing Retrieval With Trust",
+  "date": "2026-10-24",
+  "url": "https://juribuora.github.io/blog/2026/10/24/day-266.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "localai",
+    "research",
+    "trustboundaries",
+    "learningprocess"
+  ],
+  "slug": "day-266",
+  "sourcePath": "Blog/_posts/2026-10-24-day-266.md",
+  "content": "# 🔄 Using Local Web Research Without Confusing Retrieval With Trust\n\nI enabled bounded local web research for an Ollama-backed Hermes chat. The security lesson was not that local models make sources trustworthy. It was that retrieval, model interpretation, and operator acceptance are separate steps.\n\n# 🎯 Goal\n\nThe goal was to let the local research path gather public references while keeping the result inside the existing UI and test boundaries. The feature needed tests for the worker path instead of relying on a successful model response as proof that the research integration worked.\n\n# 🛠 What I Did\n\nThe local research change was implemented in the UI worker and covered by focused tests. The work was accepted as a bounded local capability, with the usual distinction between a source being retrieved and a conclusion being verified. Existing account and private-memory boundaries were not treated as automatically available to the research worker.\n\n# 🔗 Key Cybersecurity Connections\n\nResearch tools have trust boundaries too. A retrieved page can be wrong, malicious, stale, or written to influence the model. A local model can summarize it fluently without validating it. The safe workflow preserves provenance and asks what evidence supports each conclusion.\n\n## 🔍 Investigation Questions\n\n- What source was retrieved, and when?\n- Is it public reference material or private account data?\n- Did the worker return evidence or only a model-generated summary?\n- What must a human verify before acting on it?\n\n# ⚠ Challenges\n\n“Local” reduces some exposure but does not remove prompt injection, stale information, or source manipulation. The integration therefore needs bounded inputs and tests that verify the worker behavior directly.\n\n# 📚 What I Learned\n\nPrivacy and truth are different properties. A local research path may keep data on my machines while still requiring careful source validation and explicit uncertainty.\n\n# 🧠 Reflection\n\nThe best security question is often “what exactly has been proven?” A page fetch proves retrieval. It does not prove that the page is accurate or that the model's recommendation is safe.\n"
+}

@@ -1,0 +1,20 @@
+{
+  "day": 251,
+  "title": "Incident Response Plans Are Tools, Not Shelf Documents",
+  "date": "2026-10-09",
+  "url": "https://juribuora.github.io/blog/2026/10/09/day-251.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "incidentresponse",
+    "playbooks",
+    "documentation",
+    "tabletopexercise",
+    "soc",
+    "googlecert",
+    "learningprocess"
+  ],
+  "slug": "day-251",
+  "sourcePath": "Blog/_posts/2026-10-09-day-251.md",
+  "content": "# 🔄 Topic\n\nThe response module moved from roles to plans. An incident response plan describes what an organisation should do when an event becomes an incident. It is more than a policy statement: it is a working tool for making decisions while people are under pressure.\n\n# 🎯 Goal\n\nUnderstand the building blocks of a useful incident response plan and why the plan must be tested and revised rather than treated as finished when it is written.\n\n# 🛠 What I Studied\n\nThe common elements included:\n\n- step-by-step incident response procedures;\n- system information such as network and data-flow diagrams;\n- logging and asset-inventory information;\n- contact lists, forms, templates, and other supporting documents.\n\nThe plan is tailored to the organisation. A small team may keep it inside a broader security plan, while a larger organisation may maintain a dedicated response document with separate playbooks and reporting paths.\n\nI also studied the role of exercises. Tabletop exercises and simulations allow the team to walk through a scenario before a real emergency. They can reveal an outdated phone number, an unclear ownership boundary, missing evidence, a procedure nobody can execute, or a recovery dependency that the document never mentioned.\n\n# 🧠 What I Learned\n\nDocumentation is a security control because it reduces uncertainty. During an incident, people should not have to reconstruct the organisation's assets, contacts, escalation rules, and recovery order from memory.\n\nBut documentation can create false confidence if it is never exercised. A polished plan can still fail at the first handoff. The useful test is not “does the document look complete?” It is “can the people who need it use it to make the next correct decision?”\n\nThis also explains why an incident handler's journal and a final report are different. The journal preserves observations and decisions during the event. The final report explains what happened, the impact, the response, the root cause, and the improvements to make afterward.\n\n# ⚠️ Limitations\n\nI studied the planning concepts and completed related training documentation exercises. I did not run a live organisational tabletop or claim that a real incident was managed with this plan.\n\n# ✅ Takeaway\n\nAn incident response plan earns its value through rehearsal. The document, diagrams, logs, contacts, templates, and exercises form one operational system; leaving any one of them stale can slow the whole response.\n"
+}

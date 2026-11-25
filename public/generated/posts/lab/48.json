@@ -1,0 +1,17 @@
+{
+  "day": 48,
+  "title": "Capture Event Provenance Before Recovery",
+  "date": "2026-10-29",
+  "url": "https://juribuora.github.io/labs/2026/10/29/lab-48-day-271-durable-event-capture.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "dataintegrity",
+    "privacy",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-48-day-271-durable-event-capture",
+  "sourcePath": "Labs/_posts/2026-10-29-lab-48-day-271-durable-event-capture.md",
+  "content": "## Lab Objective\n\nBuild a bounded, synthetic capture exercise that preserves original event evidence without turning stored data into automatic authority.\n\n## Lab Environment\n\nUse an isolated SQLite database and parsed synthetic updates. Keep the database private and use non-sensitive payloads.\n\n## Scenario\n\nAn event may need review after a restart. The capture must bind it to the current bot, receiver, authorization home, registration generation, and adapter identity.\n\n## Steps\n\n1. Create a synthetic update and canonicalize its parsed representation.\n2. Store its digest, update ID, reason, cursor context, and capture time in one transaction.\n3. Reopen the database and verify the exact identity binding.\n4. Test duplicate capture, changed body, foreign source, revoked generation, expiry, and quota exhaustion.\n5. Copy the database to a synthetic backup, alter a payload, and verify tamper detection.\n6. Confirm that no replay, skip, release, or disposition API is present.\n\n## Expected Evidence\n\nValid duplicates are recognized without refreshing their age. Mutated, expired, foreign, revoked, or over-quota events are denied. A modified backup does not verify. Uncertain events remain held.\n\n## Security Takeaways\n\nProvenance, freshness, and authorization must be checked independently. A database row is evidence, not permission.\n\n## Limits\n\nThis lab does not prove power-loss durability, live ingress authority, or a production retention policy.\n"
+}

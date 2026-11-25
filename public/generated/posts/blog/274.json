@@ -1,0 +1,17 @@
+{
+  "day": 274,
+  "title": "Recovering a Telegram Process Without Reusing Stale Authority",
+  "date": "2026-11-06",
+  "url": "https://juribuora.github.io/blog/2026/11/06/day-274.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "telegram",
+    "recovery",
+    "authorization",
+    "learningprocess"
+  ],
+  "slug": "day-274",
+  "sourcePath": "Blog/_posts/2026-11-06-day-274.md",
+  "content": "# 🔄 Recovering a Telegram Process Without Reusing Stale Authority\n\nI tested native process checkpoint recovery and dedicated Telegram session ownership. The central lesson was that a checkpoint can describe what happened, but it must never grant permission to a future process.\n\n# 🎯 Goal\n\nThe recovery boundary had to reject unknown origins, conflicting watchers, malformed checkpoint files, and stale writes before any PID or service action.\n\n# 🛠 What I Did\n\nI validated whole-file shape and types before effects, refused snapshot drift, latched write failures, and preserved excluded rows across later checkpoint writes. The actual native checkpoint and session path passed bounded acceptance, while the recovery proof remained explicit about synthetic portions.\n\nI also verified that an owner wrapper explains why an origin check failed instead of silently doing nothing.\n\n# 🔗 Key Cybersecurity Connections\n\nRecovery metadata is not an authorization token. Treating a stale PID, session, or origin field as current authority could let an old process control a new runtime.\n\n# ⚠ Challenges\n\nCompare-and-swap did not prove a complete multi-writer transaction, and live mixed-platform ingress remained open. These were kept as residual risks.\n\n# 📚 What I Learned\n\nStartup should be a gate: validate the entire recovery record, establish current ownership, then allow effects. Partial validation after a process action is too late.\n\n# 😄 TL;DR\n\nRecovery data can help restore state, but it must never become authority by itself.\n"
+}

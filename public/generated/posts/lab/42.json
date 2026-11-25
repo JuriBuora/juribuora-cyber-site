@@ -1,0 +1,19 @@
+{
+  "day": 42,
+  "title": "Isolate Test Failures from a Production Audit Log",
+  "date": "2026-10-18",
+  "url": "https://juribuora.github.io/labs/2026/10/18/lab-42-day-260-isolate-test-audit-logs.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "auditability",
+    "testing",
+    "dataintegrity",
+    "observability",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-42-day-260-isolate-test-audit-logs",
+  "sourcePath": "Labs/_posts/2026-10-18-lab-42-day-260-isolate-test-audit-logs.md",
+  "content": "## Lab Objective\n\nPractise separating synthetic test evidence from operational audit evidence. The exercise shows why a passing test can still damage observability if it writes mocked failures into the same log used by a live service.\n\n## Lab Environment\n\nUse a local Python project or a standalone script. Create two paths in a temporary working directory:\n\n```text\nruntime/audit.jsonl\ntests/test-audit.jsonl\n```\n\nDo not point the exercise at a real service log, personal message archive, or production database.\n\n## Scenario\n\nThe command wrapper records one JSON line for every operation. A unit test forces a timeout so it can check the error-handling path. In the unsafe design, the test uses the default runtime path and leaves a fake timeout among real events.\n\nYour task is to make the test use an isolated destination while still proving that the timeout is recorded with the expected operation and error code.\n\n## Step 1 - Create a minimal audit writer\n\nWrite a small function that accepts an audit path, operation name, and error code, then appends one JSON object per line. Keep the schema simple, for example:\n\n```json\n{\"operation\":\"agenda\",\"error_code\":\"timeout\",\"source\":\"test\"}\n```\n\nThe exact schema is less important than keeping the event structured and readable.\n\n## Step 2 - Demonstrate the unsafe test\n\nUse the runtime audit path as the default in a test fixture. Force a synthetic timeout and inspect the file. Record why this is unsafe: a later operator cannot know whether the timeout came from a real command or a test.\n\nDo not use a real service while demonstrating the problem. A fixture file is enough.\n\n## Step 3 - Redirect tests to a temporary destination\n\nCreate a temporary directory in the test setup and configure the writer to use a file inside it. Preserve the default runtime path as a value to compare against, but never write to it from the test.\n\nAdd a guard such as:\n\n```python\nassert test_audit_path != runtime_audit_path\n```\n\nRun the forced timeout again and verify that the temporary file contains the expected JSON event.\n\n## Step 4 - Test cleanup and repeatability\n\nRun the test twice. Confirm that each run creates or resets its own temporary destination and that no stale event is required for the assertion to pass. Confirm that the runtime audit file is absent or unchanged.\n\n## Expected Evidence\n\nThe completed exercise should show:\n\n- the production audit path and test audit path are different;\n- the mocked timeout is recorded in the test log;\n- the event still contains the expected operation and error code;\n- the production log is not created or changed by the test;\n- the temporary directory is removed after the test finishes.\n\n## Security Takeaways\n\nAudit logs are evidence, so test provenance matters. A temporary fixture is not merely convenient test plumbing: it prevents synthetic failures from changing the operational record and gives the test an explicit, reviewable destination.\n\nThis pattern also applies to telemetry queues, alert stores, incident tickets, backup receipts, and other state that a security investigation may later trust.\n"
+}

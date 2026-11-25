@@ -1,0 +1,20 @@
+{
+  "day": 39,
+  "title": "Tabletop-Test an Incident Response Plan",
+  "date": "2026-10-09",
+  "url": "https://juribuora.github.io/labs/2026/10/09/lab-39-day-251.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "incidentresponse",
+    "tabletopexercise",
+    "playbooks",
+    "documentation",
+    "soc",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-39-day-251",
+  "sourcePath": "Labs/_posts/2026-10-09-lab-39-day-251.md",
+  "content": "## Lab Objective\n\nTest whether an incident response plan helps a team make the next decision during a fictional ransomware scenario.\n\nThis lab is a tabletop exercise. It does not simulate a live attack and does not authorise interacting with real systems.\n\n## Setup\n\nPrepare a small response pack containing:\n\n- a fictional asset and network diagram;\n- a synthetic contact list;\n- an incident response procedure;\n- an incident-handler journal template;\n- a short asset inventory;\n- a recovery checklist.\n\n## Procedure\n\n1. Read the scenario inject: several fictional endpoints display a ransom note and one shared file is unavailable.\n2. Start a timeline with the first observation and the person or role that recorded it.\n3. Ask the team to identify the affected assets, the first containment decision, and the evidence that must be preserved.\n4. Use the contact list and assign the security analyst, technical lead, incident coordinator, communications lead, and business owner roles.\n5. Walk through containment, eradication, recovery, and stakeholder communication without inventing facts that the inject did not provide.\n6. Record every point where the plan is unclear, a contact is missing, an owner is ambiguous, or a recovery dependency is unknown.\n7. Finish with a short after-action report: strengths, gaps, owners, and due dates.\n\n## Expected Evidence\n\nA good result includes a completed timeline, decisions with reasons, a list of evidence to preserve, assigned roles, unresolved questions, and at least one improvement to the response plan.\n\n## Security Takeaway\n\nThe exercise tests the plan's usability, not its appearance. A document can be polished and still fail if people cannot find the right contact, identify the affected asset, or agree on who owns the next action.\n"
+}

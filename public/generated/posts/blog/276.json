@@ -1,0 +1,17 @@
+{
+  "day": 276,
+  "title": "Giving Native Background Tasks an Explicit Owner",
+  "date": "2026-11-08",
+  "url": "https://juribuora.github.io/blog/2026/11/08/day-276.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "concurrency",
+    "authorization",
+    "lifecycle",
+    "learningprocess"
+  ],
+  "slug": "day-276",
+  "sourcePath": "Blog/_posts/2026-11-08-day-276.md",
+  "content": "# 🔄 Giving Native Background Tasks an Explicit Owner\n\nI worked through the native startup, reconnect, stall-watcher, and background-task lifecycle. The important defensive idea was to make every task belong to a known owner and to refuse cleanup or publication when that ownership is incomplete.\n\n# 🎯 Goal\n\nThe goal was to prevent a background task from surviving under an old profile, receiver, or authorization generation.\n\n# 🛠 What I Did\n\nI wired prepared startup decisions, callback inventories, reconnect ownership, drain control, housekeeping resources, and stall watching. Tests covered the positive path and refusal paths while tracking tasks, children, and extra threads.\n\nThe result was a native preparation and verification bundle, not a claim that every adapter callback or full agent execution path was already installed.\n\n# 🔗 Key Cybersecurity Connections\n\nUnowned background work is an authorization risk. A stale task may deliver a reply, read memory, or mutate state after the user or profile that created it has been revoked.\n\n# ⚠ Challenges\n\nThe native `handle_message` path still had separate admission and completion semantics. I kept those stages separate instead of calling task admission a delivered response.\n\n# 📚 What I Learned\n\nTask ownership should be visible in the lifecycle: create, join, revoke, and release must all refer to the same identity and generation.\n\n# 😄 TL;DR\n\nBackground work needs an owner, a generation, and a verified shutdown path just like a foreground request.\n"
+}

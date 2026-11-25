@@ -1,0 +1,17 @@
+{
+  "day": 273,
+  "title": "Moving Operator Controls to Ubuntu With Explicit Boundaries",
+  "date": "2026-11-05",
+  "url": "https://juribuora.github.io/blog/2026/11/05/day-273.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "linux",
+    "accesscontrol",
+    "operations",
+    "learningprocess"
+  ],
+  "slug": "day-273",
+  "sourcePath": "Blog/_posts/2026-11-05-day-273.md",
+  "content": "# 🔄 Moving Operator Controls to Ubuntu With Explicit Boundaries\n\nI moved more Hermes control and receiving responsibilities toward Ubuntu while keeping Mac-only capabilities explicit. This was less about copying features and more about defining which host is allowed to perform each action.\n\n# 🎯 Goal\n\nThe goal was to make the dedicated Telegram service and its control routes predictable without allowing a convenient fallback to become an unreviewed authority.\n\n# 🛠 What I Did\n\nI bound the dedicated Telegram service to its native lifecycle, preserved owner-origin checks, and recorded refusal reasons when a command came from the wrong origin. Mac power, calendar, secretary, and Open WebUI operations remained relays rather than silently becoming Ubuntu-local powers.\n\nThe work included staged bundles, source pins, and isolated acceptance checks. Production changes were kept separate from synthetic native-adapter preparation where the evidence was not complete.\n\n# 🔗 Key Cybersecurity Connections\n\nLeast privilege applies to hosts and routes, not only users. A command should be denied when it arrives through an untrusted origin even if the text looks like an owner command.\n\n# ⚠ Challenges\n\nSome Mac-off and mixed-platform capabilities remained open. I recorded them as residuals rather than treating a healthy tunnel or prepared bundle as full independence.\n\n# 📚 What I Learned\n\nMigration is a chance to make authority visible. Every relay should say what it does, where it executes, and what happens when its source is unavailable.\n\n# 😄 TL;DR\n\nI learned to migrate controls by authority and evidence, not by copying the old machine's assumptions.\n"
+}

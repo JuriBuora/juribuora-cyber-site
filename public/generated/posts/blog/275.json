@@ -1,0 +1,17 @@
+{
+  "day": 275,
+  "title": "Detecting iCloud Eviction During Backup Verification",
+  "date": "2026-11-07",
+  "url": "https://juribuora.github.io/blog/2026/11/07/day-275.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "backups",
+    "integrity",
+    "monitoring",
+    "learningprocess"
+  ],
+  "slug": "day-275",
+  "sourcePath": "Blog/_posts/2026-11-07-day-275.md",
+  "content": "# 🔄 Detecting iCloud Eviction During Backup Verification\n\nI improved verification of a local iCloud backup mirror after discovering that a file can disappear or become unreadable during the check. The lesson was that a backup receipt must describe what was actually verified, not what the directory looked like at the start.\n\n# 🎯 Goal\n\nThe verifier needed to identify the filename and system error, distinguish eviction from a generic failure, and alert when a mirror became stale.\n\n# 🛠 What I Did\n\nI added measured coverage for mirror verification, named unreadable files, and made the check defer when iCloud removed a file during the run. I also recorded that a successful upload and a current local mirror are separate facts.\n\n# 🔗 Key Cybersecurity Connections\n\nBackup integrity is an availability control. A directory listing or a previous receipt cannot prove that every required object is restorable now.\n\n## 🚨 Detection Opportunities\n\nUseful fields include the exact path, errno, verification timestamp, source revision, upload result, and freshness state. A `NOT_CHECKED` or `STALE` result is safer than a false green status.\n\n# ⚠ Challenges\n\nThe work did not create a restorable Time Machine backup where none existed. That gap remains a risk to address separately.\n\n# 📚 What I Learned\n\nVerification must model concurrent storage behaviour. Filesystems and cloud-backed folders can change during the check, so the verifier needs an honest residual state.\n\n# 😄 TL;DR\n\nA backup check is trustworthy only when it reports what survived the check, including files that vanished halfway through it.\n"
+}

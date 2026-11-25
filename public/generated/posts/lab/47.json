@@ -1,0 +1,17 @@
+{
+  "day": 47,
+  "title": "Distinguish Event Admission From Authorization",
+  "date": "2026-10-28",
+  "url": "https://juribuora.github.io/labs/2026/10/28/lab-47-day-270-admission-vs-authorization.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "authorization",
+    "audit",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-47-day-270-admission-vs-authorization",
+  "sourcePath": "Labs/_posts/2026-10-28-lab-47-day-270-admission-vs-authorization.md",
+  "content": "## Lab Objective\n\nDemonstrate the difference between observing an update, authorizing it, durably admitting it, dispatching it, and delivering a reply.\n\n## Lab Environment\n\nUse a disposable recording transport and synthetic Telegram-style updates. Block external network access and do not send real messages.\n\n## Scenario\n\nAn updater advances its next offset while a consumer has not durably admitted the earlier event. The exercise checks whether a receipt is incorrectly treated as proof of completion.\n\n## Steps\n\n1. Feed a synthetic update through the recording transport.\n2. Record the callback receipt and the updater's next offset.\n3. Leave the consumer queue intentionally unconsumed.\n4. Repeat the callback and verify duplicate suppression.\n5. Compare the receipt fields with the original source identity and completion state.\n6. Run a negative mutant that removes the duplicate guard and confirm the test rejects it.\n\n## Expected Evidence\n\nThe receipt identifies the event but does not contain enough information to prove current authorization, original transport provenance, or a delivered reply. Duplicate callbacks are suppressed, and the weakened mutant fails.\n\n## Security Takeaways\n\nAudit fields need precise meanings. A single `accepted` value can hide whether the system merely saw an event or actually completed an authorized action.\n\n## Limits\n\nThis is a diagnostic fixture, not a production denial or data-loss claim.\n"
+}

@@ -1,0 +1,19 @@
+{
+  "day": 252,
+  "title": "What Completing Five Google Cybersecurity Courses Actually Gives Me",
+  "date": "2026-10-10",
+  "url": "https://juribuora.github.io/blog/2026/10/10/day-252.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "googlecert",
+    "learningprocess",
+    "riskmanagement",
+    "networksecurity",
+    "linux",
+    "sql"
+  ],
+  "slug": "day-252",
+  "sourcePath": "Blog/_posts/2026-10-10-day-252.md",
+  "content": "# 🔄 Topic\n\nI reached a useful milestone in my Google Cybersecurity Certificate: completion certificates for Foundations of Cybersecurity, Play It Safe: Manage Security Risks, Assets, Threats, and Vulnerabilities, Tools of the Trade: Linux and SQL, and Connect and Protect: Networks and Network Security.\n\nThe certificates are evidence that I completed the courses. They are not a substitute for work experience, and they do not mean that I can stop practising. The more valuable result is the way the subjects now connect.\n\n# 🎯 Goal\n\nTurn a sequence of course modules into a coherent security workflow rather than treating each topic as an isolated vocabulary list.\n\n# 🛠 What I Built Into My Mental Model\n\nThe foundation course gave me the purpose and language of the field. Risk management gave me a way to think about likelihood, impact, controls, and priorities. Asset and vulnerability lessons made the protected thing explicit before discussing threats.\n\nLinux and SQL made the work more concrete. I can use the command line to inspect systems and SQL to retrieve, filter, sort, and combine security-relevant records. Networking added the path between systems: protocols, packet headers, addresses, ports, and tools such as Wireshark.\n\nThe current incident-response material added the operational loop. Detection creates evidence, analysts investigate and escalate, technical leads coordinate containment and recovery, and documentation preserves what was learned.\n\n# 🧠 What I Learned\n\nCybersecurity is not one tool or one job title. It is a chain:\n\n1. identify assets and the business context;\n2. understand threats, vulnerabilities, and likely impact;\n3. collect and filter useful evidence;\n4. detect and investigate unusual activity;\n5. coordinate response and recovery;\n6. document the outcome and improve the controls.\n\nThe courses also changed how I describe my own work. I should say exactly what I studied, what I practised, what was simulated, and what remains unverified. Honest boundaries make a learning portfolio more credible, not less.\n\n# ⚠️ Limitations\n\nThese certificates document course completion. They do not claim professional employment, production incident response, or independent enterprise experience. My labs and posts remain training exercises unless I explicitly identify a separate real implementation and its evidence.\n\n# ✅ Takeaway\n\nFinishing the courses is a milestone, not the finish line. I now have a connected foundation for practising packet analysis, SQL investigation, Linux operations, risk assessment, and incident response with better questions and more disciplined evidence.\n"
+}

@@ -1,0 +1,17 @@
+{
+  "day": 271,
+  "title": "Preserving Original Event Provenance Before Recovery",
+  "date": "2026-10-29",
+  "url": "https://juribuora.github.io/blog/2026/10/29/day-271.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "dataintegrity",
+    "privacy",
+    "recovery",
+    "learningprocess"
+  ],
+  "slug": "day-271",
+  "sourcePath": "Blog/_posts/2026-10-29-day-271.md",
+  "content": "# 🔄 Preserving Original Event Provenance Before Recovery\n\nI prepared a durable capture boundary for Telegram events. The objective was not to replay messages automatically, but to preserve enough verified provenance to decide safely what can happen after a restart or recovery.\n\n# 🎯 Goal\n\nThe capture needed to bind an event to the current bot, receiver, authorization home, registration generation, and adapter identity before inserting it into the private outbox.\n\n# 🛠 What I Did\n\nThe synthetic proof canonicalized the parsed update, stored a digest and cursor context, used a transaction, and rejected duplicates, expired entries, changed bodies, foreign bots, revoked sources, and quota violations. Backup and restore were tested with tamper detection.\n\nThe design intentionally had no automatic replay, skip, release, or retention policy. It also did not claim OS-level durability, live ingress authority, or a production-approved retention period.\n\n# 🔗 Key Cybersecurity Connections\n\nProvenance is a security property. A stored message is not trustworthy merely because it is in a database; the system must know which source, policy generation, and authorization decision allowed it to be captured.\n\n## 🔍 Investigation Questions\n\n- Was the event captured by the original trusted receiver?\n- Is the authorization still current?\n- Can a modified backup be detected?\n- Does recovery preserve evidence without silently authorizing action?\n\n# ⚠ Challenges\n\nThe capture callback was still synthetic and the production receiving path was not connected. That limitation was recorded instead of being hidden behind a green test result.\n\n# 📚 What I Learned\n\nRecovery should preserve uncertainty. If provenance, freshness, or authorization cannot be reconstructed, the safe result is a hold—not an automatic retry or deletion.\n\n# 😄 TL;DR\n\nI learned to preserve original event evidence before recovery, while refusing to turn stored data into authority.\n"
+}

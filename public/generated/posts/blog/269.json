@@ -1,0 +1,17 @@
+{
+  "day": 269,
+  "title": "Porting a Security Control Without Porting Mac Assumptions",
+  "date": "2026-10-27",
+  "url": "https://juribuora.github.io/blog/2026/10/27/day-269.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "linux",
+    "authorization",
+    "portability",
+    "learningprocess"
+  ],
+  "slug": "day-269",
+  "sourcePath": "Blog/_posts/2026-10-27-day-269.md",
+  "content": "# 🔄 Porting a Security Control Without Porting Mac Assumptions\n\nI restored a local fallback path on Ubuntu and ported the `whatsapp-autoreply` control tool. The important lesson was that moving a script is not the same as moving its security assumptions.\n\n# 🎯 Goal\n\nThe goal was to preserve owner-controlled behaviour while changing homes, interpreters, service commands, and environment paths.\n\n# 🛠 What I Did\n\nI tested a primary-provider failure with a local fallback fixture and confirmed that the fallback was selected. I then ported the control tool with explicit `HERMES_HOME`, interpreter, and systemd-user unit handling. The installed copy was compared with its source, and the tool's list, status, and doctor checks were run against the live state.\n\nThe review also found a subtle allowlist problem: quoted environment values could create phantom identities. The parser was corrected to behave like dotenv parsing, and the focused test suite passed.\n\n# 🔗 Key Cybersecurity Connections\n\nPortability affects authorization. A tool that resolves the wrong home directory, reads the wrong allowlist, or reloads the wrong service can appear to work while controlling nothing—or controlling the wrong target.\n\n## 🔍 Investigation Questions\n\n- Which directory is the authority on this host?\n- Which identity does the parser actually authorize?\n- Which service does a reload affect?\n- Can the tool explain an inconsistent state before changing it?\n\n# ⚠ Challenges\n\nThe fallback still depended on the Mac tunnel being available. The port therefore improved behaviour during provider failure but did not make the whole system independent of the Mac.\n\n# 📚 What I Learned\n\nSecurity controls need platform-specific verification. Matching filenames is not enough; paths, quoting, process ownership, reload semantics, and identity parsing must all be checked.\n\n# 😄 TL;DR\n\nI learned that a portable security tool is one whose authority and failure modes are tested on the new host, not merely copied there.\n"
+}

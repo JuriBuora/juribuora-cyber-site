@@ -1,0 +1,17 @@
+{
+  "day": 265,
+  "title": "Treating Internal Injection as an Authorization Boundary",
+  "date": "2026-10-23",
+  "url": "https://juribuora.github.io/blog/2026/10/23/day-265.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "authorization",
+    "injection",
+    "hermes",
+    "learningprocess"
+  ],
+  "slug": "day-265",
+  "sourcePath": "Blog/_posts/2026-10-23-day-265.md",
+  "content": "# 🔄 Treating Internal Injection as an Authorization Boundary\n\nI examined the path by which an internal event can enter Hermes. I used to think of internal injection as an implementation detail. It is actually an input boundary: if an untrusted or incorrectly scoped event enters there, it can influence the same downstream state as a real message.\n\n# 🎯 Goal\n\nThe goal was to admit only prepared internal sources, keep the source and session scope attached to the event, and refuse malformed or mismatched inputs before they reach the consumer.\n\n# 🛠 What I Did\n\nThe native internal-injection owner now binds the admission decision to a prepared source inventory and explicit scope. The verification included positive and negative mutants: bypassing the route exclusion, skipping the native SQLite session switch, and omitting the callback join. Each mutant was expected to fail, which is stronger than checking that the unmodified path returns success.\n\nThe work also separates a persisted row from authority. A database row can be evidence of an earlier decision, but the current admission path still needs to verify the active source, route, session, and owner.\n\n# 🔗 Key Cybersecurity Connections\n\nThis is input validation combined with authorization and provenance. Internal does not automatically mean trusted. The security question is who or what created the event, under which scope, and whether that scope is still valid at the moment of use.\n\n## 🚨 Detection Opportunities\n\nRejected injections should record a bounded reason such as source mismatch, route exclusion, session mismatch, or missing callback completion. The record should avoid copying private payloads into a security log.\n\n# ⚠ Challenges\n\nNegative testing exposed the design more clearly than the happy path. A test that only proves “the handler can process an event” does not prove that the wrong event is rejected.\n\n# 📚 What I Learned\n\nAuthorization has to travel with the event across asynchronous boundaries. Otherwise a later consumer may accept an object whose original context is no longer visible or valid.\n\n# 🧠 Reflection\n\nThe word “internal” should describe where an event came from, not grant it unlimited authority. I now treat internal queues, callbacks, and injection helpers as security-relevant interfaces.\n"
+}

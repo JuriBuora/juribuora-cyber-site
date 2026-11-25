@@ -1,0 +1,17 @@
+{
+  "day": 277,
+  "title": "Refusing Queued Events Outside the Trusted Inbound Path",
+  "date": "2026-11-09",
+  "url": "https://juribuora.github.io/blog/2026/11/09/day-277.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "telegram",
+    "authorization",
+    "inputvalidation",
+    "learningprocess"
+  ],
+  "slug": "day-277",
+  "sourcePath": "Blog/_posts/2026-11-09-day-277.md",
+  "content": "# 🔄 Refusing Queued Events Outside the Trusted Inbound Path\n\nI prepared a native inbound owner for Telegram messages. The main lesson was that a queued event must not be consumed merely because it is available; it must still arrive through the current trusted receiver and authorization generation.\n\n# 🎯 Goal\n\nThe inbound owner had to reject revoked sources, wrong receivers, queued orphan events, and source drift before session claim or native queue consumption.\n\n# 🛠 What I Did\n\nThe bounded proof checked current parent authorization around asynchronous waits, refused persisted FIFO events before consuming them, and preserved finalizers during revocation. Mutants that admitted a revoked source, consumed a queued event, or left entries unjoined were rejected.\n\nThe verification used synthetic agent outcomes and recorded replies. It did not claim full installed adapter ownership, whole-agent execution, or real Telegram delivery.\n\n# 🔗 Key Cybersecurity Connections\n\nInput validation is not enough without source validation. The same event body can be safe or unsafe depending on which receiver, profile, and authorization generation supplied it.\n\n# 🚨 Detection Opportunities\n\nLog refusal reasons, source identity, generation, queue disposition, and whether a session was claimed. Never report a queued event as processed when the trusted inbound gate rejected it.\n\n# 📚 What I Learned\n\nThe safest queue consumer is conservative: it checks authority before removing work, and it leaves uncertain events available for explicit review rather than silently dropping them.\n\n# 😄 TL;DR\n\nAn inbound queue is not an authority source; current trusted admission must come first.\n"
+}

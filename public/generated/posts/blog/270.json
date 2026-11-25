@@ -1,0 +1,17 @@
+{
+  "day": 270,
+  "title": "Separating an Admission Receipt From Authorization",
+  "date": "2026-10-28",
+  "url": "https://juribuora.github.io/blog/2026/10/28/day-270.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "authorization",
+    "telegram",
+    "audit",
+    "learningprocess"
+  ],
+  "slug": "day-270",
+  "sourcePath": "Blog/_posts/2026-10-28-day-270.md",
+  "content": "# 🔄 Separating an Admission Receipt From Authorization\n\nI examined the native Telegram update path and found a distinction that is easy to miss: a callback receipt can prove that code observed an event, but it does not automatically prove that the event was authorized, durably admitted, or answered.\n\n# 🎯 Goal\n\nThe goal was to test the meaning of native receipts without changing the production poller or sending real messages.\n\n# 🛠 What I Did\n\nUsing recording transports and synthetic updates, I tested duplicate callbacks, error observers, and a consumer-free updater. The updater advanced its next polling offset even though the queue still contained the earlier update. The receipt file preserved update IDs, but not the original transport provenance or proof of a completed reply.\n\nMutants that weakened duplicate handling were rejected. The workload completed with no external network, inference, or real sends.\n\n# 🔗 Key Cybersecurity Connections\n\nThis is an authorization and audit-integrity problem. Logging that an event reached a handler is weaker than proving that the current authorized receiver admitted it before acknowledging the source.\n\n## 🚨 Detection Opportunities\n\nAudit records should distinguish received, authorized, durably admitted, dispatched, completed, and delivered. Collapsing these into one `accepted` flag hides where an event actually stopped.\n\n# ⚠ Challenges\n\nThe test was deliberately bounded. It did not prove the full installed handler, live authentication, or production data-loss behaviour.\n\n# 📚 What I Learned\n\nAn audit receipt is evidence with a scope. Before relying on it, I must ask what source identity, authorization decision, cursor, and completion state it actually binds.\n\n# 😄 TL;DR\n\nAn event receipt is not automatically an authorization grant or a delivery receipt.\n"
+}

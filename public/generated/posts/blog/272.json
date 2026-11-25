@@ -1,0 +1,17 @@
+{
+  "day": 272,
+  "title": "Joining Receivers Before Releasing Runtime State",
+  "date": "2026-10-30",
+  "url": "https://juribuora.github.io/blog/2026/10/30/day-272.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "concurrency",
+    "lifecycle",
+    "reliability",
+    "learningprocess"
+  ],
+  "slug": "day-272",
+  "sourcePath": "Blog/_posts/2026-10-30-day-272.md",
+  "content": "# 🔄 Joining Receivers Before Releasing Runtime State\n\nI worked on the shutdown and recovery boundary for native receivers. The security lesson was that releasing shared runtime state before the workers that use it have finished creates a race between cleanup and still-running work.\n\n# 🎯 Goal\n\nThe goal was to make stop, abort, and fatal paths account for enrolled receivers and their outstanding tasks before releasing the runtime ledger.\n\n# 🛠 What I Did\n\nI prepared joined stop wrappers and guarded native release behind receiver joins. The tests exercised construction failures, reconnect guards, status release, and cleanup ordering. The verification was a bounded preparation, not a production restart or takeover.\n\n# 🔗 Key Cybersecurity Connections\n\nLifecycle races can become integrity failures: a late callback may write to released state, a stale worker may act under an old authorization generation, or a recovery path may mistake unfinished work for safely abandoned work.\n\n## 🚨 Detection Opportunities\n\nTrack active receivers, joined workers, release generation, and cleanup failures separately. A zero process count alone is not proof that every asynchronous callback has stopped.\n\n# ⚠ Challenges\n\nThe proof did not cover every platform or a power-loss scenario. It showed the intended ownership boundary, not universal crash consistency.\n\n# 📚 What I Learned\n\nCleanup is part of the security model. A resource should be released only after the work that can still reference it has joined or has been explicitly refused.\n\n# 😄 TL;DR\n\nSafe recovery starts by proving that old receivers have really finished before shared state is released.\n"
+}

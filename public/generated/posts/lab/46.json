@@ -1,0 +1,17 @@
+{
+  "day": 46,
+  "title": "Verify a Provider Fallback and Its Host Paths",
+  "date": "2026-10-27",
+  "url": "https://juribuora.github.io/labs/2026/10/27/lab-46-day-269-ubuntu-fallback-portability.html",
+  "category": "lab",
+  "tags": [
+    "cybersecurity",
+    "linux",
+    "authorization",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "lab-46-day-269-ubuntu-fallback-portability",
+  "sourcePath": "Labs/_posts/2026-10-27-lab-46-day-269-ubuntu-fallback-portability.md",
+  "content": "## Lab Objective\n\nVerify that a provider fallback is selected after a controlled primary failure, and that a ported operator tool resolves the intended home, interpreter, service, and allowlist.\n\n## Lab Environment\n\nUse a disposable Linux home and a local fixture that returns a simulated provider `429`. Do not use real credentials, private messages, or real recipients.\n\n## Scenario\n\nA primary model provider becomes unavailable. The fallback should answer, while an operator-control tool must not silently read Mac paths or authorize a quoted, malformed identity.\n\n## Steps\n\n1. Configure a fixture primary provider that returns a usage-limit error.\n2. Configure a local fallback endpoint in the disposable environment.\n3. Run one isolated request and record the selected provider and reply.\n4. Run the tool's `list`, `status`, and `doctor` operations against the fixture state.\n5. Add quoted values to the allowlist fixture and confirm the parser strips dotenv-style outer quotes.\n6. Compare the installed script hash with the approved source copy.\n\n## Expected Evidence\n\nThe request completes through the fallback. The diagnostic reports no dangerous inconsistency, and a quoted allowlist value maps to the same identity as its unquoted form. A missing or unavailable tunnel remains an explicit failure, not a false success.\n\n## Security Takeaways\n\nPortability is part of access control. A copied script is not a verified control until its authority paths, identity parsing, and service target are tested on the new host.\n\n## Limits\n\nThis lab uses synthetic provider failure and fixture identities. It does not authorize a real WhatsApp or Telegram action.\n"
+}
